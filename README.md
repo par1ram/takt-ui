@@ -47,7 +47,7 @@ bun install
 bun run dev
 ```
 
-The production catalog is at [takt-ui.vercel.app](https://takt-ui.vercel.app). GitHub Actions checks pull requests and pushes to `main` with a frozen Bun install, ESLint, a production build and SEO smoke tests. The Vercel project uses the Next.js preset and the build command in `vercel.json`. In Vercel’s Git settings, connect the private `par1ram/takt-ui` repository and select `main` for production deployments.
+The production catalog is at [takt-ui.vercel.app](https://takt-ui.vercel.app). GitHub Actions checks pull requests and pushes to `main` with a frozen Bun install, ESLint, a production build and SEO smoke tests. The Vercel project uses the Next.js preset and the build command in `vercel.json`. Vercel builds and publishes production from the `main` branch of the private `par1ram/takt-ui` repository on each push.
 
 Component detail pages live at `/components/<slug>` and `/ru/components/<slug>`. The sitemap, canonical URLs and language alternates use the production domain. Set `NEXT_PUBLIC_TAKT_ORIGIN` at build time when moving to a custom domain. Run `node scripts/check-seo.mjs https://takt-ui.vercel.app` to check the published catalog.
 
