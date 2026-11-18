@@ -611,3 +611,11 @@ html.dark .dark-choice {
   grid-template-columns: minmax(0, 1fr);
   padding: 44px 14px 20px;
 }
+
+.demo-stage:is([data-category="Messenger"], [data-category="Мессенджер"]) {
+  grid-template-columns: minmax(0, 1fr);
+  padding: 40px 14px 14px;
+}
+.demo-stage.stage-channel-list { height: 305px; }
+.demo-stage.stage-message-thread, .demo-stage.stage-course-messenger { height: 400px; grid-template-rows: minmax(0, 1fr); }
+.stage-course-messenger > section { height: 100%; }

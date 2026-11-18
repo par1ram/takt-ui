@@ -1761,6 +1761,122 @@
       "type": "registry:ui"
     },
     {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "channel-list",
+      "title": "Channel List",
+      "description": "Список каналов курса и личных диалогов.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/channel-list.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "chat-composer",
+      "title": "Chat Composer",
+      "description": "Редактор с черновиком, переносом строки и состояниями отправки.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/motion/chat-composer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "message-reactions",
+      "title": "Message Reactions",
+      "description": "Реакции на сообщение со счётчиками участников.",
+      "dependencies": [
+        "motion",
+        "radix-ui"
+      ],
+      "files": [
+        {
+          "path": "components/motion/message-reactions.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "message-thread",
+      "title": "Message Thread",
+      "description": "Ответы с контекстом исходного сообщения и отдельным редактором.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "components/motion/message-thread.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-composer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "course-messenger",
+      "title": "Course Messenger",
+      "description": "Рабочее пространство с каналами, личными сообщениями и тредами.",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "button",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "components/motion/course-messenger.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/channel-list.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-composer.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/message-reactions.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/message-thread.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "takt",
       "title": "Takt",
       "description": "Все компоненты Takt и общие модули.",
@@ -1768,10 +1884,12 @@
         "lucide-react",
         "motion",
         "@stripe/react-stripe-js",
-        "@stripe/stripe-js"
+        "@stripe/stripe-js",
+        "radix-ui"
       ],
       "registryDependencies": [
-        "button"
+        "button",
+        "avatar"
       ],
       "files": [
         {
@@ -2172,6 +2290,26 @@
         },
         {
           "path": "components/motion/hint-ladder.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/channel-list.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-composer.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/message-reactions.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/message-thread.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/course-messenger.tsx",
           "type": "registry:ui"
         }
       ],

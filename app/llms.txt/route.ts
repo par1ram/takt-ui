@@ -47,6 +47,7 @@ Use \`bunx shadcn@latest search @takt -q "receipt"\`, \`bunx shadcn@latest view 
 
 Import the recorded named export from the file under the project's UI alias. Keep pages server-rendered by default. Put browser state, callbacks and event handlers behind a client boundary. Use the project's theme tokens, content and data. Check both themes, keyboard interaction and reduced motion, then run the production build. English is the default; Russian packages are in /r/ru/.
 
+- [Course Messenger](${url("/messenger")}) combines channel selection, message composition, reactions and threads. Install [the workspace](${url("/r/course-messenger.json")}) or find each part under Messenger in the component index.
 - [Assistant Orb](${url("/r/siri-orb.json")}) takes an assistant state and normalized audio amplitude.
 - [Receipt Printer](${url("/r/receipt-printer.json")}) runs a demo by default. For checkout, supply the order and an onPay callback that resolves after server-side confirmation. Reprinting reuses the existing receipt.
 - [Registry index](${url("/r/registry.json")})

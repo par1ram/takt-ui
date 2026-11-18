@@ -1,6 +1,8 @@
 # Takt
 
-93 motion components for React, Next.js App Router and Tailwind CSS. Install one component or the entire collection as editable source through shadcn. The catalog opens in English; the Russian edition is at `/ru`. [Русская документация](README.ru.md)
+98 motion components for React, Next.js App Router and Tailwind CSS. Install one component or the entire collection as editable source through shadcn. The catalog opens in English; the Russian edition is at `/ru`. [Русская документация](README.ru.md)
+
+Try the [course messenger](https://takt-ui.vercel.app/messenger) or install `@takt/course-messenger` in a configured shadcn project. The demo keeps conversations and drafts in memory. For live conversations, pass `messages` from your data source, persist sends through `onSend(channelId, text, parentId?)`, and handle `onToggleReaction(channelId, postId, emoji)`. Channel List, Chat Composer, Message Reactions and Message Thread can also be installed separately.
 
 ## Learning components
 

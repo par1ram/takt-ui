@@ -449,4 +449,9 @@ export const demos = {
   "hint-ladder": lazy(() =>
     import("@/components/motion/hint-ladder").then((module) => ({ default: module.HintLadder })),
   ),
+  "channel-list": lazy(() => import("@/components/motion/channel-list").then(module => ({ default: module.ChannelList }))),
+  "chat-composer": lazy(() => import("@/components/motion/chat-composer").then(module => ({ default: module.ChatComposer }))),
+  "message-reactions": lazy(() => import("@/components/motion/message-reactions").then(module => ({ default: module.MessageReactions }))),
+  "message-thread": lazy(() => import("@/components/motion/message-thread").then(module => ({ default: module.MessageThread }))),
+  "course-messenger": lazy(() => import("@/components/motion/course-messenger").then(module => ({ default: module.CourseMessenger }))),
 } satisfies Record<Entry["slug"], React.ComponentType>;

@@ -2864,6 +2864,216 @@
           }
         }
       ]
+    },
+    {
+      "name": "channel-list",
+      "title": "Channel List",
+      "category": "Messenger",
+      "description": "Course channels and direct conversations.",
+      "export": "ChannelList",
+      "usage": "<ChannelList />",
+      "registryItem": "/r/channel-list.json",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "channels": {
+            "type": "ChatChannel[] | undefined",
+            "required": false
+          },
+          "value": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onSelect": {
+            "type": "((id: string) => void) | undefined",
+            "required": false
+          },
+          "workspace": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "chat-composer",
+      "title": "Chat Composer",
+      "category": "Messenger",
+      "description": "Compose a draft, insert line breaks and track delivery.",
+      "export": "ChatComposer",
+      "usage": "<ChatComposer />",
+      "registryItem": "/r/chat-composer.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "pending": {
+            "type": "boolean | undefined",
+            "required": false
+          },
+          "value": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((text: string) => void) | undefined",
+            "required": false
+          },
+          "onSend": {
+            "type": "((text: string) => void | Promise<void>) | undefined",
+            "required": false
+          },
+          "placeholder": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "message-reactions",
+      "title": "Message Reactions",
+      "category": "Messenger",
+      "description": "Message reactions with participant counts.",
+      "export": "MessageReactions",
+      "usage": "<MessageReactions />",
+      "registryItem": "/r/message-reactions.json",
+      "dependencies": [
+        "motion",
+        "radix-ui"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "reactions": {
+            "type": "ChatReaction[] | undefined",
+            "required": false
+          },
+          "onToggle": {
+            "type": "((emoji: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "message-thread",
+      "title": "Message Thread",
+      "category": "Messenger",
+      "description": "Threaded replies with the original message and a separate composer.",
+      "export": "MessageThread",
+      "usage": "<MessageThread />",
+      "registryItem": "/r/message-thread.json",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "avatar"
+      ],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "pending": {
+            "type": "boolean | undefined",
+            "required": false
+          },
+          "parent": {
+            "type": "ChatPost | undefined",
+            "required": false
+          },
+          "replies": {
+            "type": "ChatPost[] | undefined",
+            "required": false
+          },
+          "draft": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onDraftChange": {
+            "type": "((text: string) => void) | undefined",
+            "required": false
+          },
+          "onReply": {
+            "type": "((text: string) => void | Promise<void>) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "course-messenger",
+      "title": "Course Messenger",
+      "category": "Messenger",
+      "description": "A workspace for course channels, direct messages and threads.",
+      "export": "CourseMessenger",
+      "usage": "<CourseMessenger />",
+      "registryItem": "/r/course-messenger.json",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "button",
+        "avatar"
+      ],
+      "props": [
+        {
+          "messages": {
+            "type": "Record<string, ConversationPost[]> | undefined",
+            "required": false
+          },
+          "onSend": {
+            "type": "((channelId: string, text: string, parentId?: string) => void | Promise<void>) | undefined",
+            "required": false
+          },
+          "onToggleReaction": {
+            "type": "((channelId: string, postId: string, emoji: string) => void) | undefined",
+            "required": false
+          },
+          "channels": {
+            "type": "ChatChannel[] | undefined",
+            "required": false
+          },
+          "initialMessages": {
+            "type": "Record<string, ConversationPost[]> | undefined",
+            "required": false
+          },
+          "workspace": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
     }
   ]
 }

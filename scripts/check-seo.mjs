@@ -13,7 +13,7 @@ const components = registry.items.filter(item => item.name !== "takt");
 assert.ok(components.length > 0);
 const sitemap = await (await read("/sitemap.xml")).text();
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-const paths = ["", ...components.map(item => "/components/" + item.name)];
+const paths = ["", "/messenger", ...components.map(item => "/components/" + item.name)];
 const expected = paths.flatMap(path => [path || "/", "/ru" + path]);
 assert.deepEqual(urls.sort(), expected.map(path => new URL(path, canonical).href).sort());
 assert.ok((await (await read("/robots.txt")).text()).includes("Sitemap: " + new URL("/sitemap.xml", canonical).href));
@@ -21,7 +21,7 @@ for (const lang of ["en", "ru"]) {
   const prefix = lang === "ru" ? "/ru" : "";
   const home = await (await read(prefix || "/")).text();
   for (const item of components) assert.ok(home.includes('href="' + prefix + '/components/' + item.name + '"'), item.name);
-  for (const path of ["", "/components/receipt-printer"]) {
+  for (const path of ["", "/messenger", "/components/receipt-printer"]) {
     const html = path ? await (await read(prefix + path)).text() : home;
     assert.ok(html.includes('<html lang="' + lang + '"'), lang);
     const link = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
@@ -30,7 +30,7 @@ for (const lang of ["en", "ru"]) {
     assert.ok(html.includes('hrefLang="x-default"') || html.includes('hreflang="x-default"'));
     assert.ok(html.includes('name="twitter:card" content="summary_large_image"'));
     assert.ok(html.includes(new URL('/share/' + lang + '.png', canonical).href));
-    if (path) assert.ok(html.includes('application/ld+json') && html.includes('BreadcrumbList'));
+    if (path.startsWith("/components/")) assert.ok(html.includes('application/ld+json') && html.includes('BreadcrumbList'));
   }
   const image = Buffer.from(await (await read("/share/" + lang + ".png")).arrayBuffer());
   assert.deepEqual([image.readUInt32BE(16), image.readUInt32BE(20)], [1200, 630]);

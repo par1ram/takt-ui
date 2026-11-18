@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { chromium } from "playwright";
+import { reviewMessenger } from "./review-messenger.mjs";
 import { reviewEnglish } from "./review-english.mjs";
 import { reviewHost } from "./review-motion-host.mjs";
 
@@ -119,6 +120,38 @@ async function swipeRight(node, page) {
   }
 }
 const scenarios = {
+  "channel-list": async s => {
+    const dm = button(s, "Майя Ли");
+    await dm.click();
+    assert.equal(await dm.getAttribute("aria-current"), "true");
+  },
+  "chat-composer": async s => {
+    assert(await button(s, "Отправить сообщение").isDisabled());
+    await textbox(s).fill("Первая строка");
+    await textbox(s).press("Shift+Enter");
+    assert.match(await textbox(s).inputValue(), /\n$/);
+    await textbox(s).press("Enter");
+    await contains(status(s), "Отправлено");
+    assert.equal(await textbox(s).inputValue(), "");
+  },
+  "message-reactions": async s => {
+    await button(s, "Аплодисменты, 3").click();
+    assert.equal(await button(s, "Аплодисменты, 4").getAttribute("aria-pressed"), "true");
+    await button(s, "Аплодисменты, 4").click();
+    await button(s, "Аплодисменты, 3").waitFor();
+  },
+  "message-thread": async s => {
+    await textbox(s).fill("Ответ из проверки");
+    await textbox(s).press("Enter");
+    await s.getByText("Ответ из проверки", { exact: true }).waitFor();
+  },
+  "course-messenger": async s => {
+    await button(s, "Выбрать диалог").click();
+    await button(s, "Майя Ли").click();
+    await textbox(s).fill("Личный вопрос");
+    await textbox(s).press("Enter");
+    await s.getByText("Личный вопрос", { exact: true }).waitFor();
+  },
   "lesson-outline": async s => {
     await s.getByRole("button", { name: /Границы строки/ }).click();
     await button(s,"Открыть урок").click();
@@ -934,10 +967,11 @@ try {
     }),
   );
   try {
+    await reviewMessenger(browser, origin);
     await reviewEnglish(browser, origin, index.items);
     await reviewHost(browser, origin);
   } catch (error) {
-    failures.push("English catalog / host: " + error.message);
+    failures.push("Messenger / English catalog / host: " + error.message);
   }
 } finally {
   await browser.close();

@@ -1320,6 +1320,31 @@ export const entries = [
     description: "Подсказки раскрываются по одной от вопроса до похожего примера.",
     gesture: "Открывайте подсказки по очереди", usage: "<HintLadder />", references: [], symbol: "HintLadder",
   },
+  {
+    slug: "channel-list", title: "Channel List", category: "Мессенджер",
+    description: "Список каналов курса и личных диалогов.",
+    gesture: "Выберите другой диалог", usage: "<ChannelList />", references: [], symbol: "ChannelList",
+  },
+  {
+    slug: "chat-composer", title: "Chat Composer", category: "Мессенджер",
+    description: "Редактор с черновиком, переносом строки и состояниями отправки.",
+    gesture: "Напишите и отправьте сообщение", usage: "<ChatComposer />", references: [], symbol: "ChatComposer",
+  },
+  {
+    slug: "message-reactions", title: "Message Reactions", category: "Мессенджер",
+    description: "Реакции на сообщение со счётчиками участников.",
+    gesture: "Добавьте или снимите реакцию", usage: "<MessageReactions />", references: [], symbol: "MessageReactions",
+  },
+  {
+    slug: "message-thread", title: "Message Thread", category: "Мессенджер",
+    description: "Ответы с контекстом исходного сообщения и отдельным редактором.",
+    gesture: "Продолжите обсуждение", usage: "<MessageThread />", references: [], symbol: "MessageThread",
+  },
+  {
+    slug: "course-messenger", title: "Course Messenger", category: "Мессенджер",
+    description: "Рабочее пространство с каналами, личными сообщениями и тредами.",
+    gesture: "Откройте канал и ответьте в треде", usage: "<CourseMessenger />", references: [], symbol: "CourseMessenger",
+  },
 ] as const;
 export type Entry = (typeof entries)[number];
 
@@ -1339,6 +1364,8 @@ const allOrder: Entry["slug"][] = [
   // Learn, run code and get help
   "lesson-outline", "code-exercise", "run-console", "test-results", "ask-tutor",
   "lesson-citation", "predict-output", "execution-trace", "hint-ladder",
+
+  "channel-list", "chat-composer", "message-reactions", "message-thread", "course-messenger",
 
   // Find a command and move between views
   "command-search", "command-palette", "command-button", "sidebar-collapse",
