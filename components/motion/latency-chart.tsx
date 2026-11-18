@@ -21,7 +21,8 @@ import {
   Area,
   AreaChart,
   CartesianGrid,
-  ReferenceDot,
+  DefaultZIndexes,
+  ZIndexLayer,
   usePlotArea,
   useXAxisScale,
   useYAxisScale,
@@ -239,18 +240,14 @@ const LatencyPlot = memo(function LatencyPlot({
           onAnimationStart={hideCursor}
           onAnimationEnd={showCursor}
         />
-        <ReferenceDot
-          x={0}
-          y={0}
-          shape={
-            <TraceCursor
-              data={data}
-              target={target}
-              series={series}
-              visibility={visibility}
-            />
-          }
-        />
+        <ZIndexLayer zIndex={DefaultZIndexes.scatter}>
+          <TraceCursor
+            data={data}
+            target={target}
+            series={series}
+            visibility={visibility}
+          />
+        </ZIndexLayer>
       </AreaChart>
     </ChartContainer>
   );
