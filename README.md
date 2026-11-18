@@ -1,10 +1,12 @@
 # Takt
 
-101 motion components for React, Next.js App Router and Tailwind CSS. Install one component or the entire collection as editable source through shadcn. The catalog opens in English; the Russian edition is at `/ru`. [Русская документация](README.ru.md)
+104 motion components for React, Next.js App Router and Tailwind CSS. Install one component or the entire collection as editable source through shadcn. The catalog opens in English; the Russian edition is at `/ru`. [Русская документация](README.ru.md)
 
 Try the [course messenger](https://takt-ui.vercel.app/messenger) or install `@takt/course-messenger` in a configured shadcn project. The demo keeps conversations and drafts in memory. For live conversations, pass `messages` from your data source, persist sends through `onSend(channelId, text, parentId?)`, and handle `onToggleReaction(channelId, postId, emoji)`. Channel List, Chat Composer, Message Reactions and Message Thread can also be installed separately.
 
 The [metrics collection](https://takt-ui.vercel.app/metrics) includes three installable charts. Supply ordered percentile samples to Latency Chart, stage counts to Conversion Funnel, or cohort sizes and retained counts to Cohort Retention. Use `null` for missing measurements.
+
+Issue Board, Issue Table and Cycle Planner share the `TrackerIssue` type from the installed `tracker-issues.tsx`. Pass the same `issues` array and `onIssuesChange` setter to all three for synchronized views. Use `defaultIssues` for a self-contained tracker. Each issue has a stable unique ID, title, status, priority, estimate in points and an optional cycle ID.
 
 ## Learning components
 

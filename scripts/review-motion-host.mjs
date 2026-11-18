@@ -36,6 +36,22 @@ export async function reviewHost(browser, origin) {
         [name, props, callback],
       );
     const btn = (name) => page.getByRole("button", { name, exact: true });
+    await render("SharedTracker", { initial: [
+      {id:"A",title:"Прототип",priority:"high",status:"backlog",points:3},
+      {id:"B",title:"Другая задача",priority:"low",status:"done",points:5,cycleId:"older"},
+    ] });
+    const board = page.locator('[data-slot="card"]').nth(0);
+    const table = page.getByRole("table");
+    await board.locator('[data-issue="A"] [draggable=true]').dragTo(board.getByRole("region",{name:"В работе",exact:true}));
+    await table.getByRole("button",{name:"Статус · A · В работе"}).waitFor();
+    await table.getByRole("button",{name:"Переименовать Прототип"}).click();
+    await table.getByRole("textbox").fill("Готовый прототип");
+    await table.getByRole("textbox").press("Enter");
+    await board.getByText("Готовый прототип").waitFor();
+    const scope = page.getByRole("group",{name:"Состав цикла"});
+    assert.equal(await scope.getByRole("button").count(),1);
+    await scope.getByRole("button",{name:"A · Готовый прототип"}).click();
+    await page.getByText("План заполнен",{exact:true}).waitFor();
     await render("LatencyChart", { samples: [] });
     await page.getByText("Пока нет измерений").waitFor();
     await render("LatencyChart", { samples: [{label:"A",p50:0,p95:null}] });

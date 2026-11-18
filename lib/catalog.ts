@@ -1360,6 +1360,21 @@ export const entries = [
     description: "Возврат участников по когортам с отдельным состоянием для пропущенных наблюдений.", gesture: "Выберите когорту и неделю",
     usage: "<CohortRetention />", references: [], symbol: "CohortRetention",
   },
+  {
+    slug: "issue-board", title: "Issue Board", category: "Трекеры",
+    description: "Канбан с переносом задач между статусами и быстрым созданием карточек.", gesture: "Создайте задачу и измените её статус",
+    usage: "<IssueBoard />", references: [], symbol: "IssueBoard",
+  },
+  {
+    slug: "issue-table", title: "Issue Table", category: "Трекеры",
+    description: "Таблица задач с редактированием названий, статусов и приоритетов.", gesture: "Измените свойство прямо в строке",
+    usage: "<IssueTable />", references: [], symbol: "IssueTable",
+  },
+  {
+    slug: "cycle-planner", title: "Cycle Planner", category: "Трекеры",
+    description: "Планирование цикла по оценкам задач с резервом и превышением ёмкости.", gesture: "Измените состав цикла и проверьте загрузку",
+    usage: "<CyclePlanner />", references: [], symbol: "CyclePlanner",
+  },
 ] as const;
 export type Entry = (typeof entries)[number];
 
@@ -1383,6 +1398,8 @@ const allOrder: Entry["slug"][] = [
   "channel-list", "chat-composer", "message-reactions", "message-thread", "course-messenger",
 
   "latency-chart", "conversion-funnel", "cohort-retention",
+
+  "issue-board", "issue-table", "cycle-planner",
 
   // Find a command and move between views
   "command-search", "command-palette", "command-button", "sidebar-collapse",

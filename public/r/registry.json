@@ -1952,6 +1952,90 @@
       "type": "registry:ui"
     },
     {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "issue-board",
+      "title": "Issue Board",
+      "description": "A kanban board with status transitions and inline issue creation.",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "card",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/motion/issue-board.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/tracker-issues.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/issue-property-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "issue-table",
+      "title": "Issue Table",
+      "description": "An inline-editable issue database with sortable priorities.",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "card",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/motion/issue-table.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/tracker-issues.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/issue-property-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "cycle-planner",
+      "title": "Cycle Planner",
+      "description": "Plan cycle scope against capacity using issue estimates.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/motion/cycle-planner.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/tracker-issues.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "takt",
       "title": "Takt",
       "description": "All Takt motion components and their shared helpers.",
@@ -2404,6 +2488,26 @@
         },
         {
           "path": "components/motion/cohort-retention.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/issue-board.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/tracker-issues.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/issue-property-menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/issue-table.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/cycle-planner.tsx",
           "type": "registry:ui"
         }
       ],

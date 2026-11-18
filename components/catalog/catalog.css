@@ -620,7 +620,7 @@ html.dark .dark-choice {
 .demo-stage.stage-message-thread, .demo-stage.stage-course-messenger { height: 400px; grid-template-rows: minmax(0, 1fr); }
 .stage-course-messenger > section { height: 100%; }
 
-.demo-stage:is([data-category="Metrics"], [data-category="Метрики"]) {
+.demo-stage:is([data-category="Metrics"], [data-category="Метрики"], [data-category="Trackers"], [data-category="Трекеры"]) {
   height: auto;
   min-height: 380px;
   grid-template-columns: minmax(0, 1fr);

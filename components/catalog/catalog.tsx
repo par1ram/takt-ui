@@ -7,6 +7,7 @@ import { Stage } from "./preview";
 import {
   Moon,
   ChartNoAxesCombined,
+  Columns3,
   Sun,
   TextCursorInput,
   GraduationCap,
@@ -60,6 +61,7 @@ const filters = [
   { label: "Обучение", icon: GraduationCap },
   { label: "Мессенджер", icon: MessagesSquare },
   { label: "Метрики", icon: ChartNoAxesCombined },
+  { label: "Трекеры", icon: Columns3 },
 ];
 // Wait for hydration before exposing the browser’s saved theme to assistive technology.
 const subscribeToHydration = () => () => {};

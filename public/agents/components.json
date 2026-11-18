@@ -3189,6 +3189,138 @@
           }
         }
       ]
+    },
+    {
+      "name": "issue-board",
+      "title": "Issue Board",
+      "category": "Trackers",
+      "description": "A kanban board with status transitions and inline issue creation.",
+      "export": "IssueBoard",
+      "usage": "<IssueBoard />",
+      "registryItem": "/r/issue-board.json",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "card",
+        "button"
+      ],
+      "props": [
+        {
+          "issues": {
+            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "required": false
+          },
+          "defaultIssues": {
+            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "required": false
+          },
+          "onIssuesChange": {
+            "type": "((issues: import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[]) => void) | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "issue-table",
+      "title": "Issue Table",
+      "category": "Trackers",
+      "description": "An inline-editable issue database with sortable priorities.",
+      "export": "IssueTable",
+      "usage": "<IssueTable />",
+      "registryItem": "/r/issue-table.json",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "card",
+        "button"
+      ],
+      "props": [
+        {
+          "issues": {
+            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "required": false
+          },
+          "defaultIssues": {
+            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "required": false
+          },
+          "onIssuesChange": {
+            "type": "((issues: import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[]) => void) | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "cycle-planner",
+      "title": "Cycle Planner",
+      "category": "Trackers",
+      "description": "Plan cycle scope against capacity using issue estimates.",
+      "export": "CyclePlanner",
+      "usage": "<CyclePlanner />",
+      "registryItem": "/r/cycle-planner.json",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "props": [
+        {
+          "issues": {
+            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "required": false
+          },
+          "defaultIssues": {
+            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "required": false
+          },
+          "onIssuesChange": {
+            "type": "((issues: import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[]) => void) | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "cycleId": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "capacity": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
     }
   ]
 }

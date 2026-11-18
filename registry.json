@@ -1849,6 +1849,87 @@
           "type": "registry:lib"
         }
       ]
+    },
+    {
+      "name": "issue-board",
+      "type": "registry:ui",
+      "title": "Issue Board",
+      "description": "Канбан с переносом задач между статусами и быстрым созданием карточек.",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "card",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/motion/issue-board.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/tracker-issues.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/issue-property-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "issue-table",
+      "type": "registry:ui",
+      "title": "Issue Table",
+      "description": "Таблица задач с редактированием названий, статусов и приоритетов.",
+      "dependencies": [
+        "motion",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "card",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/motion/issue-table.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/tracker-issues.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/issue-property-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cycle-planner",
+      "type": "registry:ui",
+      "title": "Cycle Planner",
+      "description": "Планирование цикла по оценкам задач с резервом и превышением ёмкости.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/motion/cycle-planner.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/tracker-issues.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

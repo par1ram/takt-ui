@@ -457,4 +457,7 @@ export const demos = {
   "latency-chart": lazy(() => import("@/components/motion/latency-chart").then(module => ({ default: module.LatencyChart }))),
   "conversion-funnel": lazy(() => import("@/components/motion/conversion-funnel").then(module => ({ default: module.ConversionFunnel }))),
   "cohort-retention": lazy(() => import("@/components/motion/cohort-retention").then(module => ({ default: module.CohortRetention }))),
+  "issue-board": lazy(() => import("@/components/motion/issue-board").then(module => ({ default: module.IssueBoard }))),
+  "issue-table": lazy(() => import("@/components/motion/issue-table").then(module => ({ default: module.IssueTable }))),
+  "cycle-planner": lazy(() => import("@/components/motion/cycle-planner").then(module => ({ default: module.CyclePlanner }))),
 } satisfies Record<Entry["slug"], React.ComponentType>;

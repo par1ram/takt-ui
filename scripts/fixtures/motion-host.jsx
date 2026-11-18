@@ -1,4 +1,4 @@
-import { createElement } from "react";
+import { createElement, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { flushSync } from "react-dom";
 import { TabPill } from "@/components/motion/tab-pill";
@@ -35,7 +35,18 @@ import { LatencyChart } from "@/components/motion/latency-chart";
 import { ConversionFunnel } from "@/components/motion/conversion-funnel";
 import { CohortRetention } from "@/components/motion/cohort-retention";
 
+import { IssueBoard } from "@/components/motion/issue-board";
+import { IssueTable } from "@/components/motion/issue-table";
+import { CyclePlanner } from "@/components/motion/cycle-planner";
+
+function SharedTracker({ initial }) {
+  const [issues,setIssues] = useState(initial);
+  const props = {issues,onIssuesChange:setIssues};
+  return <><IssueBoard {...props}/><IssueTable {...props}/><CyclePlanner {...props} capacity={3}/></>;
+}
+
 const components = {
+  SharedTracker,
   LatencyChart, ConversionFunnel, CohortRetention,
   ReceiptPrinter,
   MorphPopover,

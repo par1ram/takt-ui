@@ -120,6 +120,46 @@ async function swipeRight(node, page) {
   }
 }
 const scenarios = {
+  "issue-board": async (s,page) => {
+    await button(s,"Добавить задачу").click();
+    assert(await button(s,"Создать").isDisabled());
+    const input = s.getByRole("textbox",{name:"Название задачи"});
+    await input.fill("Проверить доску");
+    await input.press("Enter");
+    const issue = s.locator("[data-issue]").filter({hasText:"Проверить доску"});
+    await issue.getByRole("button").click();
+    await page.getByRole("menuitemradio",{name:"В работе",exact:true}).click();
+    await s.getByRole("region",{name:"В работе",exact:true}).getByText("Проверить доску").waitFor();
+    await button(s,"Добавить задачу").click();
+    await input.press("Escape");
+    assert.equal(await input.count(),0);
+  },
+  "issue-table": async (s,page) => {
+    const row = s.getByRole("row").filter({hasText:"LAB-24"});
+    await row.getByRole("button",{name:/Переименовать/}).click();
+    const input = row.getByRole("textbox");
+    await input.fill("Отменённое имя");
+    await input.press("Escape");
+    await row.getByText("Поиск по урокам",{exact:true}).waitFor();
+    await row.getByRole("button",{name:/Переименовать/}).click();
+    await input.fill("Поиск по курсу");
+    await input.press("Enter");
+    await row.getByText("Поиск по курсу",{exact:true}).waitFor();
+    await row.getByRole("button",{name:/^Приоритет/}).click();
+    await page.getByRole("menuitemradio",{name:"Низкий",exact:true}).click();
+    await contains(row,"Низкий");
+    await button(s,"Сортировать по приоритету").click();
+    assert.match(await s.locator("tbody tr").first().textContent(),/LAB-24/);
+  },
+  "cycle-planner": async s => {
+    const issue = s.getByRole("button",{name:/LAB-24/});
+    await issue.click();
+    await contains(s.getByRole("status"),"Сверх плана · 2 pt");
+    await issue.press("Space");
+    await contains(s.getByRole("status"),"Резерв · 3 pt");
+    await s.getByRole("button",{name:/LAB-22/}).click();
+    await contains(s.getByRole("status"),"План заполнен");
+  },
   "latency-chart": async s => {
     await s.locator(".recharts-area-curve").waitFor();
     await s.getByRole("button", {name: /^p50$/i}).click();
