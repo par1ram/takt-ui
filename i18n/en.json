@@ -646,5 +646,17 @@
   "Вид упражнения": "Exercise view",
   "Редактор": "Editor",
   "Результат": "Result",
-  "К результату": "Back to result"
+  "К результату": "Back to result",
+  "Установи в моё приложение компонент Takt": "Install this Takt component in my app:",
+  "Подключи полную библиотеку Takt к моему приложению.": "Install the full Takt library in my app.",
+  "Работай в проекте приложения. Прочитай его AGENTS.md, если он есть. Проверь package.json, Tailwind и алиасы в components.json.": "Work in the consuming app. Read its own AGENTS.md if present. Inspect package.json, the Tailwind setup and the aliases in components.json.",
+  "Инструкция Takt для установки:": "Takt installation guide:",
+  "Индекс с именами экспортов, пропсами и примерами JSX:": "Index of named exports, props and JSX examples:",
+  "Проверь список файлов и зависимостей пакета:": "Review the package files and dependencies:",
+  "Если shadcn ещё не настроен, инициализируй его в приложении. Выполни команду из корня приложения через его пакетный менеджер. Для Bun:": "Initialize shadcn in the app if needed. Run the install command from the app root using its package manager. For Bun:",
+  "Используй именованный экспорт": "Use the named export",
+  "через UI-алиас приложения. Если место для компонента не указано, уточни его перед изменением страницы.": "with the app’s UI alias. If placement is unspecified, ask where it belongs before editing a page.",
+  "Добавь @takt в registries существующего components.json, сохранив остальные записи:": "Merge this @takt entry into the registries object in the app’s components.json:",
+  ". Импортируй только используемые компоненты через UI-алиас приложения.": ". Import the components you use through the app’s UI alias.",
+  "Сохрани локальные правки при совпадении файлов. Используй токены темы приложения. Запусти его сборку и сообщи, какие файлы установлены и как проверить результат.": "Preserve local changes if files overlap. Use the app’s theme tokens. Run its build and report the installed files and how to verify the result."
 }

@@ -43,7 +43,7 @@ bunx shadcn@latest init
 
 ## Размещение на Vercel
 
-Русский каталог опубликован на [takt-ui.vercel.app/ru](https://takt-ui.vercel.app/ru). GitHub Actions проверяет pull request и push в `main`. Проверка включает установку по lock-файлу Bun, ESLint, production-сборку и SEO-тесты. Vercel использует пресет Next.js и команду сборки из `vercel.json`. При каждом push в `main` приватного репозитория `par1ram/takt-ui` Vercel собирает и публикует production-версию.
+Русский каталог опубликован на [takt-ui.vercel.app/ru](https://takt-ui.vercel.app/ru). GitHub Actions проверяет pull request и push в `main`. Проверка включает установку по lock-файлу Bun, ESLint, production-сборку и SEO-тесты. Vercel использует пресет Next.js и команду сборки из `vercel.json`. При каждом push в `main` [публичного репозитория Takt](https://github.com/par1ram/takt-ui) Vercel собирает и публикует production-версию.
 
 У каждого компонента есть английская и русская страницы. Канонические ссылки, языковые альтернативы и `/sitemap.xml` используют production-домен. При смене домена задайте `NEXT_PUBLIC_TAKT_ORIGIN` до сборки. Команда `node scripts/check-seo.mjs https://takt-ui.vercel.app` проверяет опубликованный каталог.
 

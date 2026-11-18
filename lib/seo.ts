@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
+import { publishedOrigin as siteOrigin } from "@/lib/registry-origin";
 import { entries } from "@/lib/catalog";
 import { entries as englishEntries } from "@/generated/en/lib/catalog";
 
 export type Locale = "en" | "ru";
-export const siteOrigin = new URL(process.env.NEXT_PUBLIC_TAKT_ORIGIN ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL && "https://" + process.env.VERCEL_PROJECT_PRODUCTION_URL) ||
-  "https://takt-ui.vercel.app").origin;
+export { siteOrigin };
 export const catalogs = { en: englishEntries, ru: entries };
 export const isPreview = process.env.VERCEL_ENV === "preview";
 

@@ -72,7 +72,13 @@ export async function reviewEnglish(browser, origin, items) {
     const dialog = page.getByRole("dialog");
     await dialog.getByRole("heading", { name: "Install the full library" }).waitFor();
     await dialog.getByRole("button", { name: "For agents" }).click();
-    assert.match(await dialog.locator("code").first().innerText(), /llms\.txt/);
+    const fullPrompt = await dialog.locator("code").first().innerText();
+    const command = fullPrompt.match(/bunx shadcn@latest add (https:\/\/[^\s]+)/);
+    assert.ok(command, "Agent prompt includes a complete installation command");
+    const registry = new URL(command[1]);
+    assert.equal(registry.pathname, "/r/takt.json");
+    assert.ok(fullPrompt.includes(registry.origin + "/llms.txt"));
+    assert.ok(fullPrompt.includes(registry.origin + "/agents/components.json"));
     assert.doesNotMatch(await dialog.innerText(), /localhost|127\.0\.0\.1/);
     await page.keyboard.press("Escape");
     await page.locator('a[hreflang="ru"]').click();

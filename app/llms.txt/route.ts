@@ -17,7 +17,7 @@ Installable React motion components for Next.js App Router, TypeScript and Tailw
 
 ## Start in the consuming project
 
-1. Read its AGENTS.md and the Next.js guides shipped with its installed version.
+1. Read the consuming app’s own AGENTS.md if it exists. Inspect its package manager, aliases and Next.js guides shipped with its installed version.
 2. For a new app, run \`bun create next-app@latest my-app --yes\`, then \`cd my-app\`. Keep the recommended App Router, TypeScript, Tailwind and Turbopack defaults.
 3. If components.json is missing, run \`bunx shadcn@latest init\`. Preserve existing aliases and registries in an initialized app.
 4. Fetch the [component index](${url("/agents/components.json")}). Match the user's intent to a name, description or category. Inspect the named export, prop combinations, JSX example, dependencies and registryItem. Resolve all paths in the index against this site's origin.
@@ -28,6 +28,8 @@ bunx shadcn@latest add ${cli}/r/receipt-printer.json
 \`\`\`
 
 For a project that wants the entire library, install [the complete collection](${url("/r/takt.json")}) with \`bunx shadcn@latest add ${cli}/r/takt.json\`. Both paths produce editable source. Keep imports scoped to the components the page uses.
+
+The registry JSON contains the installable source in \`files[].content\`. The public [Takt repository](https://github.com/par1ram/takt-ui) also contains the catalog and its history. The [maintainer instructions](https://raw.githubusercontent.com/par1ram/takt-ui/main/AGENTS.md) apply when working on Takt itself.
 
 ## Connect an agent for future work
 

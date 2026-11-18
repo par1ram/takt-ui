@@ -34,7 +34,7 @@ For the full library run `bunx shadcn@latest add "$TAKT_ORIGIN/r/takt.json"`. Im
 
 ## Use a coding agent
 
-Open **For agents** in any component's install dialog to copy a prompt with its registry URL and named export. An agent starts at `/llms.txt`, searches `/agents/components.json` for descriptions, JSX examples and typed prop variants, then inspects the selected item's source. The index's paths resolve against the published site.
+Use **Install → For agents** for the full collection. Open **For agents** in any component's install dialog to copy a prompt with its registry URL and named export. An agent starts at `/llms.txt`, searches `/agents/components.json` for descriptions, JSX examples and typed prop variants, then inspects the selected item's source. The index's paths resolve against the published site.
 
 To keep Takt available across sessions, merge the namespace from **Install → Project registry** into your project's `components.json`. Add the published guide URL alongside the existing instructions in your app's `AGENTS.md`. The namespace also works with the [shadcn MCP server](https://ui.shadcn.com/docs/mcp).
 
@@ -51,7 +51,7 @@ bun install
 bun run dev
 ```
 
-The production catalog is at [takt-ui.vercel.app](https://takt-ui.vercel.app). GitHub Actions checks pull requests and pushes to `main` with a frozen Bun install, ESLint, a production build and SEO smoke tests. The Vercel project uses the Next.js preset and the build command in `vercel.json`. Vercel builds and publishes production from the `main` branch of the private `par1ram/takt-ui` repository on each push.
+The production catalog is at [takt-ui.vercel.app](https://takt-ui.vercel.app). GitHub Actions checks pull requests and pushes to `main` with a frozen Bun install, ESLint, a production build and SEO smoke tests. The Vercel project uses the Next.js preset and the build command in `vercel.json`. Vercel builds and publishes production from the `main` branch of the [public Takt repository](https://github.com/par1ram/takt-ui) on each push.
 
 Component detail pages live at `/components/<slug>` and `/ru/components/<slug>`. The sitemap, canonical URLs and language alternates use the production domain. Set `NEXT_PUBLIC_TAKT_ORIGIN` at build time when moving to a custom domain. Run `node scripts/check-seo.mjs https://takt-ui.vercel.app` to check the published catalog.
 

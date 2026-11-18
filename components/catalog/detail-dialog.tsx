@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import { installPrompt } from "./install-prompt";
 import { registryOrigin } from "@/lib/registry-origin";
 import { Dialog } from "radix-ui";
 import { Check, Copy, X } from "lucide-react";
@@ -109,9 +110,9 @@ function Detail({
       {tab === "agent" ? (
         <>
           <h3>Задание для агента</h3>
-          <CopyCode
-            value={`Read ${publicOrigin || "<published Takt origin>"}/llms.txt and the project's AGENTS.md. ${entry ? `Install ${entry.title} from ${publicOrigin || "<published Takt origin>"}${registryPath}${entry.slug}.json and import its named export ${entry.symbol}.` : "Search the component index at /agents/components.json on the Takt site. Install individual registry items, or /r/takt.json for the full library."} Use the app's aliases, theme and data. Check keyboard interaction and reduced motion, then run the production build.`}
-          />
+          <div className="whitespace-pre-wrap [&_pre]:whitespace-pre-wrap [&_pre]:wrap-anywhere">
+            <CopyCode value={installPrompt(entry, registryPath)} />
+          </div>
           <a href="/agents/components.json" className="underline">
             Каталог компонентов для агента
           </a>

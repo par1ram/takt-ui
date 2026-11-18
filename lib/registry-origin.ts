@@ -1,3 +1,7 @@
+export const publishedOrigin = new URL(process.env.NEXT_PUBLIC_TAKT_ORIGIN ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL && "https://" + process.env.VERCEL_PROJECT_PRODUCTION_URL) ||
+  "https://takt-ui.vercel.app").origin;
+
 /** Use the domain the reader is visiting, including Vercel preview deployments. */
 export function registryOrigin(requestUrl: string) {
   for (const candidate of [process.env.NEXT_PUBLIC_TAKT_ORIGIN, requestUrl]) {
