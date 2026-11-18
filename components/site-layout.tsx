@@ -20,8 +20,6 @@ export function SiteLayout({ children, lang }: { children: React.ReactNode; lang
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <link rel="alternate" hrefLang="en" href="/" />
-        <link rel="alternate" hrefLang="ru" href="/ru" />
         <link rel="alternate" type="text/plain" title="Takt agent instructions" href="/llms.txt" />
         <ThemeProvider
           attribute="class"

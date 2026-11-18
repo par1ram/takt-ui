@@ -40,7 +40,7 @@ function observe(node: Element, update: Subscription["update"]) {
   };
 }
 
-export const Stage = memo(function Stage({ entry }: { entry: Entry }) {
+export const Stage = memo(function Stage({ entry }: { entry: { slug: Entry["slug"]; category: string } }) {
   const root = useRef<HTMLDivElement>(null);
   const [visited, setVisited] = useState(false);
   const [active, setActive] = useState(false);

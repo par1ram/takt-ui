@@ -13,7 +13,7 @@ bun run dev
 
 ## Установка компонента в другой проект
 
-В проекте с настроенными Tailwind CSS и shadcn/ui задайте адрес опубликованного каталога в переменной окружения `TAKT_ORIGIN`. Например, для кнопки с магнитным эффектом выполните:
+В проекте с настроенными Tailwind CSS и shadcn/ui выполните `export TAKT_ORIGIN=https://takt-ui.vercel.app`. Например, для кнопки с магнитным эффектом выполните:
 
 ```sh
 bunx shadcn@latest add "$TAKT_ORIGIN/r/magnetic-button.json"
@@ -39,7 +39,9 @@ bunx shadcn@latest init
 
 ## Размещение на Vercel
 
-Импортируйте репозиторий с пресетом Next.js. Bun определяется по `bun.lock`. Используйте Build Command `bun run build`: перед сборкой приложения он генерирует английскую версию, установочные файлы и индекс агентов. Для публичной ссылки проверьте доступ к `/`, `/llms.txt`, `/agents/components.json` и `/r/takt.json` без авторизации. Команды используют домен открытого сайта. Чтобы закрепить домен для команд, задайте `NEXT_PUBLIC_TAKT_ORIGIN` до сборки. Главная страница содержит метаданные Open Graph и Twitter.
+Русский каталог опубликован на [takt-ui.vercel.app/ru](https://takt-ui.vercel.app/ru). GitHub Actions проверяет pull request и push в `main`. Проверка включает установку по lock-файлу Bun, ESLint, production-сборку и SEO-тесты. Vercel использует пресет Next.js и команду сборки из `vercel.json`. Для автоматической публикации подключите приватный репозиторий `par1ram/takt-ui` в настройках Git проекта Vercel и выберите ветку `main`.
+
+У каждого компонента есть английская и русская страницы. Канонические ссылки, языковые альтернативы и `/sitemap.xml` используют production-домен. При смене домена задайте `NEXT_PUBLIC_TAKT_ORIGIN` до сборки. Команда `node scripts/check-seo.mjs https://takt-ui.vercel.app` проверяет опубликованный каталог.
 
 ## Разработка библиотеки
 

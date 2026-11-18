@@ -288,11 +288,11 @@ export function Catalog({ locale = "ru" }: { locale?: "en" | "ru" }) {
                 <div className="specimen-caption">
                   <div>
                     <span className="category-label">{entry.category}</span>
-                    <h3>
-                      <button onClick={(e) => open(entry, e.currentTarget)}>
+                    <h2>
+                      <a href={(locale === "ru" ? "/ru" : "") + "/components/" + entry.slug}>
                         {entry.title}
-                      </button>
-                    </h3>
+                      </a>
+                    </h2>
                   </div>
                   <button
                     className="code-button"

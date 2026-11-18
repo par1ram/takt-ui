@@ -35,7 +35,8 @@ for (const item of catalog.items) {
   collections.en.push(en);
 }
 
-const host = process.env.NEXT_PUBLIC_TAKT_ORIGIN || (process.env.VERCEL_URL && "https://" + process.env.VERCEL_URL);
+const deploymentHost = process.env.VERCEL_ENV === "production" ? process.env.VERCEL_PROJECT_PRODUCTION_URL : process.env.VERCEL_URL;
+const host = process.env.NEXT_PUBLIC_TAKT_ORIGIN || (deploymentHost && "https://" + deploymentHost);
 for (const lang of ["ru", "en"] as const) {
   const directory = lang === "en" ? root : root + "/ru";
   const items = collections[lang];

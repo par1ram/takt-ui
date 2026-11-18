@@ -12,7 +12,7 @@ cd my-app
 bunx shadcn@latest init
 ```
 
-Open **Install** on the published Takt site to copy commands with its actual domain. In the examples below, set `TAKT_ORIGIN` to that site's origin.
+Open **Install** on the published Takt site to copy commands with its actual domain. In the examples below, run `export TAKT_ORIGIN=https://takt-ui.vercel.app`.
 
 ```sh
 bunx shadcn@latest add "$TAKT_ORIGIN/r/receipt-printer.json"
@@ -47,7 +47,9 @@ bun install
 bun run dev
 ```
 
-For Vercel, import the repository with the Next.js preset and use **bun run build**. It generates localized sources, registry items, the full-library bundle and the agent index before running Next's production build. The public installation instructions use the visited domain, including on previews. Optionally set `NEXT_PUBLIC_TAKT_ORIGIN` before building to pin a canonical registry origin. Check anonymous access to the catalog, agent guide and registry before sharing your production URL. [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs)
+The production catalog is at [takt-ui.vercel.app](https://takt-ui.vercel.app). GitHub Actions checks pull requests and pushes to `main` with a frozen Bun install, ESLint, a production build and SEO smoke tests. The Vercel project uses the Next.js preset and the build command in `vercel.json`. In Vercel’s Git settings, connect the private `par1ram/takt-ui` repository and select `main` for production deployments.
+
+Component detail pages live at `/components/<slug>` and `/ru/components/<slug>`. The sitemap, canonical URLs and language alternates use the production domain. Set `NEXT_PUBLIC_TAKT_ORIGIN` at build time when moving to a custom domain. Run `node scripts/check-seo.mjs https://takt-ui.vercel.app` to check the published catalog.
 
 Edit components in `components/motion/`, catalog metadata in `lib/catalog.ts` and English copy in `i18n/en.json`. Regenerate using `bun run registry:build`. Published English components contain their own copy and work with the consumer's shadcn tokens. Receipt Printer runs in demo mode by default; pass an order and an asynchronous `onPay` callback to print after your checkout confirms a payment.
 

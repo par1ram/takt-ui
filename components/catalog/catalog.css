@@ -326,13 +326,13 @@ html.dark .dark-choice {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.specimen h3 {
+.specimen h2 {
   font-size: clamp(20px, 1.6vw, 25px);
   letter-spacing: -0.045em;
   font-weight: 570;
   margin-top: 2px;
 }
-.specimen h3 button:hover {
+.specimen h2 a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
