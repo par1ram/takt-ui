@@ -20,6 +20,23 @@ export async function reviewEnglish(browser, origin, items) {
       assert.doesNotMatch(copy, /[а-яё]/i, item.name);
     }
 
+    for (const [title, slug] of [["Tab Pill", "tab-pill"], ["Segmented Control", "segmented-control"]]) {
+      await search.fill(title);
+      const options = page.locator(".stage-" + slug + " button");
+      await options.first().waitFor();
+      for (const option of await options.all()) {
+        await option.click();
+        const { left, right, padding } = await option.evaluate((button) => {
+          const label = button.querySelector("span:last-child").getBoundingClientRect();
+          const pill = button.querySelector('[aria-hidden="true"]').getBoundingClientRect();
+          return { left: label.left - pill.left, right: pill.right - label.right,
+            padding: parseFloat(getComputedStyle(button).paddingInlineStart) };
+        });
+        assert.ok(Math.abs(left - padding) < 1 && Math.abs(right - padding) < 1,
+          title + " selection follows the label with equal padding");
+      }
+    }
+
     await search.fill("Receipt Printer");
     const printer = page.getByRole("region", { name: "Receipt printer" });
     await printer.getByRole("button", { name: /Pay.*24\.00/ }).click();

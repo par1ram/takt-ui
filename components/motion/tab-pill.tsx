@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 
 import { useState, useId } from "react";
-import { ElasticIndicator } from "@/lib/takt-indicator";
+import { motion, useReducedMotion } from "motion/react";
 
 export function TabPill({
   className,
@@ -18,24 +18,19 @@ export function TabPill({
   const [requested, setIndex] = useState(0);
   const index = Math.min(requested, Math.max(0, options.length - 1));
   const id = useId();
+  const reduced = useReducedMotion();
   if (!options.length) return null;
   return (
-    <div className={cn("grid gap-3", className)}>
-      <div
+    <div className={cn("grid min-w-0 max-w-full gap-3", className)}>
+      <motion.div
+        layoutScroll
         role="tablist"
         aria-label="Вкладки"
-        className="relative flex items-center rounded-full border border-foreground/10 bg-muted p-1 shadow-inner"
+        className="relative flex w-fit max-w-full items-center overflow-x-auto [scrollbar-width:none] rounded-full border border-foreground/10 bg-muted p-1 shadow-inner"
       >
-        <span aria-hidden className="absolute inset-1 rounded-[inherit]">
-          <ElasticIndicator
-            count={options.length}
-            index={index}
-            className="bg-primary shadow-sm"
-          />
-        </span>
         {options.map((opt, i) => (
           <button
-            key={opt}
+            key={i}
             type="button"
             role="tab"
             id={id + "-tab-" + i}
@@ -61,20 +56,29 @@ export function TabPill({
               setIndex(i);
               onChange?.(i);
             }}
-            className="relative min-h-9 flex-1 cursor-pointer rounded-full px-3 text-xs font-medium"
+            className="relative min-h-9 shrink-0 whitespace-nowrap cursor-pointer rounded-full px-3 text-xs font-medium"
           >
+            {i === index && (
+              <motion.span
+                aria-hidden="true"
+                layoutId={reduced ? undefined : id}
+                initial={false}
+                transition={{ type: "spring", stiffness: 480, damping: 36 }}
+                className="pointer-events-none absolute inset-0 rounded-[inherit] bg-primary shadow-sm"
+              />
+            )}
             <span
               className={
                 i === index
-                  ? "relative text-primary-foreground"
-                  : "relative text-foreground/75"
+                  ? "relative z-10 text-primary-foreground"
+                  : "relative z-10 text-foreground/75"
               }
             >
               {opt}
             </span>
           </button>
         ))}
-      </div>
+      </motion.div>
       <div
         className="min-h-6 px-2 py-1 text-xs text-muted-foreground"
         id={id + "-panel"}

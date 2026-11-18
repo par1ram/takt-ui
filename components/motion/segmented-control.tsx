@@ -1,8 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
 
-import { useState } from "react";
-import { ElasticIndicator } from "@/lib/takt-indicator";
+import { useState, useId } from "react";
+import { motion, useReducedMotion } from "motion/react";
 
 export function SegmentedControl({
   className,
@@ -15,44 +15,49 @@ export function SegmentedControl({
 }) {
   const [requested, setIndex] = useState(0);
   const index = Math.min(requested, Math.max(0, options.length - 1));
+  const id = useId();
+  const reduced = useReducedMotion();
   if (!options.length) return null;
   return (
-    <div className={cn("grid gap-3", className)}>
-      <div
+    <div className={cn("grid min-w-0 max-w-full gap-3", className)}>
+      <motion.div
+        layoutScroll
         role="group"
         aria-label="Период"
-        className="relative flex items-center rounded-2xl border border-foreground/10 bg-muted p-1"
+        className="relative flex w-fit max-w-full items-center overflow-x-auto [scrollbar-width:none] rounded-2xl border border-foreground/10 bg-muted p-1"
       >
-        <span aria-hidden className="absolute inset-1 rounded-[inherit]">
-          <ElasticIndicator
-            count={options.length}
-            index={index}
-            className="border border-foreground/10 bg-card shadow-sm"
-          />
-        </span>
         {options.map((opt, i) => (
           <button
-            key={opt}
+            key={i}
             type="button"
             aria-pressed={i === index}
             onClick={() => {
               setIndex(i);
               onChange?.(i);
             }}
-            className="relative min-h-9 flex-1 cursor-pointer rounded-xl px-4 text-xs font-medium"
+            className="relative min-h-9 shrink-0 whitespace-nowrap cursor-pointer rounded-xl px-4 text-xs font-medium"
           >
+            {i === index && (
+              <motion.span
+                aria-hidden="true"
+                layoutId={reduced ? undefined : id}
+                initial={false}
+                transition={{ type: "spring", stiffness: 480, damping: 36 }}
+                className="pointer-events-none absolute inset-0 rounded-[inherit] border border-foreground/10 bg-card shadow-sm"
+              />
+            )}
             <span
               className={
                 i === index
-                  ? "relative text-primary"
-                  : "relative text-foreground/75"
+                  ? "relative z-10 text-primary"
+                  : "relative z-10 text-foreground/75"
               }
             >
               {opt}
             </span>
           </button>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

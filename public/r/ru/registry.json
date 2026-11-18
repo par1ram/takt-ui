@@ -456,14 +456,13 @@
       "name": "tab-pill",
       "title": "Tab Pill",
       "description": "Переключите вкладку",
+      "dependencies": [
+        "motion"
+      ],
       "files": [
         {
           "path": "components/motion/tab-pill.tsx",
           "type": "registry:ui"
-        },
-        {
-          "path": "lib/takt-indicator.tsx",
-          "type": "registry:lib"
         }
       ],
       "type": "registry:ui"
@@ -473,14 +472,13 @@
       "name": "segmented-control",
       "title": "Segmented Control",
       "description": "Выберите период",
+      "dependencies": [
+        "motion"
+      ],
       "files": [
         {
           "path": "components/motion/segmented-control.tsx",
           "type": "registry:ui"
-        },
-        {
-          "path": "lib/takt-indicator.tsx",
-          "type": "registry:lib"
         }
       ],
       "type": "registry:ui"
@@ -1693,16 +1691,16 @@
           "type": "registry:ui"
         },
         {
-          "path": "lib/takt-indicator.tsx",
-          "type": "registry:lib"
-        },
-        {
           "path": "components/motion/segmented-control.tsx",
           "type": "registry:ui"
         },
         {
           "path": "components/motion/plan-switch.tsx",
           "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-indicator.tsx",
+          "type": "registry:lib"
         },
         {
           "path": "components/motion/rubber-dock.tsx",

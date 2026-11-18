@@ -843,7 +843,9 @@
       "export": "TabPill",
       "usage": "<TabPill />",
       "registryItem": "/r/tab-pill.json",
-      "dependencies": [],
+      "dependencies": [
+        "motion"
+      ],
       "registryDependencies": [],
       "props": [
         {
@@ -874,7 +876,9 @@
       "export": "SegmentedControl",
       "usage": "<SegmentedControl />",
       "registryItem": "/r/segmented-control.json",
-      "dependencies": [],
+      "dependencies": [
+        "motion"
+      ],
       "registryDependencies": [],
       "props": [
         {
