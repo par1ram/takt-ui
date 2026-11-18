@@ -124,7 +124,31 @@ const scenarios = {
     await s.locator(".recharts-area-curve").waitFor();
     await s.getByRole("button", {name: /^p50$/i}).click();
     await contains(s.locator("output"), "81");
-    await button(s, "Предыдущий замер").click();
+    const travel = await button(s, "Предыдущий замер").evaluate(async control => {
+      const chart = control.closest('[data-slot="card"]').querySelector('[data-slot="chart"]');
+      const marker = () => chart.querySelector('circle[r="4"]');
+      const path = () => chart.querySelector(".recharts-area-curve");
+      const frame = () => new Promise(resolve => requestAnimationFrame(resolve));
+      // Finish the percentile morph before testing a sample change on the settled curve.
+      const started = performance.now();
+      while (performance.now() - started < 750) await frame();
+      const positions = new Set();
+      let followsCurve = true;
+      const start = Number(marker().getAttribute("cx"));
+      control.click();
+      const departure = performance.now();
+      while (performance.now() - departure < 650) {
+        await frame();
+        const dot = marker();
+        const point = new DOMPoint(Number(dot.getAttribute("cx")), Number(dot.getAttribute("cy")));
+        positions.add(Math.round(point.x * 100));
+        followsCurve &&= path().isPointInStroke(point) && getComputedStyle(dot.parentElement.parentElement).opacity === "1";
+      }
+      return { followsCurve, steps: positions.size, moved: Number(marker().getAttribute("cx")) < start,
+        reduced: matchMedia("(prefers-reduced-motion: reduce)").matches };
+    });
+    assert(travel.moved && travel.followsCurve, "Visible marker follows the chart stroke");
+    assert(travel.reduced ? travel.steps <= 2 : travel.steps > 2, "Respect the motion preference");
     await contains(s.locator("output"), "78");
     await button(s, "Следующий замер").click();
     assert(await button(s, "Следующий замер").isDisabled());

@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Grid2X2 } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { Card } from "@/components/ui/card";
+import { MetricReading } from "@/lib/takt-metric-reading";
 import { cn } from "@/lib/utils";
 
 export type RetentionCohort = {
@@ -66,6 +67,7 @@ export function CohortRetention({
 }) {
   const [selected, setSelected] = useState<{ id: string; period: number }>();
   const reduce = useReducedMotion();
+  const indicator = useId();
   const percent = new Intl.NumberFormat(locale, {
     style: "percent",
     maximumFractionDigits: 0,
@@ -100,7 +102,7 @@ export function CohortRetention({
         <>
           <div className="mt-4 flex items-baseline gap-2">
             <output className="text-4xl font-semibold tracking-tight tabular-nums">
-              {percent.format((count ?? 0) / row.size)}
+              <MetricReading value={percent.format((count ?? 0) / row.size)} />
             </output>
             <span className="text-xs text-muted-foreground">
               {periodLabel} {period}
@@ -109,8 +111,11 @@ export function CohortRetention({
           <p className="mt-1 text-xs text-muted-foreground">
             {row.label} · {count} / {row.size}
           </p>
-          <div className="mt-3 overflow-x-auto p-1">
-            <table
+          <motion.div layoutScroll className="mt-3 overflow-x-auto p-1">
+            <motion.table
+              initial="hidden"
+              whileInView="shown"
+              viewport={{ once: true }}
               aria-label={title}
               className="w-full border-separate border-spacing-1 text-center text-[10px] tabular-nums"
             >
@@ -126,16 +131,28 @@ export function CohortRetention({
                     <th
                       scope="col"
                       key={i}
-                      className="font-mono font-normal text-muted-foreground"
+                      className="relative pb-1 font-mono font-normal text-muted-foreground"
                     >
                       <span className="sr-only">{periodLabel} </span>
                       {i}
+                      {period === i && (
+                        <motion.span
+                          aria-hidden
+                          layoutId={indicator + "-week"}
+                          transition={
+                            reduce
+                              ? { duration: 0 }
+                              : { type: "spring", stiffness: 320, damping: 31 }
+                          }
+                          className="absolute inset-x-1/4 bottom-0 h-0.5 rounded-full bg-primary/55"
+                        />
+                      )}
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody>
-                {cohorts.map((cohort) => (
+                {cohorts.map((cohort, rowIndex) => (
                   <tr key={cohort.id}>
                     <th
                       scope="row"
@@ -166,6 +183,7 @@ export function CohortRetention({
                         <td key={i}>
                           <motion.button
                             type="button"
+                            tabIndex={0}
                             aria-pressed={active}
                             aria-label={[
                               cohort.label,
@@ -176,7 +194,23 @@ export function CohortRetention({
                               setSelected({ id: cohort.id, period: i })
                             }
                             whileTap={reduce ? undefined : { scale: 0.94 }}
-                            className="block h-8 w-full min-w-7 rounded-md px-0.5 font-mono outline-offset-1 aria-pressed:ring-1 aria-pressed:ring-primary aria-pressed:ring-offset-1 aria-pressed:ring-offset-card"
+                            variants={{
+                              hidden: { opacity: 0.25, y: 5, scale: 0.88 },
+                              shown: {
+                                opacity: 1,
+                                y: 0,
+                                scale: 1,
+                                transition: reduce
+                                  ? { duration: 0 }
+                                  : {
+                                      type: "spring",
+                                      stiffness: 260,
+                                      damping: 26,
+                                      delay: Math.min(rowIndex + i, 8) * 0.042,
+                                    },
+                              },
+                            }}
+                            className="relative block h-8 w-full min-w-7 motion-reduce:opacity-100! motion-reduce:transform-none! motion-safe:transition-colors motion-safe:duration-300 rounded-md px-0.5 font-mono outline-offset-1"
                             style={{
                               backgroundColor: `color-mix(in srgb, var(--primary) ${Math.round(tint)}%, var(--card))`,
                               color: strong
@@ -184,6 +218,22 @@ export function CohortRetention({
                                 : "var(--card-foreground)",
                             }}
                           >
+                            {active && (
+                              <motion.span
+                                aria-hidden
+                                layoutId={indicator + "-cell"}
+                                transition={
+                                  reduce
+                                    ? { duration: 0 }
+                                    : {
+                                        type: "spring",
+                                        stiffness: 310,
+                                        damping: 30,
+                                      }
+                                }
+                                className="pointer-events-none absolute -inset-0.5 rounded-[inherit] border-2 border-primary shadow-[inset_0_0_0_1px_var(--card)]"
+                              />
+                            )}
                             {percent.format(ratio)}
                           </motion.button>
                         </td>
@@ -192,8 +242,8 @@ export function CohortRetention({
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </div>
+            </motion.table>
+          </motion.div>
           <div className="mt-3 flex items-center gap-2 border-t pt-2 text-[11px] text-muted-foreground">
             <span aria-hidden>—</span>Нет наблюдения
           </div>

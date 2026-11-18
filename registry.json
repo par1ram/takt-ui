@@ -1797,6 +1797,10 @@
         {
           "path": "components/motion/latency-chart.tsx",
           "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-metric-reading.tsx",
+          "type": "registry:lib"
         }
       ]
     },
@@ -1816,6 +1820,10 @@
         {
           "path": "components/motion/conversion-funnel.tsx",
           "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-metric-reading.tsx",
+          "type": "registry:lib"
         }
       ]
     },
@@ -1835,6 +1843,10 @@
         {
           "path": "components/motion/cohort-retention.tsx",
           "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-metric-reading.tsx",
+          "type": "registry:lib"
         }
       ]
     }
