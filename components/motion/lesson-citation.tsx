@@ -55,7 +55,7 @@ export function LessonCitation({
             className="inline-flex items-center gap-1 font-medium text-primary"
             onClick={() => {
               setOpen(false);
-              button.current?.focus();
+              button.current?.focus({ preventScroll: true });
               onReturn?.();
             }}
           >

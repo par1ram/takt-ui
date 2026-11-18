@@ -22,7 +22,7 @@ export function TestResults({
   className,
 }: {
   results?: ExerciseCase[];
-  onAsk?: (result: ExerciseCase) => void;
+  onAsk?: (result: ExerciseCase, trigger: HTMLButtonElement) => void;
   className?: string;
 }) {
   const [choice, setChoice] = useState<number | null>(null);
@@ -78,7 +78,7 @@ export function TestResults({
             <button
               type="button"
               className={secondary}
-              onClick={() => onAsk(row)}
+              onClick={(event) => onAsk(row, event.currentTarget)}
             >
               <MessageCircleQuestion size={14} />
               Разобрать тест

@@ -642,5 +642,9 @@
   "Добавьте + после класса, чтобы принять несколько символов подряд.": "Add + after the class to accept consecutive characters.",
   "Якоря ^ и $ задают начало и конец строки.": "The ^ and $ anchors mark the start and end of a string.",
   "После slice(3) остаётся строка «42» длиной 2.": "After slice(3), the remaining string \"42\" has length 2.",
-  "Спросить о коде": "Ask about this code"
+  "Спросить о коде": "Ask about this code",
+  "Вид упражнения": "Exercise view",
+  "Редактор": "Editor",
+  "Результат": "Result",
+  "К результату": "Back to result"
 }

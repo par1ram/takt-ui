@@ -7,7 +7,7 @@
 | Компонент | Что изменилось | Состояние |
 | --- | --- | --- |
 | [Lesson Outline](components/motion/lesson-outline.tsx) | Выбор урока и открытие фрагмента. | Проверено |
-| [Code Exercise](components/motion/code-exercise.tsx) | Ошибка компиляции, переход к редактору, разбор теста с цитатой и успешная повторная проверка. | Проверено |
+| [Code Exercise](components/motion/code-exercise.tsx) | Редактор и результаты переключаются в пределах карточки. Боковая панель помощника сохраняет прокрутку страницы, Escape возвращает фокус к выбранному тесту. Проверены ошибка компиляции, цитата и повторный запуск. | Проверено |
 | [Run Console](components/motion/run-console.tsx) | Остановка и повторный запуск. | Проверено |
 | [Test Results](components/motion/test-results.tsx) | Переход между успешным и упавшим тестом. | Проверено |
 | [Ask Tutor](components/motion/ask-tutor.tsx) | Снятие вложения, отправка вопроса и цитата. | Проверено |

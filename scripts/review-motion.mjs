@@ -132,7 +132,20 @@ const scenarios = {
     assert(await editor.evaluate(el => el === document.activeElement));
     await editor.fill("^UI-[0-9]$");
     await button(s,"Проверить решение").click();
-    await button(s,"Разобрать тест").click();
+    const ask = button(s,"Разобрать тест");
+    await ask.scrollIntoViewIfNeeded();
+    const geometry = () => s.evaluate(el => ({
+      scroll: window.scrollY, height: el.getBoundingClientRect().height,
+    }));
+    const before = await geometry();
+    await ask.click();
+    const back = button(s,"К результату");
+    assert(await back.evaluate(el => el === document.activeElement));
+    assert.deepEqual(await geometry(), before);
+    await back.press("Escape");
+    assert(await ask.evaluate(el => el === document.activeElement));
+    assert.deepEqual(await geometry(), before);
+    await ask.click();
     await button(s,"Почему тест упал?").click();
     await button(s,"Отправить").click();
     await s.getByRole("button",{name:/Повторения в шаблоне/}).click();

@@ -2682,7 +2682,7 @@
             "required": false
           },
           "onAsk": {
-            "type": "((result: ExerciseCase) => void) | undefined",
+            "type": "((result: ExerciseCase, trigger: HTMLButtonElement) => void) | undefined",
             "required": false
           },
           "className": {

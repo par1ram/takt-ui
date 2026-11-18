@@ -21,7 +21,7 @@ export function ComponentPage({ lang, slug }: { lang: Locale; slug: string }) {
   };
   const Demo = en ? EnglishDemo : RussianDemo;
   return (
-    <main className="mx-auto grid max-w-2xl gap-6 px-5 py-9 text-foreground">
+    <main className="mx-auto grid w-full max-w-2xl grid-cols-1 gap-6 px-5 py-9 text-foreground">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb).replace(/</g, "\\u003c") }} />
       <nav className="flex items-center justify-between border-b pb-4 text-sm" aria-label={en ? "Navigation" : "Навигация"}>
         <a className="font-semibold" href={home}>Takt / {category}</a>
