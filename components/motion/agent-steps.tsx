@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Check, RotateCcw } from "lucide-react";
+import { ArrowRight, RotateCcw } from "lucide-react";
 import { panel, secondary } from "@/lib/takt-surface";
 import { cn } from "@/lib/utils";
 
@@ -30,20 +30,30 @@ export function AgentSteps({
             {i > 0 && (
               <span
                 aria-hidden
-                className={cn(
-                  "absolute left-[9.5px] top-0 bottom-1/2 w-px",
-                  i <= step ? "bg-primary/45" : "bg-border",
-                )}
-              />
+                className="absolute left-[9px] top-0 bottom-1/2 w-0.5 bg-border"
+              >
+                <i
+                  className={cn(
+                    "block h-full origin-top bg-primary/70 motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out",
+                    i <= step
+                      ? "scale-y-100 motion-safe:delay-100"
+                      : "scale-y-0",
+                  )}
+                />
+              </span>
             )}
             {i < steps.length - 1 && (
               <span
                 aria-hidden
-                className={cn(
-                  "absolute left-[9.5px] top-1/2 bottom-0 w-px",
-                  i < step ? "bg-primary/45" : "bg-border",
-                )}
-              />
+                className="absolute left-[9px] top-1/2 bottom-0 w-0.5 bg-border"
+              >
+                <i
+                  className={cn(
+                    "block h-full origin-top bg-primary/70 motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-in",
+                    i < step ? "scale-y-100" : "scale-y-0",
+                  )}
+                />
+              </span>
             )}
             <span
               aria-hidden
@@ -51,24 +61,51 @@ export function AgentSteps({
             >
               <span
                 className={cn(
-                  "grid size-4 place-items-center rounded-full border",
-                  i < step
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : i === step
-                      ? "border-primary"
-                      : "border-foreground/25",
+                  "absolute inset-0.5 rounded-full border motion-safe:transition-colors motion-safe:duration-200",
+                  i === step ? "border-primary/30" : "border-foreground/25",
                 )}
+              />
+              {i === step && (
+                <span className="absolute inset-0.5 motion-safe:animate-in motion-safe:zoom-in-75 motion-safe:fade-in motion-safe:duration-300">
+                  <i className="block size-full rounded-full border-[1.5px] border-transparent border-t-primary border-r-primary motion-safe:animate-spin motion-safe:[animation-duration:1.8s]" />
+                </span>
+              )}
+              <i
+                className={cn(
+                  "absolute size-1.5 rounded-full bg-primary motion-safe:transition-transform motion-safe:duration-300",
+                  i === step ? "scale-100" : "scale-0",
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute inset-0.5 rounded-full bg-primary motion-safe:transition-transform motion-safe:duration-200",
+                  i < step ? "scale-100" : "scale-0",
+                )}
+              />
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                className="relative size-3 text-primary-foreground"
               >
-                {i < step ? (
-                  <Check size={10} strokeWidth={3} />
-                ) : i === step ? (
-                  <i className="size-1.5 rounded-full bg-primary" />
-                ) : null}
-              </span>
+                <path
+                  d="m3 8 3 3 7-7"
+                  pathLength="1"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeDasharray="1 1"
+                  strokeDashoffset={i < step ? 0 : 1}
+                  className={cn(
+                    "motion-safe:transition-[stroke-dashoffset] motion-safe:duration-200",
+                    i < step ? "motion-safe:delay-75" : "invisible",
+                  )}
+                />
+              </svg>
             </span>
             <span
               className={cn(
-                "min-w-0 py-1.5 text-[13px] leading-5",
+                "min-w-0 py-1.5 text-[13px] leading-5 motion-safe:transition-colors motion-safe:duration-300",
                 i === step
                   ? "font-semibold"
                   : i > step
@@ -86,7 +123,15 @@ export function AgentSteps({
           aria-label="Завершено этапов"
           className="pl-1 font-mono text-[11px] text-muted-foreground tabular-nums"
         >
-          {step} / {steps.length}
+          <span className="inline-flex overflow-hidden align-bottom">
+            <span
+              key={step}
+              className="motion-safe:animate-in motion-safe:slide-in-from-bottom-2 motion-safe:fade-in motion-safe:duration-200"
+            >
+              {step}
+            </span>
+          </span>{" "}
+          / {steps.length}
         </output>
         <button
           type="button"
