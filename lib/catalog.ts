@@ -1277,3 +1277,45 @@ export const entries = [
   },
 ] as const;
 export type Entry = (typeof entries)[number];
+
+// Reading order for All. The individual category filters keep the catalog order above.
+const allOrder: Entry["slug"][] = [
+  // A first look across the collection
+  "morph-island", "receipt-printer", "siri-orb", "fan-cards", "stat-card", "stack-panel",
+
+  // Browse content, inspect details and play media
+  "swipe-deck", "expand-card", "profile-card", "page-flip", "parallax-ticket",
+  "boarding-pass", "glass-lens", "glass-player", "music-toggle", "scrubber",
+
+  // Ask an assistant, follow its work and approve actions
+  "voice-input", "prompt-box", "ghost-suggestion", "goo-thinking", "thinking-text",
+  "streaming-reply", "agent-steps", "tool-approval", "task-list",
+
+  // Find a command and move between views
+  "command-search", "command-palette", "command-button", "sidebar-collapse",
+  "toolbar", "spring-dock", "rubber-dock", "dynamic-menu", "bloom-menu",
+  "morph-popover", "morph-tooltip", "tab-pill", "swipe-tabs", "segmented-control",
+  "pagination-dots", "step-progress",
+
+  // Choose a plan, check out and confirm
+  "plan-switch", "cart-button", "card-field", "unlock-face-id", "otp-code",
+  "signature-pad", "slide-to-confirm", "hold-button", "hold-to-publish", "loading-success",
+
+  // Enter values and adjust controls
+  "springy-input", "invite-people", "password-strength", "letter-limit", "tag-input",
+  "file-drop", "checkbox-list", "spring-switch", "spring-dropdown", "wheel-picker",
+  "flip-counter", "wave-slider", "jelly-slider", "exposure-slider", "detent-dial",
+
+  // Respond to actions and manage notifications
+  "magnetic-button", "like-burst", "star-rating", "copy-button", "undo-button",
+  "pull-refresh", "bell-button", "notification-stack", "focus-mode",
+
+  // Read and animate text
+  "read-along", "marker-text", "typewriter", "dynamic-text", "rolling-text",
+  "roll-links", "scramble-text", "weight-wave", "goo-morph",
+];
+
+const allRank = new Map(allOrder.map((slug, index) => [slug, index]));
+export const allEntries = [...entries].sort((a, b) =>
+  (allRank.get(a.slug) ?? allOrder.length) - (allRank.get(b.slug) ?? allOrder.length)
+);

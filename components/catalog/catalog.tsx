@@ -22,7 +22,7 @@ import {
   Type,
   X,
 } from "lucide-react";
-import { entries, type Entry } from "@/lib/catalog";
+import { allEntries, entries, type Entry } from "@/lib/catalog";
 import { useTheme } from "next-themes";
 import "./catalog.css";
 
@@ -137,7 +137,8 @@ export function Catalog({ locale = "ru" }: { locale?: "en" | "ru" }) {
     setModal(value);
   }
   const normalized = query.trim().toLocaleLowerCase();
-  const visible = entries.filter(
+  const collection = !savedOnly && category === "Все" ? allEntries : entries;
+  const visible = collection.filter(
     (e) =>
       (!savedOnly || saved.includes(e.slug)) &&
       (category === "Все" || e.category === category) &&
