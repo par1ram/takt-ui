@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scrubber",
+  "title": "Scrubber",
+  "description": "Scrub the timeline",
+  "files": [
+    {
+      "path": "components/motion/scrubber.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { panel as surfacePanel } from \"@/lib/takt-surface\";\n\nimport { useState } from \"react\";\n\nexport function Scrubber({\n  className,\n  frames = 60,\n  onChange,\n}: {\n  className?: string;\n  frames?: number;\n  onChange?: (frame: number) => void;\n}) {\n  const end = Math.max(0, Math.floor(frames) || 0);\n  const [position, setFrame] = useState(12);\n  const frame = Math.min(position, end);\n  return (\n    <label className={cn(surfacePanel + \" grid w-56 gap-2\", className)}>\n      <span className=\"flex justify-between text-xs\">\n        Frame{\" \"}\n        <output className=\"font-mono\">\n          {frame} / {frames}\n        </output>\n      </span>\n      <span\n        className=\"relative has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 h-8 rounded-sm border-b border-foreground/25 bg-muted text-muted-foreground\"\n        style={{\n          background:\n            \"repeating-linear-gradient(90deg,currentColor 0 1px,transparent 1px 8px)\",\n        }}\n      >\n        <i\n          className=\"absolute -top-1 h-9 w-[2px] -translate-x-1/2 rounded bg-primary before:absolute before:-left-1 before:h-2 before:w-2.5 before:rounded-sm before:bg-primary\"\n          style={{ left: (frame / Math.max(1, end)) * 100 + \"%\" }}\n        />\n        <input\n          className=\"absolute inset-0 w-full cursor-ew-resize opacity-0\"\n          aria-label=\"Frame\"\n          type=\"range\"\n          min={0}\n          max={end}\n          value={frame}\n          onChange={(e) => {\n            setFrame(+e.target.value);\n            onChange?.(+e.target.value);\n          }}\n        />\n      </span>\n    </label>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

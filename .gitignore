@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local source bundles downloaded by motion:sync
+/references/motion/sources/
+
+# Localized standalone sources produced by registry:build
+/generated/en/

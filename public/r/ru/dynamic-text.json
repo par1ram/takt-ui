@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dynamic-text",
+  "title": "Dynamic Text",
+  "description": "Смените слово в заголовке",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "components/motion/dynamic-text.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\n\nimport { useState } from \"react\";\nimport { AnimatePresence, motion, useReducedMotion } from \"motion/react\";\n\nexport function DynamicText({\n  className,\n  prefix = \"Создавай\",\n  words = [\"формы\", \"связи\", \"движение\"],\n}: {\n  className?: string;\n  prefix?: string;\n  words?: string[];\n}) {\n  const [requested, setIndex] = useState(0);\n  const index = Math.min(requested, Math.max(0, words.length - 1));\n  const reduced = useReducedMotion();\n  if (!words.length) return null;\n  return (\n    <button\n      type=\"button\"\n      className={cn(\n        \"grid justify-items-start gap-0.5 rounded-md text-left font-serif text-3xl leading-tight tracking-tight\",\n        className,\n      )}\n      onClick={() => setIndex((index + 1) % Math.max(1, words.length))}\n    >\n      <span className=\"text-sm font-sans text-muted-foreground\">{prefix}</span>\n      <span className=\"inline-grid overflow-hidden\">\n        <AnimatePresence initial={false}>\n          <motion.strong\n            exit={reduced ? { opacity: 0 } : { y: -16, opacity: 0, rotate: -3 }}\n            key={index}\n            initial={reduced ? false : { opacity: 0, y: 8 }}\n            animate={{ opacity: 1, y: 0 }}\n            className=\"col-start-1 row-start-1 inline-block pb-0.5\"\n          >\n            {words[index]}\n          </motion.strong>\n        </AnimatePresence>\n      </span>\n    </button>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scramble-text",
+  "title": "Scramble Text",
+  "description": "Reveal the scrambled text",
+  "files": [
+    {
+      "path": "components/motion/scramble-text.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\n\nimport { useState, useEffect } from \"react\";\n\nexport function ScrambleText({\n  className,\n  text = \"SIGNAL\",\n}: {\n  className?: string;\n  text?: string;\n}) {\n  const [frame, setFrame] = useState(12);\n\n  useEffect(() => {\n    if (frame >= 12) return;\n    const timer = setTimeout(() => setFrame(frame + 1), 32);\n    return () => clearTimeout(timer);\n  }, [frame]);\n  return (\n    <button\n      type=\"button\"\n      className={cn(\n        \"rounded-xl border border-foreground/10 bg-card px-4 py-2.5 font-mono text-3xl font-semibold tracking-[.085em] text-card-foreground shadow-sm\",\n        className,\n      )}\n      aria-label={text + \" — reveal text\"}\n      onClick={() =>\n        setFrame(\n          window.matchMedia(\"(prefers-reduced-motion: reduce)\").matches\n            ? 12\n            : 0,\n        )\n      }\n    >\n      <span aria-hidden>\n        {Array.from(text).map((v, i, letters) => {\n          const settled =\n            i < Math.ceil((letters.length * frame) / 12) || /\\s/.test(v);\n          return (\n            <span\n              key={i}\n              className={\n                settled ? \"\" : \"text-primary\"\n              }\n            >\n              {settled ? v : \"◒◇+≋⌁\"[(i + frame) % 5]}\n            </span>\n          );\n        })}\n      </span>\n    </button>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

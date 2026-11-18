@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "loading-success",
+  "title": "Loading Success",
+  "description": "Запустите действие и дождитесь результата",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/motion/loading-success.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { action as surfaceAction } from \"@/lib/takt-surface\";\n\nimport { useState } from \"react\";\nimport { LoaderCircle, Check, Play } from \"lucide-react\";\n\nexport function LoadingSuccess({\n  className,\n  onRun,\n}: {\n  className?: string;\n  onRun?: () => Promise<void>;\n}) {\n  const [status, setStatus] = useState<\"idle\" | \"busy\" | \"ok\" | \"error\">(\n    \"idle\",\n  );\n  async function run() {\n    setStatus(\"busy\");\n    try {\n      await (onRun\n        ? onRun()\n        : new Promise<void>((resolve) => setTimeout(resolve, 650)));\n      setStatus(\"ok\");\n    } catch {\n      setStatus(\"error\");\n    }\n  }\n  return (\n    <button\n      type=\"button\"\n      className={cn(\n        surfaceAction +\n          \" overflow-hidden whitespace-nowrap motion-safe:transition-[width,border-radius,background-color] motion-safe:duration-300 \" +\n          (status === \"busy\"\n            ? \"w-30 rounded-xl\"\n            : status === \"ok\"\n              ? \"w-30 bg-emerald-700! text-white!\"\n              : \"w-36\"),\n        className,\n      )}\n      aria-busy={status === \"busy\"}\n      disabled={status === \"busy\"}\n      onClick={run}\n    >\n      {status === \"busy\" ? (\n        <LoaderCircle className=\"motion-safe:animate-spin\" size={16} />\n      ) : status === \"ok\" ? (\n        <Check size={16} />\n      ) : (\n        <Play size={16} />\n      )}\n      <span aria-live=\"polite\" className={status === \"busy\" ? \"sr-only\" : \"\"}>\n        {\n          {\n            idle: \"Запустить\",\n            busy: \"Выполняется\",\n            ok: \"Готово\",\n            error: \"Повторить\",\n          }[status]\n        }\n      </span>\n    </button>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

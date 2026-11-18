@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tool-approval",
+  "title": "Tool Approval",
+  "description": "Разрешите или отклоните действие",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/motion/tool-approval.tsx",
+      "content": "\"use client\";\nimport { useActionFocus } from \"@/lib/takt-focus\";\nimport { cn } from \"@/lib/utils\";\nimport { useState } from \"react\";\nimport { FileText, Check, ShieldCheck, Undo2, X } from \"lucide-react\";\nimport { panel, action as primary, secondary } from \"@/lib/takt-surface\";\nexport function ToolApproval({\n  className,\n  action = \"Прочитать файл?\",\n  resource = \"project/brief.md\",\n  onDecision,\n}: {\n  className?: string;\n  action?: string;\n  resource?: string;\n  onDecision?: (allowed: boolean) => void;\n}) {\n  const { root, focusAfterRender } = useActionFocus<HTMLElement>();\n  const [decision, setDecision] = useState<boolean | null>(null);\n  function respond(value: boolean) {\n    focusAfterRender(\"[data-reset]\");\n    setDecision(value);\n    onDecision?.(value);\n  }\n  return (\n    <section ref={root} className={cn(panel + \" grid w-64 gap-3\", className)}>\n      <header className=\"flex items-center gap-2\">\n        <ShieldCheck size={17} />\n        <strong>{action}</strong>\n      </header>\n      <code\n        title={resource}\n        className=\"flex items-center gap-2 overflow-hidden rounded-lg border bg-muted/50 px-3 py-2.5 font-mono text-xs\"\n      >\n        <FileText size={14} />\n        <span className=\"truncate\">{resource}</span>\n      </code>\n      {decision === null ? (\n        <div className=\"flex gap-1.5\">\n          <button\n            type=\"button\"\n            className={secondary + \" flex-1\"}\n            onClick={() => respond(false)}\n          >\n            Отклонить\n          </button>\n          <button\n            type=\"button\"\n            className={primary + \" flex-1 text-xs\"}\n            onClick={() => respond(true)}\n          >\n            Разрешить\n          </button>\n        </div>\n      ) : (\n        <div\n          className=\"flex min-h-10 items-center gap-2 rounded-xl bg-muted px-2.5 text-xs font-medium motion-safe:animate-in motion-safe:slide-in-from-bottom-1\"\n          role=\"status\"\n        >\n          {decision ? (\n            <Check size={15} className=\"text-emerald-600\" />\n          ) : (\n            <X size={15} className=\"text-rose-600\" />\n          )}{\" \"}\n          {decision ? \"Разрешено\" : \"Отклонено\"}\n          <button\n            type=\"button\"\n            className=\"ml-auto rounded p-1.5\"\n            aria-label=\"Сброс\"\n            data-reset\n            onClick={() => {\n              focusAfterRender(\"button\");\n              setDecision(null);\n            }}\n          >\n            <Undo2 size={14} />\n          </button>\n        </div>\n      )}\n    </section>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-focus.ts",
+      "content": "\"use client\";\n\nimport { useLayoutEffect, useRef } from \"react\";\n\n// Only move focus for a requested action that replaces the focused control.\nexport function useActionFocus<T extends HTMLElement>() {\n  const root = useRef<T>(null);\n  const pending = useRef<string | null>(null);\n  useLayoutEffect(() => {\n    if (pending.current) {\n      root.current\n        ?.querySelector<HTMLElement>(pending.current)\n        ?.focus({ preventScroll: true });\n      pending.current = null;\n    }\n  });\n  function focusAfterRender(selector: string) {\n    pending.current = selector;\n  }\n  return { root, focusAfterRender };\n}\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

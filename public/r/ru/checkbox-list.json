@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-list",
+  "title": "Checkbox List",
+  "description": "Отметьте выполненные пункты",
+  "files": [
+    {
+      "path": "components/motion/checkbox-list.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { panel as surfacePanel } from \"@/lib/takt-surface\";\n\nimport { useState } from \"react\";\n\nexport function CheckboxList({\n  className,\n  items = [\"Макет\", \"Прототип\", \"Проверка\"],\n  onChange,\n}: {\n  className?: string;\n  items?: string[];\n  onChange?: (items: string[]) => void;\n}) {\n  const [checked, setSelected] = useState<string[]>([]);\n  const selected = checked.filter((value) => items.includes(value));\n  return (\n    <fieldset className={cn(surfacePanel + \" grid min-w-44 gap-2\", className)}>\n      <legend className=\"rounded-full border bg-card px-2 font-mono text-[10px] tabular-nums\">\n        {selected.length} / {items.length}\n      </legend>\n      {items.map((item) => (\n        <label\n          key={item}\n          className=\"flex min-h-8 cursor-pointer items-center gap-2.5 rounded-lg px-1.5 hover:bg-muted\"\n        >\n          <input\n            type=\"checkbox\"\n            className=\"size-4 accent-primary\"\n            checked={selected.includes(item)}\n            onChange={(e) => {\n              const next = e.target.checked\n                ? [...selected, item]\n                : selected.filter((x) => x !== item);\n              setSelected(next);\n              onChange?.(next);\n            }}\n          />\n          <span\n            className={\n              selected.includes(item)\n                ? \"text-muted-foreground line-through\"\n                : \"\"\n            }\n          >\n            {item}\n          </span>\n        </label>\n      ))}\n    </fieldset>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

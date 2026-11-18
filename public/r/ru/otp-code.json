@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "otp-code",
+  "title": "OTP Code",
+  "description": "Введите или вставьте цифровой код",
+  "files": [
+    {
+      "path": "components/motion/otp-code.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\n\nimport { useState } from \"react\";\n\nexport function OtpCode({\n  className,\n  length: requestedLength = 4,\n  onComplete,\n}: {\n  className?: string;\n  length?: number;\n  onComplete?: (code: string) => void;\n}) {\n  const length = Number.isFinite(requestedLength)\n    ? Math.max(0, Math.floor(requestedLength))\n    : 0;\n  const [raw, setCode] = useState(\"\");\n  const [focused, setFocused] = useState(false);\n  const [caret, setCaret] = useState(0);\n  if (!length) return null;\n  const code = raw.slice(0, length);\n  return (\n    <label\n      className={cn(\n        \"relative block rounded-lg focus-within:outline-2 focus-within:outline-offset-4\",\n        className,\n      )}\n    >\n      <span className=\"flex gap-1.5\" aria-hidden>\n        {Array.from({ length }, (_, i) => (\n          <span\n            key={i}\n            className={\n              \"grid h-12 w-10 place-items-center rounded-xl border bg-card font-mono text-2xl font-semibold text-card-foreground shadow-[inset_0_1px_2px_#0001,0_2px_3px_#0001] motion-safe:transition-[transform,border-color] \" +\n              (focused && i === Math.min(caret, length - 1)\n                ? \"border-foreground ring-1 ring-foreground/25\"\n                : code.length === length\n                  ? \"border-emerald-600/60\"\n                  : \"\")\n            }\n          >\n            <span\n              key={code[i] ?? \"empty\"}\n              className={\n                code[i]\n                  ? \"motion-safe:animate-in motion-safe:slide-in-from-bottom-2 motion-safe:fade-in\"\n                  : \"text-muted-foreground/50\"\n              }\n            >\n              {code[i] || \"·\"}\n            </span>\n          </span>\n        ))}\n      </span>\n      <input\n        className=\"absolute inset-0 h-full w-full opacity-0\"\n        aria-label=\"Одноразовый код\"\n        inputMode=\"numeric\"\n        onSelect={(e) =>\n          setCaret(e.currentTarget.selectionStart ?? code.length)\n        }\n        onFocus={(e) => {\n          setFocused(true);\n          setCaret(e.currentTarget.selectionStart ?? code.length);\n        }}\n        onBlur={() => setFocused(false)}\n        autoComplete=\"one-time-code\"\n        value={code}\n        onChange={(e) => {\n          const v = e.target.value.replace(/\\D/g, \"\").slice(0, length);\n          setCode(v);\n          if (v.length === length && v !== code) onComplete?.(v);\n        }}\n      />\n    </label>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

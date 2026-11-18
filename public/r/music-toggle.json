@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "music-toggle",
+  "title": "Music Toggle",
+  "description": "Toggle the equalizer animation",
+  "files": [
+    {
+      "path": "components/motion/music-toggle.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { action as surfaceAction } from \"@/lib/takt-surface\";\n\nimport { useState } from \"react\";\n\nexport function MusicToggle({\n  className,\n  onChange,\n}: {\n  className?: string;\n  onChange?: (on: boolean) => void;\n}) {\n  const [on, setOn] = useState(false);\n  return (\n    <button\n      type=\"button\"\n      aria-label=\"Music\"\n      aria-pressed={on}\n      className={cn(surfaceAction + \" h-11\", className)}\n      onClick={() => {\n        setOn(!on);\n        onChange?.(!on);\n      }}\n    >\n      <span className=\"flex h-5 items-center gap-[3px]\">\n        {[0.6, 1, 0.4, 0.8].map((v, i) => (\n          <i\n            key={i}\n            className={\n              \"w-1 origin-bottom rounded bg-current motion-safe:transition-[height] \" +\n              (on ? \"motion-safe:animate-pulse [animation-duration:1.2s]\" : \"\")\n            }\n            style={{\n              height: on ? v * 20 : 4,\n              animationDelay: i * -110 + \"ms\",\n              animationDuration: 520 + i * 90 + \"ms\",\n            }}\n          />\n        ))}\n      </span>\n      {on ? \"On\" : \"Off\"}\n    </button>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

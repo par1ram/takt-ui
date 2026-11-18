@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "weight-wave",
+  "title": "Weight Wave",
+  "description": "Move across the letters or tap",
+  "files": [
+    {
+      "path": "components/motion/weight-wave.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\n\nimport { useState } from \"react\";\n\nexport function WeightWave({\n  className,\n  text = \"Amplitude\",\n}: {\n  className?: string;\n  text?: string;\n}) {\n  const [index, setIndex] = useState(-1);\n  const letters = Array.from(text);\n  if (!letters.length) return null;\n  return (\n    <button\n      type=\"button\"\n      aria-label={text}\n      className={cn(\n        \"cursor-pointer whitespace-pre-wrap text-4xl tracking-[-.055em]\",\n        className,\n      )}\n      onKeyDown={(e) => {\n        if (e.key === \"ArrowRight\" || e.key === \"ArrowLeft\") {\n          e.preventDefault();\n          setIndex(\n            ((index < 0 && e.key === \"ArrowLeft\" ? 0 : index) +\n              (e.key === \"ArrowRight\" ? 1 : -1) +\n              letters.length) %\n              letters.length,\n          );\n        }\n      }}\n      onBlur={() => setIndex(-1)}\n      onPointerLeave={() => setIndex(-1)}\n      onClick={() => setIndex((index + 1) % letters.length)}\n    >\n      {letters.map((v, i) => (\n        <span\n          key={i}\n          aria-hidden\n          onPointerEnter={() => setIndex(i)}\n          className=\"inline-block motion-safe:transition-[font-weight,translate] duration-350 ease-out motion-reduce:translate-none!\"\n          style={{\n            fontWeight:\n              index < 0\n                ? 450\n                : 350 + 550 * Math.exp(-Math.pow((i - index) / 1.65, 2)),\n            translate:\n              index < 0\n                ? \"none\"\n                : \"0 \" + -Math.max(0, 4 - Math.abs(i - index) * 2) + \"px\",\n          }}\n        >\n          {v}\n        </span>\n      ))}\n    </button>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,606 @@
+/* Keep primary text legible on both surfaces, even for very pale or dark picks. */
+:root[data-takt-accent] {
+  --primary: oklch(from var(--takt-accent) clamp(0.36, l, 0.49) min(c, 0.2) h);
+  --primary-foreground: white;
+  --ring: var(--primary);
+  --accent: color-mix(in oklab, var(--primary) 12%, var(--card));
+  --accent-foreground: var(--primary);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-ring: var(--ring);
+  --chart-1: var(--primary);
+  --chart-2: color-mix(in oklab, var(--primary) 80%, var(--card));
+  --chart-3: color-mix(in oklab, var(--primary) 60%, var(--card));
+  --chart-4: color-mix(in oklab, var(--primary) 40%, var(--card));
+  --chart-5: color-mix(in oklab, var(--primary) 20%, var(--card));
+}
+:root.dark[data-takt-accent] {
+  --primary: oklch(from var(--takt-accent) clamp(0.78, l, 0.87) min(c, 0.14) h);
+  --primary-foreground: #161616;
+}
+
+.catalog-app {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+.catalog-app button,
+.catalog-dialog button {
+  cursor: pointer;
+}
+.catalog-app :focus-visible,
+.catalog-dialog :focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ring) 75%, transparent);
+  outline-offset: 2px;
+}
+.shell {
+  width: min(1280px, calc(100% - 9vw));
+  margin-inline: auto;
+}
+.masthead {
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  height: 71px;
+  gap: clamp(20px, 4vw, 54px);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  font-size: 33px;
+  font-weight: 720;
+  letter-spacing: -0.08em;
+  line-height: 1;
+}
+.takt-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  width: 28px;
+  transform: skewX(-19deg);
+  margin-right: 7px;
+}
+.takt-mark i {
+  display: block;
+  width: 6px;
+  height: 23px;
+  background: currentColor;
+}
+.takt-mark i:first-child {
+  height: 14px;
+  align-self: flex-end;
+}
+.takt-mark i:last-child {
+  height: 14px;
+  align-self: flex-start;
+}
+.nav-tools {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.theme-picker {
+  display: inline-flex;
+  background: var(--muted);
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+.theme-picker button {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 26px;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+}
+html:not(.dark) .light-choice,
+html.dark .dark-choice {
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: 0 1px 3px #0002;
+}
+.nav-inner nav {
+  align-self: stretch;
+  display: flex;
+  align-items: stretch;
+  gap: 26px;
+}
+.nav-inner nav button {
+  position: relative;
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted-foreground);
+}
+.nav-inner nav button[aria-pressed="true"] {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.nav-inner nav button[aria-pressed="true"]::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background: var(--primary);
+  bottom: 0;
+  inset-inline: 0;
+}
+.nav-inner nav small {
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.install-button,
+.filters button,
+.search,
+.code-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.install-button {
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 13px;
+  font-size: 13px;
+  font-weight: 540;
+}
+.install-button:hover,
+.code-button:hover {
+  background: var(--accent);
+}
+.library {
+  scroll-margin-top: 18px;
+  padding: clamp(32px, 4vw, 62px) 0 48px;
+}
+.section-heading,
+.section-title,
+.specimen-caption,
+.filters {
+  display: flex;
+  align-items: center;
+}
+.section-heading,
+.specimen-caption {
+  justify-content: space-between;
+  gap: 12px;
+}
+.section-title {
+  gap: 11px;
+}
+.section-title h1 {
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1.18;
+  letter-spacing: -0.062em;
+  font-weight: 570;
+}
+.section-title > span {
+  font:
+    11px var(--font-geist-mono),
+    monospace;
+  border: 1px solid var(--border);
+  color: var(--muted-foreground);
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+.catalog-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.search {
+  gap: 9px;
+  border: 1px solid var(--border);
+  height: 35px;
+  border-radius: 8px;
+  padding: 0 10px;
+  background: var(--card);
+  color: var(--muted-foreground);
+}
+.search input {
+  width: 153px;
+  font-size: 12px;
+  outline: 0;
+  color: var(--foreground);
+}
+.search:focus-within {
+  outline: 2px solid var(--ring);
+}
+.search input:focus-visible {
+  outline: none;
+}
+.search button {
+  display: grid;
+  place-items: center;
+}
+.search kbd {
+  border: 1px solid var(--border);
+  width: 16px;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 11px;
+}
+.filters {
+  gap: 7px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+.filters button {
+  gap: 7px;
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  min-height: 32px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 12px;
+}
+.filters button[aria-pressed="true"] {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+}
+.filters button:hover:not([aria-pressed="true"]) {
+  background: var(--accent);
+}
+.specimen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.specimen {
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 6px;
+  background: var(--card);
+  min-width: 0;
+}
+.stage-wrap {
+  position: relative;
+}
+.demo-stage {
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  height: clamp(238px, 19.5vw, 280px);
+  border-radius: 8px;
+  background-color: light-dark(#eeefea, #242725);
+}
+.magnetic-field {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.magnetic-field i {
+  position: absolute;
+  width: 65%;
+  height: 51%;
+  border: 1px solid color-mix(in srgb, var(--foreground) 13%, transparent);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+.magnetic-field i:nth-child(2) {
+  width: 57%;
+  height: 42%;
+}
+.magnetic-field i:nth-child(3) {
+  width: 49%;
+  height: 34%;
+}
+.stage-wrap .bookmark {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--card) 81%, transparent);
+  color: var(--muted-foreground);
+}
+.stage-wrap .bookmark:hover,
+.stage-wrap .bookmark[aria-pressed="true"] {
+  background: var(--card);
+  color: var(--primary);
+}
+.specimen-caption {
+  margin: 14px 10px 0;
+}
+.category-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 550;
+  color: var(--muted-foreground);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.specimen h3 {
+  font-size: clamp(20px, 1.6vw, 25px);
+  letter-spacing: -0.045em;
+  font-weight: 570;
+  margin-top: 2px;
+}
+.specimen h3 button:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.code-button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--muted-foreground);
+}
+.gesture {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  margin: 3px 10px 10px;
+}
+.empty {
+  padding: 48px 12px;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+}
+.empty h3,
+.catalog-dialog h3 {
+  font-weight: 600;
+}
+.empty p {
+  color: var(--muted-foreground);
+  font-size: 14px;
+}
+.empty button {
+  margin-top: 6px;
+  text-decoration: underline;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding: 21px 0;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.footer span:first-child {
+  font-weight: 650;
+  color: var(--foreground);
+}
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: #0008;
+  z-index: 10;
+}
+.catalog-dialog {
+  position: fixed;
+  background: var(--card);
+  color: var(--card-foreground);
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(560px, calc(100vw - 28px));
+  max-height: 84dvh;
+  overflow-y: auto;
+  z-index: 11;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 20px 80px #0003;
+}
+.dialog-close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  padding: 5px;
+  border-radius: 6px;
+}
+.dialog-close:hover {
+  background: var(--accent);
+}
+.dialog-title {
+  font-size: 29px;
+  letter-spacing: -0.05em;
+  font-weight: 600;
+  margin-right: 25px;
+}
+.dialog-description,
+.catalog-dialog > p {
+  font-size: 14px;
+  color: var(--muted-foreground);
+  margin: 6px 0 10px;
+}
+.detail-tabs {
+  display: flex;
+  gap: 6px;
+  margin: 16px 0;
+}
+.detail-tabs button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+.detail-tabs button[aria-pressed="true"] {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.catalog-dialog h3 {
+  margin: 19px 0 7px;
+  font-size: 14px;
+}
+.code-box {
+  position: relative;
+  font-size: 12px;
+  background: #202020;
+  color: #fafafa;
+  border-radius: 8px;
+  padding: 13px 42px 13px 13px;
+}
+.code-box pre {
+  overflow: auto;
+  max-height: 46dvh;
+  line-height: 1.65;
+}
+.code-box button {
+  position: absolute;
+  right: 7px;
+  top: 8px;
+  padding: 5px;
+  border-radius: 4px;
+}
+.code-box button:hover {
+  background: #404040;
+}
+.code-box [role="status"]:not(:empty) {
+  display: block;
+  margin-top: 6px;
+  color: #e5e5e5;
+}
+@media (max-width: 900px) {
+  .specimen-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .shell {
+    width: calc(100% - 48px);
+  }
+}
+@media (max-width: 600px) {
+  .shell {
+    width: calc(100% - 32px);
+  }
+  .nav-inner {
+    gap: 12px;
+    height: 61px;
+  }
+  .brand {
+    font-size: 24px;
+  }
+  .nav-inner nav {
+    gap: 10px;
+  }
+  .nav-inner nav button,
+  .install-button {
+    font-size: 11px;
+  }
+  .install-button {
+    gap: 5px;
+    padding: 6px 8px;
+  }
+  .install-button svg:last-child {
+    display: none;
+  }
+  .library {
+    padding-top: 24px;
+  }
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .catalog-controls {
+    width: 100%;
+  }
+  .search {
+    min-width: 0;
+    flex: 1;
+  }
+  .search input {
+    min-width: 0;
+    flex: 1;
+    min-width: 0;
+  }
+  .filters {
+    margin: 13px 0;
+    gap: 5px;
+  }
+  .filters button {
+    font-size: 11px;
+    gap: 4px;
+    padding: 5px 8px;
+  }
+  .specimen-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .demo-stage {
+    height: 238px;
+  }
+  .catalog-dialog {
+    padding: 20px;
+  }
+}
+@media (max-width: 360px) {
+  .shell {
+    width: calc(100% - 22px);
+  }
+  .nav-inner {
+    gap: 8px;
+  }
+  .install-button svg {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-tools {
+    gap: 6px;
+  }
+  .install-button {
+    font-size: 0;
+    gap: 0;
+    height: 32px;
+    width: 32px;
+  }
+  .install-button svg:first-child {
+    display: block;
+  }
+  .takt-mark {
+    transform: scale(0.8) skewX(-19deg);
+    margin-right: 0;
+  }
+  .theme-picker button {
+    width: 25px;
+  }
+}
+
+.preview-placeholder {
+  display: block;
+  width: 3rem;
+  height: 0.35rem;
+  border-radius: 8px;
+  background: var(--muted-foreground);
+  opacity: 0.2;
+}
+.source-links {
+  padding-top: 12px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.source-links a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.stage-step-progress {
+  grid-template-columns: minmax(0, 1fr);
+  padding-inline: 16px;
+}
+
+.stage-spring-dropdown {
+  align-items: start;
+  padding-top: 36px;
+}
+
+.demo-stage.stage-receipt-printer {
+  height: 302px;
+}

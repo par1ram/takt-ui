@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wave-slider",
+  "title": "Wave Slider",
+  "description": "Компактная регулировка громкости с запоминанием уровня при отключении звука.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/motion/wave-slider.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { useRef, useState } from \"react\";\nimport { Volume2, VolumeX } from \"lucide-react\";\nimport { panel } from \"@/lib/takt-surface\";\nexport function WaveSlider({\n  className,\n  label = \"Громкость\",\n  defaultValue = 60,\n  value,\n  onValueChange,\n}: {\n  className?: string;\n  label?: string;\n  defaultValue?: number;\n  value?: number;\n  onValueChange?: (value: number) => void;\n}) {\n  const [internal, setInternal] = useState(defaultValue);\n  const level = Math.max(0, Math.min(100, value ?? internal));\n  const remembered = useRef(level || 60);\n  function setVolume(n: number) {\n    if (value === undefined) setInternal(n);\n    onValueChange?.(n);\n  }\n  return (\n    <div\n      className={cn(\n        panel +\n          \" flex w-60 max-w-full items-center gap-2.5 rounded-full! px-2.5! py-1!\",\n        className,\n      )}\n    >\n      <span className=\"flex shrink-0 items-center text-xs font-medium\">\n        <button\n          type=\"button\"\n          aria-label={level === 0 ? \"Включить звук\" : \"Выключить звук\"}\n          aria-pressed={level === 0}\n          className=\"grid size-9 place-items-center rounded-full bg-muted\"\n          onClick={() => {\n            if (level) {\n              remembered.current = level;\n              setVolume(0);\n            } else setVolume(remembered.current);\n          }}\n        >\n          {level === 0 ? <VolumeX size={15} /> : <Volume2 size={15} />}\n        </button>\n      </span>\n      <span className=\"relative flex h-11 min-w-0 flex-1 items-center rounded focus-within:ring-1 focus-within:ring-foreground/35\">\n        <span\n          aria-hidden\n          className=\"relative mx-1 h-1 w-full rounded-full bg-foreground/15\"\n        >\n          <i\n            className=\"absolute inset-y-0 left-0 rounded-full bg-primary\"\n            style={{ width: level + \"%\" }}\n          />\n          <i\n            className=\"absolute top-1/2 size-3 -translate-1/2 rounded-full bg-primary\"\n            style={{ left: level + \"%\" }}\n          />\n        </span>\n        <input\n          type=\"range\"\n          aria-label={label}\n          aria-valuetext={level + \"%\"}\n          value={level}\n          className=\"absolute inset-0 h-full w-full cursor-ew-resize opacity-0\"\n          onChange={(e) => {\n            const n = +e.target.value;\n            setVolume(n);\n          }}\n        />\n      </span>\n      <output className=\"w-9 text-right font-mono text-xs tabular-nums\">\n        {level}%\n      </output>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

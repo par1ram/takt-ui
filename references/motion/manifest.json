@@ -1,0 +1,2426 @@
+{
+  "catalog": "https://designbookmark.com/motion",
+  "items": [
+    {
+      "id": "db-invite-people",
+      "title": "Invite people",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-invite-people",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-invite-people.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "invite-people",
+      "directory": "sources/db-invite-people/4f60ec9f6a3761436860518af196759e638f58887ecd62c69cd7dbebb7016010",
+      "checksums": {
+        "source.txt": "2f04d27af8d718b5c3f1d9a8f811b27eb1c08c6065ed53cfaefa8c86c4ffcc26",
+        "claude.txt": "635ff3cc4252133ec3e78770cd3fd32a5db4a4dc2d23d5aa11f1e235827a00c7",
+        "codex.txt": "635ff3cc4252133ec3e78770cd3fd32a5db4a4dc2d23d5aa11f1e235827a00c7"
+      },
+      "category": "Inputs",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {
+        "--spring-pop": "520 16",
+        "--spring-soft": "260 24",
+        "--spring-fade": "420 32",
+        "--spring-settle": "280 22"
+      }
+    },
+    {
+      "id": "db-focus-mode",
+      "title": "Focus mode",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-focus-mode",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-focus-mode.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "focus-mode",
+      "directory": "sources/db-focus-mode/1ba628d7f90cb9116ec3d8eace4518a7765cb5f826ecc1c411aaceb782467e09",
+      "checksums": {
+        "source.txt": "00996952e483074608bc3e9a3cc8ef3110c850a2664755fcdfaa8c2388a33fbd",
+        "claude.txt": "8a5a707cb488ad36d1ac37b749ff5389fc2bc13e15f5e7cb96bc9a008c43170e",
+        "codex.txt": "8a5a707cb488ad36d1ac37b749ff5389fc2bc13e15f5e7cb96bc9a008c43170e"
+      },
+      "category": "Cards",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {
+        "--spring-soft": "260 24",
+        "--spring-pop": "520 16",
+        "--spring-fade": "420 32",
+        "--spring-settle": "280 22"
+      }
+    },
+    {
+      "id": "db-plan-switch",
+      "title": "Plan switch",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-plan-switch",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-plan-switch.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "plan-switch",
+      "directory": "sources/db-plan-switch/6ac960dac5e73387d0c9db3e70520ac46a710bfbe85c155b253361203c783f7f",
+      "checksums": {
+        "source.txt": "e349989db70d39ad10adf574a5fa662bc131e6c47ff5371bb42b68296f3c29f1",
+        "claude.txt": "fc12715873bafb85ff91a31dcea548f1994065a4b4486c9c1fd312a113cfd6b6",
+        "codex.txt": "fc12715873bafb85ff91a31dcea548f1994065a4b4486c9c1fd312a113cfd6b6"
+      },
+      "category": "Cards",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {
+        "--spring-lead": "620 36",
+        "--spring-trail": "190 19",
+        "--spring-pop": "520 16",
+        "--spring-fade": "420 32",
+        "--spring-soft": "260 24"
+      }
+    },
+    {
+      "id": "db-letter-limit",
+      "title": "Letter limit",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-letter-limit",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-letter-limit.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "letter-limit",
+      "directory": "sources/db-letter-limit/ee690d18c40937c1f9f628a90d5aa21ab51ca0ab8f8974e3acf9ebdac9855be2",
+      "checksums": {
+        "source.txt": "806c5b79b942cc42f3e3f1d019e9f84bbeb5557f2af4062cc45be40c17f7fdc3",
+        "claude.txt": "6dabb2e5847cfde1f1092cb8788ad5fd1eb075c4321cc78c3a869e6ab1b3e00e",
+        "codex.txt": "6dabb2e5847cfde1f1092cb8788ad5fd1eb075c4321cc78c3a869e6ab1b3e00e"
+      },
+      "category": "Inputs",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {
+        "--spring-pop": "520 16",
+        "--spring-settle": "280 22"
+      }
+    },
+    {
+      "id": "db-pull-cord",
+      "title": "Pull cord",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-pull-cord",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-pull-cord.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": null,
+      "directory": "sources/db-pull-cord/3723ddd8b777e7e9767f7979bae9b1fe30a7dbc550a8b3fa7a7dc900cd322467",
+      "checksums": {
+        "source.txt": "0a2c0dd7712d127eb17ac234f229c219c1ed7f343511d9bb762cbe219b7c3210",
+        "claude.txt": "5941bedd655cb7eadc304313cce4a0b8d399d44f17c9bcb262eab4072535d407",
+        "codex.txt": "5941bedd655cb7eadc304313cce4a0b8d399d44f17c9bcb262eab4072535d407"
+      },
+      "category": "Buttons",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-morph-tooltip",
+      "title": "Morph tooltip",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-morph-tooltip",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-morph-tooltip.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "morph-tooltip",
+      "directory": "sources/db-morph-tooltip/51e08e56d8e89c0e3ce5b3c69b7a42646afad87a470fdb95678bb8a5a15af6cc",
+      "checksums": {
+        "source.txt": "04830340b112e1dbb4bd1817abb42a6dea16e32781919e220927386242831805",
+        "claude.txt": "24e8cdeeb97b5ff55dec3060401007647936f69e289e7dd927123b62ce2c790c",
+        "codex.txt": "24e8cdeeb97b5ff55dec3060401007647936f69e289e7dd927123b62ce2c790c"
+      },
+      "category": "Navigation",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-spring-dropdown",
+      "title": "Spring dropdown",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-spring-dropdown",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-spring-dropdown.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "spring-dropdown",
+      "directory": "sources/db-spring-dropdown/3a4e750b927a278c046eaab55ddca161d686949bd6f9a908b77617a96f1e76cb",
+      "checksums": {
+        "source.txt": "aa5290dd09f7b09d1a0dd596e53083786ed5383b2ac85f7ea0145f522a0fd66a",
+        "claude.txt": "46f0559ed06c6aa09cd65be75e0f84dc89e5ecbf9f434d25b1e35ff564d39777",
+        "codex.txt": "46f0559ed06c6aa09cd65be75e0f84dc89e5ecbf9f434d25b1e35ff564d39777"
+      },
+      "category": "Inputs",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-file-drop",
+      "title": "File drop",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-file-drop",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-file-drop.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "file-drop",
+      "directory": "sources/db-file-drop/83010d70e9deffe97ccdcb56bae18e078a5bbb0ab855cf86d0d3a6c498a1ce94",
+      "checksums": {
+        "source.txt": "e5cad472f53e7c053d3d586f82498d04cf1d410c381a086a0e377a9e3c050bbb",
+        "claude.txt": "daff58f49dcfaee7b11a489cf680a8c9c42e731dda3d77776f1e2c902126d850",
+        "codex.txt": "daff58f49dcfaee7b11a489cf680a8c9c42e731dda3d77776f1e2c902126d850"
+      },
+      "category": "Inputs",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-command-button",
+      "title": "Command button",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-command-button",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-command-button.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": null,
+      "target": "command-search",
+      "directory": "sources/db-command-button/a4d82ad96c5ea407d081d2e8979ec72ca4f433e463ec70f6509b93097f3d923c",
+      "checksums": {
+        "source.txt": "cf4b43c957a4968c24b13ed0e472439ad104e43804a9a12da8b12e2506f01ef1",
+        "claude.txt": "be9d48b92833a55245b6405bde5b894434bbd1635cf52ad7dd1e44300beac8a0",
+        "codex.txt": "be9d48b92833a55245b6405bde5b894434bbd1635cf52ad7dd1e44300beac8a0"
+      },
+      "category": "Buttons",
+      "entryFile": "db-command-button.tsx",
+      "imports": [
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "db-morph-island",
+      "title": "Morph island",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-morph-island",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-morph-island.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "morph-island",
+      "directory": "sources/db-morph-island/79cfc7b3457780caf3a3b8d3b0f06eaa0f63180ad84b76a18a177131b28118a6",
+      "checksums": {
+        "source.txt": "c4a93fd6ba6066bcdb543d97ac21069df9742d54346f6bd8bff6172c3da840bc",
+        "claude.txt": "e40369656fd7daa69ad668285178b2486f6dad7012f73f411b04dc66a5df7a75",
+        "codex.txt": "e40369656fd7daa69ad668285178b2486f6dad7012f73f411b04dc66a5df7a75"
+      },
+      "category": "Cards",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {
+        "--island-w": "380 24",
+        "--island-h": "300 22",
+        "--island-radius": "32",
+        "--island-cycle-ms": "2800"
+      }
+    },
+    {
+      "id": "db-goo-menu",
+      "title": "Goo menu",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-goo-menu",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-goo-menu.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "bloom-menu",
+      "directory": "sources/db-goo-menu/7c9ad28ca030e66845daa61ba382b5c68d82fafa5bee6e2ee604955694c9e33f",
+      "checksums": {
+        "source.txt": "7847bdba89aa5510f08ccd503eb3976e63296eef4f44fec59cc92b0c1a54c16c",
+        "claude.txt": "c18351dd26fb9fd182fa4c519cf0b73f0cc7ee61fd2e055e3e69827880d14bab",
+        "codex.txt": "c18351dd26fb9fd182fa4c519cf0b73f0cc7ee61fd2e055e3e69827880d14bab"
+      },
+      "category": "Buttons",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {
+        "--goo-out": "230 15",
+        "--goo-in": "520 34",
+        "--goo-release": "300 12",
+        "--goo-toast": "260 17",
+        "--goo-radius": "112",
+        "--goo-stagger": "45",
+        "--goo-toast-ms": "2600",
+        "--goo-blur": "10"
+      }
+    },
+    {
+      "id": "db-jelly-slider",
+      "title": "Jelly slider",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-jelly-slider",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-jelly-slider.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "jelly-slider",
+      "directory": "sources/db-jelly-slider/ac7d6c3a7add624d5883181c88228fcd262120dd2c8aef462bab47d391e6e41f",
+      "checksums": {
+        "source.txt": "75d630aa6f6cedad725e79ff30243832aa369692f92e7a3366e5b5d06c3a3f48",
+        "claude.txt": "c66d3759f37bd557780bf78607da0f66377784091dbbff045771c32c741729ba",
+        "codex.txt": "c66d3759f37bd557780bf78607da0f66377784091dbbff045771c32c741729ba"
+      },
+      "category": "Inputs",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {
+        "--slider-follow": "900 50",
+        "--slider-bubble": "420 22",
+        "--slider-release": "300 14",
+        "--slider-blur": "8"
+      }
+    },
+    {
+      "id": "db-hold-button",
+      "title": "Hold to publish",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-hold-button",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-hold-button.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "hold-to-publish",
+      "directory": "sources/db-hold-button/332f441076a613ea3d26bb82651c9d73d2cb1128399f3857448894bb12935a77",
+      "checksums": {
+        "source.txt": "ee963d3fb34e03b983ff8cf5da3bdf3d578e9e94e7799dde5261361cc4b29210",
+        "claude.txt": "b8f51ae9c84d30fec9fd918243e7e87c3e5b33b7978b9116c4d87e3ee9091b4b",
+        "codex.txt": "b8f51ae9c84d30fec9fd918243e7e87c3e5b33b7978b9116c4d87e3ee9091b4b"
+      },
+      "category": "Buttons",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {
+        "--hold-ms": "1200",
+        "--hold-release": "260 14",
+        "--hold-morph": "320 20",
+        "--hold-done-ms": "1700"
+      }
+    },
+    {
+      "id": "db-swipe-deck",
+      "title": "Swipe deck",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-swipe-deck",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-swipe-deck.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "swipe-deck",
+      "directory": "sources/db-swipe-deck/59579c3ff3f16b770a24ec4817e7d1170f8c6f6492409ceb52edc4aad9a0127b",
+      "checksums": {
+        "source.txt": "afa167073f28efae70928a0fba34487ae9559e789beb8953176a74cabd71578f",
+        "claude.txt": "683989fbdec36e01c6c9779e0d309c6ad28530a8186316bbaeff399b060d0154",
+        "codex.txt": "683989fbdec36e01c6c9779e0d309c6ad28530a8186316bbaeff399b060d0154"
+      },
+      "category": "Cards",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap",
+        "https://designbookmark.com/motion-src/shared/img/hills-1.webp",
+        "https://designbookmark.com/motion-src/shared/img/hills-3.webp",
+        "https://designbookmark.com/motion-src/shared/img/hills-5.webp",
+        "https://designbookmark.com/motion-src/shared/img/hills-6.webp",
+        "https://designbookmark.com/motion-src/shared/img/hills-7.webp"
+      ],
+      "motionTokens": {
+        "--deck-drag": "900 50",
+        "--deck-return": "280 16",
+        "--deck-threshold": "110"
+      }
+    },
+    {
+      "id": "db-springy-input",
+      "title": "Springy input",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-springy-input",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-springy-input.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "springy-input",
+      "directory": "sources/db-springy-input/204b2d14ed2eae3bc2d78bd1937a5485b6b79f447c4205be71db99c99c4d87bc",
+      "checksums": {
+        "source.txt": "82815663c10c9107e921b435105d4feb016d05f5769bfa6b2d640ec8c4da50a8",
+        "claude.txt": "fc83f6de071fc805f30aef848ba8f1e560c5253418d78614ecd4611e3dcfa063",
+        "codex.txt": "fc83f6de071fc805f30aef848ba8f1e560c5253418d78614ecd4611e3dcfa063"
+      },
+      "category": "Inputs",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {
+        "--input-caret": "700 32",
+        "--input-morph": "300 20"
+      }
+    },
+    {
+      "id": "db-rubber-dock",
+      "title": "Rubber dock",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-rubber-dock",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-rubber-dock.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "rubber-dock",
+      "directory": "sources/db-rubber-dock/c5f55e723a3937d5167873036516c19c23771699d6219bd5a4ba11977ca038af",
+      "checksums": {
+        "source.txt": "787886417ddcd4c34b9cf4a52bcf761fb92788f368c61cec7715a5563aa69eaf",
+        "claude.txt": "b9c44f703e76e58c5f71991d2acdee88c282fae261da5442a49b50b9cbbba3ae",
+        "codex.txt": "b9c44f703e76e58c5f71991d2acdee88c282fae261da5442a49b50b9cbbba3ae"
+      },
+      "category": "Navigation",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {
+        "--dock-lead": "640 38",
+        "--dock-trail": "150 16",
+        "--dock-drag-lead": "1100 56",
+        "--dock-drag-trail": "320 26",
+        "--dock-open-w": "340 21",
+        "--dock-open-h": "230 21",
+        "--dock-close": "420 30",
+        "--dock-pop": "520 16",
+        "--dock-expanded-w": "340"
+      }
+    },
+    {
+      "id": "db-parallax-ticket",
+      "title": "Parallax ticket",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-parallax-ticket",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-parallax-ticket.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "parallax-ticket",
+      "directory": "sources/db-parallax-ticket/99de331367639fc31799a75338b75c5120bf6cf1568b2b15827045f12d4b3511",
+      "checksums": {
+        "source.txt": "ad9140b96f9648b34ec95c709d4083e080df16e425c7720e2094265d2174ff89",
+        "claude.txt": "026c8965515dee7f3baa288f7fb830e06cb44e8123b95ba02d7c7bcd0e9c8990",
+        "codex.txt": "026c8965515dee7f3baa288f7fb830e06cb44e8123b95ba02d7c7bcd0e9c8990"
+      },
+      "category": "Cards",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap",
+        "https://designbookmark.com/motion-src/shared/img/hills-8.webp"
+      ],
+      "motionTokens": {
+        "--ticket-tilt": "14",
+        "--ticket-depth": "12",
+        "--ticket-flip": "170 15"
+      }
+    },
+    {
+      "id": "db-glass-lens",
+      "title": "Glass lens",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-glass-lens",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-glass-lens.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "glass-lens",
+      "directory": "sources/db-glass-lens/cd77bb4ee586fb372fd9343055e07b1d7a1bbd46878baa73a551684217545608",
+      "checksums": {
+        "source.txt": "0754192133c435723a6883687840816f3cdd49627b42b56cbc4b0b217cdbab41",
+        "claude.txt": "d72930f960f59b713e41271af97ce6eb55a71aac83be06ffd96d592baf5a75a0",
+        "codex.txt": "d72930f960f59b713e41271af97ce6eb55a71aac83be06ffd96d592baf5a75a0"
+      },
+      "category": "Cards",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap",
+        "https://designbookmark.com/motion-src/shared/img/hills-9.webp"
+      ],
+      "motionTokens": {
+        "--lens-follow": "180 17",
+        "--lens-zoom": "1.7",
+        "--lens-zoom-press": "2.4",
+        "--lens-size": "150"
+      }
+    },
+    {
+      "id": "db-pull-refresh",
+      "title": "Pull to refresh",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-pull-refresh",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-pull-refresh.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "pull-refresh",
+      "directory": "sources/db-pull-refresh/6b7f5f52d50191ad079735bdac1b9ec02d3ad4aaae0145bc3fa00f0d17e61380",
+      "checksums": {
+        "source.txt": "b89f1b1e84949f371d4546edbbdd920da656e6cb65f60a278a527d0cc62bb71b",
+        "claude.txt": "c1e80e8d7b20a32071f5e29cdf3e5260411e7b3258e18a2757bfdafa0b77b9d6",
+        "codex.txt": "c1e80e8d7b20a32071f5e29cdf3e5260411e7b3258e18a2757bfdafa0b77b9d6"
+      },
+      "category": "Cards",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {
+        "--pull-threshold": "88",
+        "--pull-return": "260 18",
+        "--pull-hold-ms": "1300"
+      }
+    },
+    {
+      "id": "db-word-roll",
+      "title": "Word roll",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-word-roll",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-word-roll.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "rolling-text",
+      "directory": "sources/db-word-roll/48685dd05065833ec8e442d941dce58030043e5a650ffc477abcd7c34f4f5199",
+      "checksums": {
+        "source.txt": "d4518df7e9e7a9eda00f8d52ca2d724d3fd4304d4e27c8fa6b1451eee21b3cef",
+        "claude.txt": "c9c351d0f816d31fcdac2fda4b95a4dae0acdac88de07b6067e71bb0eca07796",
+        "codex.txt": "c9c351d0f816d31fcdac2fda4b95a4dae0acdac88de07b6067e71bb0eca07796"
+      },
+      "category": "Text",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-weight-wave",
+      "title": "Weight wave",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-weight-wave",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-weight-wave.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "weight-wave",
+      "directory": "sources/db-weight-wave/9418c20ce7c5b0d21af1ac08b90063bab366888dec99c8fa950de382ee6daa2b",
+      "checksums": {
+        "source.txt": "b4aebc8ac1896e1d6b07d7c0dedb317f26c37a4af0dd743b1c5e49eb0b5485f9",
+        "claude.txt": "3422c76b8586cccb7a141d2ee9ae74735564fba46e8d34b3c507c946424b0bb1",
+        "codex.txt": "3422c76b8586cccb7a141d2ee9ae74735564fba46e8d34b3c507c946424b0bb1"
+      },
+      "category": "Text",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-goo-morph",
+      "title": "Goo morph",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-goo-morph",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-goo-morph.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "goo-morph",
+      "directory": "sources/db-goo-morph/fa7cd3ccde3644d813d44273491e47871943bf11f2449fbe38faaf1ff3233297",
+      "checksums": {
+        "source.txt": "e9acc8ca5245cdb2baf4bd33ac9be491c3bb0bcc3398b4e22231668722168023",
+        "claude.txt": "fec50c711b370a617804a02ffc9ded2a7a3f1cbc5564b4bfc8e07ed904d4b209",
+        "codex.txt": "fec50c711b370a617804a02ffc9ded2a7a3f1cbc5564b4bfc8e07ed904d4b209"
+      },
+      "category": "Text",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-scramble-text",
+      "title": "Scramble text",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-scramble-text",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-scramble-text.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "scramble-text",
+      "directory": "sources/db-scramble-text/f6263b77f586a624b0f098552d4905a2dcbff56c4dc32b350fb1af66e6e74867",
+      "checksums": {
+        "source.txt": "0798f195478a7ec08afd7244d4b6909e37d119672c3c9f904b6927275980b51a",
+        "claude.txt": "3ec199df423c5b32df4c89803496eefaf58d103a6bd986015ec2658c6cd6d599",
+        "codex.txt": "3ec199df423c5b32df4c89803496eefaf58d103a6bd986015ec2658c6cd6d599"
+      },
+      "category": "Text",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-read-along",
+      "title": "Read along",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-read-along",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-read-along.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "read-along",
+      "directory": "sources/db-read-along/dd7189b4a5c55ce3943416f3b1c0958033ab04b939e10c9586ff62bd27e212ab",
+      "checksums": {
+        "source.txt": "703fa505de27429d80f07aafb86c8f51ccae29b0128708e5dfadb1829f5a4eff",
+        "claude.txt": "6b8b425aff4d00f3690edc3d5d231feef2f438d6ed3f323a4631b80a142cab4d",
+        "codex.txt": "6b8b425aff4d00f3690edc3d5d231feef2f438d6ed3f323a4631b80a142cab4d"
+      },
+      "category": "Text",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-roll-links",
+      "title": "Roll links",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-roll-links",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-roll-links.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "roll-links",
+      "directory": "sources/db-roll-links/8e1d0dacd286413b47bd4824c91a63f1fe8aa4c1759dad36def7a2e846b998a1",
+      "checksums": {
+        "source.txt": "a64267db55ae7b142e91163e812ba19b360ee1b8e494716101d53cd33d76ae6d",
+        "claude.txt": "4d1b3388cab36e932663ce5871b14e11c4d8d6e91ded42ab1b69fa0509019f47",
+        "codex.txt": "4d1b3388cab36e932663ce5871b14e11c4d8d6e91ded42ab1b69fa0509019f47"
+      },
+      "category": "Text",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-prompt-box",
+      "title": "Prompt box",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-prompt-box",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-prompt-box.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "prompt-box",
+      "directory": "sources/db-prompt-box/1a8b76fe825eabf0cba85298e25e719bfbd3484b9ebc11de2b637c5dc23c44be",
+      "checksums": {
+        "source.txt": "f5a1fa637d4ef79aa2d09c85a3f16aad1f25c1a121afbf3201973e46a09e2806",
+        "claude.txt": "019eae4bc00160bce9fe4b4c88d9e8c4b175e67ee6bb48bdf19961d6c20639e4",
+        "codex.txt": "019eae4bc00160bce9fe4b4c88d9e8c4b175e67ee6bb48bdf19961d6c20639e4"
+      },
+      "category": "AI",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-streaming-reply",
+      "title": "Streaming reply",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-streaming-reply",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-streaming-reply.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "streaming-reply",
+      "directory": "sources/db-streaming-reply/798a6f94e8f51ceb7aecb19d72866530bf62706af78fe4783bbba68eff65a253",
+      "checksums": {
+        "source.txt": "2644e2755b85ddf6bc5c81da7e54188c8160c3dc1defec8603466b0578a2b2d4",
+        "claude.txt": "626c25be00c78bbfb3adc220fcb6d3a35b5cdd5a13d8445b8014f58c73c160dc",
+        "codex.txt": "626c25be00c78bbfb3adc220fcb6d3a35b5cdd5a13d8445b8014f58c73c160dc"
+      },
+      "category": "AI",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-ghost-suggestion",
+      "title": "Ghost suggestion",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-ghost-suggestion",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-ghost-suggestion.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "ghost-suggestion",
+      "directory": "sources/db-ghost-suggestion/63d2f0601f975604a5a533c4ab02cc822049af1ca3566399d9f965e948b9a328",
+      "checksums": {
+        "source.txt": "8862e6ad3a7c2389ecf419a863470e1641dda66e4d8a148c2c6f2a1fb45fa8c3",
+        "claude.txt": "b08c3b4e905ea5294ab9f672fe6db0d7a0c5a61464996e3577a5ac8ae2286f5b",
+        "codex.txt": "b08c3b4e905ea5294ab9f672fe6db0d7a0c5a61464996e3577a5ac8ae2286f5b"
+      },
+      "category": "AI",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-goo-thinking",
+      "title": "Goo thinking",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-goo-thinking",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-goo-thinking.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "goo-thinking",
+      "directory": "sources/db-goo-thinking/ed72a6b038ae8c9f54ca5303679a45a54245538f7d52f0a6dff0b4afbf6aeeed",
+      "checksums": {
+        "source.txt": "212427b2c16caa9245e2274fef52a79f3b0ce3db8588aeb795bbdebd241aad2e",
+        "claude.txt": "b7dbfc24c126b4e17e43016894740c5a62f674cb4eb35c84bec9ac8f7687c1ee",
+        "codex.txt": "b7dbfc24c126b4e17e43016894740c5a62f674cb4eb35c84bec9ac8f7687c1ee"
+      },
+      "category": "AI",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-expand-card",
+      "title": "Expand card",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-expand-card",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-expand-card.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "expand-card",
+      "directory": "sources/db-expand-card/15e5604459ac2c3a79363e3ccd5f394e3184aad8d0d20d5f3e2fad129e54e8c3",
+      "checksums": {
+        "source.txt": "7ae0ab62fb0461c5345eee7dd9e8fc060c77641205cd9e6d316b11b1ca006714",
+        "claude.txt": "aa242de9f2cff394ea9a1e6ff41364cf192568b0ae5e866f712d59431e0b2562",
+        "codex.txt": "aa242de9f2cff394ea9a1e6ff41364cf192568b0ae5e866f712d59431e0b2562"
+      },
+      "category": "Cards",
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-fan-cards",
+      "title": "Fan cards",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Cards",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-fan-cards",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-fan-cards.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "fan-cards",
+      "directory": "sources/db-fan-cards/10d23906e6fde5801a31a99d321fe030ce4a96a8ce26c031f4563516b81cb389",
+      "checksums": {
+        "source.txt": "bf3e9316b90a85787f1b65874e5127e90c0d9f4fad1879957f646bfe8065008d",
+        "claude.txt": "88d431df25f8140a7609985a6d0a74b7757277e146f3b91272f119a628f77e25",
+        "codex.txt": "88d431df25f8140a7609985a6d0a74b7757277e146f3b91272f119a628f77e25"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-stat-card",
+      "title": "Stat card",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Cards",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-stat-card",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-stat-card.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "stat-card",
+      "directory": "sources/db-stat-card/73c696798aff79eb04fbfca7e8477c4cf18134714d11a9559beebe5312feaaae",
+      "checksums": {
+        "source.txt": "2ff35630af1b5108b882218decd3fd67f17152d7b438020586ef56acdc7f9363",
+        "claude.txt": "22d99b7eaf2fdb69985fae60a78ac827dc3ce00917fcbd17911a24a40b4e3357",
+        "codex.txt": "22d99b7eaf2fdb69985fae60a78ac827dc3ce00917fcbd17911a24a40b4e3357"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-profile-card",
+      "title": "Profile card",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Cards",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-profile-card",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-profile-card.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "profile-card",
+      "directory": "sources/db-profile-card/ab6e2f3e5e64db81f79145f1c84f607dd57e4337d35e96d47a5f5f4bf0b26294",
+      "checksums": {
+        "source.txt": "9e5b446e991a887a24f2e62ad0f8dea2377b18bb95cceccf78b83dc4f561b390",
+        "claude.txt": "50b7b412db23f6b1d06bd1bc57753dc4252ebe2e2bceabe48223d92069ac5a35",
+        "codex.txt": "50b7b412db23f6b1d06bd1bc57753dc4252ebe2e2bceabe48223d92069ac5a35"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-magnetic-button",
+      "title": "Magnetic button",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Buttons",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-magnetic-button",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-magnetic-button.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "magnetic-button",
+      "directory": "sources/db-magnetic-button/231359cc07cac2177e0e63b70e1451932b59c573e91fd7bd4520d3659345400a",
+      "checksums": {
+        "source.txt": "a14a3554aff55629ae0adb5bf2bff5971b81ddd1c710219daba58ce5ce8ce07d",
+        "claude.txt": "3ca56768b7af7d26dd2dbf9bb0eec4036bcd3a25a0af999bdecbd46e5add6342",
+        "codex.txt": "3ca56768b7af7d26dd2dbf9bb0eec4036bcd3a25a0af999bdecbd46e5add6342"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-loading-success",
+      "title": "Loading to success",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Buttons",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-loading-success",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-loading-success.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "loading-success",
+      "directory": "sources/db-loading-success/a549cea037c4ab9aa854331e478864bdb2ffa4caf83873f9fca33c1e7a04a269",
+      "checksums": {
+        "source.txt": "a7984b6e0c87dcd46b3169989de7063ca65d795c818017f4ea7837b4bcb4e4ff",
+        "claude.txt": "24c6264a633e555d308fd0f690c27a99b41bca57a58696ebfb67724bc9afc3ff",
+        "codex.txt": "24c6264a633e555d308fd0f690c27a99b41bca57a58696ebfb67724bc9afc3ff"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-copy-button",
+      "title": "Copy button",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Buttons",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-copy-button",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-copy-button.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "copy-button",
+      "directory": "sources/db-copy-button/9d6fc3e624aaf2ac5450baddf39cdd1725213e37391185a20a99f9cfb66115c3",
+      "checksums": {
+        "source.txt": "ce19ef9477e7b24c4625de407613ebfb4b41c697bfd5b44731ad302b7b597649",
+        "claude.txt": "df436fc6fe3f30f5457aae672836a496f1d4a8e14942738bb8a390fe467a4906",
+        "codex.txt": "df436fc6fe3f30f5457aae672836a496f1d4a8e14942738bb8a390fe467a4906"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-like-burst",
+      "title": "Like burst",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Buttons",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-like-burst",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-like-burst.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "like-burst",
+      "directory": "sources/db-like-burst/159c37fb4630e0e11fee9220abde110edab1cd251bf5df42a455846b65c59ad9",
+      "checksums": {
+        "source.txt": "c3a8712428bdd8d0caf37c074f2f659161f744a25f818f30063ee8104dec21c5",
+        "claude.txt": "b1f3c2f14fee9aa95b394fb8e42e723520af0c470d6b882bf69a99f079c68cba",
+        "codex.txt": "b1f3c2f14fee9aa95b394fb8e42e723520af0c470d6b882bf69a99f079c68cba"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-tab-pill",
+      "title": "Tab pill",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Navigation",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-tab-pill",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-tab-pill.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "tab-pill",
+      "directory": "sources/db-tab-pill/47e462b239825d26d5c35835e7400a241908c6197953fbe4744e9d2fd4df081a",
+      "checksums": {
+        "source.txt": "01be2bde29713f626de972c321ed4091beabe515a0434ce94f22ecadb5a6f4fb",
+        "claude.txt": "1c1d60ec274b0911c06bc39f57618c9ff794ef29410940e751cfea828bc07dea",
+        "codex.txt": "1c1d60ec274b0911c06bc39f57618c9ff794ef29410940e751cfea828bc07dea"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-bottom-bar",
+      "title": "Bottom bar",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Navigation",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-bottom-bar",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-bottom-bar.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "spring-dock",
+      "directory": "sources/db-bottom-bar/fc57d8b36f650739e494e5995ef4b7a26635752e770b569695af1e431a3eb9f3",
+      "checksums": {
+        "source.txt": "a600440dc4579856fd0f68cf508a5793816136392917e3ecd0615f025774617c",
+        "claude.txt": "8a4a8cbb98d0dc3251bfe7f035a0609e40e2b0b3f92e791f9d30750f6af9d72e",
+        "codex.txt": "8a4a8cbb98d0dc3251bfe7f035a0609e40e2b0b3f92e791f9d30750f6af9d72e"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-dynamic-menu",
+      "title": "Dynamic menu",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Navigation",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-dynamic-menu",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-dynamic-menu.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "dynamic-menu",
+      "directory": "sources/db-dynamic-menu/87197ff3a2dfe6a65d8895238137a20f7d54bff0879a83e46874d557f38168b5",
+      "checksums": {
+        "source.txt": "dd0367ceba26da15f89eed69796536aaf40376a61394b6a2c1594a82dad6e6eb",
+        "claude.txt": "cc594969005684c1480a5e76b435729cae19136c87f09eff1e080b82fbc691d1",
+        "codex.txt": "cc594969005684c1480a5e76b435729cae19136c87f09eff1e080b82fbc691d1"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-segmented-control",
+      "title": "Segmented control",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Navigation",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-segmented-control",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-segmented-control.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "segmented-control",
+      "directory": "sources/db-segmented-control/2ea0a63fdb1847d4c79672ad77cec6d6f87c2c1efabe8bb527cc59cc64380bb3",
+      "checksums": {
+        "source.txt": "64f3aebcfc788f18c195cd41bdf0c45e432679fc7f38b56f00d58ee909be904a",
+        "claude.txt": "a9ef6316f4c0c2ef01afcbcc597be4430624cb883af52186fcd797114d1c9ccb",
+        "codex.txt": "a9ef6316f4c0c2ef01afcbcc597be4430624cb883af52186fcd797114d1c9ccb"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-sidebar-collapse",
+      "title": "Sidebar collapse",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Navigation",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-sidebar-collapse",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-sidebar-collapse.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "sidebar-collapse",
+      "directory": "sources/db-sidebar-collapse/ecb1cbfd80f9110ad5ddaa33780f4ee7e2993211925fb04ac029710853607b71",
+      "checksums": {
+        "source.txt": "37f2f30111aca91840c6a72c70ef4259b15e88ee446ab51ebcaf0eec293731fe",
+        "claude.txt": "0bcc01f6aa7575dab3599a45b7e0806b9f747329fd76592e0db1fb4c6cb3f360",
+        "codex.txt": "0bcc01f6aa7575dab3599a45b7e0806b9f747329fd76592e0db1fb4c6cb3f360"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-pagination-dots",
+      "title": "Pagination dots",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Navigation",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-pagination-dots",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-pagination-dots.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "pagination-dots",
+      "directory": "sources/db-pagination-dots/008262e4db7ea63f9243d367974bc20e7a49b0bf9114ce7743eb39051ce4b3fa",
+      "checksums": {
+        "source.txt": "5e4f1aa7c6c1a0213fe9791cce9b3894e3fe5dfcdeffcb0ebee68f18b5d4be5c",
+        "claude.txt": "81a9e407b440ea077943a22e0a6809f0223dbcd304d7b8613df566f9ac7e5a81",
+        "codex.txt": "81a9e407b440ea077943a22e0a6809f0223dbcd304d7b8613df566f9ac7e5a81"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap",
+        "https://designbookmark.com/motion-src/shared/img/hills-1.webp",
+        "https://designbookmark.com/motion-src/shared/img/hills-3.webp",
+        "https://designbookmark.com/motion-src/shared/img/hills-5.webp",
+        "https://designbookmark.com/motion-src/shared/img/hills-6.webp",
+        "https://designbookmark.com/motion-src/shared/img/hills-8.webp"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-command-palette",
+      "title": "Command palette",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Navigation",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-command-palette",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-command-palette.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "command-palette",
+      "directory": "sources/db-command-palette/bfeba3ea4f94b9712f2a8ce836faa6e979be43c22f87bec63d1bf2c3396d7531",
+      "checksums": {
+        "source.txt": "a168f15f427e00ba4c0329817ad33f3e6f2d0b2f3acbc1fb6349abb7bc659af4",
+        "claude.txt": "8cd3e1b5fc4092d2c57668a47ee3a2a39a6219927a0d1dc1f2e96b9192be58f8",
+        "codex.txt": "8cd3e1b5fc4092d2c57668a47ee3a2a39a6219927a0d1dc1f2e96b9192be58f8"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-step-progress",
+      "title": "Step progress",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Navigation",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-step-progress",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-step-progress.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "step-progress",
+      "directory": "sources/db-step-progress/7167cb270cc8ec4ca5f1961c5f6ed371e18e795c01f64e4b9628237777ba395a",
+      "checksums": {
+        "source.txt": "1db6d134068c4a08ec8c460aaecd48fffebba435040b768b110568b516f59cc3",
+        "claude.txt": "83884be735d5634fc3e76a8aa19522d92771fab9129d9a41465d7d63e5b11fd4",
+        "codex.txt": "83884be735d5634fc3e76a8aa19522d92771fab9129d9a41465d7d63e5b11fd4"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-otp-code",
+      "title": "OTP code",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-otp-code",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-otp-code.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "otp-code",
+      "directory": "sources/db-otp-code/7f7218338d3f9b617ca62ea4f2aeb894eead9849f21bfb4f402108bfd659f8ad",
+      "checksums": {
+        "source.txt": "8e2e92ba764cffc96fca91b1387f4e8466b373ffb772ddda254f8e6fe0331af3",
+        "claude.txt": "a797917b4758f8db82bdd6d03e2fe8a4815fe9c8b6811ffe6290f387b45a0a9e",
+        "codex.txt": "a797917b4758f8db82bdd6d03e2fe8a4815fe9c8b6811ffe6290f387b45a0a9e"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-toggle-switch",
+      "title": "Toggle switch",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-toggle-switch",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-toggle-switch.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "spring-switch",
+      "directory": "sources/db-toggle-switch/0c8ec0d00e59f9836377827086d084cebb95c190305d5f8fc211e28d5bbf6114",
+      "checksums": {
+        "source.txt": "bf8201a009dd9df76d63361376a8de6b650b099288acfcd85fea7e27bc53c238",
+        "claude.txt": "6176e7e471e4c372ba1e83b81ed4eb9051ebe12484cdfd1b28a28fc8086644b1",
+        "codex.txt": "6176e7e471e4c372ba1e83b81ed4eb9051ebe12484cdfd1b28a28fc8086644b1"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-star-rating",
+      "title": "Star rating",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-star-rating",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-star-rating.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "star-rating",
+      "directory": "sources/db-star-rating/1e7b6bba9375242812a97a06d5594372307ed2885aef43c9a501eb5e45304ecb",
+      "checksums": {
+        "source.txt": "2830c3b63835a9985ecbb9d5f26809e8692d7129334aa0f6e24a69a9417a2c6e",
+        "claude.txt": "b8edc85661afec67cc5f42b69f35ef4b9332fd9a9f284344146db251b946e390",
+        "codex.txt": "b8edc85661afec67cc5f42b69f35ef4b9332fd9a9f284344146db251b946e390"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-tag-input",
+      "title": "Tag input",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-tag-input",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-tag-input.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "tag-input",
+      "directory": "sources/db-tag-input/127b25b41181171fcb23da8f627fabea6362392c636d4eb61e294ab34d0ee484",
+      "checksums": {
+        "source.txt": "ffe474e6485a6a59e9746837081e5855bcd3de518aeb434c417950d8b6fc5888",
+        "claude.txt": "9f5c71ead73ae0ed8d81ad662688affbf8e9cbb7ac5f36349fbb10311f6079e0",
+        "codex.txt": "9f5c71ead73ae0ed8d81ad662688affbf8e9cbb7ac5f36349fbb10311f6079e0"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-number-stepper",
+      "title": "Number stepper",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-number-stepper",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-number-stepper.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "flip-counter",
+      "directory": "sources/db-number-stepper/a7139ad7830a6156e20797360fa46a60bb3e8b18c1ae95dfbbe7afe665a06063",
+      "checksums": {
+        "source.txt": "37412f991895ec40b7ac3ead31b001797e0e1176e48454754b31775e30c48501",
+        "claude.txt": "6d042961299067a3a033b9002a9614e6834f10ea4b12d6d9be5dc541580b39d9",
+        "codex.txt": "6d042961299067a3a033b9002a9614e6834f10ea4b12d6d9be5dc541580b39d9"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-range-slider",
+      "title": "Range slider",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-range-slider",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-range-slider.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "wave-slider",
+      "directory": "sources/db-range-slider/1f888f3bc84e6e6801ba2a236930d7727905965ce8a48cb86f466e06a2f8e3cd",
+      "checksums": {
+        "source.txt": "4131e470041363db04860cdd8abe98de79c2c9a7b1f651adef22f530efc94dce",
+        "claude.txt": "1b7356b6932f9245d71aa8569f1be9302b072ac81e9f45988afaa7ebc81e6df6",
+        "codex.txt": "1b7356b6932f9245d71aa8569f1be9302b072ac81e9f45988afaa7ebc81e6df6"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-password-strength",
+      "title": "Password strength",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-password-strength",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-password-strength.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "password-strength",
+      "directory": "sources/db-password-strength/5d6a8c7e641804f7d877a631c8bf25882ad5ebd47c35b11464ddad4e9dba7724",
+      "checksums": {
+        "source.txt": "cb100fb20e6a54c427cc039b8f82a244b366166b9391153fa364ef529fc1bd5b",
+        "claude.txt": "99a8effeb2b4529c31b1e4ca26c5bb4634087ad5cd85518fc7d8a3ea2db24bf7",
+        "codex.txt": "99a8effeb2b4529c31b1e4ca26c5bb4634087ad5cd85518fc7d8a3ea2db24bf7"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "db-checkbox-list",
+      "title": "Checkbox list",
+      "author": "DesignBookmark",
+      "upstream": null,
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#db-checkbox-list",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/db-checkbox-list.txt",
+      "format": "html",
+      "licenseNotice": null,
+      "companionFiles": [],
+      "install": null,
+      "target": "checkbox-list",
+      "directory": "sources/db-checkbox-list/03e757475e8ce5eda93d0b53db427d024c606c86ef05d0a7bd5ddcad124cb8c6",
+      "checksums": {
+        "source.txt": "09a7e572821091328e28b3add4b451727ba0e27d66e4d2b6f6fa5a415c393b9d",
+        "claude.txt": "b602195c4fec3d9f8f37afe333c21331df3efbee958d2148bbfa857fa6b1554f",
+        "codex.txt": "b602195c4fec3d9f8f37afe333c21331df3efbee958d2148bbfa857fa6b1554f"
+      },
+      "entryFile": "index.html",
+      "assets": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      ],
+      "motionTokens": {}
+    },
+    {
+      "id": "detent-dial",
+      "title": "Detent dial",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/inputs/detent-dial?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#detent-dial",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/detent-dial.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/detent-dial.json",
+      "target": "detent-dial",
+      "directory": "sources/detent-dial/00703d4fe3828409b61093a5a73747a1b93ef9b67750dbd2c96feab11269c605",
+      "checksums": {
+        "source.txt": "80141206fa662910054a177ea5615f772dda5ede3a2d883d6886c2710f2892eb",
+        "claude.txt": "eec7aed6e66a57d8cc6b1888fdc10c3afdd82a2372a4e750f15145ab6ddec3b9",
+        "codex.txt": "eec7aed6e66a57d8cc6b1888fdc10c3afdd82a2372a4e750f15145ab6ddec3b9"
+      },
+      "entryFile": "detent-dial.tsx",
+      "imports": [
+        "@/lib/utils",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "siri-orb",
+      "title": "Siri orb",
+      "author": "SmoothUI",
+      "upstream": "https://smoothui.dev/docs/components/siri-orb?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "AI",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#siri-orb",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/siri-orb.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [
+        "./ai-core.tsx"
+      ],
+      "install": "npx shadcn@latest add https://smoothui.dev/r/siri-orb.json",
+      "target": "siri-orb",
+      "directory": "sources/siri-orb/bc7b5aeb19825179ddc3c2d6f331c7ba61d48406725bd7edffc8186cd01b14cb",
+      "checksums": {
+        "source.txt": "ff9717a0dd593d6bd0eddba4415e9ee8877a8f7eb6c12288925f38547424c8f5",
+        "claude.txt": "74ccff610e089a567ecc28933fdfd7271017832b42b372f96b6841bac39f9e8a",
+        "codex.txt": "74ccff610e089a567ecc28933fdfd7271017832b42b372f96b6841bac39f9e8a"
+      },
+      "entryFile": "siri-orb.tsx",
+      "imports": [
+        "./ai-core",
+        "@/lib/utils",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "ai-loading",
+      "title": "Agent steps",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/ai/ai-loading?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "AI",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#ai-loading",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/ai-loading.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/ai-loading.json",
+      "target": "agent-steps",
+      "directory": "sources/ai-loading/cb9b188df5c5c59230fcc220406a058b4049df7fa30471becaafb3e0ee3caaa3",
+      "checksums": {
+        "source.txt": "f33c303e65e4da5630868e71aa6f40444a6d77bc04e2fe6fdf0f9d0e1fcfcf61",
+        "claude.txt": "7c91e7f34dd78b21028d789125282a60cbc0fcc51ef6b2a7040e36aa357d2503",
+        "codex.txt": "7c91e7f34dd78b21028d789125282a60cbc0fcc51ef6b2a7040e36aa357d2503"
+      },
+      "entryFile": "ai-loading.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "hold-button",
+      "title": "Hold button",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/buttons/hold-button?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Buttons",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#hold-button",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/hold-button.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/hold-button.json",
+      "target": "hold-button",
+      "directory": "sources/hold-button/07e85c76a9ae169804c02f1f2f2c39cb73a1ca055a22940a9002ef246e61066c",
+      "checksums": {
+        "source.txt": "da10a122c3127dc030a6f73c6e83e6f9098db03154ff50223e0a668f84057038",
+        "claude.txt": "93d56c9304d2887e132cf94b4b3b5992e0ce76f630f6516930505a86242dfcca",
+        "codex.txt": "93d56c9304d2887e132cf94b4b3b5992e0ce76f630f6516930505a86242dfcca"
+      },
+      "entryFile": "hold-button.tsx",
+      "imports": [
+        "@/lib/utils",
+        "class-variance-authority",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "exposure-slider",
+      "title": "Exposure slider",
+      "author": "SmoothUI",
+      "upstream": "https://smoothui.dev/docs/components/exposure-slider?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#exposure-slider",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/exposure-slider.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://smoothui.dev/r/exposure-slider.json",
+      "target": "exposure-slider",
+      "directory": "sources/exposure-slider/3a19ab5ed2e49d5df970c1270009cbd2fe15e238c5514b0c2252b088b4c177ce",
+      "checksums": {
+        "source.txt": "c20fad2e4650bf2375cdfea2385ce904aafc2609ba30abe5eb1068982be148e6",
+        "claude.txt": "d695351754807f0d00081213079d549748b75fceaf502796e074b20643f4a3ea",
+        "codex.txt": "d695351754807f0d00081213079d549748b75fceaf502796e074b20643f4a3ea"
+      },
+      "entryFile": "exposure-slider.tsx",
+      "imports": [
+        "@/lib/utils",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "boarding-pass",
+      "title": "Boarding pass",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/cards/boarding-pass?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Cards",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#boarding-pass",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/boarding-pass.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/boarding-pass.json",
+      "target": "boarding-pass",
+      "directory": "sources/boarding-pass/be17a66dc3b97e572b68a652e950d105220bf604d87f001246e88de7645e5280",
+      "checksums": {
+        "source.txt": "eb16342160ce76f736ebe0f8437dc3e7ffc0e523e24c7380b2009094e59f1a92",
+        "claude.txt": "981737852d4e85c8ff5dada521561badbb59d52f09fa135ad9016dee8c86d831",
+        "codex.txt": "981737852d4e85c8ff5dada521561badbb59d52f09fa135ad9016dee8c86d831"
+      },
+      "entryFile": "boarding-pass.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "marker-text",
+      "title": "Marker text",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/texts/marker-text?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Text",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#marker-text",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/marker-text.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/marker-text.json",
+      "target": "marker-text",
+      "directory": "sources/marker-text/e15622897c1b11913e669ff95f156817428bd2de50e9b9d0a18fdc350177fb7a",
+      "checksums": {
+        "source.txt": "094baca91b81ed37eee5c7457b78623e5056024b9bf14278aa148882282bdc5f",
+        "claude.txt": "9a4fa4a722a1542b025b0c9e60c46644045e23b0881e581ac14aca7dd84034c6",
+        "codex.txt": "9a4fa4a722a1542b025b0c9e60c46644045e23b0881e581ac14aca7dd84034c6"
+      },
+      "entryFile": "marker-text.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "react"
+      ]
+    },
+    {
+      "id": "smooth-tab",
+      "title": "Smooth tab",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/navigation/smooth-tab?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Navigation",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#smooth-tab",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/smooth-tab.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/smooth-tab.json",
+      "target": "swipe-tabs",
+      "directory": "sources/smooth-tab/507d775279abec9addc2a7886228f318cefcaf1f4ba99b98b2c8d585a2b9b33b",
+      "checksums": {
+        "source.txt": "6667a7af5731dcf7f9b65784d8c0db90b44244efc032a44d729d681d475542a4",
+        "claude.txt": "1a4dc74c36f14239d5319a7c559c11b0af1933a2376fe9f8b9ac632bb864c679",
+        "codex.txt": "1a4dc74c36f14239d5319a7c559c11b0af1933a2376fe9f8b9ac632bb864c679"
+      },
+      "entryFile": "smooth-tab.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "unlock-face-id",
+      "title": "Unlock Face ID",
+      "author": "SmoothUI",
+      "upstream": "https://smoothui.dev/docs/components/unlock-face-id?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Cards",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#unlock-face-id",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/unlock-face-id.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://smoothui.dev/r/unlock-face-id.json",
+      "target": "unlock-face-id",
+      "directory": "sources/unlock-face-id/170ec26ddca7834bc7dc2598fbc9ecc742ff1b6a5815d75dfa00163c5f64bf20",
+      "checksums": {
+        "source.txt": "560ed9367e3f6c7163f036756a2972d35e54db417a226b7a657a325dc6bca354",
+        "claude.txt": "036e2d8262ae58518a60fe3e79cfc1a865e4312c4cffd431862ce1e0e772205c",
+        "codex.txt": "036e2d8262ae58518a60fe3e79cfc1a865e4312c4cffd431862ce1e0e772205c"
+      },
+      "entryFile": "unlock-face-id.tsx",
+      "imports": [
+        "@/lib/utils",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "slide-to-confirm",
+      "title": "Slide to confirm",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/buttons/slide-to-confirm?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Buttons",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#slide-to-confirm",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/slide-to-confirm.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/slide-to-confirm.json",
+      "target": "slide-to-confirm",
+      "directory": "sources/slide-to-confirm/7ef661ebfaa714121bff858ce54823774710d5b5b4706eb8af2bcfa1b2b8aa6d",
+      "checksums": {
+        "source.txt": "32d532b93fe4a0cc9f8d29f46dc4c9949547450c2d09f1b5e73a25d23ad3fa85",
+        "claude.txt": "295a856439b55c0444fd5442c2c5ee9ddd8fcbb7f595a5753853144c0673ebb4",
+        "codex.txt": "295a856439b55c0444fd5442c2c5ee9ddd8fcbb7f595a5753853144c0673ebb4"
+      },
+      "entryFile": "slide-to-confirm.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "notification-stack",
+      "title": "Notification stack",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/cards/notification-stack?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Cards",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#notification-stack",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/notification-stack.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/notification-stack.json",
+      "target": "notification-stack",
+      "directory": "sources/notification-stack/1ef831e08b58d897d11fcde536bfa1bf34bba328f20f56467962d4b513fb20d7",
+      "checksums": {
+        "source.txt": "192212c6033f616069c29549d132dd45cf2eaeac6d30a70dc1e4bdc0b793d848",
+        "claude.txt": "e96ef9de1240b7fd78b6c32ca40f98c2ef5ebbd30785a292c0ba3ffc2f87558a",
+        "codex.txt": "e96ef9de1240b7fd78b6c32ca40f98c2ef5ebbd30785a292c0ba3ffc2f87558a"
+      },
+      "entryFile": "notification-stack.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "react"
+      ]
+    },
+    {
+      "id": "wheel-picker",
+      "title": "Wheel picker",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/inputs/wheel-picker?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#wheel-picker",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/wheel-picker.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/wheel-picker.json",
+      "target": "wheel-picker",
+      "directory": "sources/wheel-picker/2586cb1c22a647f69b6556505c85eca12df5919af4ae6da456c6e01fc20436de",
+      "checksums": {
+        "source.txt": "b4a59bd90eeba67fce4aed6b58bfc79ab8a0233c921c6c4b96b17c29d4a7840f",
+        "claude.txt": "b1bc3abef18bbdebb4d2dfe67375885b234779e06a98302621e308f9dc5e2374",
+        "codex.txt": "b1bc3abef18bbdebb4d2dfe67375885b234779e06a98302621e308f9dc5e2374"
+      },
+      "entryFile": "wheel-picker.tsx",
+      "imports": [
+        "@/lib/utils",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "dynamic-text",
+      "title": "Dynamic text",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/texts/dynamic-text?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Text",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#dynamic-text",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/dynamic-text.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/dynamic-text.json",
+      "target": "dynamic-text",
+      "directory": "sources/dynamic-text/59cf9aa87a0bf9b9bfb4975a14b1aeb7783a1f7762706a38261d5af8cc5ac183",
+      "checksums": {
+        "source.txt": "3365294008789c1d04cc50d8aaf580253463effdba4fd4d618126e6d2ff3e137",
+        "claude.txt": "68bc6fa6f4b690ceab6b570fb0bc2122779a8d7974e527986ca912d6880624ae",
+        "codex.txt": "68bc6fa6f4b690ceab6b570fb0bc2122779a8d7974e527986ca912d6880624ae"
+      },
+      "entryFile": "dynamic-text.tsx",
+      "imports": [
+        "@/lib/utils",
+        "react"
+      ]
+    },
+    {
+      "id": "ai-voice",
+      "title": "Voice input",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/ai/ai-voice?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "AI",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#ai-voice",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/ai-voice.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/ai-voice.json",
+      "target": "voice-input",
+      "directory": "sources/ai-voice/9c618b0b2f6f42405391ac409ac6f933fc1f4dbd6c1da9d9b7699ceba80d186d",
+      "checksums": {
+        "source.txt": "ba620e59f75670f385f1570ccfd6f61bc854332e4666d09a506bfe8bb594d196",
+        "claude.txt": "5b72ecaed1701a57a857ba6e16102ce51eb7a6d16d2f1218a45a359c1ee684bb",
+        "codex.txt": "5b72ecaed1701a57a857ba6e16102ce51eb7a6d16d2f1218a45a359c1ee684bb"
+      },
+      "entryFile": "ai-voice.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "ai-tool-approval",
+      "title": "Tool approval",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/ai/ai-tool-approval?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "AI",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#ai-tool-approval",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/ai-tool-approval.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/ai-tool-approval.json",
+      "target": "tool-approval",
+      "directory": "sources/ai-tool-approval/1124b7aba9406e9c44c2915b5c0462d55d166258582bede6713620e23c74e575",
+      "checksums": {
+        "source.txt": "3f9bbb5842d220a5dbe60f7275f0f796f27d237010dedaa9fec547286cc488ba",
+        "claude.txt": "4aecfc152d193d6d128ce2a40fca2555384a859df87eadbe03d0b55249ed0eb5",
+        "codex.txt": "4aecfc152d193d6d128ce2a40fca2555384a859df87eadbe03d0b55249ed0eb5"
+      },
+      "entryFile": "ai-tool-approval.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "toolbar",
+      "title": "Toolbar",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/navigation/toolbar?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Navigation",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#toolbar",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/toolbar.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/toolbar.json",
+      "target": "toolbar",
+      "directory": "sources/toolbar/d12ec1f6bb8bbcdb507a3f36a8978f3cd479f76da6890254e9a51cdb95855d62",
+      "checksums": {
+        "source.txt": "0d627d2d11024c8772009dc575be4d7a3c3cc310903f814d2e5813e27f4e6ccd",
+        "claude.txt": "aa85d95cffe8fcc2151b18229b670c3cb756e9f32d719bec53c1b967cc0593bd",
+        "codex.txt": "aa85d95cffe8fcc2151b18229b670c3cb756e9f32d719bec53c1b967cc0593bd"
+      },
+      "entryFile": "toolbar.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "scrubber",
+      "title": "Scrubber",
+      "author": "SmoothUI",
+      "upstream": "https://smoothui.dev/docs/components/scrubber?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#scrubber",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/scrubber.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://smoothui.dev/r/scrubber.json",
+      "target": "scrubber",
+      "directory": "sources/scrubber/915ebfa12ab7d9b620c6878ee8506a69c8a959fb961e0fb8b68e9025a0786de2",
+      "checksums": {
+        "source.txt": "3a3b8e8fcf286319856ef6d2cb11ae6467629c7ad74828f6984d774e06af64d4",
+        "claude.txt": "1fff19082a234acc3fee5a58364c75388a017043b266f6e87a7c1213479e6972",
+        "codex.txt": "1fff19082a234acc3fee5a58364c75388a017043b266f6e87a7c1213479e6972"
+      },
+      "entryFile": "scrubber.tsx",
+      "imports": [
+        "@/lib/utils",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "cart-button",
+      "title": "Cart button",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/buttons/cart-button?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Cards",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#cart-button",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/cart-button.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/cart-button.json",
+      "target": "cart-button",
+      "directory": "sources/cart-button/a59679e050e838dcec8826fd1c69bd7d8205f157cb6e91361b861843a0759b79",
+      "checksums": {
+        "source.txt": "ae73e798564fe96f018bfb9f6dc8886beb35f3566e1ec7d62c84974d971e567e",
+        "claude.txt": "2a1ff387bc0652471247817010043feaee3b0d0bd93c83ab2699fa3267625b3e",
+        "codex.txt": "2a1ff387bc0652471247817010043feaee3b0d0bd93c83ab2699fa3267625b3e"
+      },
+      "entryFile": "cart-button.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "page-flip",
+      "title": "Page flip",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/cards/page-flip?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Cards",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#page-flip",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/page-flip.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/page-flip.json",
+      "target": "page-flip",
+      "directory": "sources/page-flip/bbe495d604a626286410cf8fccfa7ad7d3c3bbefb9236dc80afda34ec9ca0444",
+      "checksums": {
+        "source.txt": "1b5343b3992145c0741e4e7a5b8cc936fe69252671a9b0af371eebb62247d62c",
+        "claude.txt": "e1dd7d3852944074a0efec6b5b88165f0185f26b52ac6a346b0b75feda438e2a",
+        "codex.txt": "e1dd7d3852944074a0efec6b5b88165f0185f26b52ac6a346b0b75feda438e2a"
+      },
+      "entryFile": "page-flip.tsx",
+      "imports": [
+        "@/lib/utils",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "signature-pad",
+      "title": "Signature pad",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/inputs/signature-pad?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#signature-pad",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/signature-pad.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/signature-pad.json",
+      "target": "signature-pad",
+      "directory": "sources/signature-pad/fc2f2dbfa33ca0577eae92abdce60b326516a1e3ecb4b7db7740d75d63b9b993",
+      "checksums": {
+        "source.txt": "0a433e75159432fa485d78dcd45c9c43f1bdfe9b9e9aee8a8ac679fb5b67b1c4",
+        "claude.txt": "ada6836e63fe76dbcf60ffed68a5772cd78b7331c76f5823a403d202e3a5d997",
+        "codex.txt": "ada6836e63fe76dbcf60ffed68a5772cd78b7331c76f5823a403d202e3a5d997"
+      },
+      "entryFile": "signature-pad.tsx",
+      "imports": [
+        "@/lib/utils",
+        "react"
+      ]
+    },
+    {
+      "id": "undo-button",
+      "title": "Undo button",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/buttons/undo-button?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Buttons",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#undo-button",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/undo-button.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/undo-button.json",
+      "target": "undo-button",
+      "directory": "sources/undo-button/4fe42baad9092808286e3b04f5503d7a7fba1e5934166948c7beb1e3faee10fc",
+      "checksums": {
+        "source.txt": "3e7e7243cb784c3c57b36029ecf2c1050a863dd3a45e95facdd69592f97f244c",
+        "claude.txt": "fd490a184eca258d898d550fe47fe5658625800d89dd471c766bf96a8f48caa3",
+        "codex.txt": "fd490a184eca258d898d550fe47fe5658625800d89dd471c766bf96a8f48caa3"
+      },
+      "entryFile": "undo-button.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "card-field",
+      "title": "Card field",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/inputs/card-field?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Inputs",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#card-field",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/card-field.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/card-field.json",
+      "target": "card-field",
+      "directory": "sources/card-field/c3965e44204702c518c3a5dff7304a8ba2bb9ef84e02b88f0eb8072485257b85",
+      "checksums": {
+        "source.txt": "843177bcb36d027b34f88e3bd77cf4eb1f3421458f5d65b3bfb9eccec6bc9de7",
+        "claude.txt": "22b707a7e8908a8fc2758756da07efe457d06184582f7342abbb044977c83b2b",
+        "codex.txt": "22b707a7e8908a8fc2758756da07efe457d06184582f7342abbb044977c83b2b"
+      },
+      "entryFile": "card-field.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "stack-panel",
+      "title": "Stack panel",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/navigation/stack-panel?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Navigation",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#stack-panel",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/stack-panel.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/stack-panel.json",
+      "target": "stack-panel",
+      "directory": "sources/stack-panel/f0e3cb9c4b36140851e48a8cf8b54c2f59b7665362d61786fb32224710625697",
+      "checksums": {
+        "source.txt": "a4e2a482faef1f333e24a96635263ea8edabd800b049e63a93d869dacb7cf083",
+        "claude.txt": "e3a3730104a6e589bdb44ed4dd2a0e4668dec3edd440149209da12351ea16c1d",
+        "codex.txt": "e3a3730104a6e589bdb44ed4dd2a0e4668dec3edd440149209da12351ea16c1d"
+      },
+      "entryFile": "stack-panel.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react",
+        "react-dom"
+      ]
+    },
+    {
+      "id": "type-writer",
+      "title": "Typewriter",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/texts/type-writer?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Text",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#type-writer",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/type-writer.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/type-writer.json",
+      "target": "typewriter",
+      "directory": "sources/type-writer/375574cd471bbc311bc126477e306c0745bf8a0b87c96167b1e5f440a02f96b8",
+      "checksums": {
+        "source.txt": "13303f82352cc02eac6febea85b7ed94afec5899328bcf52fbf3e6cffd9bb7a7",
+        "claude.txt": "048cea69bed7351b3286057cc16ae0c32f9ce1e64e9fe2f1201c6fc096b4b540",
+        "codex.txt": "048cea69bed7351b3286057cc16ae0c32f9ce1e64e9fe2f1201c6fc096b4b540"
+      },
+      "entryFile": "type-writer.tsx",
+      "imports": [
+        "@/lib/utils",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "ai-text-loading",
+      "title": "Thinking text",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/ai/ai-text-loading?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "AI",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#ai-text-loading",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/ai-text-loading.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/ai-text-loading.json",
+      "target": "thinking-text",
+      "directory": "sources/ai-text-loading/94d8d4e92bc5fd69cb555aacacaf7319b9bfc0f59f9d4d1afea68a1aebb7e918",
+      "checksums": {
+        "source.txt": "fd617b7a253a78985fb4be33e0210fccef56f47ea97c4c79d7646be50e26a20b",
+        "claude.txt": "fdbae0ec3f71bb7eefb163a5496c9cc5522a77b64ccba685cdcd8ed8d110c42f",
+        "codex.txt": "fdbae0ec3f71bb7eefb163a5496c9cc5522a77b64ccba685cdcd8ed8d110c42f"
+      },
+      "entryFile": "ai-text-loading.tsx",
+      "imports": [
+        "@/lib/utils",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "liquid-glass-card",
+      "title": "Glass player",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/cards/liquid-glass-card?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Cards",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#liquid-glass-card",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/liquid-glass-card.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/liquid-glass-card.json",
+      "target": "glass-player",
+      "directory": "sources/liquid-glass-card/86744935ef79d19b7703a49acf94d921ce4bc74fd4e1a4c52e78aa4d7c916c10",
+      "checksums": {
+        "source.txt": "87901b7801ce8e17db855268ddac8f748402373043c676c4e3eb1abf2a054524",
+        "claude.txt": "4d9b1bea664596777f420632849cc05595f27922da552914581976019d126ec2",
+        "codex.txt": "4d9b1bea664596777f420632849cc05595f27922da552914581976019d126ec2"
+      },
+      "entryFile": "liquid-glass-card.tsx",
+      "imports": [
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/lib/utils",
+        "class-variance-authority",
+        "lucide-react",
+        "react"
+      ]
+    },
+    {
+      "id": "bell-button",
+      "title": "Bell button",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/buttons/bell-button?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Buttons",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#bell-button",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/bell-button.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/bell-button.json",
+      "target": "bell-button",
+      "directory": "sources/bell-button/17452eacdfe165b2e5feb9e2e0d6fdd44c1e85bff8fe4b68e1217b7de70ec397",
+      "checksums": {
+        "source.txt": "1e6096252c65ba9c65436082ef0f729bb3bddd3ae94b6632dbba06e8f656d448",
+        "claude.txt": "c9d062ca0430fce381f88245f92bd1f0fc087e465a5830bd3ed40e4280c128e6",
+        "codex.txt": "c9d062ca0430fce381f88245f92bd1f0fc087e465a5830bd3ed40e4280c128e6"
+      },
+      "entryFile": "bell-button.tsx",
+      "imports": [
+        "@/lib/utils",
+        "react"
+      ]
+    },
+    {
+      "id": "morph-popover",
+      "title": "Morph popover",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/buttons/morph-popover?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Buttons",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#morph-popover",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/morph-popover.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/morph-popover.json",
+      "target": "morph-popover",
+      "directory": "sources/morph-popover/dec5d7c939c44d624f85e64ae044db33454e0acac5a4ed656ad09b545cba1fbd",
+      "checksums": {
+        "source.txt": "5faaaec66e61896ab0f5bdde10b63fea4375d0b298af8bad0cc154af45fffe8f",
+        "claude.txt": "6155423f0c4c5c013eeb15bb5fff1ccdeff86c4f0c4c4f1cedcb1dcea5a62dc9",
+        "codex.txt": "6155423f0c4c5c013eeb15bb5fff1ccdeff86c4f0c4c4f1cedcb1dcea5a62dc9"
+      },
+      "entryFile": "morph-popover.tsx",
+      "imports": [
+        "@/lib/utils",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "ai-task-list",
+      "title": "Task list",
+      "author": "SmoothUI",
+      "upstream": "https://smoothui.dev/docs/components/ai-task-list?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "AI",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#ai-task-list",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/ai-task-list.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://smoothui.dev/r/ai-task-list.json",
+      "target": "task-list",
+      "directory": "sources/ai-task-list/8658aaae231db0fd3e191f9601e5922a120b0f1090986f7185a5764a542eb748",
+      "checksums": {
+        "source.txt": "b41fd1eda630e5784670f68b976ae38e75d6c3ed2fd751c5c977d2b8e57887fd",
+        "claude.txt": "436da959a495ba0754dbb1e07c3cacf116f62eb956721e5972c0303f17efc610",
+        "codex.txt": "436da959a495ba0754dbb1e07c3cacf116f62eb956721e5972c0303f17efc610"
+      },
+      "entryFile": "ai-task-list.tsx",
+      "imports": [
+        "@/lib/utils",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "music-toggle",
+      "title": "Music toggle",
+      "author": "SmoothUI",
+      "upstream": "https://smoothui.dev/docs/components/music-toggle?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Buttons",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#music-toggle",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/music-toggle.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://smoothui.dev/r/music-toggle.json",
+      "target": "music-toggle",
+      "directory": "sources/music-toggle/8f1f6ace380f82975080514c195b052a6bacd90341779efece22d2b8d514f76f",
+      "checksums": {
+        "source.txt": "0f76437b77bbe9ff86076652717006ced12da83904db55a7ecdb25f510931eb5",
+        "claude.txt": "90ae5dad3ba2d235f78470593ad88a11c200c6a0bd0364132424ee9bd9b9483b",
+        "codex.txt": "90ae5dad3ba2d235f78470593ad88a11c200c6a0bd0364132424ee9bd9b9483b"
+      },
+      "entryFile": "music-toggle.tsx",
+      "imports": [
+        "@/lib/utils",
+        "lucide-react",
+        "motion/react",
+        "react"
+      ]
+    },
+    {
+      "id": "command-button",
+      "title": "Command button",
+      "author": "Kokonut UI",
+      "upstream": "https://kokonutui.com/docs/buttons/command-button?ref=designbookmark.com&utm_source=designbookmark&utm_medium=referral",
+      "category": "Buttons",
+      "encoding": "utf-8",
+      "reference": "https://designbookmark.com/motion#command-button",
+      "sourceUrl": "https://designbookmark.com/motion-src/code/command-button.txt",
+      "format": "tsx",
+      "licenseNotice": "MIT",
+      "companionFiles": [],
+      "install": "npx shadcn@latest add https://kokonutui.com/r/command-button.json",
+      "target": "command-button",
+      "directory": "sources/command-button/f6755ca5cfda31690e89cd474d7c9680e7ff008f9c6a1c74ce97f563f0d46355",
+      "checksums": {
+        "source.txt": "fd06dc0febfbea5929726ffd8b8af20f7ccb02dea6cb51a21795813eaeb32ac3",
+        "claude.txt": "e4a843a2f5defdc2a92a8c0658c7e5164bf4b5b54f3f67bb25b8ede2217213a6",
+        "codex.txt": "e4a843a2f5defdc2a92a8c0658c7e5164bf4b5b54f3f67bb25b8ede2217213a6"
+      },
+      "entryFile": "command-button.tsx",
+      "imports": [
+        "@/lib/utils",
+        "react"
+      ]
+    }
+  ]
+}

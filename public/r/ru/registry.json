@@ -1,0 +1,1943 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "takt",
+  "homepage": "/",
+  "items": [
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "magnetic-button",
+      "title": "Magnetic Button",
+      "description": "Кнопка тянется за курсором и мягко возвращается на место.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/motion/magnetic-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "flip-counter",
+      "title": "Flip Counter",
+      "description": "Цифры перекатываются при каждом шаге счётчика.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/flip-counter.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "swipe-deck",
+      "title": "Swipe Deck",
+      "description": "Стопка арт-принтов следует за жестом и раскрывает следующий постер.",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/motion/swipe-deck.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-art-orbit.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-art-fold.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-art-glass.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "spring-dock",
+      "title": "Spring Dock",
+      "description": "Активная подложка скользит за выбранным пунктом.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/motion/spring-dock.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "wave-slider",
+      "title": "Wave Slider",
+      "description": "Компактная регулировка громкости с запоминанием уровня при отключении звука.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/wave-slider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "hold-button",
+      "title": "Hold to Confirm",
+      "description": "Удержание заполняет кнопку и подтверждает действие.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/motion/hold-button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "rolling-text",
+      "title": "Rolling Text",
+      "description": "Буквы нового слова по очереди вкатываются в строку.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/motion/rolling-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "spring-switch",
+      "title": "Spring Switch",
+      "description": "Пружинный переключатель для двоичных настроек.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/spring-switch.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "bloom-menu",
+      "title": "Bloom Menu",
+      "description": "Меню раскрывает действия веером вокруг кнопки.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/motion/bloom-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "invite-people",
+      "title": "Invite People",
+      "description": "Приглашение по email с проверкой адреса и обновлением списка участников.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/invite-people.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-art-team.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "focus-mode",
+      "title": "Focus Mode",
+      "description": "Уведомления сворачиваются, пока идёт сессия фокуса.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/focus-mode.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "morph-tooltip",
+      "title": "Morph Tooltip",
+      "description": "Наведите курсор или переведите фокус",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/morph-tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "command-button",
+      "title": "Command Button",
+      "description": "Выполните команду",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/command-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "loading-success",
+      "title": "Loading Success",
+      "description": "Запустите действие и дождитесь результата",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/loading-success.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "copy-button",
+      "title": "Copy Button",
+      "description": "Скопируйте текст",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/copy-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "like-burst",
+      "title": "Like Burst",
+      "description": "Поставьте или снимите отметку",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/like-burst.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "slide-to-confirm",
+      "title": "Slide To Confirm",
+      "description": "Подтверждение выполняется в конце хода. Незавершённый жест возвращает бегунок.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/slide-to-confirm.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-focus.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "cart-button",
+      "title": "Cart Button",
+      "description": "Раскрывающаяся корзина с количеством товаров и пересчётом суммы.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/cart-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-focus.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-art-orbit.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "undo-button",
+      "title": "Undo Button",
+      "description": "Удалите запись и верните её",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/undo-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "bell-button",
+      "title": "Bell Button",
+      "description": "Переключите оповещения",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/bell-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "unlock-face-id",
+      "title": "Unlock Face ID",
+      "description": "Запустите демонстрацию сканирования",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/unlock-face-id.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "spring-dropdown",
+      "title": "Spring Dropdown",
+      "description": "Раскройте список и выберите статус",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/spring-dropdown.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "morph-island",
+      "title": "Morph Island",
+      "description": "Панель для таймера, экспорта и входящего звонка.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/morph-island.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "tab-pill",
+      "title": "Tab Pill",
+      "description": "Переключите вкладку",
+      "files": [
+        {
+          "path": "components/motion/tab-pill.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-indicator.tsx",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "segmented-control",
+      "title": "Segmented Control",
+      "description": "Выберите период",
+      "files": [
+        {
+          "path": "components/motion/segmented-control.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-indicator.tsx",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "plan-switch",
+      "title": "Plan Switch",
+      "description": "Переключение периода пересчитывает месячную стоимость, итог и скидку.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/plan-switch.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-indicator.tsx",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "rubber-dock",
+      "title": "Rubber Dock",
+      "description": "Проведите по иконкам",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/rubber-dock.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-indicator.tsx",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "dynamic-menu",
+      "title": "Dynamic Menu",
+      "description": "Откройте меню и вложенный раздел",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/dynamic-menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-focus.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "sidebar-collapse",
+      "title": "Sidebar Collapse",
+      "description": "Боковая навигация студии с рабочей областью выбранного раздела.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/sidebar-collapse.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "pagination-dots",
+      "title": "Pagination Dots",
+      "description": "Перейдите к другой странице",
+      "files": [
+        {
+          "path": "components/motion/pagination-dots.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "command-palette",
+      "title": "Command Palette",
+      "description": "Найдите и выполните команду",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/command-palette.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "step-progress",
+      "title": "Step Progress",
+      "description": "Перейдите к следующему этапу",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/step-progress.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "toolbar",
+      "title": "Toolbar",
+      "description": "Включите стили текста",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/toolbar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "morph-popover",
+      "title": "Morph Popover",
+      "description": "Кнопка обратной связи раскрывается в форму и сворачивается в подтверждение.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/morph-popover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "letter-limit",
+      "title": "Letter Limit",
+      "description": "Введите текст до лимита",
+      "files": [
+        {
+          "path": "components/motion/letter-limit.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "file-drop",
+      "title": "File Drop",
+      "description": "Папка принимает файлы и показывает список с размером каждого.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/file-drop.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-focus.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "springy-input",
+      "title": "Springy Input",
+      "description": "Нажмите на поле и начните ввод",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/springy-input.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "otp-code",
+      "title": "OTP Code",
+      "description": "Введите или вставьте цифровой код",
+      "files": [
+        {
+          "path": "components/motion/otp-code.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "star-rating",
+      "title": "Star Rating",
+      "description": "Оцените от одной до пяти звёзд",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/star-rating.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "tag-input",
+      "title": "Tag Input",
+      "description": "Введите метку и нажмите Enter",
+      "files": [
+        {
+          "path": "components/motion/tag-input.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "password-strength",
+      "title": "Password Strength",
+      "description": "Проверьте индикатор при вводе",
+      "files": [
+        {
+          "path": "components/motion/password-strength.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "checkbox-list",
+      "title": "Checkbox List",
+      "description": "Отметьте выполненные пункты",
+      "files": [
+        {
+          "path": "components/motion/checkbox-list.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "jelly-slider",
+      "title": "Jelly Slider",
+      "description": "Потяните упругий бегунок",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/jelly-slider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "detent-dial",
+      "title": "Detent Dial",
+      "description": "Поверните регулятор стрелками или свайпом",
+      "files": [
+        {
+          "path": "components/motion/detent-dial.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "exposure-slider",
+      "title": "Exposure Slider",
+      "description": "Шкала в EV управляет яркостью фотографии. Исходную экспозицию можно восстановить.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/exposure-slider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-art-fold.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "wheel-picker",
+      "title": "Wheel Picker",
+      "description": "Прокрутите список до нужного значения",
+      "files": [
+        {
+          "path": "components/motion/wheel-picker.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "scrubber",
+      "title": "Scrubber",
+      "description": "Прокрутите шкалу времени",
+      "files": [
+        {
+          "path": "components/motion/scrubber.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "receipt-printer",
+      "title": "Receipt Printer",
+      "description": "Подтверждение оплаты с анимацией термопринтера и повторной печатью чека.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/receipt-printer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "card-field",
+      "title": "Card Field",
+      "description": "Тестовая карта и форма Stripe для ввода по HTTPS.",
+      "dependencies": [
+        "lucide-react",
+        "@stripe/react-stripe-js",
+        "@stripe/stripe-js"
+      ],
+      "files": [
+        {
+          "path": "components/motion/card-field.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "signature-pad",
+      "title": "Signature Pad",
+      "description": "Нарисуйте подпись и сохраните результат",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/signature-pad.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "parallax-ticket",
+      "title": "Parallax Ticket",
+      "description": "Наклоните билет курсором",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/parallax-ticket.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-art-orbit.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "glass-lens",
+      "title": "Glass Lens",
+      "description": "Перемещайте линзу по рисунку",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/glass-lens.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-art-glass.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "pull-refresh",
+      "title": "Pull Refresh",
+      "description": "Синхронизация файла с предварительным натяжением и отменой короткого жеста.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/pull-refresh.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "expand-card",
+      "title": "Expand Card",
+      "description": "Строка коллекции поднимается и раскрывается в карточку с обложкой.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/expand-card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-art-glass.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-art-orbit.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-art-fold.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "fan-cards",
+      "title": "Fan Cards",
+      "description": "Колода раскрывается веером и мягко приподнимает карту под указателем.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/fan-cards.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "stat-card",
+      "title": "Stat Card",
+      "description": "График показывает значение в выбранной точке и меняет период.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/stat-card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "profile-card",
+      "title": "Profile Card",
+      "description": "Подпишитесь и посмотрите, как меняются счётчик и кнопки",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/profile-card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-art-team.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "boarding-pass",
+      "title": "Boarding Pass",
+      "description": "Посадочный талон с маршрутом, номером выхода и раскрывающимся штрихкодом.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/boarding-pass.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "notification-stack",
+      "title": "Notification Stack",
+      "description": "Стопка уведомлений с раскрытием и удалением свайпом.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/notification-stack.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-focus.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "page-flip",
+      "title": "Page Flip",
+      "description": "Лист с двумя сторонами переворачивается вокруг корешка.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/page-flip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "stack-panel",
+      "title": "Stack Panel",
+      "description": "Вложенные панели с параллаксом и жестом возврата.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/stack-panel.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "glass-player",
+      "title": "Glass Player",
+      "description": "Аудиоплеер с обложкой, перемоткой, повтором и отключением звука.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/glass-player.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-art-fold.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "weight-wave",
+      "title": "Weight Wave",
+      "description": "Проведите по буквам или нажмите",
+      "files": [
+        {
+          "path": "components/motion/weight-wave.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "goo-morph",
+      "title": "Goo Morph",
+      "description": "Переключите текучую надпись",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/goo-morph.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "scramble-text",
+      "title": "Scramble Text",
+      "description": "Расшифруйте строку",
+      "files": [
+        {
+          "path": "components/motion/scramble-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "read-along",
+      "title": "Read Along",
+      "description": "Слова подсвечиваются в ритме чтения с паузой и пошаговым переходом.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/read-along.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "roll-links",
+      "title": "Roll Links",
+      "description": "Наведите курсор или сфокусируйте ссылку",
+      "files": [
+        {
+          "path": "components/motion/roll-links.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "marker-text",
+      "title": "Marker Text",
+      "description": "Выделите фразу маркером",
+      "files": [
+        {
+          "path": "components/motion/marker-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "dynamic-text",
+      "title": "Dynamic Text",
+      "description": "Смените слово в заголовке",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/dynamic-text.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "typewriter",
+      "title": "Typewriter",
+      "description": "Запустите набор текста",
+      "files": [
+        {
+          "path": "components/motion/typewriter.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "music-toggle",
+      "title": "Music Toggle",
+      "description": "Переключите анимацию эквалайзера",
+      "files": [
+        {
+          "path": "components/motion/music-toggle.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "prompt-box",
+      "title": "Prompt Box",
+      "description": "Введите запрос и отправьте",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/prompt-box.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "streaming-reply",
+      "title": "Streaming Reply",
+      "description": "Покажите ответ по частям",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/streaming-reply.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "ghost-suggestion",
+      "title": "Ghost Suggestion",
+      "description": "Начните ввод и примите подсказку стрелкой вправо",
+      "files": [
+        {
+          "path": "components/motion/ghost-suggestion.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "goo-thinking",
+      "title": "Goo Thinking",
+      "description": "Капли сливаются и раскрываются в ответ.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/goo-thinking.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "siri-orb",
+      "title": "Assistant Orb",
+      "description": "Сфера с шестью состояниями ассистента и реакцией на амплитуду.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/siri-orb.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "agent-steps",
+      "title": "Agent Steps",
+      "description": "Проведите агента по этапам",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/agent-steps.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "tool-approval",
+      "title": "Tool Approval",
+      "description": "Разрешите или отклоните действие",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/tool-approval.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-focus.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "thinking-text",
+      "title": "Thinking Text",
+      "description": "Включите текстовый индикатор",
+      "files": [
+        {
+          "path": "components/motion/thinking-text.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "task-list",
+      "title": "Task List",
+      "description": "Пройдите очередь задач",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/task-list.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "voice-input",
+      "title": "Voice Input",
+      "description": "Голосовая запись с живой волной и прослушиванием.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/voice-input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "hold-to-publish",
+      "title": "Hold to Publish",
+      "description": "Удержание заполняет кнопку публикации. После отправки она складывается в галочку.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/hold-to-publish.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "command-search",
+      "title": "Command Search",
+      "description": "Кнопка раскрывается в поле поиска по клику или по ⌘/Ctrl + K.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "components/motion/command-search.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "swipe-tabs",
+      "title": "Swipe Tabs",
+      "description": "Горизонтальный жест сдвигает панель раздела и активную подложку вкладки.",
+      "files": [
+        {
+          "path": "components/motion/swipe-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "takt",
+      "title": "Takt",
+      "description": "Все компоненты Takt и общие модули.",
+      "dependencies": [
+        "lucide-react",
+        "motion",
+        "@stripe/react-stripe-js",
+        "@stripe/stripe-js"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/motion/magnetic-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/flip-counter.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/swipe-deck.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-art-orbit.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-art-fold.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "lib/takt-art-glass.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "components/motion/spring-dock.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/wave-slider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "components/motion/hold-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/rolling-text.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/spring-switch.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/bloom-menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/invite-people.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-art-team.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "components/motion/focus-mode.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/morph-tooltip.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/command-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/loading-success.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/copy-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/like-burst.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/slide-to-confirm.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-focus.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "components/motion/cart-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/undo-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/bell-button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/unlock-face-id.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/spring-dropdown.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/morph-island.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/tab-pill.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-indicator.tsx",
+          "type": "registry:lib"
+        },
+        {
+          "path": "components/motion/segmented-control.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/plan-switch.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/rubber-dock.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/dynamic-menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/sidebar-collapse.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/pagination-dots.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/command-palette.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/step-progress.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/toolbar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/morph-popover.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/letter-limit.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/file-drop.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/springy-input.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/otp-code.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/star-rating.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/tag-input.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/password-strength.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/checkbox-list.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/jelly-slider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/detent-dial.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/exposure-slider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/wheel-picker.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/scrubber.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/receipt-printer.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/card-field.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/signature-pad.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/parallax-ticket.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/glass-lens.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/pull-refresh.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/expand-card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/fan-cards.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/stat-card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/profile-card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/boarding-pass.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/notification-stack.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/page-flip.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/stack-panel.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/glass-player.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/weight-wave.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/goo-morph.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/scramble-text.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/read-along.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/roll-links.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/marker-text.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/dynamic-text.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/typewriter.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/music-toggle.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/prompt-box.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/streaming-reply.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/ghost-suggestion.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/goo-thinking.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/siri-orb.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/agent-steps.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/tool-approval.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/thinking-text.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/task-list.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/voice-input.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/hold-to-publish.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/command-search.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/swipe-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:block"
+    }
+  ]
+}

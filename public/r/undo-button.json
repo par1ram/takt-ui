@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "undo-button",
+  "title": "Undo Button",
+  "description": "Delete the entry and undo the change",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/motion/undo-button.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  panel as surfacePanel,\n  secondary as surfaceSecondary,\n} from \"@/lib/takt-surface\";\n\nimport { useState } from \"react\";\nimport { Undo2, Trash2 } from \"lucide-react\";\n\nexport function UndoButton({\n  className,\n  label = \"Draft\",\n  onChange,\n}: {\n  className?: string;\n  label?: string;\n  onChange?: (removed: boolean) => void;\n}) {\n  const [removed, setRemoved] = useState(false);\n  return (\n    <div\n      className={cn(\n        surfacePanel + \" flex min-w-56 items-center justify-between gap-3\",\n        className,\n      )}\n    >\n      <span\n        role=\"status\"\n        key={String(removed)}\n        className={\n          \"text-sm motion-safe:animate-in motion-safe:slide-in-from-bottom-1 \" +\n          (removed ? \"text-muted-foreground\" : \"font-medium\")\n        }\n      >\n        {removed ? \"Entry deleted\" : label}\n      </span>\n      <button\n        type=\"button\"\n        className={\n          surfaceSecondary +\n          (removed ? \" bg-primary! text-primary-foreground!\" : \"\")\n        }\n        onClick={() => {\n          setRemoved(!removed);\n          onChange?.(!removed);\n        }}\n      >\n        {removed ? (\n          <>\n            <Undo2 size={15} />\n            Undo\n          </>\n        ) : (\n          <>\n            <Trash2 size={15} />\n            Delete\n          </>\n        )}\n      </button>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

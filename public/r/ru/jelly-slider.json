@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "jelly-slider",
+  "title": "Jelly Slider",
+  "description": "Потяните упругий бегунок",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "components/motion/jelly-slider.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { panel as surfacePanel } from \"@/lib/takt-surface\";\n\nimport { useState } from \"react\";\nimport { motion, useReducedMotion } from \"motion/react\";\n\nexport function JellySlider({\n  className,\n  label = \"Упругость\",\n  onChange,\n}: {\n  className?: string;\n  label?: string;\n  onChange?: (value: number) => void;\n}) {\n  const [level, setLevel] = useState(45);\n  const [drag, setDrag] = useState(false);\n  const reduced = useReducedMotion();\n  return (\n    <label className={cn(surfacePanel + \" grid w-52 gap-3\", className)}>\n      <span className=\"flex justify-between\">\n        {label}\n        <output>{level}%</output>\n      </span>\n      <span className=\"relative mx-2 h-5 rounded-full has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4\">\n        <span className=\"absolute inset-x-0 top-2 h-1 rounded bg-muted-foreground/40\" />\n        <span\n          aria-hidden\n          className=\"absolute inset-x-0 top-2 h-1 origin-left rounded bg-primary\"\n          style={{ transform: \"scaleX(\" + level / 100 + \")\" }}\n        />\n        {drag && (\n          <span\n            aria-hidden\n            className=\"absolute bottom-7 -translate-x-1/2 rounded-md bg-primary px-1.5 py-1 font-mono text-[10px] text-primary-foreground motion-safe:animate-in motion-safe:slide-in-from-bottom-1\"\n            style={{ left: level + \"%\" }}\n          >\n            {level}\n          </span>\n        )}\n        <motion.span\n          style={{ left: level + \"%\", x: \"-50%\" }}\n          animate={{\n            scaleX: drag && !reduced ? 1.22 : 1,\n            scaleY: drag && !reduced ? 0.8 : 1,\n          }}\n          transition={\n            reduced\n              ? { duration: 0 }\n              : { type: \"spring\", stiffness: 215, damping: 24 }\n          }\n          className=\"absolute top-0 size-5 rounded-full bg-primary\"\n        />\n        <input\n          type=\"range\"\n          className=\"absolute inset-0 w-full opacity-0\"\n          aria-label={label}\n          value={level}\n          onPointerDown={(e) => {\n            if (e.isPrimary && e.button === 0) {\n              e.currentTarget.setPointerCapture(e.pointerId);\n              setDrag(true);\n            }\n          }}\n          onLostPointerCapture={() => setDrag(false)}\n          onPointerUp={() => setDrag(false)}\n          onPointerCancel={() => setDrag(false)}\n          onBlur={() => setDrag(false)}\n          onChange={(e) => {\n            setLevel(+e.target.value);\n            onChange?.(+e.target.value);\n          }}\n        />\n      </span>\n    </label>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "springy-input",
+  "title": "Springy Input",
+  "description": "Нажмите на поле и начните ввод",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/motion/springy-input.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport { useState, useRef } from \"react\";\nimport { ArrowRight, Check, Search, X } from \"lucide-react\";\nimport { panel } from \"@/lib/takt-surface\";\nexport function SpringyInput({\n  className,\n  placeholder = \"Поиск по проекту\",\n  onChange,\n  onSubmit,\n}: {\n  className?: string;\n  placeholder?: string;\n  onChange?: (text: string) => void;\n  onSubmit?: (query: string) => void;\n}) {\n  const [text, setText] = useState(\"\");\n  const [submitted, setSubmitted] = useState(false);\n  const input = useRef<HTMLInputElement>(null);\n  function update(value: string) {\n    setText(value);\n    setSubmitted(false);\n    onChange?.(value);\n  }\n  return (\n    <form\n      className={cn(\n        panel +\n          \" flex w-64 items-center gap-2 px-3 py-2 motion-safe:transition-colors has-[input:focus]:border-foreground/55 forced-colors:has-[input:focus]:outline-2 forced-colors:has-[input:focus]:outline-[Highlight]\",\n        className,\n      )}\n      onSubmit={(e) => {\n        e.preventDefault();\n        if (!text.trim()) return;\n        setSubmitted(true);\n        onSubmit?.(text.trim());\n      }}\n    >\n      <span\n        key={text.length}\n        className=\"shrink-0 text-muted-foreground motion-safe:animate-in motion-safe:zoom-in-90\"\n      >\n        <Search size={17} />\n      </span>\n      <input\n        ref={input}\n        type=\"search\"\n        className=\"h-8 min-w-0 flex-1 bg-transparent text-sm focus:outline-none! [&::-webkit-search-cancel-button]:hidden\"\n        aria-label={placeholder}\n        placeholder={placeholder}\n        value={text}\n        onChange={(e) => update(e.target.value)}\n      />\n      {text && (\n        <button\n          type=\"button\"\n          aria-label=\"Очистить\"\n          className=\"rounded-md p-1 text-muted-foreground\"\n          onClick={() => {\n            update(\"\");\n            input.current?.focus();\n          }}\n        >\n          <X size={13} />\n        </button>\n      )}\n      <button\n        type=\"submit\"\n        disabled={!text.trim()}\n        aria-label=\"Найти\"\n        className=\"grid size-7 place-items-center rounded-lg bg-primary text-primary-foreground disabled:opacity-30\"\n      >\n        {submitted ? (\n          <Check\n            size={14}\n            className=\"motion-safe:animate-in motion-safe:zoom-in-75\"\n          />\n        ) : (\n          <ArrowRight size={14} />\n        )}\n      </button>\n      <span className=\"sr-only\" role=\"status\">\n        {submitted ? \"Запрос принят\" : \"\"}\n      </span>\n    </form>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

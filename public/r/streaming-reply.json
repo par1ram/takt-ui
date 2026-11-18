@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "streaming-reply",
+  "title": "Streaming Reply",
+  "description": "Reveal the reply in chunks",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "components/motion/streaming-reply.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  panel as surfacePanel,\n  secondary as surfaceSecondary,\n} from \"@/lib/takt-surface\";\n\nimport { useState, useEffect } from \"react\";\nimport { useReducedMotion } from \"motion/react\";\n\nexport function StreamingReply({\n  className,\n  text = \"Rhythm, contrast and motion give an interface its shape.\",\n}: {\n  className?: string;\n  text?: string;\n}) {\n  const [revealed, setCount] = useState(0);\n  const [running, setRunning] = useState(false);\n  const words = text.trim() ? text.trim().split(/\\s+/) : [];\n  const count = Math.min(revealed, words.length);\n  const reduced = useReducedMotion();\n  useEffect(() => {\n    if (!running || count >= words.length) return;\n    const id = setTimeout(() => setCount((i) => i + 1), 85);\n    return () => clearTimeout(id);\n  }, [running, count, words.length]);\n  return (\n    <div className={cn(surfacePanel + \" grid w-56 gap-2\", className)}>\n      <p className=\"min-h-16 rounded-lg bg-muted px-3 py-2.5 text-sm leading-relaxed\">\n        {count\n          ? words.slice(0, count).map((word, i) => (\n              <span\n                key={i}\n                className=\"inline-block whitespace-pre motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-1\"\n              >\n                {word}{\" \"}\n              </span>\n            ))\n          : \"Reply preview\"}\n        {running && count < words.length && (\n          <i\n            aria-hidden\n            className=\"inline-block size-1.5 rounded-full bg-primary motion-safe:animate-pulse\"\n          />\n        )}\n      </p>\n      <progress\n        aria-label=\"Reply progress\"\n        max={Math.max(1, words.length)}\n        value={count}\n        className=\"h-1 w-full overflow-hidden rounded-full accent-primary\"\n      />\n      <button\n        type=\"button\"\n        className={surfaceSecondary}\n        disabled={!words.length}\n        onClick={() => {\n          if (running && count < words.length) {\n            setRunning(false);\n            return;\n          }\n          if (count === words.length) setCount(0);\n          if (reduced) setCount(words.length);\n          setRunning(true);\n        }}\n      >\n        {running && count < words.length\n          ? \"Pause\"\n          : count === words.length\n            ? \"Retry\"\n            : count\n              ? \"Resume\"\n              : \"Show reply\"}\n      </button>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

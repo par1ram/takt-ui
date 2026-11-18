@@ -1,0 +1,2536 @@
+{
+  "version": 1,
+  "locale": "en",
+  "registry": "/r/registry.json",
+  "fullLibrary": "/r/takt.json",
+  "components": [
+    {
+      "name": "invite-people",
+      "title": "Invite People",
+      "category": "Inputs",
+      "description": "Invite a teammate by email, validate the address and update the member list.",
+      "export": "InvitePeople",
+      "usage": "<InvitePeople />",
+      "registryItem": "/r/invite-people.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "members": {
+            "type": "ProjectMember[] | undefined",
+            "required": false
+          },
+          "onInvite": {
+            "type": "((email: string) => void | Promise<void>) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "focus-mode",
+      "title": "Focus Mode",
+      "category": "Cards",
+      "description": "Silence notifications for the duration of a focus session.",
+      "export": "FocusMode",
+      "usage": "<FocusMode />",
+      "registryItem": "/r/focus-mode.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((active: boolean) => void) | undefined",
+            "required": false
+          },
+          "minutes": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "notifications": {
+            "type": "{ title: string; body: string; time: string; }[] | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "swipe-deck",
+      "title": "Swipe Deck",
+      "category": "Cards",
+      "description": "Swipe through a stack of art prints to reveal the next poster.",
+      "export": "SwipeDeck",
+      "usage": "<SwipeDeck />",
+      "registryItem": "/r/swipe-deck.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "cards": {
+            "type": "DeckCard[] | undefined",
+            "required": false
+          },
+          "onSwipe": {
+            "type": "((card: DeckCard, direction: \"left\" | \"right\") => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "glass-player",
+      "title": "Glass Player",
+      "category": "Cards",
+      "description": "An audio player with cover art, seeking, repeat and mute.",
+      "export": "GlassPlayer",
+      "usage": "<GlassPlayer />",
+      "registryItem": "/r/glass-player.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "src": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "cover": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "title": "Stat Card",
+      "category": "Cards",
+      "description": "Explore individual data points and switch reporting periods.",
+      "export": "StatCard",
+      "usage": "<StatCard />",
+      "registryItem": "/r/stat-card.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "daily": {
+            "type": "number[] | undefined",
+            "required": false
+          },
+          "weekly": {
+            "type": "number[] | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "magnetic-button",
+      "title": "Magnetic Button",
+      "category": "Buttons",
+      "description": "The button follows your pointer and springs back into place.",
+      "export": "MagneticButton",
+      "usage": "<MagneticButton onClick={() => console.log(\"click\")}>Open</MagneticButton>",
+      "registryItem": "/r/magnetic-button.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "children": {
+            "type": "ReactNode",
+            "required": false
+          },
+          "onClick": {
+            "type": "(() => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "plan-switch",
+      "title": "Plan Switch",
+      "category": "Cards",
+      "description": "Switch billing periods to compare the monthly price, total and savings.",
+      "export": "PlanSwitch",
+      "usage": "<PlanSwitch />",
+      "registryItem": "/r/plan-switch.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "options": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "prices": {
+            "type": "{ monthly: number; total: number; }[] | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((index: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "wave-slider",
+      "title": "Wave Slider",
+      "category": "Inputs",
+      "description": "A compact volume control that remembers the level before muting.",
+      "export": "WaveSlider",
+      "usage": "<WaveSlider defaultValue={60} onValueChange={console.log} />",
+      "registryItem": "/r/wave-slider.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "defaultValue": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "value": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "onValueChange": {
+            "type": "((value: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "flip-counter",
+      "title": "Flip Counter",
+      "category": "Inputs",
+      "description": "Digits roll into place as the count changes.",
+      "export": "FlipCounter",
+      "usage": "<FlipCounter defaultValue={12} min={0} max={99} />",
+      "registryItem": "/r/flip-counter.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "defaultValue": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "min": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "max": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "onValueChange": {
+            "type": "((value: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "hold-button",
+      "title": "Hold to Confirm",
+      "category": "Buttons",
+      "description": "Hold to fill the button and confirm the action.",
+      "export": "HoldButton",
+      "usage": "<HoldButton duration={800} onConfirm={() => console.log('done')} />",
+      "registryItem": "/r/hold-button.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onConfirm": {
+            "type": "(() => void) | undefined",
+            "required": false
+          },
+          "duration": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "resetAfter": {
+            "type": "number | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring-dock",
+      "title": "Spring Dock",
+      "category": "Navigation",
+      "description": "The indicator slides under the selected item.",
+      "export": "SpringDock",
+      "usage": "<SpringDock onChange={(index) => console.log(index)} />",
+      "registryItem": "/r/spring-dock.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "items": {
+            "type": "{ label: string; icon: LucideIcon; }[] | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((index: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "file-drop",
+      "title": "File Drop",
+      "category": "Inputs",
+      "description": "Drop files into a folder and see their names and sizes.",
+      "export": "FileDrop",
+      "usage": "<FileDrop />",
+      "registryItem": "/r/file-drop.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onFiles": {
+            "type": "((files: File[]) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "rolling-text",
+      "title": "Rolling Text",
+      "category": "Text",
+      "description": "Letters roll into place one by one.",
+      "export": "RollingText",
+      "usage": "<RollingText words={[\"Welcome\", \"Bonjour\", \"Hello\"]} />",
+      "registryItem": "/r/rolling-text.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "words": {
+            "type": "string[] | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring-switch",
+      "title": "Spring Switch",
+      "category": "Inputs",
+      "description": "A spring-loaded switch for on/off settings.",
+      "export": "SpringSwitch",
+      "usage": "<SpringSwitch label=\"Notifications\" onCheckedChange={console.log} />",
+      "registryItem": "/r/spring-switch.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "defaultChecked": {
+            "type": "boolean | undefined",
+            "required": false
+          },
+          "checked": {
+            "type": "boolean | undefined",
+            "required": false
+          },
+          "onCheckedChange": {
+            "type": "((value: boolean) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "bloom-menu",
+      "title": "Bloom Menu",
+      "category": "Buttons",
+      "description": "Actions fan out around the menu button.",
+      "export": "BloomMenu",
+      "usage": "<BloomMenu onSelect={(action) => console.log(action)} />",
+      "registryItem": "/r/bloom-menu.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "actions": {
+            "type": "{ label: string; icon: LucideIcon; }[] | undefined",
+            "required": false
+          },
+          "onSelect": {
+            "type": "((label: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "morph-tooltip",
+      "title": "Morph Tooltip",
+      "category": "Navigation",
+      "description": "Hover or focus with the keyboard",
+      "export": "MorphTooltip",
+      "usage": "<MorphTooltip />",
+      "registryItem": "/r/morph-tooltip.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onClick": {
+            "type": "(() => void) | undefined",
+            "required": false
+          },
+          "onAction": {
+            "type": "((action: \"bookmark\" | \"favorite\" | \"pin\") => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "command-button",
+      "title": "Command Button",
+      "category": "Buttons",
+      "description": "Run the command",
+      "export": "CommandButton",
+      "usage": "<CommandButton />",
+      "registryItem": "/r/command-button.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onExecute": {
+            "type": "(() => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "loading-success",
+      "title": "Loading Success",
+      "category": "Buttons",
+      "description": "Start the action and wait for the result",
+      "export": "LoadingSuccess",
+      "usage": "<LoadingSuccess />",
+      "registryItem": "/r/loading-success.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onRun": {
+            "type": "(() => Promise<void>) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "copy-button",
+      "title": "Copy Button",
+      "category": "Buttons",
+      "description": "Copy the text",
+      "export": "CopyButton",
+      "usage": "<CopyButton />",
+      "registryItem": "/r/copy-button.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "text": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "like-burst",
+      "title": "Like Burst",
+      "category": "Buttons",
+      "description": "Add or remove a like",
+      "export": "LikeBurst",
+      "usage": "<LikeBurst />",
+      "registryItem": "/r/like-burst.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "likes": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((liked: boolean) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "slide-to-confirm",
+      "title": "Slide To Confirm",
+      "category": "Buttons",
+      "description": "Slide into the finish zone to confirm. An incomplete swipe returns the handle.",
+      "export": "SlideToConfirm",
+      "usage": "<SlideToConfirm />",
+      "registryItem": "/r/slide-to-confirm.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onConfirm": {
+            "type": "(() => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "cart-button",
+      "title": "Cart Button",
+      "category": "Cards",
+      "description": "Expand the cart to adjust quantities and see the total.",
+      "export": "CartButton",
+      "usage": "<CartButton />",
+      "registryItem": "/r/cart-button.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onAdd": {
+            "type": "(() => void) | undefined",
+            "required": false
+          },
+          "onQuantityChange": {
+            "type": "((n: number) => void) | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "price": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "cover": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "undo-button",
+      "title": "Undo Button",
+      "category": "Buttons",
+      "description": "Delete the entry and undo the change",
+      "export": "UndoButton",
+      "usage": "<UndoButton />",
+      "registryItem": "/r/undo-button.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((removed: boolean) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "bell-button",
+      "title": "Bell Button",
+      "category": "Buttons",
+      "description": "Toggle notifications",
+      "export": "BellButton",
+      "usage": "<BellButton />",
+      "registryItem": "/r/bell-button.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((on: boolean) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "unlock-face-id",
+      "title": "Unlock Face ID",
+      "category": "Cards",
+      "description": "Try the scan demo",
+      "export": "UnlockFaceId",
+      "usage": "<UnlockFaceId />",
+      "registryItem": "/r/unlock-face-id.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onDemoComplete": {
+            "type": "(() => void) | undefined",
+            "required": false
+          },
+          "status": {
+            "type": "ScanState | undefined",
+            "required": false
+          },
+          "onScan": {
+            "type": "(() => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "spring-dropdown",
+      "title": "Spring Dropdown",
+      "category": "Inputs",
+      "description": "Open the list and choose a status",
+      "export": "SpringDropdown",
+      "usage": "<SpringDropdown />",
+      "registryItem": "/r/spring-dropdown.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "options": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onSelect": {
+            "type": "((value: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "morph-island",
+      "title": "Morph Island",
+      "category": "Cards",
+      "description": "A compact panel for a timer, an export and an incoming call.",
+      "export": "MorphIsland",
+      "usage": "<MorphIsland />",
+      "registryItem": "/r/morph-island.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onCall": {
+            "type": "((accepted: boolean) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "tab-pill",
+      "title": "Tab Pill",
+      "category": "Navigation",
+      "description": "Switch tabs",
+      "export": "TabPill",
+      "usage": "<TabPill />",
+      "registryItem": "/r/tab-pill.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "options": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((index: number) => void) | undefined",
+            "required": false
+          },
+          "panels": {
+            "type": "string[] | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "title": "Segmented Control",
+      "category": "Navigation",
+      "description": "Choose a period",
+      "export": "SegmentedControl",
+      "usage": "<SegmentedControl />",
+      "registryItem": "/r/segmented-control.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "options": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((index: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "rubber-dock",
+      "title": "Rubber Dock",
+      "category": "Navigation",
+      "description": "Move across the icons",
+      "export": "RubberDock",
+      "usage": "<RubberDock />",
+      "registryItem": "/r/rubber-dock.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onSelect": {
+            "type": "((index: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "dynamic-menu",
+      "title": "Dynamic Menu",
+      "category": "Navigation",
+      "description": "Open the menu and explore a submenu",
+      "export": "DynamicMenu",
+      "usage": "<DynamicMenu />",
+      "registryItem": "/r/dynamic-menu.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "formats": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onChoose": {
+            "type": "((format: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "sidebar-collapse",
+      "title": "Sidebar Collapse",
+      "category": "Navigation",
+      "description": "A studio sidebar that switches between workspaces.",
+      "export": "SidebarCollapse",
+      "usage": "<SidebarCollapse />",
+      "registryItem": "/r/sidebar-collapse.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "items": {
+            "type": "[string, string] | undefined",
+            "required": false
+          },
+          "onSelect": {
+            "type": "((index: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "pagination-dots",
+      "title": "Pagination Dots",
+      "category": "Navigation",
+      "description": "Go to another page",
+      "export": "PaginationDots",
+      "usage": "<PaginationDots />",
+      "registryItem": "/r/pagination-dots.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "pages": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((index: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "command-palette",
+      "title": "Command Palette",
+      "category": "Navigation",
+      "description": "Find and run a command",
+      "export": "CommandPalette",
+      "usage": "<CommandPalette />",
+      "registryItem": "/r/command-palette.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "commands": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onExecute": {
+            "type": "((command: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "step-progress",
+      "title": "Step Progress",
+      "category": "Navigation",
+      "description": "Move to the next step",
+      "export": "StepProgress",
+      "usage": "<StepProgress />",
+      "registryItem": "/r/step-progress.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "steps": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((index: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "title": "Toolbar",
+      "category": "Navigation",
+      "description": "Toggle text formatting",
+      "export": "Toolbar",
+      "usage": "<Toolbar />",
+      "registryItem": "/r/toolbar.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "text": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((styles: string[]) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "morph-popover",
+      "title": "Morph Popover",
+      "category": "Buttons",
+      "description": "Open the feedback button to leave a comment",
+      "export": "MorphPopover",
+      "usage": "<MorphPopover />",
+      "registryItem": "/r/morph-popover.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "children": {
+            "type": "ReactNode",
+            "required": false
+          },
+          "onSubmit": {
+            "type": "((text: string) => void | Promise<void>) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "letter-limit",
+      "title": "Letter Limit",
+      "category": "Inputs",
+      "description": "Type until you reach the character limit",
+      "export": "LetterLimit",
+      "usage": "<LetterLimit />",
+      "registryItem": "/r/letter-limit.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "limit": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((text: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "springy-input",
+      "title": "Springy Input",
+      "category": "Inputs",
+      "description": "Focus the field and start typing",
+      "export": "SpringyInput",
+      "usage": "<SpringyInput />",
+      "registryItem": "/r/springy-input.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "placeholder": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((text: string) => void) | undefined",
+            "required": false
+          },
+          "onSubmit": {
+            "type": "((query: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "otp-code",
+      "title": "OTP Code",
+      "category": "Inputs",
+      "description": "Enter or paste a numeric code",
+      "export": "OtpCode",
+      "usage": "<OtpCode />",
+      "registryItem": "/r/otp-code.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "length": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "onComplete": {
+            "type": "((code: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "star-rating",
+      "title": "Star Rating",
+      "category": "Inputs",
+      "description": "Rate from one to five stars",
+      "export": "StarRating",
+      "usage": "<StarRating />",
+      "registryItem": "/r/star-rating.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((value: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "tag-input",
+      "title": "Tag Input",
+      "category": "Inputs",
+      "description": "Type a tag and press Enter",
+      "export": "TagInput",
+      "usage": "<TagInput />",
+      "registryItem": "/r/tag-input.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "initial": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((tags: string[]) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "password-strength",
+      "title": "Password Strength",
+      "category": "Inputs",
+      "description": "Watch the strength indicator as you type",
+      "export": "PasswordStrength",
+      "usage": "<PasswordStrength />",
+      "registryItem": "/r/password-strength.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((value: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "checkbox-list",
+      "title": "Checkbox List",
+      "category": "Inputs",
+      "description": "Check off completed items",
+      "export": "CheckboxList",
+      "usage": "<CheckboxList />",
+      "registryItem": "/r/checkbox-list.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "items": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((items: string[]) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "jelly-slider",
+      "title": "Jelly Slider",
+      "category": "Inputs",
+      "description": "Drag the elastic handle",
+      "export": "JellySlider",
+      "usage": "<JellySlider />",
+      "registryItem": "/r/jelly-slider.json",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((value: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "detent-dial",
+      "title": "Detent Dial",
+      "category": "Inputs",
+      "description": "Turn the dial with the arrow keys or a swipe",
+      "export": "DetentDial",
+      "usage": "<DetentDial />",
+      "registryItem": "/r/detent-dial.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((value: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "exposure-slider",
+      "title": "Exposure Slider",
+      "category": "Inputs",
+      "description": "Adjust photo brightness in EV and restore the original exposure.",
+      "export": "ExposureSlider",
+      "usage": "<ExposureSlider />",
+      "registryItem": "/r/exposure-slider.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((ev: number) => void) | undefined",
+            "required": false
+          },
+          "image": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "wheel-picker",
+      "title": "Wheel Picker",
+      "category": "Inputs",
+      "description": "Scroll to a value",
+      "export": "WheelPicker",
+      "usage": "<WheelPicker />",
+      "registryItem": "/r/wheel-picker.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "items": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((value: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "scrubber",
+      "title": "Scrubber",
+      "category": "Inputs",
+      "description": "Scrub the timeline",
+      "export": "Scrubber",
+      "usage": "<Scrubber />",
+      "registryItem": "/r/scrubber.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "frames": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((frame: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "receipt-printer",
+      "title": "Receipt Printer",
+      "category": "Cards",
+      "description": "Confirm a payment, watch the thermal receipt print and print another copy.",
+      "export": "ReceiptPrinter",
+      "usage": "<ReceiptPrinter />",
+      "registryItem": "/r/receipt-printer.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "merchant": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "order": {
+            "type": "ReceiptOrder | undefined",
+            "required": false
+          },
+          "onPay": {
+            "type": "((order: ReceiptOrder) => Promise<PaymentReceipt>) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "card-field",
+      "title": "Card Field",
+      "category": "Inputs",
+      "description": "Try the test card",
+      "export": "CardField",
+      "usage": "<CardField />",
+      "registryItem": "/r/card-field.json",
+      "dependencies": [
+        "lucide-react",
+        "@stripe/react-stripe-js",
+        "@stripe/stripe-js"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "mode": {
+            "type": "\"demo\" | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((testDigits: string) => void) | undefined",
+            "required": false
+          }
+        },
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "mode": {
+            "type": "\"payment\"",
+            "required": true
+          },
+          "onCompleteChange": {
+            "type": "((complete: boolean) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "signature-pad",
+      "title": "Signature Pad",
+      "category": "Inputs",
+      "description": "Draw a signature and save it",
+      "export": "SignaturePad",
+      "usage": "<SignaturePad />",
+      "registryItem": "/r/signature-pad.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onSave": {
+            "type": "((png: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "parallax-ticket",
+      "title": "Parallax Ticket",
+      "category": "Cards",
+      "description": "Move the pointer to tilt the ticket",
+      "export": "ParallaxTicket",
+      "usage": "<ParallaxTicket />",
+      "registryItem": "/r/parallax-ticket.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "date": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "cover": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "glass-lens",
+      "title": "Glass Lens",
+      "category": "Cards",
+      "description": "Move the lens over the artwork",
+      "export": "GlassLens",
+      "usage": "<GlassLens />",
+      "registryItem": "/r/glass-lens.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "image": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "pull-refresh",
+      "title": "Pull Refresh",
+      "category": "Cards",
+      "description": "Pull down to sync a file. A short pull cancels the gesture.",
+      "export": "PullRefresh",
+      "usage": "<PullRefresh />",
+      "registryItem": "/r/pull-refresh.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onRefresh": {
+            "type": "(() => Promise<void>) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "expand-card",
+      "title": "Expand Card",
+      "category": "Cards",
+      "description": "Select a collection to reveal its cover and details",
+      "export": "ExpandCard",
+      "usage": "<ExpandCard />",
+      "registryItem": "/r/expand-card.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "cover": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "body": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "items": {
+            "type": "readonly ExpandCardItem[] | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "fan-cards",
+      "title": "Fan Cards",
+      "category": "Cards",
+      "description": "Fan out the deck and lift the card under your pointer.",
+      "export": "FanCards",
+      "usage": "<FanCards />",
+      "registryItem": "/r/fan-cards.json",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "cards": {
+            "type": "string[] | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "profile-card",
+      "title": "Profile Card",
+      "category": "Cards",
+      "description": "Follow the profile to see the count and actions change",
+      "export": "ProfileCard",
+      "usage": "<ProfileCard />",
+      "registryItem": "/r/profile-card.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "name": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "role": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onMessage": {
+            "type": "((name: string) => void) | undefined",
+            "required": false
+          },
+          "onFollow": {
+            "type": "((value: boolean) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "boarding-pass",
+      "title": "Boarding Pass",
+      "category": "Cards",
+      "description": "A boarding pass with route, gate and an expandable barcode.",
+      "export": "BoardingPass",
+      "usage": "<BoardingPass />",
+      "registryItem": "/r/boarding-pass.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "from": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "to": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "flight": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "seat": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "gate": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "boarding": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "notification-stack",
+      "title": "Notification Stack",
+      "category": "Cards",
+      "description": "Expand the stack or swipe a notification away",
+      "export": "NotificationStack",
+      "usage": "<NotificationStack />",
+      "registryItem": "/r/notification-stack.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "messages": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "notifications": {
+            "type": "readonly StackNotification[] | undefined",
+            "required": false
+          },
+          "onDismiss": {
+            "type": "((message: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "page-flip",
+      "title": "Page Flip",
+      "category": "Cards",
+      "description": "Turn a double-sided page around its spine.",
+      "export": "PageFlip",
+      "usage": "<PageFlip />",
+      "registryItem": "/r/page-flip.json",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "pages": {
+            "type": "string[] | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "stack-panel",
+      "title": "Stack Panel",
+      "category": "Navigation",
+      "description": "Open a project and swipe right to go back",
+      "export": "StackPanel",
+      "usage": "<StackPanel />",
+      "registryItem": "/r/stack-panel.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "items": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "renderPanel": {
+            "type": "((name: string) => ReactNode) | undefined",
+            "required": false
+          },
+          "pages": {
+            "type": "Record<string, StackPage> | undefined",
+            "required": false
+          },
+          "root": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "weight-wave",
+      "title": "Weight Wave",
+      "category": "Text",
+      "description": "Move across the letters or tap",
+      "export": "WeightWave",
+      "usage": "<WeightWave />",
+      "registryItem": "/r/weight-wave.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "text": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "goo-morph",
+      "title": "Goo Morph",
+      "category": "Text",
+      "description": "Switch the liquid lettering",
+      "export": "GooMorph",
+      "usage": "<GooMorph />",
+      "registryItem": "/r/goo-morph.json",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "words": {
+            "type": "string[] | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "scramble-text",
+      "title": "Scramble Text",
+      "category": "Text",
+      "description": "Reveal the scrambled text",
+      "export": "ScrambleText",
+      "usage": "<ScrambleText />",
+      "registryItem": "/r/scramble-text.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "text": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "read-along",
+      "title": "Read Along",
+      "category": "Text",
+      "description": "Words light up at reading speed. Pause or step through them individually.",
+      "export": "ReadAlong",
+      "usage": "<ReadAlong />",
+      "registryItem": "/r/read-along.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "text": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "interval": {
+            "type": "number | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "roll-links",
+      "title": "Roll Links",
+      "category": "Text",
+      "description": "Hover or focus the link",
+      "export": "RollLinks",
+      "usage": "<RollLinks />",
+      "registryItem": "/r/roll-links.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "href": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "marker-text",
+      "title": "Marker Text",
+      "category": "Text",
+      "description": "Highlight the phrase",
+      "export": "MarkerText",
+      "usage": "<MarkerText />",
+      "registryItem": "/r/marker-text.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "text": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "dynamic-text",
+      "title": "Dynamic Text",
+      "category": "Text",
+      "description": "Change the word in the headline",
+      "export": "DynamicText",
+      "usage": "<DynamicText />",
+      "registryItem": "/r/dynamic-text.json",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "prefix": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "words": {
+            "type": "string[] | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "typewriter",
+      "title": "Typewriter",
+      "category": "Text",
+      "description": "Start typing the text",
+      "export": "Typewriter",
+      "usage": "<Typewriter />",
+      "registryItem": "/r/typewriter.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "text": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "interval": {
+            "type": "number | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "music-toggle",
+      "title": "Music Toggle",
+      "category": "Buttons",
+      "description": "Toggle the equalizer animation",
+      "export": "MusicToggle",
+      "usage": "<MusicToggle />",
+      "registryItem": "/r/music-toggle.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((on: boolean) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "prompt-box",
+      "title": "Prompt Box",
+      "category": "AI",
+      "description": "Enter a prompt and send it",
+      "export": "PromptBox",
+      "usage": "<PromptBox />",
+      "registryItem": "/r/prompt-box.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "suggestions": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onSend": {
+            "type": "((text: string) => void | Promise<void>) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "streaming-reply",
+      "title": "Streaming Reply",
+      "category": "AI",
+      "description": "Reveal the reply in chunks",
+      "export": "StreamingReply",
+      "usage": "<StreamingReply />",
+      "registryItem": "/r/streaming-reply.json",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "text": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "ghost-suggestion",
+      "title": "Ghost Suggestion",
+      "category": "AI",
+      "description": "Start typing and accept the suggestion with the right arrow",
+      "export": "GhostSuggestion",
+      "usage": "<GhostSuggestion />",
+      "registryItem": "/r/ghost-suggestion.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "options": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((value: string) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "goo-thinking",
+      "title": "Goo Thinking",
+      "category": "AI",
+      "description": "Tap the dots to reveal the answer",
+      "export": "GooThinking",
+      "usage": "<GooThinking />",
+      "registryItem": "/r/goo-thinking.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "reply": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "siri-orb",
+      "title": "Assistant Orb",
+      "category": "AI",
+      "description": "Switch assistant states",
+      "export": "AssistantOrb",
+      "usage": "<AssistantOrb state=\"thinking\" />",
+      "registryItem": "/r/siri-orb.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "state": {
+            "type": "\"idle\" | \"error\" | \"listening\" | \"thinking\" | \"streaming\" | \"done\" | undefined",
+            "required": false
+          },
+          "onStateChange": {
+            "type": "((state: OrbState) => void) | undefined",
+            "required": false
+          },
+          "amplitude": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((active: boolean) => void) | undefined",
+            "required": false
+          },
+          "showControls": {
+            "type": "boolean | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "agent-steps",
+      "title": "Agent Steps",
+      "category": "AI",
+      "description": "Walk through the agent’s steps",
+      "export": "AgentSteps",
+      "usage": "<AgentSteps />",
+      "registryItem": "/r/agent-steps.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "steps": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onStep": {
+            "type": "((step: number) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "tool-approval",
+      "title": "Tool Approval",
+      "category": "AI",
+      "description": "Approve or decline the action",
+      "export": "ToolApproval",
+      "usage": "<ToolApproval />",
+      "registryItem": "/r/tool-approval.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "action": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "resource": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onDecision": {
+            "type": "((allowed: boolean) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "thinking-text",
+      "title": "Thinking Text",
+      "category": "AI",
+      "description": "Start the thinking indicator",
+      "export": "ThinkingText",
+      "usage": "<ThinkingText />",
+      "registryItem": "/r/thinking-text.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "task-list",
+      "title": "Task List",
+      "category": "AI",
+      "description": "Work through the task queue",
+      "export": "TaskList",
+      "usage": "<TaskList />",
+      "registryItem": "/r/task-list.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "tasks": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((done: string[]) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "voice-input",
+      "title": "Voice Input",
+      "category": "AI",
+      "description": "Record and play a voice note",
+      "export": "VoiceInput",
+      "usage": "<VoiceInput />",
+      "registryItem": "/r/voice-input.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onRecord": {
+            "type": "((blob: Blob) => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "hold-to-publish",
+      "title": "Hold to Publish",
+      "category": "Buttons",
+      "description": "Hold to fill the publish button. A checkmark appears when it completes.",
+      "export": "HoldToPublish",
+      "usage": "<HoldToPublish onPublish={() => console.log('published')} />",
+      "registryItem": "/r/hold-to-publish.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "duration": {
+            "type": "number | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onPublish": {
+            "type": "(() => void) | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "command-search",
+      "title": "Command Search",
+      "category": "Buttons",
+      "description": "Click or press ⌘/Ctrl + K to expand the search field.",
+      "export": "CommandSearch",
+      "usage": "<CommandSearch onSearch={console.log} />",
+      "registryItem": "/r/command-search.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "placeholder": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onSearch": {
+            "type": "((query: string) => void) | undefined",
+            "required": false
+          },
+          "shortcut": {
+            "type": "boolean | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "swipe-tabs",
+      "title": "Swipe Tabs",
+      "category": "Navigation",
+      "description": "Swipe horizontally to move between panels and update the active tab.",
+      "export": "SwipeTabs",
+      "usage": "<SwipeTabs onChange={console.log} />",
+      "registryItem": "/r/swipe-tabs.json",
+      "dependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "items": {
+            "type": "SwipeTab[] | undefined",
+            "required": false
+          },
+          "defaultValue": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "value": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onChange": {
+            "type": "((id: string) => void) | undefined",
+            "required": false
+          },
+          "label": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    }
+  ]
+}

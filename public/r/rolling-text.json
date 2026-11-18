@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rolling-text",
+  "title": "Rolling Text",
+  "description": "Letters roll into place one by one.",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/motion/rolling-text.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\n\nimport { useState } from \"react\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport { RefreshCw } from \"lucide-react\";\n\nexport function RollingText({\n  className,\n  words = [\"Hello\", \"Bonjour\", \"Hello\"],\n}: {\n  className?: string;\n  words?: string[];\n}) {\n  const [index, setIndex] = useState(0);\n  const reduced = useReducedMotion();\n  if (!words.length) return null;\n  const word = words[index % words.length];\n  return (\n    <button\n      onKeyDown={(e) => {\n        if (e.key === \"ArrowLeft\" || e.key === \"ArrowRight\") {\n          e.preventDefault();\n          setIndex(\n            (i) =>\n              (i + (e.key === \"ArrowRight\" ? 1 : words.length - 1)) %\n              words.length,\n          );\n        }\n      }}\n      type=\"button\"\n      aria-label={word + \" — change word\"}\n      onClick={() => setIndex((i) => i + 1)}\n      className={cn(\n        \"inline-flex cursor-pointer items-center gap-4 overflow-hidden rounded-md px-2 py-1 text-foreground\",\n        className,\n      )}\n    >\n      <span\n        aria-hidden\n        className=\"flex overflow-hidden font-serif text-[43px] leading-tight tracking-[-0.04em]\"\n      >\n        {Array.from(word).map((letter, i) => (\n          <motion.span\n            key={index + \"-\" + i}\n            initial={index && !reduced ? { y: \"100%\" } : false}\n            animate={{ y: 0 }}\n            transition={{\n              duration: reduced ? 0 : 0.46,\n              delay: reduced ? 0 : Math.min(i, 10) * 0.029,\n            }}\n          >\n            {letter}\n          </motion.span>\n        ))}\n      </span>\n      <span className=\"grid size-8 place-items-center rounded-full bg-muted\">\n        <RefreshCw size={14} aria-hidden />\n      </span>\n    </button>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

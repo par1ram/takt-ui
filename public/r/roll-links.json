@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "roll-links",
+  "title": "Roll Links",
+  "description": "Hover or focus the link",
+  "files": [
+    {
+      "path": "components/motion/roll-links.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nexport function RollLinks({\n  className,\n  label = \"Back to top\",\n  href = \"#top\",\n}: {\n  className?: string;\n  label?: string;\n  href?: string;\n}) {\n  return (\n    <a\n      href={href}\n      aria-label={label}\n      className={cn(\n        \"group inline-flex items-center gap-2 rounded-sm border-b border-foreground/20 font-medium text-3xl tracking-tight\",\n        className,\n      )}\n    >\n      <span aria-hidden className=\"grid overflow-hidden whitespace-pre\">\n        <span className=\"col-start-1 row-start-1 px-0.5 leading-[1.25] ease-out group-hover:-translate-y-full group-focus-visible:-translate-y-full motion-safe:transition-transform motion-safe:duration-450\">\n          {label}\n        </span>\n        <span className=\"col-start-1 row-start-1 translate-y-full px-0.5 font-serif italic leading-[1.25] ease-out group-hover:translate-y-0 group-focus-visible:translate-y-0 motion-safe:transition-transform motion-safe:duration-450\">\n          {label}\n        </span>\n      </span>\n      <span\n        aria-hidden\n        className=\"text-base motion-safe:transition-transform motion-safe:group-hover:translate-x-1\"\n      >\n        ↗\n      </span>\n    </a>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

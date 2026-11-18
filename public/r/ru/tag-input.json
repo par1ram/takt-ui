@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tag-input",
+  "title": "Tag Input",
+  "description": "Введите метку и нажмите Enter",
+  "files": [
+    {
+      "path": "components/motion/tag-input.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  panel as surfacePanel,\n  field as surfaceField,\n} from \"@/lib/takt-surface\";\n\nimport { useState } from \"react\";\n\nexport function TagInput({\n  className,\n  initial = [\"Motion\"],\n  onChange,\n}: {\n  className?: string;\n  initial?: string[];\n  onChange?: (tags: string[]) => void;\n}) {\n  const [tags, setTags] = useState(initial);\n  const [draft, setDraft] = useState(\"\");\n  function change(next: string[]) {\n    setTags(next);\n    onChange?.(next);\n  }\n  return (\n    <form\n      className={cn(surfacePanel + \" grid w-56 gap-2\", className)}\n      onSubmit={(e) => {\n        e.preventDefault();\n        const t = draft.trim();\n        if (\n          t &&\n          !tags.some((tag) => tag.toLocaleLowerCase() === t.toLocaleLowerCase())\n        )\n          change([...tags, t]);\n        setDraft(\"\");\n      }}\n    >\n      <div className=\"flex max-h-16 flex-wrap gap-1 overflow-auto\">\n        {tags.map((t) => (\n          <button\n            type=\"button\"\n            key={t}\n            aria-label={\"Удалить \" + t}\n            className=\"min-h-8 rounded-md border border-foreground/10 bg-muted px-2.5 py-1 hover:bg-accent text-xs motion-safe:animate-in motion-safe:zoom-in\"\n            onClick={() => change(tags.filter((x) => x !== t))}\n          >\n            {t} ×\n          </button>\n        ))}\n      </div>\n      <input\n        aria-label=\"Новая метка\"\n        className={surfaceField}\n        placeholder=\"Метка + Enter\"\n        onKeyDown={(e) => {\n          if (e.nativeEvent.isComposing || e.keyCode === 229) return;\n          if (e.nativeEvent.isComposing) return;\n          if (e.key === \"Backspace\" && !draft && tags.length) {\n            e.preventDefault();\n            change(tags.slice(0, -1));\n          }\n          if (e.key === \",\" && draft.trim()) {\n            e.preventDefault();\n            e.currentTarget.form?.requestSubmit();\n          }\n        }}\n        value={draft}\n        onChange={(e) => setDraft(e.target.value)}\n      />\n    </form>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

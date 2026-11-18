@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dynamic-menu",
+  "title": "Dynamic Menu",
+  "description": "Open the menu and explore a submenu",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/motion/dynamic-menu.tsx",
+      "content": "\"use client\";\nimport { useActionFocus } from \"@/lib/takt-focus\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  panel as surfacePanel,\n  secondary as surfaceSecondary,\n} from \"@/lib/takt-surface\";\n\nimport { useState } from \"react\";\nimport { Menu, ChevronRight } from \"lucide-react\";\n\nexport function DynamicMenu({\n  className,\n  formats = [\"PDF\", \"SVG\"],\n  onChoose,\n}: {\n  className?: string;\n  formats?: string[];\n  onChoose?: (format: string) => void;\n}) {\n  const { root, focusAfterRender } = useActionFocus<HTMLDivElement>();\n  const [view, setView] = useState<\"closed\" | \"root\" | \"more\">(\"closed\");\n  const [choice, setChoice] = useState(\"\");\n  return (\n    <div\n      ref={root}\n      onKeyDown={(e) => {\n        if (e.key === \"Escape\") {\n          e.preventDefault();\n          focusAfterRender(\n            view === \"more\" ? \"[data-export]\" : \"[aria-expanded]\",\n          );\n          setView(view === \"more\" ? \"root\" : \"closed\");\n        }\n      }}\n      className={cn(\n        surfacePanel +\n          \" grid max-w-full gap-1.5 motion-safe:transition-[width] motion-safe:duration-300 motion-safe:ease-out \" +\n          (view === \"more\" ? \"w-60\" : \"w-44\"),\n        className,\n      )}\n    >\n      <button\n        type=\"button\"\n        className={surfaceSecondary}\n        aria-expanded={view !== \"closed\"}\n        onClick={() => setView(view === \"closed\" ? \"root\" : \"closed\")}\n      >\n        <Menu size={15} />\n        {choice || \"Menu\"}\n      </button>\n      {view === \"root\" && (\n        <button\n          type=\"button\"\n          className={surfaceSecondary}\n          data-export\n          onClick={() => {\n            focusAfterRender(\"[data-back]\");\n            setView(\"more\");\n          }}\n        >\n          Export <ChevronRight size={14} />\n        </button>\n      )}\n      {view === \"more\" && (\n        <div className=\"flex flex-wrap gap-2 motion-safe:animate-in motion-safe:slide-in-from-right-2\">\n          <button\n            type=\"button\"\n            className={surfaceSecondary}\n            aria-label=\"Back\"\n            data-back\n            onClick={() => {\n              focusAfterRender(\"[data-export]\");\n              setView(\"root\");\n            }}\n          >\n            ←\n          </button>\n          {formats.map((f) => (\n            <button\n              type=\"button\"\n              key={f}\n              className={surfaceSecondary}\n              onClick={() => {\n                focusAfterRender(\"[aria-expanded]\");\n                setChoice(f);\n                onChoose?.(f);\n                setView(\"closed\");\n              }}\n            >\n              {f}\n            </button>\n          ))}\n        </div>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-focus.ts",
+      "content": "\"use client\";\n\nimport { useLayoutEffect, useRef } from \"react\";\n\n// Only move focus for a requested action that replaces the focused control.\nexport function useActionFocus<T extends HTMLElement>() {\n  const root = useRef<T>(null);\n  const pending = useRef<string | null>(null);\n  useLayoutEffect(() => {\n    if (pending.current) {\n      root.current\n        ?.querySelector<HTMLElement>(pending.current)\n        ?.focus({ preventScroll: true });\n      pending.current = null;\n    }\n  });\n  function focusAfterRender(selector: string) {\n    pending.current = selector;\n  }\n  return { root, focusAfterRender };\n}\n",
+      "type": "registry:lib"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spring-dock",
+  "title": "Spring Dock",
+  "description": "Активная подложка скользит за выбранным пунктом.",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/motion/spring-dock.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\n\nimport { useId, useState } from \"react\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport { House, Layers, Heart, type LucideIcon } from \"lucide-react\";\n\nconst defaults = [\n  { label: \"Главная\", icon: House },\n  { label: \"Слои\", icon: Layers },\n  { label: \"Избранное\", icon: Heart },\n];\n\nexport function SpringDock({\n  className,\n  items = defaults,\n  onChange,\n}: {\n  className?: string;\n  items?: { label: string; icon: LucideIcon }[];\n  onChange?: (index: number) => void;\n}) {\n  const [requested, setActive] = useState(0);\n  const active = Math.min(requested, Math.max(0, items.length - 1));\n  const id = useId();\n  const reduced = useReducedMotion();\n  if (!items.length) return null;\n  return (\n    <div\n      role=\"group\"\n      aria-label=\"Переключатель разделов\"\n      className={cn(\n        \"inline-flex items-center gap-1 rounded-2xl border border-foreground/10 bg-card p-1.5 shadow-sm\",\n        className,\n      )}\n    >\n      {items.map(({ label, icon: Icon }, index) => (\n        <button\n          type=\"button\"\n          key={label}\n          aria-label={label}\n          aria-pressed={active === index}\n          onClick={() => {\n            setActive(index);\n            onChange?.(index);\n          }}\n          className=\"group relative flex h-10 cursor-pointer items-center justify-center gap-1 overflow-hidden rounded-2xl px-3\"\n          title={label}\n        >\n          {active === index && (\n            <motion.span\n              aria-hidden\n              layoutId={id}\n              className=\"absolute inset-0 rounded-2xl bg-primary shadow-[inset_0_1px_1px_#ffffff30,0_2px_3px_#0002]\"\n              transition={\n                reduced\n                  ? { duration: 0 }\n                  : { type: \"spring\", stiffness: 410, damping: 27 }\n              }\n            />\n          )}\n          <Icon\n            aria-hidden\n            className=\"relative size-[21px] motion-safe:transition-transform motion-safe:group-hover:-translate-y-0.5 motion-safe:group-active:scale-90\"\n            strokeWidth={1.65}\n            color={\n              active === index\n                ? \"var(--primary-foreground)\"\n                : \"var(--muted-foreground)\"\n            }\n          />\n          <motion.span\n            initial={false}\n            animate={{\n              width: index === active ? \"auto\" : 0,\n              opacity: index === active ? 1 : 0,\n            }}\n            transition={\n              reduced\n                ? { duration: 0 }\n                : { type: \"spring\", stiffness: 360, damping: 30 }\n            }\n            aria-hidden\n            className=\"relative overflow-hidden text-xs font-medium whitespace-nowrap text-primary-foreground\"\n          >\n            {label}\n          </motion.span>\n        </button>\n      ))}\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spring-switch",
+  "title": "Spring Switch",
+  "description": "Пружинный переключатель для двоичных настроек.",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "components/motion/spring-switch.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\n\nimport { useState } from \"react\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport { Bell, BellOff } from \"lucide-react\";\n\nexport function SpringSwitch({\n  className,\n  label = \"Уведомления\",\n  defaultChecked = true,\n  checked,\n  onCheckedChange,\n}: {\n  className?: string;\n  label?: string;\n  defaultChecked?: boolean;\n  checked?: boolean;\n  onCheckedChange?: (value: boolean) => void;\n}) {\n  const [internal, setInternal] = useState(defaultChecked);\n  const active = checked ?? internal;\n  const reduced = useReducedMotion();\n  const Icon = active ? Bell : BellOff;\n  return (\n    <button\n      type=\"button\"\n      role=\"switch\"\n      aria-checked={active}\n      onClick={() => {\n        if (checked === undefined) setInternal(!active);\n        onCheckedChange?.(!active);\n      }}\n      className={cn(\n        \"inline-flex cursor-pointer items-center gap-3 rounded-[20px] border border-foreground/10 bg-card p-3 pr-4 text-sm font-medium text-card-foreground shadow-[0_8px_18px_-10px_#0005]\",\n        className,\n      )}\n    >\n      <span className=\"grid size-9 place-items-center rounded-xl bg-muted\">\n        <Icon aria-hidden size={17} strokeWidth={1.7} />\n      </span>\n      {label}\n      <span\n        aria-hidden\n        className={\n          \"relative inline-flex h-6 w-10 rounded-full p-[3px] \" +\n          (active ? \"bg-primary\" : \"bg-muted-foreground/50\")\n        }\n      >\n        <motion.span\n          initial={false}\n          animate={{ x: active ? 16 : 0 }}\n          transition={\n            reduced\n              ? { duration: 0 }\n              : { type: \"spring\", stiffness: 260, damping: 25 }\n          }\n          className=\"grid size-[18px] place-items-center rounded-full bg-primary-foreground shadow-[0_1px_3px_#0004]\"\n        >\n          <i\n            className={\n              \"h-1.5 rounded-full \" +\n              (active\n                ? \"w-1 bg-primary\"\n                : \"w-1.5 border border-neutral-500\")\n            }\n          />\n        </motion.span>\n      </span>\n    </button>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

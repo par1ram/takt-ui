@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "magnetic-button",
+  "title": "Magnetic Button",
+  "description": "Кнопка тянется за курсором и мягко возвращается на место.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "components/motion/magnetic-button.tsx",
+      "content": "\"use client\";\nimport { cn } from \"@/lib/utils\";\n\nimport { useRef, useState, type ReactNode } from \"react\";\nimport { ArrowUpRight } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\n\nexport function MagneticButton({\n  className,\n  children = \"Притянуть\",\n  onClick,\n}: {\n  className?: string;\n  children?: ReactNode;\n  onClick?: () => void;\n}) {\n  const follower = useRef<HTMLDivElement>(null);\n  function move(x: number, y: number) {\n    const node = follower.current;\n    if (!node) return;\n    node.style.transform = \"translate(\" + x + \"px,\" + y + \"px)\";\n    node.style.setProperty(\"--ink-x\", x * 0.22 + \"px\");\n    node.style.setProperty(\"--ink-y\", y * 0.22 + \"px\");\n  }\n  const [pulse, setPulse] = useState(0);\n\n  return (\n    <div\n      className=\"relative inline-grid place-items-center p-4\"\n      onPointerMove={(event) => {\n        if (event.pointerType === \"touch\") return;\n        const rect = event.currentTarget.getBoundingClientRect();\n        move(\n          (event.clientX - rect.left - rect.width / 2) * 0.32,\n          (event.clientY - rect.top - rect.height / 2) * 0.32,\n        );\n      }}\n      onPointerLeave={() => {\n        move(0, 0);\n      }}\n    >\n      <div\n        ref={follower}\n        className=\"relative transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transform-none! motion-reduce:transition-none\"\n      >\n        {pulse > 0 && (\n          <span\n            key={pulse}\n            aria-hidden\n            className=\"pointer-events-none absolute inset-0 rounded-full border border-primary/60 opacity-0 motion-safe:animate-ping [animation-iteration-count:1]\"\n          />\n        )}\n        <Button\n          type=\"button\"\n          onClick={() => {\n            setPulse((p) => p + 1);\n            onClick?.();\n          }}\n          className={cn(\n            \"group h-13 cursor-pointer gap-4 rounded-full border border-white/15 bg-[linear-gradient(160deg,#44504b,#181f1c_80%)] pr-2 pl-6 text-sm font-medium text-white shadow-[inset_0_1px_1px_#ffffff44,0_4px_6px_-3px_#151a1866,0_14px_20px_-12px_#13191688] motion-safe:active:scale-[.96]\",\n            className,\n          )}\n        >\n          <span className=\"motion-safe:translate-x-(--ink-x) motion-safe:translate-y-(--ink-y) motion-safe:transition-transform\">\n            {children}\n          </span>\n          <span className=\"grid size-9 place-items-center rounded-full border border-white/15 bg-white/10\">\n            <ArrowUpRight\n              aria-hidden\n              className=\"size-4 motion-safe:transition-transform motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:-translate-y-0.5\"\n            />\n          </span>\n        </Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
