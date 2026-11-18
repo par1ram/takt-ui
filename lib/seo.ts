@@ -25,7 +25,7 @@ export function pageMetadata(lang: Locale, item?: { title: string; slug: string;
     en ? "Takt — Motion Components for React and Next.js" : "Takt — Motion-компоненты для React и Next.js";
   const description = item?.description ?? (en
     ? `Explore ${catalogs.en.length} interactive React components for Next.js and Tailwind CSS. Try live demos, inspect the source and install with shadcn or your coding agent.`
-    : `${catalogs.ru.length} интерактивных компонента для Next.js и Tailwind CSS. Попробуйте демо, изучите исходный код и установите нужный компонент через shadcn или своего ИИ-агента.`);
+    : `Библиотека интерактивных компонентов для Next.js и Tailwind CSS. Попробуйте демо, изучите исходный код и установите нужный компонент через shadcn или своего ИИ-агента.`);
   const url = siteOrigin + pagePath(lang, item?.slug);
   const image = { url: siteOrigin + "/share/" + lang + ".png", width: 1200, height: 630,
     alt: en ? "Takt component library for React and Next.js" : "Библиотека компонентов Takt для React и Next.js" };

@@ -8,6 +8,7 @@ import {
   Moon,
   Sun,
   TextCursorInput,
+  GraduationCap,
   Sparkles,
   ArrowUpRight,
   Bookmark,
@@ -54,6 +55,7 @@ const filters = [
   { label: "Текст", icon: Type },
   { label: "Ввод", icon: TextCursorInput },
   { label: "AI", icon: Sparkles },
+  { label: "Обучение", icon: GraduationCap },
 ];
 // Wait for hydration before exposing the browser’s saved theme to assistive technology.
 const subscribeToHydration = () => () => {};

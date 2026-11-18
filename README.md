@@ -1,6 +1,10 @@
 # Takt
 
-84 motion components for React, Next.js App Router and Tailwind CSS. Install one component or the entire collection as editable source through shadcn. The catalog opens in English; the Russian edition is at `/ru`. [Русская документация](README.ru.md)
+93 motion components for React, Next.js App Router and Tailwind CSS. Install one component or the entire collection as editable source through shadcn. The catalog opens in English; the Russian edition is at `/ru`. [Русская документация](README.ru.md)
+
+## Learning components
+
+Open [Code Exercise](https://takt-ui.vercel.app/components/code-exercise) to try the connected lesson. The included runner compiles regular expressions in a disposable browser worker. To use your platform’s execution service, pass `onExecute(source, cases, signal, onRunning)` and return one boolean per case. Pass a lesson-specific `draftKey` to resume editing on the same device. Ask Tutor reuses Prompt Box and Lesson Citation. Connect `onAsk(question, context)` to your server and return `{ text, citation: { title, locator, excerpt, href } }`. The catalog uses a labeled local demo reply.
 
 ## Start with a Next.js app
 

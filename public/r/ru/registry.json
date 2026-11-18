@@ -1557,6 +1557,210 @@
       "type": "registry:ui"
     },
     {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "lesson-outline",
+      "title": "Lesson Outline",
+      "description": "Программа курса с выбором урока и возвратом к обучению.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/lesson-outline.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "code-exercise",
+      "title": "Code Exercise",
+      "description": "Редактор задания с запуском, проверкой тестов и разбором ошибки.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/code-exercise.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/run-console.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/test-results.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/ask-tutor.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/prompt-box.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/lesson-citation.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "run-console",
+      "title": "Run Console",
+      "description": "Состояния компиляции и выполнения с выводом, временем и остановкой.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/run-console.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "test-results",
+      "title": "Test Results",
+      "description": "Сравнение ожидаемого и полученного результата на конкретном входе.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/test-results.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "ask-tutor",
+      "title": "Ask Tutor",
+      "description": "Вопрос по материалу урока или ошибке с выбранными источниками.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/ask-tutor.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/prompt-box.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/lesson-citation.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "lesson-citation",
+      "title": "Lesson Citation",
+      "description": "Ссылка на конкретный фрагмент урока с возвратом к задаче.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/lesson-citation.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "predict-output",
+      "title": "Predict Output",
+      "description": "Прогноз вывода программы с проверкой ответа и объяснением.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/predict-output.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "execution-trace",
+      "title": "Execution Trace",
+      "description": "Пошаговое выполнение с подсветкой строки и значений переменных.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/execution-trace.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "hint-ladder",
+      "title": "Hint Ladder",
+      "description": "Подсказки раскрываются по одной от вопроса до похожего примера.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/hint-ladder.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "takt",
       "title": "Takt",
       "description": "Все компоненты Takt и общие модули.",
@@ -1932,6 +2136,42 @@
         },
         {
           "path": "components/motion/swipe-tabs.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/lesson-outline.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/code-exercise.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/run-console.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/test-results.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/ask-tutor.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/lesson-citation.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/predict-output.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/execution-trace.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/hint-ladder.tsx",
           "type": "registry:ui"
         }
       ],

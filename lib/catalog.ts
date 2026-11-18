@@ -1275,6 +1275,51 @@ export const entries = [
     ],
     symbol: "SwipeTabs",
   },
+  {
+    slug: "lesson-outline", title: "Lesson Outline", category: "Обучение",
+    description: "Программа курса с выбором урока и возвратом к обучению.",
+    gesture: "Выберите урок и откройте его", usage: "<LessonOutline />", references: [], symbol: "LessonOutline",
+  },
+  {
+    slug: "code-exercise", title: "Code Exercise", category: "Обучение",
+    description: "Редактор задания с запуском, проверкой тестов и разбором ошибки.",
+    gesture: "Исправьте шаблон и проверьте решение", usage: "<CodeExercise />", references: [], symbol: "CodeExercise",
+  },
+  {
+    slug: "run-console", title: "Run Console", category: "Обучение",
+    description: "Состояния компиляции и выполнения с выводом, временем и остановкой.",
+    gesture: "Запустите или остановите пример", usage: "<RunConsole />", references: [], symbol: "RunConsole",
+  },
+  {
+    slug: "test-results", title: "Test Results", category: "Обучение",
+    description: "Сравнение ожидаемого и полученного результата на конкретном входе.",
+    gesture: "Выберите тест и сравните значения", usage: "<TestResults />", references: [], symbol: "TestResults",
+  },
+  {
+    slug: "ask-tutor", title: "Ask Tutor", category: "Обучение",
+    description: "Вопрос по материалу урока или ошибке с выбранными источниками.",
+    gesture: "Задайте вопрос по уроку", usage: "<AskTutor />", references: [], symbol: "AskTutor",
+  },
+  {
+    slug: "lesson-citation", title: "Lesson Citation", category: "Обучение",
+    description: "Ссылка на конкретный фрагмент урока с возвратом к задаче.",
+    gesture: "Откройте фрагмент урока", usage: "<LessonCitation />", references: [], symbol: "LessonCitation",
+  },
+  {
+    slug: "predict-output", title: "Predict Output", category: "Обучение",
+    description: "Прогноз вывода программы с проверкой ответа и объяснением.",
+    gesture: "Выберите прогноз и сверьте его", usage: "<PredictOutput />", references: [], symbol: "PredictOutput",
+  },
+  {
+    slug: "execution-trace", title: "Execution Trace", category: "Обучение",
+    description: "Пошаговое выполнение с подсветкой строки и значений переменных.",
+    gesture: "Пройдите код по шагам", usage: "<ExecutionTrace />", references: [], symbol: "ExecutionTrace",
+  },
+  {
+    slug: "hint-ladder", title: "Hint Ladder", category: "Обучение",
+    description: "Подсказки раскрываются по одной от вопроса до похожего примера.",
+    gesture: "Открывайте подсказки по очереди", usage: "<HintLadder />", references: [], symbol: "HintLadder",
+  },
 ] as const;
 export type Entry = (typeof entries)[number];
 
@@ -1290,6 +1335,10 @@ const allOrder: Entry["slug"][] = [
   // Ask an assistant, follow its work and approve actions
   "voice-input", "prompt-box", "ghost-suggestion", "goo-thinking", "thinking-text",
   "streaming-reply", "agent-steps", "tool-approval", "task-list",
+
+  // Learn, run code and get help
+  "lesson-outline", "code-exercise", "run-console", "test-results", "ask-tutor",
+  "lesson-citation", "predict-output", "execution-trace", "hint-ladder",
 
   // Find a command and move between views
   "command-search", "command-palette", "command-button", "sidebar-collapse",

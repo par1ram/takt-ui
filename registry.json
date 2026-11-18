@@ -1471,6 +1471,201 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "lesson-outline",
+      "type": "registry:ui",
+      "title": "Lesson Outline",
+      "description": "Программа курса с выбором урока и возвратом к обучению.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/lesson-outline.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "code-exercise",
+      "type": "registry:ui",
+      "title": "Code Exercise",
+      "description": "Редактор задания с запуском, проверкой тестов и разбором ошибки.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/code-exercise.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/run-console.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/test-results.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/ask-tutor.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/prompt-box.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/lesson-citation.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "run-console",
+      "type": "registry:ui",
+      "title": "Run Console",
+      "description": "Состояния компиляции и выполнения с выводом, временем и остановкой.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/run-console.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "test-results",
+      "type": "registry:ui",
+      "title": "Test Results",
+      "description": "Сравнение ожидаемого и полученного результата на конкретном входе.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/test-results.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "ask-tutor",
+      "type": "registry:ui",
+      "title": "Ask Tutor",
+      "description": "Вопрос по материалу урока или ошибке с выбранными источниками.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/ask-tutor.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/prompt-box.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/lesson-citation.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "lesson-citation",
+      "type": "registry:ui",
+      "title": "Lesson Citation",
+      "description": "Ссылка на конкретный фрагмент урока с возвратом к задаче.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/lesson-citation.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "predict-output",
+      "type": "registry:ui",
+      "title": "Predict Output",
+      "description": "Прогноз вывода программы с проверкой ответа и объяснением.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/predict-output.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "execution-trace",
+      "type": "registry:ui",
+      "title": "Execution Trace",
+      "description": "Пошаговое выполнение с подсветкой строки и значений переменных.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/execution-trace.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "hint-ladder",
+      "type": "registry:ui",
+      "title": "Hint Ladder",
+      "description": "Подсказки раскрываются по одной от вопроса до похожего примера.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "components/motion/hint-ladder.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "lib/takt-surface.ts",
+          "type": "registry:lib"
+        }
+      ]
     }
   ]
 }

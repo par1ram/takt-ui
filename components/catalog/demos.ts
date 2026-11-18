@@ -422,4 +422,31 @@ export const demos = {
       default: module.SwipeTabs,
     })),
   ),
+  "lesson-outline": lazy(() =>
+    import("@/components/motion/lesson-outline").then((module) => ({ default: module.LessonOutline })),
+  ),
+  "code-exercise": lazy(() =>
+    import("@/components/motion/code-exercise").then((module) => ({ default: () => createElement(module.CodeExercise, {draftKey: "takt:exercise:regex:v1"}) })),
+  ),
+  "run-console": lazy(() =>
+    import("@/components/motion/run-console").then((module) => ({ default: module.RunConsole })),
+  ),
+  "test-results": lazy(() =>
+    import("@/components/motion/test-results").then((module) => ({ default: module.TestResults })),
+  ),
+  "ask-tutor": lazy(() =>
+    import("@/components/motion/ask-tutor").then((module) => ({ default: module.AskTutor })),
+  ),
+  "lesson-citation": lazy(() =>
+    import("@/components/motion/lesson-citation").then((module) => ({ default: module.LessonCitation })),
+  ),
+  "predict-output": lazy(() =>
+    import("@/components/motion/predict-output").then((module) => ({ default: module.PredictOutput })),
+  ),
+  "execution-trace": lazy(() =>
+    import("@/components/motion/execution-trace").then((module) => ({ default: module.ExecutionTrace })),
+  ),
+  "hint-ladder": lazy(() =>
+    import("@/components/motion/hint-ladder").then((module) => ({ default: module.HintLadder })),
+  ),
 } satisfies Record<Entry["slug"], React.ComponentType>;

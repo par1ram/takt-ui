@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hint-ladder",
+  "title": "Hint Ladder",
+  "description": "Подсказки раскрываются по одной от вопроса до похожего примера.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/motion/hint-ladder.tsx",
+      "content": "\"use client\";\n\nimport { useId, useState } from \"react\";\nimport { Lightbulb, Plus, RotateCcw } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\nimport { panel, secondary } from \"@/lib/takt-surface\";\n\nconst hints = [\n  \"Сравните длину строк UI-7 и UI-42.\",\n  \"Посмотрите, сколько цифр допускает [0-9].\",\n  \"В шаблоне [a-z]+ знак + разрешает несколько букв подряд.\",\n];\nexport function HintLadder({\n  items = hints,\n  onReveal,\n  className,\n}: {\n  items?: string[];\n  onReveal?: (index: number) => void;\n  className?: string;\n}) {\n  const [count, setCount] = useState(0);\n  const id = useId();\n  const shown = Math.min(count, items.length);\n  return (\n    <section className={cn(panel, \"grid w-72 max-w-full gap-3\", className)}>\n      <header className=\"flex items-center gap-2\">\n        <Lightbulb size={16} />\n        <strong>Подсказки</strong>\n        <output className=\"ml-auto font-mono text-xs\">\n          {shown} / {items.length}\n        </output>\n      </header>\n      <div aria-hidden className=\"flex gap-1\">\n        {items.map((_, i) => (\n          <i\n            key={i}\n            className={cn(\n              \"h-1 flex-1 rounded-full motion-safe:transition-colors\",\n              i < shown ? \"bg-primary\" : \"bg-muted\",\n            )}\n          />\n        ))}\n      </div>\n      <ol id={id} aria-live=\"polite\" className=\"grid gap-2 empty:hidden\">\n        {items.slice(0, shown).map((hint, i) => (\n          <li\n            key={i}\n            className=\"flex items-baseline gap-3 text-xs leading-relaxed motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2\"\n          >\n            <span className=\"font-mono text-muted-foreground\">\n              {String(i + 1).padStart(2, \"0\")}\n            </span>\n            {hint}\n          </li>\n        ))}\n      </ol>\n      {shown < items.length ? (\n        <button\n          type=\"button\"\n          aria-controls={id}\n          className={secondary}\n          onClick={() => {\n            setCount(shown + 1);\n            onReveal?.(shown);\n          }}\n        >\n          <Plus size={14} />\n          {shown ? \"Ещё подсказка\" : \"Открыть подсказку\"}\n        </button>\n      ) : (\n        shown > 0 && (\n          <button\n            type=\"button\"\n            className={secondary}\n            onClick={() => setCount(0)}\n          >\n            <RotateCcw size={13} />\n            Скрыть подсказки\n          </button>\n        )\n      )}\n    </section>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

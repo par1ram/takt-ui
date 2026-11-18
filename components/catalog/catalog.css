@@ -604,3 +604,10 @@ html.dark .dark-choice {
 .demo-stage.stage-receipt-printer {
   height: 302px;
 }
+
+.demo-stage:is([data-category="Learning"], [data-category="Обучение"]) {
+  height: auto;
+  min-height: 380px;
+  grid-template-columns: minmax(0, 1fr);
+  padding: 44px 14px 20px;
+}

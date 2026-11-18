@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "predict-output",
+  "title": "Predict Output",
+  "description": "Прогноз вывода программы с проверкой ответа и объяснением.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "components/motion/predict-output.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Check, RotateCcw, X } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\nimport { action, panel, secondary } from \"@/lib/takt-surface\";\n\nexport function PredictOutput({\n  code = 'console.log(\"UI-42\".slice(3).length)',\n  options = [\"2\", \"3\", \"5\"],\n  answer = \"2\",\n  explanation = \"После slice(3) остаётся строка «42» длиной 2.\",\n  onAnswer,\n  className,\n}: {\n  code?: string;\n  options?: string[];\n  answer?: string;\n  explanation?: string;\n  onAnswer?: (guess: string) => void;\n  className?: string;\n}) {\n  const [guess, setGuess] = useState<string>();\n  const [revealed, setRevealed] = useState(false);\n  const correct = guess === answer;\n  return (\n    <section className={cn(panel, \"grid w-72 max-w-full gap-3\", className)}>\n      <strong>Что выведет код?</strong>\n      <pre className=\"overflow-x-auto rounded-lg bg-muted p-3 text-xs\">\n        <code>{code}</code>\n      </pre>\n      <div className=\"flex flex-wrap gap-1\">\n        {options.map((option) => (\n          <button\n            key={option}\n            type=\"button\"\n            aria-pressed={guess === option}\n            disabled={revealed}\n            className=\"min-h-9 rounded-lg border px-3 font-mono text-xs aria-pressed:border-primary aria-pressed:bg-primary/10 motion-safe:transition-colors\"\n            onClick={() => setGuess(option)}\n          >\n            {option}\n          </button>\n        ))}\n      </div>\n      {revealed ? (\n        <div className=\"grid gap-2 motion-safe:animate-in motion-safe:slide-in-from-bottom-1\">\n          <output className=\"grid gap-1\">\n            <strong className=\"flex items-center gap-2 text-sm\">\n              {correct ? <Check size={15} /> : <X size={15} />}\n              {correct ? \"Верно\" : \"Вывод программы\"}\n              <code>{answer}</code>\n            </strong>\n            <span className=\"text-xs text-muted-foreground\">{explanation}</span>\n          </output>\n          <button\n            type=\"button\"\n            className={secondary}\n            onClick={() => {\n              setGuess(undefined);\n              setRevealed(false);\n            }}\n          >\n            <RotateCcw size={13} />\n            Ещё раз\n          </button>\n        </div>\n      ) : (\n        <button\n          type=\"button\"\n          disabled={guess === undefined || !options.includes(guess)}\n          className={action}\n          onClick={() => {\n            if (guess !== undefined) {\n              setRevealed(true);\n              onAnswer?.(guess);\n            }\n          }}\n        >\n          Сверить прогноз\n        </button>\n      )}\n    </section>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "lib/takt-surface.ts",
+      "content": "// Semantic shadcn colors keep the surfaces usable in a host project's own theme.\nexport const panel =\n  \"rounded-2xl border border-foreground/10 bg-card p-4 text-sm text-card-foreground shadow-[0_2px_5px_#0000000a,0_8px_18px_-12px_#0003]\";\nexport const field =\n  \"min-h-10 min-w-0 w-full rounded-xl border border-foreground/10 bg-muted/70 px-3 text-sm text-foreground outline-none motion-safe:transition-[background-color,box-shadow] focus:bg-background focus:ring-1 focus:ring-foreground/35\";\nexport const action =\n  \"inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-foreground/10 bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground shadow-sm outline-offset-4 motion-safe:transition-[transform,box-shadow] motion-safe:active:translate-y-px motion-safe:active:scale-[.97] disabled:cursor-default disabled:opacity-50\";\nexport const secondary =\n  \"inline-flex min-h-9 cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-foreground/10 bg-background px-3 text-xs font-medium text-foreground outline-offset-2 hover:bg-muted motion-safe:transition-[transform,background-color] motion-safe:active:scale-[.96] disabled:cursor-default disabled:opacity-45\";\n",
+      "type": "registry:lib"
+    }
+  ],
+  "type": "registry:ui"
+}

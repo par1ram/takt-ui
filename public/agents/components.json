@@ -2535,6 +2535,335 @@
           }
         }
       ]
+    },
+    {
+      "name": "lesson-outline",
+      "title": "Lesson Outline",
+      "category": "Learning",
+      "description": "Browse lessons and resume a course.",
+      "export": "LessonOutline",
+      "usage": "<LessonOutline />",
+      "registryItem": "/r/lesson-outline.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "items": {
+            "type": "Lesson[] | undefined",
+            "required": false
+          },
+          "currentId": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onResume": {
+            "type": "((id: string) => void) | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "code-exercise",
+      "title": "Code Exercise",
+      "category": "Learning",
+      "description": "Edit an exercise, run a sample and investigate a failing test.",
+      "export": "CodeExercise",
+      "usage": "<CodeExercise />",
+      "registryItem": "/r/code-exercise.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "instruction": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "filename": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "initialSource": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "initialInput": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "tests": {
+            "type": "InputCase[] | undefined",
+            "required": false
+          },
+          "onExecute": {
+            "type": "Runner | undefined",
+            "required": false
+          },
+          "onAsk": {
+            "type": "((question: string, context: string[]) => Promise<TutorAnswer>) | undefined",
+            "required": false
+          },
+          "draftKey": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "run-console",
+      "title": "Run Console",
+      "category": "Learning",
+      "description": "Follow compilation and execution, inspect output and stop a run.",
+      "export": "RunConsole",
+      "usage": "<RunConsole />",
+      "registryItem": "/r/run-console.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "state": {
+            "type": "RunState | undefined",
+            "required": false
+          },
+          "onStop": {
+            "type": "(() => void) | undefined",
+            "required": false
+          },
+          "onErrorLocation": {
+            "type": "(() => void) | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "test-results",
+      "title": "Test Results",
+      "category": "Learning",
+      "description": "Inspect the input, expected value and actual result of each test.",
+      "export": "TestResults",
+      "usage": "<TestResults />",
+      "registryItem": "/r/test-results.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "results": {
+            "type": "ExerciseCase[] | undefined",
+            "required": false
+          },
+          "onAsk": {
+            "type": "((result: ExerciseCase) => void) | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "ask-tutor",
+      "title": "Ask Tutor",
+      "category": "Learning",
+      "description": "Ask about a lesson or failing test with selected context.",
+      "export": "AskTutor",
+      "usage": "<AskTutor />",
+      "registryItem": "/r/ask-tutor.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "context": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onAsk": {
+            "type": "((question: string, context: string[]) => Promise<TutorAnswer>) | undefined",
+            "required": false
+          },
+          "onReturn": {
+            "type": "(() => void) | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "lesson-citation",
+      "title": "Lesson Citation",
+      "category": "Learning",
+      "description": "Read a cited lesson passage and return to the exercise.",
+      "export": "LessonCitation",
+      "usage": "<LessonCitation />",
+      "registryItem": "/r/lesson-citation.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "locator": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "excerpt": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "href": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onReturn": {
+            "type": "(() => void) | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "predict-output",
+      "title": "Predict Output",
+      "category": "Learning",
+      "description": "Predict the output, compare your answer and read the explanation.",
+      "export": "PredictOutput",
+      "usage": "<PredictOutput />",
+      "registryItem": "/r/predict-output.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "code": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "options": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "answer": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "explanation": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "onAnswer": {
+            "type": "((guess: string) => void) | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "execution-trace",
+      "title": "Execution Trace",
+      "category": "Learning",
+      "description": "Step through a trace with the active line and live variable values.",
+      "export": "ExecutionTrace",
+      "usage": "<ExecutionTrace />",
+      "registryItem": "/r/execution-trace.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "code": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "steps": {
+            "type": "Frame[] | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "hint-ladder",
+      "title": "Hint Ladder",
+      "category": "Learning",
+      "description": "Reveal hints one at a time, from a question to a related example.",
+      "export": "HintLadder",
+      "usage": "<HintLadder />",
+      "registryItem": "/r/hint-ladder.json",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "props": [
+        {
+          "items": {
+            "type": "string[] | undefined",
+            "required": false
+          },
+          "onReveal": {
+            "type": "((index: number) => void) | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
     }
   ]
 }

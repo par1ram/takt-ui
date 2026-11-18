@@ -119,6 +119,79 @@ async function swipeRight(node, page) {
   }
 }
 const scenarios = {
+  "lesson-outline": async s => {
+    await s.getByRole("button", { name: /Границы строки/ }).click();
+    await button(s,"Открыть урок").click();
+    await contains(status(s), "Якоря");
+  },
+  "code-exercise": async s => {
+    const editor = s.getByRole("textbox", {name:"pattern.regex"});
+    await editor.fill("[");
+    await button(s,"Запустить").click();
+    await button(s,"К строке с ошибкой").click();
+    assert(await editor.evaluate(el => el === document.activeElement));
+    await editor.fill("^UI-[0-9]$");
+    await button(s,"Проверить решение").click();
+    await button(s,"Разобрать тест").click();
+    await button(s,"Почему тест упал?").click();
+    await button(s,"Отправить").click();
+    await s.getByRole("button",{name:/Повторения в шаблоне/}).click();
+    await s.getByRole("blockquote").waitFor();
+    await button(s,"Вернуться").click();
+    assert(await editor.evaluate(el => el === document.activeElement));
+    await editor.fill("^UI-[0-9]+$");
+    await button(s,"Проверить решение").click();
+    await s.getByText("5 / 5",{exact:true}).waitFor();
+  },
+  "run-console": async s => {
+    await button(s,"Повторить пример").click();
+    await button(s,"Остановить").click();
+    await contains(status(s),"Остановлено");
+    await button(s,"Повторить пример").click();
+    await contains(status(s),"UI-42");
+  },
+  "test-results": async s => {
+    assert.match(await s.locator("dl").innerText(),/false/);
+    await s.getByRole("button",{name:/UI-7/}).click();
+    assert.doesNotMatch(await s.locator("dl").innerText(),/false/);
+  },
+  "ask-tutor": async s => {
+    await s.getByRole("button",{name:/Убрать источник.*pattern/}).click();
+    await button(s,"Как работает повторение?").click();
+    await button(s,"Отправить").click();
+    await s.getByRole("button",{name:/Повторения в шаблоне/}).waitFor();
+  },
+  "lesson-citation": async s => {
+    await s.getByRole("button",{name:/Повторения в шаблоне/}).click();
+    await s.getByRole("blockquote").waitFor();
+    await button(s,"Вернуться").click();
+    assert.equal(await s.getByRole("blockquote").count(),0);
+  },
+  "predict-output": async s => {
+    assert(await button(s,"Сверить прогноз").isDisabled());
+    await button(s,"5").click();
+    await button(s,"Сверить прогноз").click();
+    await contains(status(s),"Вывод программы");
+    await button(s,"Ещё раз").click();
+    await button(s,"2").click();
+    await button(s,"Сверить прогноз").click();
+    await contains(status(s),"Верно");
+  },
+  "execution-trace": async s => {
+    assert(await button(s,"Назад").isDisabled());
+    await button(s,"Шаг вперёд").click();
+    assert.match(await s.locator('[aria-current=step]').innerText(),/for/);
+    await button(s,"Назад").click();
+    assert.match(await s.locator('[aria-current=step]').innerText(),/let total/);
+  },
+  "hint-ladder": async s => {
+    await button(s,"Открыть подсказку").click();
+    await button(s,"Ещё подсказка").click();
+    await button(s,"Ещё подсказка").click();
+    assert.equal(await s.getByRole("listitem").count(),3);
+    await button(s,"Скрыть подсказки").click();
+    assert.equal(await s.getByRole("listitem").count(),0);
+  },
   "magnetic-button": async (s) => {
     const b = first(s);
     await b.hover();

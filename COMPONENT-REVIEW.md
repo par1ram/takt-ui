@@ -1,11 +1,20 @@
 # Ревизия карточек Takt
 
-В каталоге 84 компонента, включая Receipt Printer по видеореференсу. Исходная опись содержит 84 референса. Pull Cord снят по запросу.
+В каталоге 93 компонента, включая Receipt Printer по видеореференсу. Исходная опись содержит 84 референса. Pull Cord снят по запросу.
 
 Для каждой действующей карточки выполнен сценарий в Chrome в светлой теме при ширине 1250 px и в тёмной при ширине 360 px. В мобильном сценарии включено уменьшение движения. Команда для повторной проверки при запущенном каталоге — `PLAYWRIGHT_CHANNEL=chrome bun run motion:review`.
 
 | Компонент | Что изменилось | Состояние |
 | --- | --- | --- |
+| [Lesson Outline](components/motion/lesson-outline.tsx) | Выбор урока и открытие фрагмента. | Проверено |
+| [Code Exercise](components/motion/code-exercise.tsx) | Ошибка компиляции, переход к редактору, разбор теста с цитатой и успешная повторная проверка. | Проверено |
+| [Run Console](components/motion/run-console.tsx) | Остановка и повторный запуск. | Проверено |
+| [Test Results](components/motion/test-results.tsx) | Переход между успешным и упавшим тестом. | Проверено |
+| [Ask Tutor](components/motion/ask-tutor.tsx) | Снятие вложения, отправка вопроса и цитата. | Проверено |
+| [Lesson Citation](components/motion/lesson-citation.tsx) | Чтение отрывка и возврат. | Проверено |
+| [Predict Output](components/motion/predict-output.tsx) | Неверный прогноз, повтор и верный ответ. | Проверено |
+| [Execution Trace](components/motion/execution-trace.tsx) | Переход между кадрами в обоих направлениях. | Проверено |
+| [Hint Ladder](components/motion/hint-ladder.tsx) | Последовательное раскрытие и сброс. | Проверено |
 | [Invite People](components/motion/invite-people.tsx) | Портреты команды выровнены в горизонтальный ряд. Убраны сетчатый фон и наклон. | Проверено |
 | [Focus Mode](components/motion/focus-mode.tsx) | Список уведомлений получил ровные графитовые поверхности, прогресс фокуса выделен спокойным зелёным. | Проверено |
 | [Swipe Deck](components/motion/swipe-deck.tsx) | Постеры колоды приведены к серебристой монохромной серии. Выход карточки стал мягче. | Проверено |
