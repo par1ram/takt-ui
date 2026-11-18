@@ -1877,6 +1877,69 @@
       "type": "registry:ui"
     },
     {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "latency-chart",
+      "title": "Latency Chart",
+      "description": "Response times by percentile and sample.",
+      "dependencies": [
+        "recharts",
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "chart",
+        "card",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/motion/latency-chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "conversion-funnel",
+      "title": "Conversion Funnel",
+      "description": "Participant counts and conversion between consecutive stages.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/motion/conversion-funnel.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "cohort-retention",
+      "title": "Cohort Retention",
+      "description": "Cohort retention with missing observations distinguished from zero.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/motion/cohort-retention.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "takt",
       "title": "Takt",
       "description": "All Takt motion components and their shared helpers.",
@@ -1885,11 +1948,14 @@
         "motion",
         "@stripe/react-stripe-js",
         "@stripe/stripe-js",
-        "radix-ui"
+        "radix-ui",
+        "recharts"
       ],
       "registryDependencies": [
         "button",
-        "avatar"
+        "avatar",
+        "chart",
+        "card"
       ],
       "files": [
         {
@@ -2310,6 +2376,18 @@
         },
         {
           "path": "components/motion/course-messenger.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/latency-chart.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/conversion-funnel.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/cohort-retention.tsx",
           "type": "registry:ui"
         }
       ],

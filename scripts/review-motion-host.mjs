@@ -36,6 +36,19 @@ export async function reviewHost(browser, origin) {
         [name, props, callback],
       );
     const btn = (name) => page.getByRole("button", { name, exact: true });
+    await render("LatencyChart", { samples: [] });
+    await page.getByText("Пока нет измерений").waitFor();
+    await render("LatencyChart", { samples: [{label:"A",p50:0,p95:null}] });
+    assert.equal(await page.locator("output").textContent(), "—");
+    await page.getByRole("button", {name: /^p50$/i}).click();
+    assert.equal(await page.locator("output").textContent(), "0");
+    assert(await btn("Следующий замер").isDisabled());
+    await render("ConversionFunnel", { stages: [{id:"a",label:"A",count:0},{id:"b",label:"B",count:0}] });
+    assert.match(await page.locator("[aria-live]").innerText(), /—/);
+    await render("CohortRetention", { cohorts: [{id:"a",label:"A",size:100,retained:[100,0,null]}] });
+    await page.getByRole("button", {name:/A, Неделя 1, 0/}).click();
+    assert.match(await page.locator("output").textContent(), /^0\s*%$/);
+    assert.equal(await page.locator('td[aria-label="Нет наблюдения"]').count(), 1);
     for (const [component, prop] of [
       ["TabPill", "options"],
       ["StepProgress", "steps"],

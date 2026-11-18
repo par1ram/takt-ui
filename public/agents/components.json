@@ -3074,6 +3074,121 @@
           }
         }
       ]
+    },
+    {
+      "name": "latency-chart",
+      "title": "Latency Chart",
+      "category": "Metrics",
+      "description": "Response times by percentile and sample.",
+      "export": "LatencyChart",
+      "usage": "<LatencyChart />",
+      "registryItem": "/r/latency-chart.json",
+      "dependencies": [
+        "recharts",
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "chart",
+        "card",
+        "button"
+      ],
+      "props": [
+        {
+          "samples": {
+            "type": "LatencySample[] | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "unit": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "conversion-funnel",
+      "title": "Conversion Funnel",
+      "category": "Metrics",
+      "description": "Participant counts and conversion between consecutive stages.",
+      "export": "ConversionFunnel",
+      "usage": "<ConversionFunnel />",
+      "registryItem": "/r/conversion-funnel.json",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "props": [
+        {
+          "stages": {
+            "type": "FunnelStage[] | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "locale": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "cohort-retention",
+      "title": "Cohort Retention",
+      "category": "Metrics",
+      "description": "Cohort retention with missing observations distinguished from zero.",
+      "export": "CohortRetention",
+      "usage": "<CohortRetention />",
+      "registryItem": "/r/cohort-retention.json",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "props": [
+        {
+          "cohorts": {
+            "type": "RetentionCohort[] | undefined",
+            "required": false
+          },
+          "title": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "periodLabel": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "locale": {
+            "type": "string | undefined",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
     }
   ]
 }

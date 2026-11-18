@@ -120,6 +120,29 @@ async function swipeRight(node, page) {
   }
 }
 const scenarios = {
+  "latency-chart": async s => {
+    await s.locator(".recharts-area-curve").waitFor();
+    await s.getByRole("button", {name: /^p50$/i}).click();
+    await contains(s.locator("output"), "81");
+    await button(s, "Предыдущий замер").click();
+    await contains(s.locator("output"), "78");
+    await button(s, "Следующий замер").click();
+    assert(await button(s, "Следующий замер").isDisabled());
+  },
+  "conversion-funnel": async s => {
+    await s.getByRole("button", {name: /Начали урок/}).click();
+    await contains(s.locator("[aria-live]"), "79,5");
+    await s.getByRole("button", {name: /Записались/}).press("Enter");
+    await contains(s.locator("[aria-live]"), "Базовая группа");
+  },
+  "cohort-retention": async s => {
+    const cell = s.getByRole("button", {name: /^08 апр, Неделя 2, 68\s*%$/});
+    await cell.click();
+    assert.equal(await cell.getAttribute("aria-pressed"), "true");
+    await contains(s.locator("output"), "68");
+    await contains(s, "81 / 120");
+    assert.equal(await s.locator('td[aria-label="Нет наблюдения"] button').count(), 0);
+  },
   "channel-list": async s => {
     const dm = button(s, "Майя Ли");
     await dm.click();
@@ -127,6 +150,15 @@ const scenarios = {
   },
   "chat-composer": async s => {
     assert(await button(s, "Отправить сообщение").isDisabled());
+    await textbox(s).focus();
+    const appearance = await textbox(s).evaluate(el => ({
+      field: getComputedStyle(el).outlineStyle,
+      ring: getComputedStyle(el.form).getPropertyValue("--tw-ring-shadow"),
+      radius: parseFloat(getComputedStyle(el.form).borderRadius),
+    }));
+    assert.equal(appearance.field, "none");
+    assert.match(appearance.ring, /2px/);
+    assert(appearance.radius > 0);
     await textbox(s).fill("Первая строка");
     await textbox(s).press("Shift+Enter");
     assert.match(await textbox(s).inputValue(), /\n$/);

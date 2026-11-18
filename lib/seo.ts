@@ -10,7 +10,7 @@ export const isPreview = process.env.VERCEL_ENV === "preview";
 
 export function pagePath(lang: Locale, slug?: string) {
   const prefix = lang === "ru" ? "/ru" : "";
-  if (slug === "messenger") return prefix + "/messenger";
+  if (slug === "messenger" || slug === "metrics") return prefix + "/" + slug;
   return slug ? prefix + "/components/" + slug : prefix || "/";
 }
 

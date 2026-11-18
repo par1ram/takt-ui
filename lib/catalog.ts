@@ -1345,6 +1345,21 @@ export const entries = [
     description: "Рабочее пространство с каналами, личными сообщениями и тредами.",
     gesture: "Откройте канал и ответьте в треде", usage: "<CourseMessenger />", references: [], symbol: "CourseMessenger",
   },
+  {
+    slug: "latency-chart", title: "Latency Chart", category: "Метрики",
+    description: "Измерения времени ответа с выбором перцентиля и точки во времени.", gesture: "Выберите перцентиль и сравните замеры",
+    usage: "<LatencyChart />", references: [], symbol: "LatencyChart",
+  },
+  {
+    slug: "conversion-funnel", title: "Conversion Funnel", category: "Метрики",
+    description: "Число участников на этапах и конверсия между соседними этапами.", gesture: "Выберите этап воронки",
+    usage: "<ConversionFunnel />", references: [], symbol: "ConversionFunnel",
+  },
+  {
+    slug: "cohort-retention", title: "Cohort Retention", category: "Метрики",
+    description: "Возврат участников по когортам с отдельным состоянием для пропущенных наблюдений.", gesture: "Выберите когорту и неделю",
+    usage: "<CohortRetention />", references: [], symbol: "CohortRetention",
+  },
 ] as const;
 export type Entry = (typeof entries)[number];
 
@@ -1366,6 +1381,8 @@ const allOrder: Entry["slug"][] = [
   "lesson-citation", "predict-output", "execution-trace", "hint-ladder",
 
   "channel-list", "chat-composer", "message-reactions", "message-thread", "course-messenger",
+
+  "latency-chart", "conversion-funnel", "cohort-retention",
 
   // Find a command and move between views
   "command-search", "command-palette", "command-button", "sidebar-collapse",

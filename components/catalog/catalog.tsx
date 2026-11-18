@@ -6,6 +6,7 @@ import { AccentPicker } from "./accent-picker";
 import { Stage } from "./preview";
 import {
   Moon,
+  ChartNoAxesCombined,
   Sun,
   TextCursorInput,
   GraduationCap,
@@ -58,6 +59,7 @@ const filters = [
   { label: "AI", icon: Sparkles },
   { label: "Обучение", icon: GraduationCap },
   { label: "Мессенджер", icon: MessagesSquare },
+  { label: "Метрики", icon: ChartNoAxesCombined },
 ];
 // Wait for hydration before exposing the browser’s saved theme to assistive technology.
 const subscribeToHydration = () => () => {};
@@ -267,7 +269,8 @@ export function Catalog({ locale = "ru" }: { locale?: "en" | "ru" }) {
               </button>
             ))}
           </div>
-          {!savedOnly && (category === "Все" || category === "Мессенджер") && !query.trim() && <a href={locale === "ru" ? "/ru/messenger" : "/messenger"} className="mb-4 inline-flex items-center gap-2 rounded-lg border bg-card px-3 py-2 text-sm font-medium hover:bg-muted"><MessagesSquare size={15}/>Открыть мессенджер курса<ArrowUpRight size={14}/></a>}
+          {!savedOnly && (category === "Все" || category === "Мессенджер") && !query.trim() && <a href={locale === "ru" ? "/ru/messenger" : "/messenger"} className="mr-2 mb-4 inline-flex items-center gap-2 rounded-lg border bg-card px-3 py-2 text-sm font-medium hover:bg-muted"><MessagesSquare size={15}/>Открыть мессенджер курса<ArrowUpRight size={14}/></a>}
+          {!savedOnly && (category === "Все" || category === "Метрики") && !query.trim() && <a href={locale === "ru" ? "/ru/metrics" : "/metrics"} className="mr-2 mb-4 inline-flex items-center gap-2 rounded-lg border bg-card px-3 py-2 text-sm font-medium hover:bg-muted"><ChartNoAxesCombined size={15}/>Открыть метрики<ArrowUpRight size={14}/></a>}
           <div className="specimen-grid">
             {visible.map((entry) => (
               <article key={entry.slug} className="specimen">

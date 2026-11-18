@@ -31,7 +31,12 @@ import { MorphPopover } from "@/components/motion/morph-popover";
 
 import { ReceiptPrinter } from "@/components/motion/receipt-printer";
 
+import { LatencyChart } from "@/components/motion/latency-chart";
+import { ConversionFunnel } from "@/components/motion/conversion-funnel";
+import { CohortRetention } from "@/components/motion/cohort-retention";
+
 const components = {
+  LatencyChart, ConversionFunnel, CohortRetention,
   ReceiptPrinter,
   MorphPopover,
   CardField,

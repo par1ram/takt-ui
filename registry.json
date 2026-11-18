@@ -1777,6 +1777,66 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "latency-chart",
+      "type": "registry:ui",
+      "title": "Latency Chart",
+      "description": "Измерения времени ответа с выбором перцентиля и точки во времени.",
+      "dependencies": [
+        "recharts",
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "chart",
+        "card",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "components/motion/latency-chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "conversion-funnel",
+      "type": "registry:ui",
+      "title": "Conversion Funnel",
+      "description": "Число участников на этапах и конверсия между соседними этапами.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/motion/conversion-funnel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "cohort-retention",
+      "type": "registry:ui",
+      "title": "Cohort Retention",
+      "description": "Возврат участников по когортам с отдельным состоянием для пропущенных наблюдений.",
+      "dependencies": [
+        "motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "card"
+      ],
+      "files": [
+        {
+          "path": "components/motion/cohort-retention.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

@@ -54,7 +54,7 @@ export function ChatComposer({
         void submit();
       }}
       className={cn(
-        "w-full min-w-0 rounded-xl border bg-background p-2.5 text-left shadow-xs focus-within:border-primary/45",
+        "w-full min-w-0 rounded-xl border bg-background p-2.5 text-left shadow-xs has-[textarea:focus-visible]:border-ring has-[textarea:focus-visible]:ring-2 has-[textarea:focus-visible]:ring-ring/55 forced-colors:has-[textarea:focus-visible]:outline-2",
         className,
       )}
     >
@@ -80,7 +80,7 @@ export function ChatComposer({
             if (!event.repeat) void submit();
           }
         }}
-        className="block w-full resize-none bg-transparent px-1 py-0.5 text-sm text-foreground outline-none placeholder:text-muted-foreground"
+        className="block w-full resize-none bg-transparent px-1 py-0.5 text-sm text-foreground outline-none focus-visible:outline-none! placeholder:text-muted-foreground"
       />
       <div className="flex items-end justify-between gap-2">
         <span
