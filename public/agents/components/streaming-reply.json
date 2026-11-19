@@ -1,0 +1,41 @@
+{
+  "name": "streaming-reply",
+  "title": "Streaming Reply",
+  "category": "AI",
+  "description": "Reveal the reply in chunks",
+  "export": "StreamingReply",
+  "usage": "<StreamingReply text=\"The draft reply is ready.\" />",
+  "useCases": [
+    "In a chatbot demo, a visitor starts the gradual reveal of a prepared reply and watches the words appear.",
+    "In a worked example, a learner reads an explanation in stages. The app supplies the completed text for playback."
+  ],
+  "registryItem": "/r/streaming-reply.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Reveal the reply in chunks",
+  "page": "/components/streaming-reply",
+  "example": "import { StreamingReply } from \"@/components/ui/streaming-reply\";\n\nexport default function Example() {\n  return <StreamingReply text=\"The draft reply is ready.\" />;\n}",
+  "models": {},
+  "behavior": "text contains the reply to reveal progressively. The application retrieves the model response.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/streaming-reply.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

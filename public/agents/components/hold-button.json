@@ -1,0 +1,51 @@
+{
+  "name": "hold-button",
+  "title": "Hold to Confirm",
+  "category": "Buttons",
+  "description": "Hold to fill the button and confirm the action.",
+  "export": "HoldButton",
+  "usage": "<HoldButton duration={800} onConfirm={() => console.log('done')} />",
+  "useCases": [
+    "Before clearing a draft, the author holds the button to confirm. Releasing it early preserves the text.",
+    "At a kiosk, an operator holds the session reset button. The app starts the reset after onConfirm."
+  ],
+  "registryItem": "/r/hold-button.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onConfirm": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "duration": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "resetAfter": {
+        "type": "number | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Hold to fill the button and confirm the action.",
+  "page": "/components/hold-button",
+  "example": "\"use client\";\n\nimport { HoldButton } from \"@/components/ui/hold-button\";\n\nexport default function Example() {\n  return <HoldButton duration={800} onConfirm={() => console.log('done')} />;\n}",
+  "models": {},
+  "behavior": "duration and resetAfter are in milliseconds. Attach the action to onConfirm, which fires after a completed hold.",
+  "parts": [],
+  "related": [
+    "/agents/components/slide-to-confirm.json",
+    "/agents/components/hold-to-publish.json"
+  ],
+  "files": [
+    "components/motion/hold-button.tsx"
+  ]
+}

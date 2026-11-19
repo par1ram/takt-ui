@@ -1,0 +1,38 @@
+{
+  "name": "weight-wave",
+  "title": "Weight Wave",
+  "category": "Text",
+  "description": "Move across the letters or tap",
+  "export": "WeightWave",
+  "usage": "<WeightWave text=\"Takt Studio\" />",
+  "useCases": [
+    "On a type studio’s page, a visitor moves across a word to see how the weight of nearby letters changes.",
+    "In an interactive wordmark specimen, a designer moves the emphasis across letters with the keyboard to inspect each shape."
+  ],
+  "registryItem": "/r/weight-wave.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Move across the letters or tap",
+  "page": "/components/weight-wave",
+  "example": "import { WeightWave } from \"@/components/ui/weight-wave\";\n\nexport default function Example() {\n  return <WeightWave text=\"Takt Studio\" />;\n}",
+  "models": {},
+  "behavior": "text supplies the string for the letter animation. Use className to style the container.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/weight-wave.tsx"
+  ]
+}

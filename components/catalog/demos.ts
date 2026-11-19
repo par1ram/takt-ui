@@ -452,6 +452,12 @@ export const demos = {
   "channel-list": lazy(() => import("@/components/motion/channel-list").then(module => ({ default: module.ChannelList }))),
   "chat-composer": lazy(() => import("@/components/motion/chat-composer").then(module => ({ default: module.ChatComposer }))),
   "message-reactions": lazy(() => import("@/components/motion/message-reactions").then(module => ({ default: module.MessageReactions }))),
+  "chat-post": lazy(() => import("@/components/motion/chat-post").then(({ ChatPostBody }) => ({
+    default: () => createElement(ChatPostBody, { post: {
+      id: "release", author: "Sam", initials: "S", time: "10:00", text: "Takt v2.0",
+      resource: { title: "Takt", detail: "README", href: "/llms.txt" },
+    } }),
+  }))),
   "message-thread": lazy(() => import("@/components/motion/message-thread").then(module => ({ default: module.MessageThread }))),
   "course-messenger": lazy(() => import("@/components/motion/course-messenger").then(module => ({ default: module.CourseMessenger }))),
   "latency-chart": lazy(() => import("@/components/motion/latency-chart").then(module => ({ default: module.LatencyChart }))),

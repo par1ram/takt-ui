@@ -1,0 +1,45 @@
+{
+  "name": "checkbox-list",
+  "title": "Checkbox List",
+  "category": "Inputs",
+  "description": "Check off completed items",
+  "export": "CheckboxList",
+  "usage": "<CheckboxList items={[\"Lint\", \"Build\", \"Review\"]} />",
+  "useCases": [
+    "When exporting a report, an analyst selects the sections to include. The app builds the file from those choices.",
+    "In newsletter settings, a subscriber selects topics of interest and saves several preferences at once."
+  ],
+  "registryItem": "/r/checkbox-list.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((items: string[]) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Check off completed items",
+  "page": "/components/checkbox-list",
+  "example": "import { CheckboxList } from \"@/components/ui/checkbox-list\";\n\nexport default function Example() {\n  return <CheckboxList items={[\"Lint\", \"Build\", \"Review\"]} />;\n}",
+  "models": {},
+  "behavior": "items contains the option labels. onChange reports the full list of selected values.",
+  "parts": [],
+  "related": [
+    "/agents/components/task-list.json"
+  ],
+  "files": [
+    "components/motion/checkbox-list.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

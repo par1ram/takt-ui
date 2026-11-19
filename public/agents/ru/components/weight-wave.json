@@ -1,0 +1,38 @@
+{
+  "name": "weight-wave",
+  "title": "Weight Wave",
+  "category": "Текст",
+  "description": "Проведите по буквам или нажмите",
+  "export": "WeightWave",
+  "usage": "<WeightWave text=\"Takt Studio\" />",
+  "useCases": [
+    "На странице шрифтовой студии посетитель проводит по слову и наблюдает, как меняется насыщенность соседних букв.",
+    "В интерактивном образце логотипа дизайнер передвигает акцент по буквам с клавиатуры, чтобы изучить форму каждой."
+  ],
+  "registryItem": "/r/ru/weight-wave.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Проведите по буквам или нажмите",
+  "page": "/ru/components/weight-wave",
+  "example": "import { WeightWave } from \"@/components/ui/weight-wave\";\n\nexport default function Example() {\n  return <WeightWave text=\"Takt Studio\" />;\n}",
+  "models": {},
+  "behavior": "text задаёт строку для анимации букв. Стили контейнера можно изменить через className.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/weight-wave.tsx"
+  ]
+}

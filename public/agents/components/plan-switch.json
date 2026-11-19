@@ -1,0 +1,50 @@
+{
+  "name": "plan-switch",
+  "title": "Plan Switch",
+  "category": "Cards",
+  "description": "Switch billing periods to compare the monthly price, total and savings.",
+  "export": "PlanSwitch",
+  "usage": "<PlanSwitch options={[\"Monthly\", \"Yearly\"]} prices={[{ monthly: 20, total: 20 }, { monthly: 15, total: 180 }]} />",
+  "useCases": [
+    "On a pricing page, a buyer compares the monthly price with the annual total before subscribing.",
+    "At renewal, a customer changes the billing period. The app uses the selected index to send the corresponding plan to checkout."
+  ],
+  "registryItem": "/r/plan-switch.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "options": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "prices": {
+        "type": "{ monthly: number; total: number; }[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Switch billing periods to compare the monthly price, total and savings.",
+  "page": "/components/plan-switch",
+  "example": "import { PlanSwitch } from \"@/components/ui/plan-switch\";\n\nexport default function Example() {\n  return <PlanSwitch options={[\"Monthly\", \"Yearly\"]} prices={[{ monthly: 20, total: 20 }, { monthly: 15, total: 180 }]} />;\n}",
+  "models": {},
+  "behavior": "Pair every options entry with a prices object at the same position. onChange returns the selected billing period index.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/plan-switch.tsx",
+    "lib/takt-indicator.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

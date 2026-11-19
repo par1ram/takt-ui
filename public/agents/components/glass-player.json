@@ -1,0 +1,49 @@
+{
+  "name": "glass-player",
+  "title": "Glass Player",
+  "category": "Cards",
+  "description": "An audio player with cover art, seeking, repeat and mute.",
+  "export": "GlassPlayer",
+  "usage": "<GlassPlayer src=\"/audio/intro.mp3\" title=\"Introduction\" />",
+  "useCases": [
+    "On a lesson page, a student scrubs back to a phrase they missed in an audio explanation.",
+    "In a music catalog, a buyer loops a track preview to compare its arrangement with another version."
+  ],
+  "registryItem": "/r/glass-player.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "src": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "cover": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "An audio player with cover art, seeking, repeat and mute.",
+  "page": "/components/glass-player",
+  "example": "import { GlassPlayer } from \"@/components/ui/glass-player\";\n\nexport default function Example() {\n  return <GlassPlayer src=\"/audio/intro.mp3\" title=\"Introduction\" />;\n}",
+  "models": {},
+  "behavior": "Set src to a browser-accessible audio file and cover to an image. Replace /audio/intro.mp3 in the example with your recording.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/glass-player.tsx",
+    "lib/takt-art-fold.ts"
+  ]
+}

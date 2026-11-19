@@ -1,0 +1,94 @@
+{
+  "name": "code-exercise",
+  "title": "Code Exercise",
+  "category": "Learning",
+  "description": "Edit an exercise, run a sample and investigate a failing test.",
+  "export": "CodeExercise",
+  "usage": "<CodeExercise draftKey=\"lesson:ids:v1\" initialSource=\"^UI-[0-9]+$\" tests={[{ input: \"UI-23\", expected: true }]} />",
+  "useCases": [
+    "In a regex lesson, a student edits a pattern, checks it against sample strings and inspects mismatches.",
+    "In a lab, a student returns to an unfinished exercise. The app assigns each exercise its own draftKey so the right draft is restored."
+  ],
+  "registryItem": "/r/code-exercise.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "instruction": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "filename": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "initialSource": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "initialInput": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "tests": {
+        "type": "InputCase[] | undefined",
+        "required": false
+      },
+      "onExecute": {
+        "type": "Runner | undefined",
+        "required": false
+      },
+      "onAsk": {
+        "type": "((question: string, context: string[]) => Promise<TutorAnswer>) | undefined",
+        "required": false
+      },
+      "draftKey": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Edit an exercise, run a sample and investigate a failing test.",
+  "page": "/components/code-exercise",
+  "example": "import { CodeExercise } from \"@/components/ui/code-exercise\";\n\nexport default function Example() {\n  return <CodeExercise draftKey=\"lesson:ids:v1\" initialSource=\"^UI-[0-9]+$\" tests={[{ input: \"UI-23\", expected: true }]} />;\n}",
+  "models": {
+    "InputCase": "type InputCase = Omit<ExerciseCase, \"actual\">;",
+    "ExerciseCase": "type ExerciseCase = {\n  input: string;\n  expected: boolean;\n  actual: boolean;\n};",
+    "Runner": "type Runner = (\n  source: string,\n  inputs: InputCase[],\n  signal: AbortSignal,\n  onRunning: () => void,\n) => Promise<boolean[]>;",
+    "TutorAnswer": "type TutorAnswer = { text: string; citation?: Citation };",
+    "Citation": "type Citation = Pick<\n  React.ComponentProps<typeof LessonCitation>,\n  \"title\" | \"locator\" | \"excerpt\" | \"href\"\n>;"
+  },
+  "behavior": "Use a distinct draftKey per lesson to persist drafts. A custom onExecute receives source, cases, an AbortSignal and onRunning. Return one boolean per case in input order.",
+  "parts": [
+    "prompt-box",
+    "run-console",
+    "test-results",
+    "ask-tutor",
+    "lesson-citation"
+  ],
+  "related": [
+    "/agents/components/run-console.json",
+    "/agents/components/test-results.json",
+    "/agents/components/ask-tutor.json"
+  ],
+  "files": [
+    "components/motion/code-exercise.tsx",
+    "components/motion/run-console.tsx",
+    "components/motion/test-results.tsx",
+    "components/motion/ask-tutor.tsx",
+    "components/motion/prompt-box.tsx",
+    "components/motion/lesson-citation.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

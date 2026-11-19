@@ -1,0 +1,60 @@
+{
+  "name": "boarding-pass",
+  "title": "Boarding Pass",
+  "category": "Cards",
+  "description": "A boarding pass with route, gate and an expandable barcode.",
+  "export": "BoardingPass",
+  "usage": "<BoardingPass from=\"LIS\" to=\"AMS\" flight=\"TK 204\" seat=\"12A\" />",
+  "useCases": [
+    "On a trip screen, a passenger expands the boarding pass to check their seat, gate and boarding time.",
+    "In a connecting itinerary, the app shows a separate pass for each flight so the traveler can distinguish the legs of the trip."
+  ],
+  "registryItem": "/r/boarding-pass.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "from": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "to": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "flight": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "seat": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "gate": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "boarding": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "A boarding pass with route, gate and an expandable barcode.",
+  "page": "/components/boarding-pass",
+  "example": "import { BoardingPass } from \"@/components/ui/boarding-pass\";\n\nexport default function Example() {\n  return <BoardingPass from=\"LIS\" to=\"AMS\" flight=\"TK 204\" seat=\"12A\" />;\n}",
+  "models": {},
+  "behavior": "Provide display-ready airport, flight, seat and gate labels. boarding holds the displayed boarding time.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/boarding-pass.tsx"
+  ]
+}

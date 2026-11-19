@@ -1,0 +1,48 @@
+{
+  "name": "command-palette",
+  "title": "Command Palette",
+  "category": "Навигация",
+  "description": "Найдите и выполните команду",
+  "export": "CommandPalette",
+  "usage": "<CommandPalette commands={[\"Печать\"]} onExecute={() => window.print()} />",
+  "useCases": [
+    "В редакторе пользователь набирает часть названия команды и запускает найденное действие клавишей Enter.",
+    "В админке оператор находит среди команд переход к очереди заявок. Приложение сопоставляет выбранное название с маршрутом."
+  ],
+  "registryItem": "/r/ru/command-palette.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "commands": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onExecute": {
+        "type": "((command: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Найти и выполнить действие из известного списка команд.",
+  "page": "/ru/components/command-palette",
+  "example": "\"use client\";\n\nimport { CommandPalette } from \"@/components/ui/command-palette\";\n\nexport default function Example() {\n  return <CommandPalette commands={[\"Печать\"]} onExecute={() => window.print()} />;\n}",
+  "models": {},
+  "behavior": "Передайте названия действий в commands. onExecute получает выбранное название после подтверждения. Список фильтруется внутри диалога.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/command-search.json",
+    "/agents/ru/components/command-button.json"
+  ],
+  "files": [
+    "components/motion/command-palette.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

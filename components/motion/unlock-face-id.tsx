@@ -36,6 +36,7 @@ export function UnlockFaceId({
   const phase = status ?? demo;
   const scanning = phase === "scanning";
   const unlocked = phase === "success";
+  const caption = status !== undefined && unlocked ? "Доступ открыт" : captions[phase];
   const reduced = useReducedMotion();
   const complete = useEffectEvent(() => onDemoComplete?.());
   useEffect(() => {
@@ -50,10 +51,8 @@ export function UnlockFaceId({
     <section className={cn(panel, "w-[246px] max-w-full", className)}>
       <button
         type="button"
+        aria-label={"Face ID " + caption}
         disabled={scanning || (status !== undefined && unlocked)}
-        aria-label={
-          unlocked && status !== undefined ? "Доступ открыт" : captions[phase]
-        }
         onClick={() => {
           if (unlocked) {
             setDemo("idle");
@@ -130,15 +129,13 @@ export function UnlockFaceId({
         </span>
         <span className="grid gap-1">
           <strong className="text-base leading-5 tracking-tight">
-            Face ID
+            Face ID{" "}
           </strong>
           <span
             role="status"
             className="text-xs leading-4 text-muted-foreground"
           >
-            {status !== undefined && unlocked
-              ? "Доступ открыт"
-              : captions[phase]}
+            {caption}
           </span>
         </span>
       </button>
@@ -153,7 +150,7 @@ export function UnlockFaceId({
           <span
             className={cn(
               "truncate font-semibold motion-safe:transition-[filter,opacity] motion-safe:duration-400",
-              !unlocked && "opacity-50 blur-[3px] select-none",
+              !unlocked && "blur-[3px] select-none",
             )}
             aria-hidden={!unlocked}
           >

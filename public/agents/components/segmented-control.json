@@ -1,0 +1,47 @@
+{
+  "name": "segmented-control",
+  "title": "Segmented Control",
+  "category": "Navigation",
+  "description": "Choose a period",
+  "export": "SegmentedControl",
+  "usage": "<SegmentedControl options={[\"p50\", \"p95\", \"p99\"]} />",
+  "useCases": [
+    "In a performance report, an analyst switches between p50 and p95. The app supplies the series for the selected metric.",
+    "In a file manager, a user chooses a grid or list. The app changes how it displays the same files."
+  ],
+  "registryItem": "/r/segmented-control.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "options": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Choose a period",
+  "page": "/components/segmented-control",
+  "example": "import { SegmentedControl } from \"@/components/ui/segmented-control\";\n\nexport default function Example() {\n  return <SegmentedControl options={[\"p50\", \"p95\", \"p99\"]} />;\n}",
+  "models": {},
+  "behavior": "Supply options in order. Use the index reported by onChange to switch the application dataset or mode.",
+  "parts": [],
+  "related": [
+    "/agents/components/swipe-tabs.json",
+    "/agents/components/tab-pill.json"
+  ],
+  "files": [
+    "components/motion/segmented-control.tsx"
+  ]
+}

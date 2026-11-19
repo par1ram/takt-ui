@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chat-post",
+  "title": "Chat Post",
+  "description": "Render one message in your own feed or discussion.",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "components/motion/chat-post.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport { ArrowUpRight, Layers2 } from \"lucide-react\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport { Avatar, AvatarFallback } from \"@/components/ui/avatar\";\nimport { cn } from \"@/lib/utils\";\nimport styles from \"./chat-post.module.css\";\n\nexport type ChatPost = {\n  id: string;\n  author: string;\n  initials: string;\n  time: string;\n  text: string;\n  code?: string;\n  resource?: { title: string; detail: string; href: string };\n};\n\nexport function ChatPostBody({\n  post,\n  children,\n  className,\n}: {\n  post: ChatPost;\n  children?: ReactNode;\n  className?: string;\n}) {\n  const reduce = useReducedMotion();\n  return (\n    <motion.article\n      initial={reduce ? false : { opacity: 0, y: 4 }}\n      animate={{ opacity: 1, y: 0 }}\n      transition={{ duration: 0.2 }}\n      className={cn(\"flex min-w-0 items-start gap-2.5 text-left\", className)}\n    >\n      <Avatar aria-hidden className=\"size-8 shrink-0 rounded-xl\">\n        <AvatarFallback className=\"rounded-xl bg-primary/10 font-mono text-[11px] font-bold text-primary\">\n          {post.initials}\n        </AvatarFallback>\n      </Avatar>\n      <div className=\"min-w-0 flex-1\">\n        <header className=\"flex flex-wrap items-baseline gap-x-2\">\n          <strong className=\"text-sm font-semibold\">{post.author}</strong>\n          <span className=\"text-[10px] tabular-nums text-muted-foreground\">\n            {post.time}\n          </span>\n        </header>\n        <p className=\"mt-0.5 whitespace-pre-wrap text-sm leading-relaxed wrap-anywhere\">\n          {post.text}\n        </p>\n        {post.resource && (\n          <a\n            href={post.resource.href}\n            target=\"_blank\"\n            rel=\"noopener noreferrer\"\n            className=\"group mt-2 flex w-fit max-w-full items-center gap-2.5 overflow-hidden rounded-xl border bg-card p-1.5 pr-3 transition-colors hover:border-primary/40\"\n          >\n            <span\n              aria-hidden\n              className={styles.thumbnail}\n            >\n              <Layers2 size={19} strokeWidth={1.5} />\n            </span>\n            <span className=\"min-w-0\">\n              <strong className=\"block truncate text-xs\">\n                {post.resource.title}\n              </strong>\n              <span className=\"block truncate text-[11px] text-muted-foreground\">\n                {post.resource.detail}\n              </span>\n            </span>\n            <ArrowUpRight\n              size={13}\n              className=\"shrink-0 text-muted-foreground\"\n            />\n          </a>\n        )}\n        {post.code && (\n          <pre tabIndex={0} className=\"mt-2 overflow-x-auto rounded-lg border bg-muted/55 px-2.5 py-2 font-mono text-[11px]\">\n            <code>{post.code}</code>\n          </pre>\n        )}\n        {children}\n      </div>\n    </motion.article>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "components/motion/chat-post.module.css",
+      "content": ".thumbnail {\n  position: relative;\n  display: grid;\n  place-items: center;\n  flex: none;\n  width: 4rem;\n  height: 3rem;\n  overflow: hidden;\n  border-radius: 0.5rem;\n  background: #171717;\n  color: #d1fae5;\n}\n\n.thumbnail::before,\n.thumbnail::after {\n  content: \"\";\n  position: absolute;\n  width: 6rem;\n  height: 3.5rem;\n  border: 1px solid rgb(209 250 229 / 25%);\n  border-radius: 50%;\n  transform: rotate(-28deg);\n}\n\n.thumbnail::after {\n  width: 5.5rem;\n  height: 2rem;\n  border-color: rgb(209 250 229 / 30%);\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .thumbnail::after {\n    transition: transform 150ms;\n  }\n\n  a:hover .thumbnail::after {\n    transform: rotate(0);\n  }\n}\n",
+      "type": "registry:file",
+      "target": "@ui/chat-post.module.css"
+    }
+  ],
+  "type": "registry:ui"
+}

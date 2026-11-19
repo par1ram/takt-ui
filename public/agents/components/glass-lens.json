@@ -1,0 +1,45 @@
+{
+  "name": "glass-lens",
+  "title": "Glass Lens",
+  "category": "Cards",
+  "description": "Move the lens over the artwork",
+  "export": "GlassLens",
+  "usage": "<GlassLens label=\"Orbit\" image=\"/photos/orbit.jpg\" />",
+  "useCases": [
+    "On a fabric product page, a shopper moves the lens over a photo to inspect the weave.",
+    "During a design review, a designer magnifies a screenshot detail and moves the lens with the arrow keys."
+  ],
+  "registryItem": "/r/glass-lens.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "image": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Move the lens over the artwork",
+  "page": "/components/glass-lens",
+  "example": "import { GlassLens } from \"@/components/ui/glass-lens\";\n\nexport default function Example() {\n  return <GlassLens label=\"Orbit\" image=\"/photos/orbit.jpg\" />;\n}",
+  "models": {},
+  "behavior": "Supply an image URL in image. The lens magnifies that same image and label names the control.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/glass-lens.tsx",
+    "lib/takt-art-glass.ts"
+  ]
+}

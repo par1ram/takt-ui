@@ -1,0 +1,45 @@
+{
+  "name": "toolbar",
+  "title": "Toolbar",
+  "category": "Navigation",
+  "description": "Toggle text formatting",
+  "export": "Toolbar",
+  "usage": "<Toolbar text=\"Editor note\" />",
+  "useCases": [
+    "In a note editor, an author turns on bold and italic and immediately sees the combination in a text sample.",
+    "In a template builder, a designer removes one style. The app receives the remaining styles for the selected label."
+  ],
+  "registryItem": "/r/toolbar.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((styles: string[]) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Toggle text formatting",
+  "page": "/components/toolbar",
+  "example": "import { Toolbar } from \"@/components/ui/toolbar\";\n\nexport default function Example() {\n  return <Toolbar text=\"Editor note\" />;\n}",
+  "models": {},
+  "behavior": "text supplies the preview content. onChange reports the list of enabled styles.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/toolbar.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "receipt-printer",
   "title": "Receipt Printer",
-  "description": "Confirm a payment, watch the thermal receipt print and print another copy.",
+  "description": "Print a receipt after payment confirmation.",
   "dependencies": [
     "lucide-react",
     "motion"

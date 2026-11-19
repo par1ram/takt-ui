@@ -15,7 +15,6 @@ export function MusicToggle({
   return (
     <button
       type="button"
-      aria-label="Музыка"
       aria-pressed={on}
       className={cn(surfaceAction + " h-11", className)}
       onClick={() => {
@@ -39,6 +38,7 @@ export function MusicToggle({
           />
         ))}
       </span>
+      <span className="sr-only">Музыка</span>
       {on ? "Включена" : "Выключена"}
     </button>
   );

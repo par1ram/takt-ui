@@ -1,0 +1,47 @@
+{
+  "name": "prompt-box",
+  "title": "Prompt Box",
+  "category": "AI",
+  "description": "Введите запрос и отправьте",
+  "export": "PromptBox",
+  "usage": "<PromptBox suggestions={[\"Объясни этот пример\"]} onSend={text => localStorage.setItem(\"last-prompt\", text)} />",
+  "useCases": [
+    "На пустом экране ассистента аналитик выбирает подсказку «Суммируй отчёт», уточняет запрос и отправляет его.",
+    "В помощнике редактора автор формулирует собственную задачу. Приложение возвращает Promise запроса, чтобы форма показала состояние отправки и разрешила повтор при ошибке."
+  ],
+  "registryItem": "/r/ru/prompt-box.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "suggestions": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onSend": {
+        "type": "((text: string) => void | Promise<void>) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Введите запрос и отправьте",
+  "page": "/ru/components/prompt-box",
+  "example": "\"use client\";\n\nimport { PromptBox } from \"@/components/ui/prompt-box\";\n\nexport default function Example() {\n  return <PromptBox suggestions={[\"Объясни этот пример\"]} onSend={text => localStorage.setItem(\"last-prompt\", text)} />;\n}",
+  "models": {},
+  "behavior": "Передайте подсказки в suggestions, а отправку запроса ассистенту подключите через onSend. Верните Promise запроса для отображения состояния отправки.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/chat-composer.json"
+  ],
+  "files": [
+    "components/motion/prompt-box.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "springy-input",
+  "title": "Springy Input",
+  "category": "Ввод",
+  "description": "Нажмите на поле и начните ввод",
+  "export": "SpringyInput",
+  "usage": "<SpringyInput placeholder=\"Поиск по проекту\" onSubmit={query => location.assign(\"/search?q=\" + encodeURIComponent(query))} />",
+  "useCases": [
+    "В базе знаний сотрудник вводит вопрос и отправляет его клавишей Enter. Приложение открывает страницу результатов.",
+    "В каталоге образцов дизайнер вводит часть названия. Приложение использует onChange, чтобы отфильтровать образцы по мере ввода."
+  ],
+  "registryItem": "/r/ru/springy-input.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "placeholder": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((text: string) => void) | undefined",
+        "required": false
+      },
+      "onSubmit": {
+        "type": "((query: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Нажмите на поле и начните ввод",
+  "page": "/ru/components/springy-input",
+  "example": "\"use client\";\n\nimport { SpringyInput } from \"@/components/ui/springy-input\";\n\nexport default function Example() {\n  return <SpringyInput placeholder=\"Поиск по проекту\" onSubmit={query => location.assign(\"/search?q=\" + encodeURIComponent(query))} />;\n}",
+  "models": {},
+  "behavior": "onChange вызывается при редактировании. Для запуска поиска передайте onSubmit, который получает запрос с удалёнными крайними пробелами.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/command-search.json"
+  ],
+  "files": [
+    "components/motion/springy-input.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

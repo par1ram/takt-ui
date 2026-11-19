@@ -1,0 +1,62 @@
+{
+  "name": "ask-tutor",
+  "title": "Ask Tutor",
+  "category": "Learning",
+  "description": "Ask about a lesson or failing test with selected context.",
+  "export": "AskTutor",
+  "usage": "<AskTutor context={[\"lesson.md § 2\", \"pattern.regex\"]} />",
+  "useCases": [
+    "During an exercise, a student asks about a selected code fragment. The app sends the question and its context to the tutoring service.",
+    "While investigating a mistake, a learner removes an irrelevant source before submitting and reads a reply citing the relevant lesson passage."
+  ],
+  "registryItem": "/r/ask-tutor.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "context": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onAsk": {
+        "type": "((question: string, context: string[]) => Promise<TutorAnswer>) | undefined",
+        "required": false
+      },
+      "onReturn": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Ask about a lesson or failing test with selected context.",
+  "page": "/components/ask-tutor",
+  "example": "import { AskTutor } from \"@/components/ui/ask-tutor\";\n\nexport default function Example() {\n  return <AskTutor context={[\"lesson.md § 2\", \"pattern.regex\"]} />;\n}",
+  "models": {
+    "TutorAnswer": "type TutorAnswer = { text: string; citation?: Citation };",
+    "Citation": "type Citation = Pick<\n  React.ComponentProps<typeof LessonCitation>,\n  \"title\" | \"locator\" | \"excerpt\" | \"href\"\n>;"
+  },
+  "behavior": "onAsk receives the question and the remaining sources from context. Return a Promise with text and an optional citation. Omitting the handler enables the demo reply.",
+  "parts": [
+    "prompt-box",
+    "lesson-citation"
+  ],
+  "related": [
+    "/agents/components/code-exercise.json",
+    "/agents/components/run-console.json",
+    "/agents/components/test-results.json",
+    "/agents/components/lesson-citation.json"
+  ],
+  "files": [
+    "components/motion/ask-tutor.tsx",
+    "components/motion/prompt-box.tsx",
+    "components/motion/lesson-citation.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

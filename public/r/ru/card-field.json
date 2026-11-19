@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "card-field",
   "title": "Card Field",
-  "description": "Тестовая карта и форма Stripe для ввода по HTTPS.",
+  "description": "Ввести тестовый номер карты или подключить платёжное поле Stripe.",
   "dependencies": [
     "lucide-react",
     "@stripe/react-stripe-js",

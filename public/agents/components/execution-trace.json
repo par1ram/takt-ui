@@ -1,0 +1,47 @@
+{
+  "name": "execution-trace",
+  "title": "Execution Trace",
+  "category": "Learning",
+  "description": "Step through a trace with the active line and live variable values.",
+  "export": "ExecutionTrace",
+  "usage": "<ExecutionTrace code={[\"let x = 2\", \"x *= 3\"]} steps={[{ line: 1, variables: { x: 2 } }, { line: 2, variables: { x: 6 } }]} />",
+  "useCases": [
+    "When studying a loop, a student steps through the trace and follows the counter beside the highlighted line.",
+    "When explaining a bug, an instructor goes back to the step where a variable first acquired the wrong value."
+  ],
+  "registryItem": "/r/execution-trace.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "code": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "steps": {
+        "type": "Frame[] | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Step through a trace with the active line and live variable values.",
+  "page": "/components/execution-trace",
+  "example": "import { ExecutionTrace } from \"@/components/ui/execution-trace\";\n\nexport default function Example() {\n  return <ExecutionTrace code={[\"let x = 2\", \"x *= 3\"]} steps={[{ line: 1, variables: { x: 2 } }, { line: 2, variables: { x: 6 } }]} />;\n}",
+  "models": {
+    "Frame": "type Frame = { line: number; variables: Record<string, string | number> };"
+  },
+  "behavior": "code contains the source lines. Each step uses a one-based line number and a variables snapshot for that step.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/execution-trace.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

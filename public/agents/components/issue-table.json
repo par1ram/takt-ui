@@ -1,0 +1,66 @@
+{
+  "name": "issue-table",
+  "title": "Issue Table",
+  "category": "Trackers",
+  "description": "An inline-editable issue database with sortable priorities.",
+  "export": "IssueTable",
+  "usage": "<IssueTable defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3 }]} />",
+  "useCases": [
+    "During backlog triage, a manager sorts issues by priority and corrects a title inline.",
+    "In a team meeting, a coordinator changes a task’s status in the table. The board receives the same updated array and shows the new status."
+  ],
+  "registryItem": "/r/issue-table.json",
+  "dependencies": [
+    "motion",
+    "lucide-react",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "props": [
+    {
+      "issues": {
+        "type": "TrackerIssue[] | undefined",
+        "required": false
+      },
+      "defaultIssues": {
+        "type": "TrackerIssue[] | undefined",
+        "required": false
+      },
+      "onIssuesChange": {
+        "type": "((issues: TrackerIssue[]) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "An inline-editable issue database with sortable priorities.",
+  "page": "/components/issue-table",
+  "example": "import { IssueTable } from \"@/components/ui/issue-table\";\n\nexport default function Example() {\n  return <IssueTable defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3 }]} />;\n}",
+  "models": {
+    "TrackerIssue": "type TrackerIssue = {\n  id: string;\n  title: string;\n  status: IssueStatus;\n  priority: IssuePriority;\n  points: number;\n  cycleId?: string;\n};",
+    "IssueStatus": "type IssueStatus = \"done\" | \"backlog\" | \"active\";",
+    "IssuePriority": "type IssuePriority = \"high\" | \"medium\" | \"low\";"
+  },
+  "behavior": "In controlled mode onIssuesChange receives the full TrackerIssue array. Pass the updated issues back to the table and related views.",
+  "parts": [],
+  "related": [
+    "/agents/components/issue-board.json",
+    "/agents/components/cycle-planner.json"
+  ],
+  "files": [
+    "components/motion/issue-table.tsx",
+    "components/motion/tracker-issues.tsx",
+    "components/motion/issue-property-menu.tsx"
+  ]
+}

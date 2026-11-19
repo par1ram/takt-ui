@@ -1,0 +1,66 @@
+{
+  "name": "issue-board",
+  "title": "Issue Board",
+  "category": "Trackers",
+  "description": "A kanban board with status transitions and inline issue creation.",
+  "export": "IssueBoard",
+  "usage": "<IssueBoard defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3 }]} />",
+  "useCases": [
+    "At stand-up, a developer moves a card from backlog to active so the team sees the task’s new status.",
+    "During intake, a manager creates a task directly on the board. The app saves the updated list and refreshes its other views."
+  ],
+  "registryItem": "/r/issue-board.json",
+  "dependencies": [
+    "motion",
+    "lucide-react",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "props": [
+    {
+      "issues": {
+        "type": "TrackerIssue[] | undefined",
+        "required": false
+      },
+      "defaultIssues": {
+        "type": "TrackerIssue[] | undefined",
+        "required": false
+      },
+      "onIssuesChange": {
+        "type": "((issues: TrackerIssue[]) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "A kanban board with status transitions and inline issue creation.",
+  "page": "/components/issue-board",
+  "example": "import { IssueBoard } from \"@/components/ui/issue-board\";\n\nexport default function Example() {\n  return <IssueBoard defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3 }]} />;\n}",
+  "models": {
+    "TrackerIssue": "type TrackerIssue = {\n  id: string;\n  title: string;\n  status: IssueStatus;\n  priority: IssuePriority;\n  points: number;\n  cycleId?: string;\n};",
+    "IssueStatus": "type IssueStatus = \"done\" | \"backlog\" | \"active\";",
+    "IssuePriority": "type IssuePriority = \"high\" | \"medium\" | \"low\";"
+  },
+  "behavior": "Use defaultIssues for a local board. To synchronize with the table, give both the same issues array and onIssuesChange handler. Each issue needs a stable ID.",
+  "parts": [],
+  "related": [
+    "/agents/components/issue-table.json",
+    "/agents/components/cycle-planner.json"
+  ],
+  "files": [
+    "components/motion/issue-board.tsx",
+    "components/motion/tracker-issues.tsx",
+    "components/motion/issue-property-menu.tsx"
+  ]
+}

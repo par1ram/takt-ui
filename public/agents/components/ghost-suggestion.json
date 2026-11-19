@@ -1,0 +1,43 @@
+{
+  "name": "ghost-suggestion",
+  "title": "Ghost Suggestion",
+  "category": "AI",
+  "description": "Start typing and accept the suggestion with the right arrow",
+  "export": "GhostSuggestion",
+  "usage": "<GhostSuggestion options={[\"Amsterdam\", \"Athens\", \"Lisbon\"]} />",
+  "useCases": [
+    "In a travel form, a user starts typing a city and completes its name from a matching suggestion.",
+    "In a command field, a developer enters the prefix of a known command. The app supplies the vocabulary used for inline completion."
+  ],
+  "registryItem": "/r/ghost-suggestion.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "options": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((value: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Start typing and accept the suggestion with the right arrow",
+  "page": "/components/ghost-suggestion",
+  "example": "import { GhostSuggestion } from \"@/components/ui/ghost-suggestion\";\n\nexport default function Example() {\n  return <GhostSuggestion options={[\"Amsterdam\", \"Athens\", \"Lisbon\"]} />;\n}",
+  "models": {},
+  "behavior": "Pass completion candidates in options. onChange reports the field text after typing or accepting a suggestion.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/ghost-suggestion.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

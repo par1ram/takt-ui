@@ -1,0 +1,47 @@
+{
+  "name": "letter-limit",
+  "title": "Letter Limit",
+  "category": "Inputs",
+  "description": "Type until you reach the character limit",
+  "export": "LetterLimit",
+  "usage": "<LetterLimit label=\"Bio\" limit={160} />",
+  "useCases": [
+    "On a profile page, an author trims their bio to the platform limit and sees how much space it uses.",
+    "When writing a short caption, an editor pastes text containing emoji. The field enforces the limit without splitting combined characters."
+  ],
+  "registryItem": "/r/letter-limit.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "limit": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((text: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Type until you reach the character limit",
+  "page": "/components/letter-limit",
+  "example": "import { LetterLimit } from \"@/components/ui/letter-limit\";\n\nexport default function Example() {\n  return <LetterLimit label=\"Bio\" limit={160} />;\n}",
+  "models": {},
+  "behavior": "limit sets the maximum length. onChange receives the truncated text to use as the field value.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/letter-limit.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

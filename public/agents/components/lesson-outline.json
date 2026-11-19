@@ -1,0 +1,55 @@
+{
+  "name": "lesson-outline",
+  "title": "Lesson Outline",
+  "category": "Learning",
+  "description": "Browse lessons and resume a course.",
+  "export": "LessonOutline",
+  "usage": "<LessonOutline title=\"React\" currentId=\"state\" items={[{ id: \"state\", title: \"State\", href: \"/lessons/state\" }]} />",
+  "useCases": [
+    "Returning to a course, a student sees the current lesson in the outline and resumes it with the continue button.",
+    "Before a class, a participant reviews the topic sequence and follows the link to a particular lesson."
+  ],
+  "registryItem": "/r/lesson-outline.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "Lesson[] | undefined",
+        "required": false
+      },
+      "currentId": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onResume": {
+        "type": "((id: string) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Browse lessons and resume a course.",
+  "page": "/components/lesson-outline",
+  "example": "import { LessonOutline } from \"@/components/ui/lesson-outline\";\n\nexport default function Example() {\n  return <LessonOutline title=\"React\" currentId=\"state\" items={[{ id: \"state\", title: \"State\", href: \"/lessons/state\" }]} />;\n}",
+  "models": {
+    "Lesson": "type Lesson = {\n  id: string;\n  title: string;\n  complete?: boolean;\n  href?: string;\n  excerpt?: string;\n};"
+  },
+  "behavior": "Supply currentId and lessons with IDs. onResume receives the lesson ID to open in the app.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/lesson-outline.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

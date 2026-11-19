@@ -1,0 +1,56 @@
+{
+  "name": "command-search",
+  "title": "Command Search",
+  "category": "Кнопки",
+  "description": "Кнопка раскрывается в поле поиска по клику или по ⌘/Ctrl + K.",
+  "export": "CommandSearch",
+  "usage": "<CommandSearch onSearch={query => location.assign(\"/search?q=\" + encodeURIComponent(query))} />",
+  "useCases": [
+    "В базе документации разработчик нажимает Ctrl/⌘+K, вводит фразу и открывает страницу результатов через обработчик приложения.",
+    "В тесной панели проекта пользователь раскрывает поле из кнопки и ищет файл по произвольному тексту."
+  ],
+  "registryItem": "/r/ru/command-search.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "placeholder": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onSearch": {
+        "type": "((query: string) => void) | undefined",
+        "required": false
+      },
+      "shortcut": {
+        "type": "boolean | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Ввести произвольный поисковый запрос и передать его в поиск приложения.",
+  "page": "/ru/components/command-search",
+  "example": "\"use client\";\n\nimport { CommandSearch } from \"@/components/ui/command-search\";\n\nexport default function Example() {\n  return <CommandSearch onSearch={query => location.assign(\"/search?q=\" + encodeURIComponent(query))} />;\n}",
+  "models": {},
+  "behavior": "onSearch получает строку запроса. Маршрут и результаты поиска определяет приложение. Если приложение уже обрабатывает Ctrl/⌘+K, передайте shortcut={false}.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/command-palette.json",
+    "/agents/ru/components/springy-input.json"
+  ],
+  "files": [
+    "components/motion/command-search.tsx"
+  ]
+}

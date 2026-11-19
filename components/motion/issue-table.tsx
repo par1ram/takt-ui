@@ -71,7 +71,7 @@ export function IssueTable({
               >
                 <button
                   type="button"
-                  aria-label="Сортировать по приоритету"
+                  title="Сортировать по приоритету"
                   onClick={() =>
                     setOrder(
                       order === "descending" ? "ascending" : "descending",

@@ -1,0 +1,42 @@
+{
+  "name": "roll-links",
+  "title": "Roll Links",
+  "category": "Текст",
+  "description": "Наведите курсор или сфокусируйте ссылку",
+  "export": "RollLinks",
+  "usage": "<RollLinks label=\"Документация\" href=\"/docs\" />",
+  "useCases": [
+    "В навигации портфолио посетитель видит отклик при наведении на название раздела и переходит по обычной ссылке.",
+    "Внизу статьи читатель переводит клавиатурный фокус на ссылку документации и открывает её без мыши."
+  ],
+  "registryItem": "/r/ru/roll-links.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "href": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Наведите курсор или сфокусируйте ссылку",
+  "page": "/ru/components/roll-links",
+  "example": "import { RollLinks } from \"@/components/ui/roll-links\";\n\nexport default function Example() {\n  return <RollLinks label=\"Документация\" href=\"/docs\" />;\n}",
+  "models": {},
+  "behavior": "href задаёт реальный адрес перехода, а label используется для обеих визуальных версий подписи.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/roll-links.tsx"
+  ]
+}

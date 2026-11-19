@@ -1,0 +1,43 @@
+{
+  "name": "scrubber",
+  "title": "Scrubber",
+  "category": "Ввод",
+  "description": "Прокрутите шкалу времени",
+  "export": "Scrubber",
+  "usage": "<Scrubber frames={24} />",
+  "useCases": [
+    "В предпросмотре анимации дизайнер перемещается к отдельному кадру, чтобы проверить положение объекта.",
+    "При разборе записи эксперимента исследователь выбирает номер измерения. Приложение отображает данные для этой позиции."
+  ],
+  "registryItem": "/r/ru/scrubber.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "frames": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((frame: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Прокрутите шкалу времени",
+  "page": "/ru/components/scrubber",
+  "example": "import { Scrubber } from \"@/components/ui/scrubber\";\n\nexport default function Example() {\n  return <Scrubber frames={24} />;\n}",
+  "models": {},
+  "behavior": "frames задаёт максимальную позицию. onChange получает целое число от 0 до frames включительно.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/scrubber.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

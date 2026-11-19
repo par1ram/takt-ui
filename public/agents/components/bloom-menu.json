@@ -1,0 +1,45 @@
+{
+  "name": "bloom-menu",
+  "title": "Bloom Menu",
+  "category": "Buttons",
+  "description": "Actions fan out around the menu button.",
+  "export": "BloomMenu",
+  "usage": "<BloomMenu onSelect={(action) => console.log(action)} />",
+  "useCases": [
+    "Beside a selected shape, a designer expands duplicate and delete actions and applies one to that shape.",
+    "On a photo card, an editor opens a compact menu to download the original or copy its link through an app handler."
+  ],
+  "registryItem": "/r/bloom-menu.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "actions": {
+        "type": "{ label: string; icon: LucideIcon; }[] | undefined",
+        "required": false
+      },
+      "onSelect": {
+        "type": "((label: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Actions fan out around the menu button.",
+  "page": "/components/bloom-menu",
+  "example": "\"use client\";\n\nimport { BloomMenu } from \"@/components/ui/bloom-menu\";\n\nexport default function Example() {\n  return <BloomMenu onSelect={(action) => console.log(action)} />;\n}",
+  "models": {},
+  "behavior": "actions contains label and icon pairs. Map the label received by onSelect to an application action.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/bloom-menu.tsx"
+  ]
+}

@@ -88,105 +88,106 @@ export function SwipeDeck({
   }
   return (
     <div className={cn("grid justify-items-center gap-3", className)}>
-      <button
-        type="button"
-        aria-label={cards[front].title + " — показать следующую карточку"}
-        className="relative h-[154px] w-[134px] touch-pan-y cursor-grab rounded-xl outline-offset-8 select-none active:cursor-grabbing"
-        onPointerDown={(e) => {
-          if (
-            !e.isPrimary ||
-            e.button !== 0 ||
-            leaving.current ||
-            cards.length < 2
-          )
-            return;
-          const rect = e.currentTarget.getBoundingClientRect();
-          drag.current = {
-            id: e.pointerId,
-            x: e.clientX,
-            y: e.clientY,
-            lastX: e.clientX,
-            time: e.timeStamp,
-            speed: 0,
-            tilt: e.clientY - rect.top < rect.height / 2 ? 1 : -1,
-            width: rect.width,
-            travelled: false,
-          };
-          suppressClick.current = false;
-          if (lead.current) lead.current.style.transition = "none";
-          e.currentTarget.setPointerCapture(e.pointerId);
-        }}
-        onPointerMove={(e) => {
-          const grip = drag.current;
-          if (!grip || grip.id !== e.pointerId || !lead.current) return;
-          const dx = e.clientX - grip.x,
-            dy = e.clientY - grip.y;
-          const elapsed = e.timeStamp - grip.time;
-          if (elapsed > 0)
-            grip.speed =
-              0.5 * grip.speed +
-              (0.5 * (e.clientX - grip.lastX) * 1000) / elapsed;
-          grip.time = e.timeStamp;
-          grip.lastX = e.clientX;
-          if (Math.abs(dx) > 5 || Math.abs(dy) > 5) grip.travelled = true;
-          lead.current.style.setProperty(
-            "--next",
-            String(Math.min(1, Math.max(0, -dx / 55))),
-          );
-          lead.current.style.setProperty(
-            "--previous",
-            String(Math.min(1, Math.max(0, dx / 55))),
-          );
-          if (!reduce())
-            lead.current.style.transform =
-              "translate(" +
-              dx +
-              "px," +
-              dy * 0.35 +
-              "px) rotate(" +
-              (5 + dx * 0.065 * grip.tilt) +
-              "deg)";
-        }}
-        onPointerCancel={() => {
-          suppressClick.current = true;
-          releaseCard();
-        }}
-        onLostPointerCapture={() => {
-          if (drag.current) releaseCard();
-        }}
-        onPointerUp={(e) => {
-          const grip = drag.current;
-          if (!grip || grip.id !== e.pointerId) return;
-          const dx = e.clientX - grip.x;
-          // The original uses a 110px throw on a 256px card, or a quick flick.
-          const flick =
-            e.timeStamp - grip.time < 80 &&
-            Math.abs(grip.speed) > 700 &&
-            Math.sign(grip.speed) === Math.sign(dx);
-          suppressClick.current = grip.travelled || Math.abs(dx) > 5;
-          if (
-            Math.abs(dx) > (grip.width * 110) / 256 ||
-            (Math.abs(dx) > 5 && flick)
-          ) {
-            drag.current = null;
-            if (lead.current) lead.current.style.removeProperty("transition");
-            void turn(Math.sign(dx));
-          } else releaseCard();
-        }}
-        onClick={() => {
-          if (suppressClick.current) {
+      <div className="relative h-[154px] w-[134px]">
+        <button
+          type="button"
+          aria-label={cards[front].title + " — показать следующую карточку"}
+          className="absolute inset-0 z-10 touch-pan-y cursor-grab rounded-xl outline-offset-8 select-none active:cursor-grabbing"
+          onPointerDown={(e) => {
+            if (
+              !e.isPrimary ||
+              e.button !== 0 ||
+              leaving.current ||
+              cards.length < 2
+            )
+              return;
+            const rect = e.currentTarget.getBoundingClientRect();
+            drag.current = {
+              id: e.pointerId,
+              x: e.clientX,
+              y: e.clientY,
+              lastX: e.clientX,
+              time: e.timeStamp,
+              speed: 0,
+              tilt: e.clientY - rect.top < rect.height / 2 ? 1 : -1,
+              width: rect.width,
+              travelled: false,
+            };
             suppressClick.current = false;
-            return;
-          }
-          void turn(-1);
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-            e.preventDefault();
-            void turn(e.key === "ArrowLeft" ? 1 : -1);
-          }
-        }}
-      >
+            if (lead.current) lead.current.style.transition = "none";
+            e.currentTarget.setPointerCapture(e.pointerId);
+          }}
+          onPointerMove={(e) => {
+            const grip = drag.current;
+            if (!grip || grip.id !== e.pointerId || !lead.current) return;
+            const dx = e.clientX - grip.x,
+              dy = e.clientY - grip.y;
+            const elapsed = e.timeStamp - grip.time;
+            if (elapsed > 0)
+              grip.speed =
+                0.5 * grip.speed +
+                (0.5 * (e.clientX - grip.lastX) * 1000) / elapsed;
+            grip.time = e.timeStamp;
+            grip.lastX = e.clientX;
+            if (Math.abs(dx) > 5 || Math.abs(dy) > 5) grip.travelled = true;
+            lead.current.style.setProperty(
+              "--next",
+              String(Math.min(1, Math.max(0, -dx / 55))),
+            );
+            lead.current.style.setProperty(
+              "--previous",
+              String(Math.min(1, Math.max(0, dx / 55))),
+            );
+            if (!reduce())
+              lead.current.style.transform =
+                "translate(" +
+                dx +
+                "px," +
+                dy * 0.35 +
+                "px) rotate(" +
+                (5 + dx * 0.065 * grip.tilt) +
+                "deg)";
+          }}
+          onPointerCancel={() => {
+            suppressClick.current = true;
+            releaseCard();
+          }}
+          onLostPointerCapture={() => {
+            if (drag.current) releaseCard();
+          }}
+          onPointerUp={(e) => {
+            const grip = drag.current;
+            if (!grip || grip.id !== e.pointerId) return;
+            const dx = e.clientX - grip.x;
+            // The original uses a 110px throw on a 256px card, or a quick flick.
+            const flick =
+              e.timeStamp - grip.time < 80 &&
+              Math.abs(grip.speed) > 700 &&
+              Math.sign(grip.speed) === Math.sign(dx);
+            suppressClick.current = grip.travelled || Math.abs(dx) > 5;
+            if (
+              Math.abs(dx) > (grip.width * 110) / 256 ||
+              (Math.abs(dx) > 5 && flick)
+            ) {
+              drag.current = null;
+              if (lead.current) lead.current.style.removeProperty("transition");
+              void turn(Math.sign(dx));
+            } else releaseCard();
+          }}
+          onClick={() => {
+            if (suppressClick.current) {
+              suppressClick.current = false;
+              return;
+            }
+            void turn(-1);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+              e.preventDefault();
+              void turn(e.key === "ArrowLeft" ? 1 : -1);
+            }
+          }}
+        />
         {Array.from({ length: Math.min(3, cards.length) }, (_, depth) => {
           const pos = (front + depth) % cards.length;
           const card = cards[pos];
@@ -247,7 +248,7 @@ export function SwipeDeck({
             </span>
           );
         })}
-      </button>
+      </div>
       <span className="flex items-center gap-1.5" aria-hidden>
         {cards.slice(0, 12).map((_, i) => (
           <i

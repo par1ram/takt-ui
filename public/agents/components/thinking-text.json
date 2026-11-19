@@ -1,0 +1,39 @@
+{
+  "name": "thinking-text",
+  "title": "Thinking Text",
+  "category": "AI",
+  "description": "Start the thinking indicator",
+  "export": "ThinkingText",
+  "usage": "<ThinkingText label=\"Loading context\" />",
+  "useCases": [
+    "While an assistant gathers document context, the reader sees a short status beside the reply area.",
+    "On a report page, the app displays “Processing rows” while a background calculation runs, then replaces it with the result."
+  ],
+  "registryItem": "/r/thinking-text.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Start the thinking indicator",
+  "page": "/components/thinking-text",
+  "example": "import { ThinkingText } from \"@/components/ui/thinking-text\";\n\nexport default function Example() {\n  return <ThinkingText label=\"Loading context\" />;\n}",
+  "models": {},
+  "behavior": "Pass the status in label and render the component while the operation is pending.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/thinking-text.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

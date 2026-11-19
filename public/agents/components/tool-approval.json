@@ -1,0 +1,50 @@
+{
+  "name": "tool-approval",
+  "title": "Tool Approval",
+  "category": "AI",
+  "description": "Approve or decline the action",
+  "export": "ToolApproval",
+  "usage": "<ToolApproval action=\"Run build\" resource=\"package.json\" onDecision={allowed => console.info({ allowed })} />",
+  "useCases": [
+    "Before creating an event, an assistant shows the calendar and proposed action. The user approves or declines, and the app handles the decision.",
+    "In a workspace, an agent proposes changing a specific file. The editor checks the resource name before approving the write."
+  ],
+  "registryItem": "/r/tool-approval.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "action": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "resource": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onDecision": {
+        "type": "((allowed: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Approve or decline the action",
+  "page": "/components/tool-approval",
+  "example": "\"use client\";\n\nimport { ToolApproval } from \"@/components/ui/tool-approval\";\n\nexport default function Example() {\n  return <ToolApproval action=\"Run build\" resource=\"package.json\" onDecision={allowed => console.info({ allowed })} />;\n}",
+  "models": {},
+  "behavior": "Supply the action and resource labels. onDecision reports the user choice. The application executes the operation and enforces permissions.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/tool-approval.tsx",
+    "lib/takt-focus.ts",
+    "lib/takt-surface.ts"
+  ]
+}

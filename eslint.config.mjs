@@ -13,6 +13,8 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
     "generated/**",
+    "coverage/**",
+    "test-results/**",
     "references/motion/sources/**",
   ]),
 ]);

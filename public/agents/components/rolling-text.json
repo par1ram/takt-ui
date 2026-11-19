@@ -1,0 +1,44 @@
+{
+  "name": "rolling-text",
+  "title": "Rolling Text",
+  "category": "Text",
+  "description": "Letters roll into place one by one.",
+  "export": "RollingText",
+  "usage": "<RollingText words={[\"Welcome\", \"Bonjour\", \"Hello\"]} />",
+  "useCases": [
+    "At an exhibition kiosk, a visitor taps the greeting to read it in the next language.",
+    "In a brand type specimen, a designer cycles through short words with the arrow keys to compare letterforms."
+  ],
+  "registryItem": "/r/rolling-text.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "words": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Letters roll into place one by one.",
+  "page": "/components/rolling-text",
+  "example": "import { RollingText } from \"@/components/ui/rolling-text\";\n\nexport default function Example() {\n  return <RollingText words={[\"Welcome\", \"Bonjour\", \"Hello\"]} />;\n}",
+  "models": {},
+  "behavior": "Pass words in display order. An empty array renders no control.",
+  "parts": [],
+  "related": [
+    "/agents/components/dynamic-text.json",
+    "/agents/components/goo-morph.json"
+  ],
+  "files": [
+    "components/motion/rolling-text.tsx"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "marker-text",
+  "title": "Marker Text",
+  "category": "Text",
+  "description": "Highlight the phrase",
+  "export": "MarkerText",
+  "usage": "<MarkerText text=\"New release\" />",
+  "useCases": [
+    "In lecture notes, an instructor taps a short quotation to highlight it during an explanation.",
+    "During a presentation, an editor highlights a key point and clears the mark before showing it again."
+  ],
+  "registryItem": "/r/marker-text.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Highlight the phrase",
+  "page": "/components/marker-text",
+  "example": "import { MarkerText } from \"@/components/ui/marker-text\";\n\nexport default function Example() {\n  return <MarkerText text=\"New release\" />;\n}",
+  "models": {},
+  "behavior": "Pass the phrase to highlight in text. The component manages the highlight state.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/marker-text.tsx"
+  ]
+}

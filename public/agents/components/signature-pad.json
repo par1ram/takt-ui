@@ -1,0 +1,43 @@
+{
+  "name": "signature-pad",
+  "title": "Signature Pad",
+  "category": "Inputs",
+  "description": "Draw a signature and save it",
+  "export": "SignaturePad",
+  "usage": "<SignaturePad onSave={png => { const link = document.createElement(\"a\"); link.download = \"signature.png\"; link.href = png; link.click(); }} />",
+  "useCases": [
+    "At equipment pickup, the recipient signs with a finger. The app attaches the resulting PNG to the pickup record.",
+    "In a greeting card editor, an author adds a handwritten autograph, undoes a stray stroke and saves the drawing."
+  ],
+  "registryItem": "/r/signature-pad.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onSave": {
+        "type": "((png: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Draw a signature and save it",
+  "page": "/components/signature-pad",
+  "example": "\"use client\";\n\nimport { SignaturePad } from \"@/components/ui/signature-pad\";\n\nexport default function Example() {\n  return <SignaturePad onSave={png => { const link = document.createElement(\"a\"); link.download = \"signature.png\"; link.href = png; link.click(); }} />;\n}",
+  "models": {},
+  "behavior": "onSave receives the PNG as a data URL. Download it or convert it to a file for upload.",
+  "parts": [],
+  "related": [
+    "/agents/components/file-drop.json"
+  ],
+  "files": [
+    "components/motion/signature-pad.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

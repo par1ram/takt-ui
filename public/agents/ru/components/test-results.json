@@ -1,0 +1,51 @@
+{
+  "name": "test-results",
+  "title": "Test Results",
+  "category": "Обучение",
+  "description": "Сравнение ожидаемого и полученного результата на конкретном входе.",
+  "export": "TestResults",
+  "usage": "<TestResults results={[{ input: \"UI-23\", expected: true, actual: false }]} />",
+  "useCases": [
+    "После проверки решения студент выбирает упавший тест и сравнивает вход, ожидаемое и фактическое значения.",
+    "Во время разбора студент просит объяснить конкретное расхождение. Приложение передаёт выбранный тест наставнику через onAsk."
+  ],
+  "registryItem": "/r/ru/test-results.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "results": {
+        "type": "ExerciseCase[] | undefined",
+        "required": false
+      },
+      "onAsk": {
+        "type": "((result: ExerciseCase, trigger: HTMLButtonElement) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Сравнение ожидаемого и полученного результата на конкретном входе.",
+  "page": "/ru/components/test-results",
+  "example": "import { TestResults } from \"@/components/ui/test-results\";\n\nexport default function Example() {\n  return <TestResults results={[{ input: \"UI-23\", expected: true, actual: false }]} />;\n}",
+  "models": {
+    "ExerciseCase": "type ExerciseCase = {\n  input: string;\n  expected: boolean;\n  actual: boolean;\n};"
+  },
+  "behavior": "Каждая запись results содержит input, expected и actual. onAsk получает выбранный тест и кнопку, к которой можно вернуть фокус.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/code-exercise.json",
+    "/agents/ru/components/run-console.json",
+    "/agents/ru/components/ask-tutor.json"
+  ],
+  "files": [
+    "components/motion/test-results.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

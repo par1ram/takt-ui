@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "cohort-retention",
   "title": "Cohort Retention",
-  "description": "Возврат участников по когортам с отдельным состоянием для пропущенных наблюдений.",
+  "description": "Показать возвращаемость участников по когортам и периодам.",
   "dependencies": [
     "motion",
     "lucide-react"

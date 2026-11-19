@@ -1,0 +1,47 @@
+{
+  "name": "agent-steps",
+  "title": "Agent Steps",
+  "category": "AI",
+  "description": "Проведите агента по этапам",
+  "export": "AgentSteps",
+  "usage": "<AgentSteps steps={[\"Прочитать\", \"Проверить\", \"Сохранить\"]} />",
+  "useCases": [
+    "В обучающем демо пользователь по шагам проводит агента от чтения файла до подготовки результата и видит число завершённых этапов.",
+    "Во время презентации ведущий переключает этап кнопкой. Приложение использует onStep, чтобы рядом показать артефакт соответствующего шага."
+  ],
+  "registryItem": "/r/ru/agent-steps.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "steps": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onStep": {
+        "type": "((step: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Проведите агента по этапам",
+  "page": "/ru/components/agent-steps",
+  "example": "import { AgentSteps } from \"@/components/ui/agent-steps\";\n\nexport default function Example() {\n  return <AgentSteps steps={[\"Прочитать\", \"Проверить\", \"Сохранить\"]} />;\n}",
+  "models": {},
+  "behavior": "steps задаёт порядок этапов. Подпишитесь на onStep, чтобы синхронизировать продвижение с другой частью экрана.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/step-progress.json"
+  ],
+  "files": [
+    "components/motion/agent-steps.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

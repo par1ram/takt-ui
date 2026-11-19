@@ -1,0 +1,52 @@
+{
+  "name": "notification-stack",
+  "title": "Notification Stack",
+  "category": "Карточки",
+  "description": "Раскройте стопку или смахните уведомление",
+  "export": "NotificationStack",
+  "usage": "<NotificationStack notifications={[{ id: \"build-24\", title: \"Сборка завершена\", time: \"10:00\" }]} />",
+  "useCases": [
+    "На панели команды сотрудник просматривает стопку уведомлений о сборках и закрывает уже прочитанные сообщения.",
+    "В центре событий приложение обновляет уведомления со стабильными идентификаторами, пока пользователь разбирает оставшиеся карточки."
+  ],
+  "registryItem": "/r/ru/notification-stack.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "messages": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "notifications": {
+        "type": "readonly StackNotification[] | undefined",
+        "required": false
+      },
+      "onDismiss": {
+        "type": "((message: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Раскройте стопку или смахните уведомление",
+  "page": "/ru/components/notification-stack",
+  "example": "import { NotificationStack } from \"@/components/ui/notification-stack\";\n\nexport default function Example() {\n  return <NotificationStack notifications={[{ id: \"build-24\", title: \"Сборка завершена\", time: \"10:00\" }]} />;\n}",
+  "models": {
+    "StackNotification": "type StackNotification = {\n  id: string;\n  title: string;\n  body?: string;\n  time?: string;\n  icon?: ReactNode;\n};"
+  },
+  "behavior": "Для уведомлений с данными передайте notifications со стабильными id. onDismiss получает заголовок закрытого уведомления.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/notification-stack.tsx",
+    "lib/takt-focus.ts"
+  ]
+}

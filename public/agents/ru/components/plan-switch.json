@@ -1,0 +1,50 @@
+{
+  "name": "plan-switch",
+  "title": "Plan Switch",
+  "category": "Карточки",
+  "description": "Переключение периода пересчитывает месячную стоимость, итог и скидку.",
+  "export": "PlanSwitch",
+  "usage": "<PlanSwitch options={[\"Месяц\", \"Год\"]} prices={[{ monthly: 20, total: 20 }, { monthly: 15, total: 180 }]} />",
+  "useCases": [
+    "На странице тарифов покупатель сравнивает стоимость месяца и итог за год перед оформлением подписки.",
+    "При продлении подписки клиент меняет период оплаты. Приложение использует выбранный индекс, чтобы передать нужный тариф в checkout."
+  ],
+  "registryItem": "/r/ru/plan-switch.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "options": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "prices": {
+        "type": "{ monthly: number; total: number; }[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Переключение периода пересчитывает месячную стоимость, итог и скидку.",
+  "page": "/ru/components/plan-switch",
+  "example": "import { PlanSwitch } from \"@/components/ui/plan-switch\";\n\nexport default function Example() {\n  return <PlanSwitch options={[\"Месяц\", \"Год\"]} prices={[{ monthly: 20, total: 20 }, { monthly: 15, total: 180 }]} />;\n}",
+  "models": {},
+  "behavior": "Каждому элементу options соответствует объект prices с той же позицией. onChange возвращает индекс выбранного периода.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/plan-switch.tsx",
+    "lib/takt-indicator.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

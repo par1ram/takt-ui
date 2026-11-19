@@ -1,0 +1,43 @@
+{
+  "name": "signature-pad",
+  "title": "Signature Pad",
+  "category": "Ввод",
+  "description": "Нарисуйте подпись и сохраните результат",
+  "export": "SignaturePad",
+  "usage": "<SignaturePad onSave={png => { const link = document.createElement(\"a\"); link.download = \"signature.png\"; link.href = png; link.click(); }} />",
+  "useCases": [
+    "При выдаче оборудования получатель рисует подпись пальцем. Приложение прикладывает полученный PNG к записи выдачи.",
+    "В конструкторе открыток автор добавляет рукописный автограф, отменяет неудачный штрих и сохраняет рисунок."
+  ],
+  "registryItem": "/r/ru/signature-pad.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onSave": {
+        "type": "((png: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Нарисуйте подпись и сохраните результат",
+  "page": "/ru/components/signature-pad",
+  "example": "\"use client\";\n\nimport { SignaturePad } from \"@/components/ui/signature-pad\";\n\nexport default function Example() {\n  return <SignaturePad onSave={png => { const link = document.createElement(\"a\"); link.download = \"signature.png\"; link.href = png; link.click(); }} />;\n}",
+  "models": {},
+  "behavior": "onSave получает PNG в виде data URL. Его можно скачать или преобразовать в файл для загрузки.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/file-drop.json"
+  ],
+  "files": [
+    "components/motion/signature-pad.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

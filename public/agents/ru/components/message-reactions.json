@@ -1,0 +1,51 @@
+{
+  "name": "message-reactions",
+  "title": "Message Reactions",
+  "category": "Мессенджер",
+  "description": "Реакции на сообщение со счётчиками участников.",
+  "export": "MessageReactions",
+  "usage": "<MessageReactions onToggle={emoji => console.info(emoji)} />",
+  "useCases": [
+    "Под сообщением о релизе коллега ставит реакцию и видит обновлённый счётчик рядом с эмодзи.",
+    "В обсуждении предложения участник снимает свою реакцию. Приложение обновляет счётчик этого эмодзи, сохраняя отметки остальных участников."
+  ],
+  "registryItem": "/r/ru/message-reactions.json",
+  "dependencies": [
+    "motion",
+    "radix-ui",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "reactions": {
+        "type": "ChatReaction[] | undefined",
+        "required": false
+      },
+      "onToggle": {
+        "type": "((emoji: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Реакции на сообщение со счётчиками участников.",
+  "page": "/ru/components/message-reactions",
+  "example": "\"use client\";\n\nimport { useState } from \"react\";\nimport { MessageReactions, toggleReaction } from \"@/components/ui/message-reactions\";\n\nexport default function Reactions() {\n  const [reactions, setReactions] = useState([\n    { emoji: \"👏\", label: \"Bravo\", count: 2, mine: false },\n  ]);\n\n  return (\n    <MessageReactions\n      reactions={reactions}\n      onToggle={emoji => setReactions(current => toggleReaction(current, emoji))}\n    />\n  );\n}",
+  "models": {
+    "ChatReaction": "type ChatReaction = {\n  emoji: string;\n  label: string;\n  count: number;\n  mine: boolean;\n};"
+  },
+  "behavior": "При переданном reactions список управляется приложением. onToggle получает emoji, а экспорт toggleReaction вычисляет новый массив для обновления состояния.",
+  "registryExample": "/r/ru/message-reactions-demo.json",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/chat-post.json"
+  ],
+  "files": [
+    "components/motion/message-reactions.tsx"
+  ]
+}

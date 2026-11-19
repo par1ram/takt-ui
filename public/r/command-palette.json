@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "command-palette",
   "title": "Command Palette",
-  "description": "Find and run a command",
+  "description": "Find and execute an action from a known list of commands.",
   "dependencies": [
     "lucide-react"
   ],

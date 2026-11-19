@@ -1,0 +1,49 @@
+{
+  "name": "morph-popover",
+  "title": "Morph Popover",
+  "category": "Buttons",
+  "description": "Open the feedback button to leave a comment",
+  "export": "MorphPopover",
+  "usage": "<MorphPopover title=\"Feedback\" onSubmit={text => localStorage.setItem(\"feedback\", text)} />",
+  "useCases": [
+    "A reader spots an error in the docs and sends feedback from a small form beside the article.",
+    "During a mockup review, a designer leaves a short comment. If the service is unavailable, they retry from the same form."
+  ],
+  "registryItem": "/r/morph-popover.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "children": {
+        "type": "ReactNode",
+        "required": false
+      },
+      "onSubmit": {
+        "type": "((text: string) => void | Promise<void>) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Open the feedback button to leave a comment",
+  "page": "/components/morph-popover",
+  "example": "\"use client\";\n\nimport { MorphPopover } from \"@/components/ui/morph-popover\";\n\nexport default function Example() {\n  return <MorphPopover title=\"Feedback\" onSubmit={text => localStorage.setItem(\"feedback\", text)} />;\n}",
+  "models": {},
+  "behavior": "onSubmit receives the text and can return a Promise. Reject it on delivery failure to show the retry state.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/morph-popover.tsx"
+  ]
+}

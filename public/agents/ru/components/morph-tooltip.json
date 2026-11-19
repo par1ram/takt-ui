@@ -1,0 +1,48 @@
+{
+  "name": "morph-tooltip",
+  "title": "Morph Tooltip",
+  "category": "Навигация",
+  "description": "Наведите курсор или переведите фокус",
+  "export": "MorphTooltip",
+  "usage": "<MorphTooltip label=\"Статья\" onAction={(action) => console.info(action)} />",
+  "useCases": [
+    "В списке материалов читатель открывает действия статьи и добавляет её в закладки для чтения позже.",
+    "На доске исследований участник закрепляет важный материал. Приложение обрабатывает действие pin для выбранной записи."
+  ],
+  "registryItem": "/r/ru/morph-tooltip.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onClick": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "onAction": {
+        "type": "((action: \"bookmark\" | \"favorite\" | \"pin\") => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Наведите курсор или переведите фокус",
+  "page": "/ru/components/morph-tooltip",
+  "example": "\"use client\";\n\nimport { MorphTooltip } from \"@/components/ui/morph-tooltip\";\n\nexport default function Example() {\n  return <MorphTooltip label=\"Статья\" onAction={(action) => console.info(action)} />;\n}",
+  "models": {},
+  "behavior": "onAction сообщает bookmark, favorite или pin. Для первого действия также вызывается onClick, поэтому оформите побочный эффект в одном обработчике.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/morph-tooltip.tsx"
+  ]
+}

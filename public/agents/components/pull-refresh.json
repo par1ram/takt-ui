@@ -1,0 +1,41 @@
+{
+  "name": "pull-refresh",
+  "title": "Pull Refresh",
+  "category": "Cards",
+  "description": "Pull down to sync a file. A short pull cancels the gesture.",
+  "export": "PullRefresh",
+  "usage": "<PullRefresh onRefresh={async () => { const result = await fetch(\"/api/status\", { cache: \"no-store\" }); if (!result.ok) throw new Error(\"Refresh failed\"); }} />",
+  "useCases": [
+    "In a mobile recent-files panel, a teammate pulls down to refresh. The app requests fresh data in onRefresh.",
+    "After a connection drops, a user retries the sync with the button and reads its status to see whether the request completed."
+  ],
+  "registryItem": "/r/pull-refresh.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onRefresh": {
+        "type": "(() => Promise<void>) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Pull down to sync a file. A short pull cancels the gesture.",
+  "page": "/components/pull-refresh",
+  "example": "\"use client\";\n\nimport { PullRefresh } from \"@/components/ui/pull-refresh\";\n\nexport default function Example() {\n  return <PullRefresh onRefresh={async () => { const result = await fetch(\"/api/status\", { cache: \"no-store\" }); if (!result.ok) throw new Error(\"Refresh failed\"); }} />;\n}",
+  "models": {},
+  "behavior": "Return a Promise from onRefresh and update application data inside the handler. Rejection puts the control in its error state.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/pull-refresh.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

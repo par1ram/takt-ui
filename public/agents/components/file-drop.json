@@ -1,0 +1,43 @@
+{
+  "name": "file-drop",
+  "title": "File Drop",
+  "category": "Inputs",
+  "description": "Drop files into a folder and see their names and sizes.",
+  "export": "FileDrop",
+  "usage": "<FileDrop onFiles={(files) => console.info(files.map(file => file.name))} />",
+  "useCases": [
+    "When opening a support ticket, a customer drops screenshots. The form receives File objects and attaches them when the ticket is submitted.",
+    "In a gallery editor, an author selects images from disk. The app previews the chosen files before upload."
+  ],
+  "registryItem": "/r/file-drop.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onFiles": {
+        "type": "((files: File[]) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Drop files into a folder and see their names and sizes.",
+  "page": "/components/file-drop",
+  "example": "\"use client\";\n\nimport { FileDrop } from \"@/components/ui/file-drop\";\n\nexport default function Example() {\n  return <FileDrop onFiles={(files) => console.info(files.map(file => file.name))} />;\n}",
+  "models": {},
+  "behavior": "onFiles receives the current list of File objects. The application handles uploading them to storage.",
+  "parts": [],
+  "related": [
+    "/agents/components/signature-pad.json"
+  ],
+  "files": [
+    "components/motion/file-drop.tsx",
+    "lib/takt-focus.ts"
+  ]
+}

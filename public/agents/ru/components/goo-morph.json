@@ -1,0 +1,43 @@
+{
+  "name": "goo-morph",
+  "title": "Goo Morph",
+  "category": "Текст",
+  "description": "Переключите текучую надпись",
+  "export": "GooMorph",
+  "usage": "<GooMorph words={[\"Design\", \"Build\", \"Ship\"]} />",
+  "useCases": [
+    "В презентации бренда зритель нажимает на ключевое слово, чтобы увидеть следующий принцип в серии.",
+    "В витрине анимаций дизайнер сравнивает переход между короткими и длинными названиями, подставив свои слова."
+  ],
+  "registryItem": "/r/ru/goo-morph.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "words": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Переключите текучую надпись",
+  "page": "/ru/components/goo-morph",
+  "example": "import { GooMorph } from \"@/components/ui/goo-morph\";\n\nexport default function Example() {\n  return <GooMorph words={[\"Design\", \"Build\", \"Ship\"]} />;\n}",
+  "models": {},
+  "behavior": "words задаёт последовательность слов для перехода по нажатию. Пустой массив скрывает управление.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/rolling-text.json",
+    "/agents/ru/components/dynamic-text.json"
+  ],
+  "files": [
+    "components/motion/goo-morph.tsx"
+  ]
+}

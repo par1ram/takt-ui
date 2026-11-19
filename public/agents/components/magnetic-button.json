@@ -1,0 +1,46 @@
+{
+  "name": "magnetic-button",
+  "title": "Magnetic Button",
+  "category": "Buttons",
+  "description": "The button follows your pointer and springs back into place.",
+  "export": "MagneticButton",
+  "usage": "<MagneticButton onClick={() => console.log(\"click\")}>Open</MagneticButton>",
+  "useCases": [
+    "On a studio homepage, a visitor presses “View portfolio.” The app opens the collection through onClick.",
+    "At the end of a presentation, a “Try the demo” button responds to the approaching pointer and opens the demo when pressed."
+  ],
+  "registryItem": "/r/magnetic-button.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "children": {
+        "type": "ReactNode",
+        "required": false
+      },
+      "onClick": {
+        "type": "(() => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "The button follows your pointer and springs back into place.",
+  "page": "/components/magnetic-button",
+  "example": "\"use client\";\n\nimport { MagneticButton } from \"@/components/ui/magnetic-button\";\n\nexport default function Example() {\n  return <MagneticButton onClick={() => console.log(\"click\")}>Open</MagneticButton>;\n}",
+  "models": {},
+  "behavior": "Set the button label through children. Pass the action to onClick from a client component.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/magnetic-button.tsx"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "swipe-deck",
+  "title": "Swipe Deck",
+  "category": "Карточки",
+  "description": "Стопка арт-принтов следует за жестом и раскрывает следующий постер.",
+  "export": "SwipeDeck",
+  "usage": "<SwipeDeck cards={[{ title: \"Orbit\", color: \"#bed5ce\", ink: \"#20312a\" }, { title: \"Fold\", color: \"#dbcfbd\", ink: \"#30271c\" }]} />",
+  "useCases": [
+    "В портфолио посетитель листает серию постеров по одному, не покидая страницу проекта.",
+    "При отборе обложек редактор смахивает вариант вправо, чтобы добавить его в подборку. Приложение сохраняет карточку и направление из onSwipe."
+  ],
+  "registryItem": "/r/ru/swipe-deck.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "cards": {
+        "type": "DeckCard[] | undefined",
+        "required": false
+      },
+      "onSwipe": {
+        "type": "((card: DeckCard, direction: \"left\" | \"right\") => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Стопка арт-принтов следует за жестом и раскрывает следующий постер.",
+  "page": "/ru/components/swipe-deck",
+  "example": "import { SwipeDeck } from \"@/components/ui/swipe-deck\";\n\nexport default function Example() {\n  return <SwipeDeck cards={[{ title: \"Orbit\", color: \"#bed5ce\", ink: \"#20312a\" }, { title: \"Fold\", color: \"#dbcfbd\", ink: \"#30271c\" }]} />;\n}",
+  "models": {
+    "DeckCard": "type DeckCard = {\n  title: string;\n  color: string;\n  ink: string;\n  cover?: string;\n};"
+  },
+  "behavior": "Передайте cards в порядке показа. onSwipe получает саму карточку и направление left или right.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/swipe-deck.tsx",
+    "lib/takt-art-orbit.ts",
+    "lib/takt-art-fold.ts",
+    "lib/takt-art-glass.ts"
+  ]
+}

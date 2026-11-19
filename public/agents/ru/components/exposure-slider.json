@@ -1,0 +1,45 @@
+{
+  "name": "exposure-slider",
+  "title": "Exposure Slider",
+  "category": "Ввод",
+  "description": "Шкала в EV управляет яркостью фотографии. Исходную экспозицию можно восстановить.",
+  "export": "ExposureSlider",
+  "usage": "<ExposureSlider image=\"/photos/portrait.jpg\" />",
+  "useCases": [
+    "Фотограф корректирует экспозицию портрета и сравнивает результат с исходным снимком до сохранения.",
+    "В уроке по фотографии ученик пробует отрицательную и положительную поправки на одном кадре, затем сбрасывает их к нулю."
+  ],
+  "registryItem": "/r/ru/exposure-slider.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((ev: number) => void) | undefined",
+        "required": false
+      },
+      "image": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Шкала в EV управляет яркостью фотографии. Исходную экспозицию можно восстановить.",
+  "page": "/ru/components/exposure-slider",
+  "example": "import { ExposureSlider } from \"@/components/ui/exposure-slider\";\n\nexport default function Example() {\n  return <ExposureSlider image=\"/photos/portrait.jpg\" />;\n}",
+  "models": {},
+  "behavior": "Передайте собственную фотографию в image. onChange сообщает поправку экспозиции от −2 до +2.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/exposure-slider.tsx",
+    "lib/takt-art-fold.ts"
+  ]
+}

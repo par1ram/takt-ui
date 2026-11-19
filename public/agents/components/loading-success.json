@@ -1,0 +1,41 @@
+{
+  "name": "loading-success",
+  "title": "Loading Success",
+  "category": "Buttons",
+  "description": "Start the action and wait for the result",
+  "export": "LoadingSuccess",
+  "usage": "<LoadingSuccess onRun={async () => { const response = await fetch(\"/api/status\"); if (!response.ok) throw new Error(\"HTTP \" + response.status); }} />",
+  "useCases": [
+    "In integration settings, an admin tests a connection. The button waits for the server and offers another attempt if the check fails.",
+    "In a report, an analyst starts a sync and sees confirmation once the request completes."
+  ],
+  "registryItem": "/r/loading-success.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onRun": {
+        "type": "(() => Promise<void>) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Start the action and wait for the result",
+  "page": "/components/loading-success",
+  "example": "\"use client\";\n\nimport { LoadingSuccess } from \"@/components/ui/loading-success\";\n\nexport default function Example() {\n  return <LoadingSuccess onRun={async () => { const response = await fetch(\"/api/status\"); if (!response.ok) throw new Error(\"HTTP \" + response.status); }} />;\n}",
+  "models": {},
+  "behavior": "Return a Promise from onRun. The control shows pending, success or retry based on the result.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/loading-success.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

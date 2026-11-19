@@ -1,0 +1,48 @@
+{
+  "name": "command-palette",
+  "title": "Command Palette",
+  "category": "Navigation",
+  "description": "Find and run a command",
+  "export": "CommandPalette",
+  "usage": "<CommandPalette commands={[\"Print\"]} onExecute={() => window.print()} />",
+  "useCases": [
+    "In an editor, a user types part of a command name and runs the matching action with Enter.",
+    "In an admin console, an operator finds the command for opening the ticket queue. The app maps the selected command to its route."
+  ],
+  "registryItem": "/r/command-palette.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "commands": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onExecute": {
+        "type": "((command: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Find and execute an action from a known list of commands.",
+  "page": "/components/command-palette",
+  "example": "\"use client\";\n\nimport { CommandPalette } from \"@/components/ui/command-palette\";\n\nexport default function Example() {\n  return <CommandPalette commands={[\"Print\"]} onExecute={() => window.print()} />;\n}",
+  "models": {},
+  "behavior": "Pass action names in commands. onExecute receives the selected name on confirmation. The dialog filters the list locally.",
+  "parts": [],
+  "related": [
+    "/agents/components/command-search.json",
+    "/agents/components/command-button.json"
+  ],
+  "files": [
+    "components/motion/command-palette.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "boarding-pass",
+  "title": "Boarding Pass",
+  "category": "Карточки",
+  "description": "Посадочный талон с маршрутом, номером выхода и раскрывающимся штрихкодом.",
+  "export": "BoardingPass",
+  "usage": "<BoardingPass from=\"LIS\" to=\"AMS\" flight=\"TK 204\" seat=\"12A\" />",
+  "useCases": [
+    "На экране поездки пассажир раскрывает посадочный талон и сверяет место, выход и время посадки.",
+    "В маршруте с пересадкой приложение показывает отдельный талон для каждого рейса, чтобы путешественник различал сегменты пути."
+  ],
+  "registryItem": "/r/ru/boarding-pass.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "from": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "to": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "flight": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "seat": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "gate": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "boarding": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Посадочный талон с маршрутом, номером выхода и раскрывающимся штрихкодом.",
+  "page": "/ru/components/boarding-pass",
+  "example": "import { BoardingPass } from \"@/components/ui/boarding-pass\";\n\nexport default function Example() {\n  return <BoardingPass from=\"LIS\" to=\"AMS\" flight=\"TK 204\" seat=\"12A\" />;\n}",
+  "models": {},
+  "behavior": "Передайте готовые для показа обозначения аэропортов, рейса, места и выхода. boarding содержит отображаемое время посадки.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/boarding-pass.tsx"
+  ]
+}

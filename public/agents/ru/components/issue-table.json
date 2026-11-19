@@ -1,0 +1,66 @@
+{
+  "name": "issue-table",
+  "title": "Issue Table",
+  "category": "Трекеры",
+  "description": "Таблица задач с редактированием названий, статусов и приоритетов.",
+  "export": "IssueTable",
+  "usage": "<IssueTable defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3 }]} />",
+  "useCases": [
+    "При разборе бэклога менеджер сортирует задачи по приоритету и исправляет название прямо в строке.",
+    "На встрече команды координатор меняет статус задачи в таблице. Доска получает тот же обновлённый массив и показывает новый статус."
+  ],
+  "registryItem": "/r/ru/issue-table.json",
+  "dependencies": [
+    "motion",
+    "lucide-react",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "props": [
+    {
+      "issues": {
+        "type": "TrackerIssue[] | undefined",
+        "required": false
+      },
+      "defaultIssues": {
+        "type": "TrackerIssue[] | undefined",
+        "required": false
+      },
+      "onIssuesChange": {
+        "type": "((issues: TrackerIssue[]) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Таблица задач с редактированием названий, статусов и приоритетов.",
+  "page": "/ru/components/issue-table",
+  "example": "import { IssueTable } from \"@/components/ui/issue-table\";\n\nexport default function Example() {\n  return <IssueTable defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3 }]} />;\n}",
+  "models": {
+    "TrackerIssue": "type TrackerIssue = {\n  id: string;\n  title: string;\n  status: IssueStatus;\n  priority: IssuePriority;\n  points: number;\n  cycleId?: string;\n};",
+    "IssueStatus": "type IssueStatus = \"done\" | \"backlog\" | \"active\";",
+    "IssuePriority": "type IssuePriority = \"high\" | \"medium\" | \"low\";"
+  },
+  "behavior": "При внешнем управлении onIssuesChange получает обновления как полный массив TrackerIssue. Передайте обновлённые issues таблице и связанным представлениям.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/issue-board.json",
+    "/agents/ru/components/cycle-planner.json"
+  ],
+  "files": [
+    "components/motion/issue-table.tsx",
+    "components/motion/tracker-issues.tsx",
+    "components/motion/issue-property-menu.tsx"
+  ]
+}

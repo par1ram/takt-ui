@@ -1,0 +1,52 @@
+{
+  "name": "flip-counter",
+  "title": "Flip Counter",
+  "category": "Inputs",
+  "description": "Digits roll into place as the count changes.",
+  "export": "FlipCounter",
+  "usage": "<FlipCounter defaultValue={12} min={0} max={99} />",
+  "useCases": [
+    "When booking a table, a guest adds people up to the table’s seating capacity.",
+    "In a print order, a customer changes the number of copies. The app recalculates the quote from the new count."
+  ],
+  "registryItem": "/r/flip-counter.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "defaultValue": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "min": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "max": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onValueChange": {
+        "type": "((value: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Digits roll into place as the count changes.",
+  "page": "/components/flip-counter",
+  "example": "import { FlipCounter } from \"@/components/ui/flip-counter\";\n\nexport default function Example() {\n  return <FlipCounter defaultValue={12} min={0} max={99} />;\n}",
+  "models": {},
+  "behavior": "min and max bound the counter. defaultValue sets the starting count and onValueChange reports the new count.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/flip-counter.tsx"
+  ]
+}

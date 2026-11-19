@@ -1,0 +1,57 @@
+{
+  "name": "predict-output",
+  "title": "Predict Output",
+  "category": "Learning",
+  "description": "Predict the output, compare your answer and read the explanation.",
+  "export": "PredictOutput",
+  "usage": "<PredictOutput code=\"2 ** 3\" options={[\"6\", \"8\"]} answer=\"8\" explanation=\"2 × 2 × 2\" />",
+  "useCases": [
+    "Before running an example, a student predicts its output and reads the explanation.",
+    "At a lesson checkpoint, an instructor supplies possible results for an expression. The app records the learner’s choice through onAnswer."
+  ],
+  "registryItem": "/r/predict-output.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "code": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "options": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "answer": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "explanation": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onAnswer": {
+        "type": "((guess: string) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Predict the output, compare your answer and read the explanation.",
+  "page": "/components/predict-output",
+  "example": "import { PredictOutput } from \"@/components/ui/predict-output\";\n\nexport default function Example() {\n  return <PredictOutput code=\"2 ** 3\" options={[\"6\", \"8\"]} answer=\"8\" explanation=\"2 × 2 × 2\" />;\n}",
+  "models": {},
+  "behavior": "answer should match an entry in options. onAnswer receives the selected answer and explanation describes the result.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/predict-output.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

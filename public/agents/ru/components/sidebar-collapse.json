@@ -1,0 +1,44 @@
+{
+  "name": "sidebar-collapse",
+  "title": "Sidebar Collapse",
+  "category": "Навигация",
+  "description": "Боковая навигация студии с рабочей областью выбранного раздела.",
+  "export": "SidebarCollapse",
+  "usage": "<SidebarCollapse items={[\"Проекты\", \"Команда\"]} />",
+  "useCases": [
+    "В рабочем пространстве дизайнер сворачивает навигацию, чтобы освободить место для макета, сохраняя доступ к двум разделам.",
+    "В кабинете студии сотрудник выбирает проекты или коллекции. Приложение переключает содержимое по индексу раздела."
+  ],
+  "registryItem": "/r/ru/sidebar-collapse.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "[string, string] | undefined",
+        "required": false
+      },
+      "onSelect": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Боковая навигация студии с рабочей областью выбранного раздела.",
+  "page": "/ru/components/sidebar-collapse",
+  "example": "import { SidebarCollapse } from \"@/components/ui/sidebar-collapse\";\n\nexport default function Example() {\n  return <SidebarCollapse items={[\"Проекты\", \"Команда\"]} />;\n}",
+  "models": {},
+  "behavior": "items принимает пару названий. onSelect передаёт индекс для переключения представления приложения.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/sidebar-collapse.tsx"
+  ]
+}

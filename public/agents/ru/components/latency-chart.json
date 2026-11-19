@@ -1,0 +1,60 @@
+{
+  "name": "latency-chart",
+  "title": "Latency Chart",
+  "category": "Метрики",
+  "description": "Измерения времени ответа с выбором перцентиля и точки во времени.",
+  "export": "LatencyChart",
+  "usage": "<LatencyChart title=\"API latency\" unit=\"ms\" samples={[{ label: \"10:00\", p50: 18, p95: 42 }, { label: \"10:05\", p50: 20, p95: null }]} />",
+  "useCases": [
+    "После релиза инженер сравнивает медиану задержки API с p95, чтобы увидеть замедление у части запросов.",
+    "При разборе инцидента дежурный перемещается между замерами и отличает отсутствующее измерение от измеренного нуля."
+  ],
+  "registryItem": "/r/ru/latency-chart.json",
+  "dependencies": [
+    "recharts",
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "chart",
+    "card",
+    "button"
+  ],
+  "props": [
+    {
+      "samples": {
+        "type": "LatencySample[] | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "unit": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Сравнить задержку p50 и p95 по времени.",
+  "page": "/ru/components/latency-chart",
+  "example": "import { LatencyChart } from \"@/components/ui/latency-chart\";\n\nexport default function Example() {\n  return <LatencyChart title=\"API latency\" unit=\"ms\" samples={[{ label: \"10:00\", p50: 18, p95: 42 }, { label: \"10:05\", p50: 20, p95: null }]} />;\n}",
+  "models": {
+    "LatencySample": "type LatencySample = {\n  label: string;\n  p50: number | null;\n  p95: number | null;\n};"
+  },
+  "behavior": "Передайте samples в хронологическом порядке. null означает отсутствие замера, а 0 отображается как измеренное значение.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/conversion-funnel.json",
+    "/agents/ru/components/cohort-retention.json"
+  ],
+  "files": [
+    "components/motion/latency-chart.tsx",
+    "lib/takt-metric-reading.tsx"
+  ]
+}

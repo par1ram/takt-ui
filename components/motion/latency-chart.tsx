@@ -183,6 +183,7 @@ const LatencyPlot = memo(function LatencyPlot({
     <ChartContainer
       config={config}
       className="h-32 w-full aspect-auto"
+      role="img"
       aria-label={title}
     >
       <AreaChart

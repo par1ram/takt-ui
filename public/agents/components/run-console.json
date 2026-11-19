@@ -1,0 +1,55 @@
+{
+  "name": "run-console",
+  "title": "Run Console",
+  "category": "Learning",
+  "description": "Follow compilation and execution, inspect output and stop a run.",
+  "export": "RunConsole",
+  "usage": "<RunConsole state={{ phase: \"done\", output: \"OK\", duration: 120 }} />",
+  "useCases": [
+    "During an exercise run, a student sees the execution phase, output and duration reported by the runner.",
+    "When a run stalls or fails, a student requests a stop or jumps to the offending line through the editor’s handler."
+  ],
+  "registryItem": "/r/run-console.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "state": {
+        "type": "RunState | undefined",
+        "required": false
+      },
+      "onStop": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "onErrorLocation": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Follow compilation and execution, inspect output and stop a run.",
+  "page": "/components/run-console",
+  "example": "import { RunConsole } from \"@/components/ui/run-console\";\n\nexport default function Example() {\n  return <RunConsole state={{ phase: \"done\", output: \"OK\", duration: 120 }} />;\n}",
+  "models": {
+    "RunState": "type RunState = {\n  phase: \"idle\" | \"compile\" | \"run\" | \"done\" | \"error\" | \"stopped\";\n  output?: string;\n  duration?: number;\n};"
+  },
+  "behavior": "For an external runner pass state with phase, output and duration in milliseconds. Wire cancellation to onStop and source navigation to onErrorLocation.",
+  "parts": [],
+  "related": [
+    "/agents/components/code-exercise.json",
+    "/agents/components/test-results.json",
+    "/agents/components/ask-tutor.json"
+  ],
+  "files": [
+    "components/motion/run-console.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

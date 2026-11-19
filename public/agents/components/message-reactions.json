@@ -1,0 +1,51 @@
+{
+  "name": "message-reactions",
+  "title": "Message Reactions",
+  "category": "Messenger",
+  "description": "Message reactions with participant counts.",
+  "export": "MessageReactions",
+  "usage": "<MessageReactions onToggle={emoji => console.info(emoji)} />",
+  "useCases": [
+    "Under a release announcement, a teammate adds a reaction and sees the count update beside the emoji.",
+    "In a proposal thread, a member removes their reaction. The app updates that emoji’s count while preserving everyone else’s reactions."
+  ],
+  "registryItem": "/r/message-reactions.json",
+  "dependencies": [
+    "motion",
+    "radix-ui",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "reactions": {
+        "type": "ChatReaction[] | undefined",
+        "required": false
+      },
+      "onToggle": {
+        "type": "((emoji: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Message reactions with participant counts.",
+  "page": "/components/message-reactions",
+  "example": "\"use client\";\n\nimport { useState } from \"react\";\nimport { MessageReactions, toggleReaction } from \"@/components/ui/message-reactions\";\n\nexport default function Reactions() {\n  const [reactions, setReactions] = useState([\n    { emoji: \"👏\", label: \"Bravo\", count: 2, mine: false },\n  ]);\n\n  return (\n    <MessageReactions\n      reactions={reactions}\n      onToggle={emoji => setReactions(current => toggleReaction(current, emoji))}\n    />\n  );\n}",
+  "models": {
+    "ChatReaction": "type ChatReaction = {\n  emoji: string;\n  label: string;\n  count: number;\n  mine: boolean;\n};"
+  },
+  "behavior": "Supplying reactions makes the list controlled. onToggle receives the emoji and the exported toggleReaction helper computes the next array for state updates.",
+  "registryExample": "/r/message-reactions-demo.json",
+  "parts": [],
+  "related": [
+    "/agents/components/chat-post.json"
+  ],
+  "files": [
+    "components/motion/message-reactions.tsx"
+  ]
+}

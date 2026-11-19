@@ -48,7 +48,7 @@ export function TestResults({
               key={i}
               type="button"
               aria-pressed={i === index}
-              aria-label={test.input + (ok ? " · пройден" : " · ошибка")}
+              aria-label={String(i + 1).padStart(2, "0") + " · " + test.input + (ok ? " · пройден" : " · ошибка")}
               onClick={() => setChoice(i)}
               className="flex min-h-9 items-center gap-1 rounded-md border px-2 font-mono text-xs aria-pressed:border-primary aria-pressed:bg-primary/10 motion-safe:transition-colors"
             >

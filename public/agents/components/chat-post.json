@@ -1,0 +1,53 @@
+{
+  "name": "chat-post",
+  "title": "Chat Post",
+  "category": "Messenger",
+  "description": "Render one chat message with an author, text, optional code and a resource link.",
+  "export": "ChatPostBody",
+  "usage": "<ChatPostBody post={{ id: \"release\", author: \"Sam\", initials: \"S\", time: \"10:00\", text: \"v2.0\" }} />",
+  "useCases": [
+    "In a support log, a reader sees a single message with its author, time and code snippet, even on a page without a reply editor.",
+    "In a course feed, an instructor shares a workbook link. The card shows the resource below the text, and the app adds reactions through children."
+  ],
+  "registryItem": "/r/chat-post.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "props": [
+    {
+      "post": {
+        "type": "ChatPost",
+        "required": true
+      },
+      "children": {
+        "type": "ReactNode",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Render one message in your own feed or discussion.",
+  "page": "/components/chat-post",
+  "example": "import { ChatPostBody } from \"@/components/ui/chat-post\";\n\nexport default function Example() {\n  return <ChatPostBody post={{ id: \"release\", author: \"Sam\", initials: \"S\", time: \"10:00\", text: \"v2.0\" }} />;\n}",
+  "models": {
+    "ChatPost": "type ChatPost = {\n  id: string;\n  author: string;\n  initials: string;\n  time: string;\n  text: string;\n  code?: string;\n  resource?: { title: string; detail: string; href: string };\n};"
+  },
+  "behavior": "Pass post with the author, time and text. The optional code and resource fields show a code sample and a link. Supply actions or reactions below the message using children.",
+  "parts": [],
+  "related": [
+    "/agents/components/message-reactions.json",
+    "/agents/components/message-thread.json"
+  ],
+  "files": [
+    "components/motion/chat-post.tsx",
+    "components/motion/chat-post.module.css"
+  ]
+}

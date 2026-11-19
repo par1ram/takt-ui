@@ -1,0 +1,62 @@
+{
+  "name": "card-field",
+  "title": "Card Field",
+  "category": "Ввод",
+  "description": "Попробуйте тестовую карту",
+  "export": "CardField",
+  "usage": "<CardField mode=\"demo\" />",
+  "useCases": [
+    "В прототипе оформления заказа тестировщик подставляет встроенную тестовую карту и сбрасывает её для следующего прохода.",
+    "В настоящем checkout клиент заполняет форму Stripe Elements по HTTPS. По onCompleteChange приложение узнаёт, когда можно предложить переход к подтверждению оплаты."
+  ],
+  "registryItem": "/r/ru/card-field.json",
+  "dependencies": [
+    "lucide-react",
+    "@stripe/react-stripe-js",
+    "@stripe/stripe-js"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "mode": {
+        "type": "\"demo\" | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((testDigits: string) => void) | undefined",
+        "required": false
+      }
+    },
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "mode": {
+        "type": "\"payment\"",
+        "required": true
+      },
+      "onCompleteChange": {
+        "type": "((complete: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Ввести тестовый номер карты или подключить платёжное поле Stripe.",
+  "page": "/ru/components/card-field",
+  "example": "import { CardField } from \"@/components/ui/card-field\";\n\nexport default function Example() {\n  return <CardField mode=\"demo\" />;\n}",
+  "models": {},
+  "behavior": "В режиме demo onChange получает тестовые цифры. Для mode=\"payment\" разместите компонент внутри настроенного Stripe Elements на HTTPS и используйте onCompleteChange для состояния заполнения.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/receipt-printer.json"
+  ],
+  "files": [
+    "components/motion/card-field.tsx"
+  ]
+}

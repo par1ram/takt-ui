@@ -1,0 +1,43 @@
+{
+  "name": "goo-morph",
+  "title": "Goo Morph",
+  "category": "Text",
+  "description": "Switch the liquid lettering",
+  "export": "GooMorph",
+  "usage": "<GooMorph words={[\"Design\", \"Build\", \"Ship\"]} />",
+  "useCases": [
+    "In a brand presentation, a viewer taps a keyword to reveal the next principle in the series.",
+    "In a motion showcase, a designer supplies their own words to compare transitions between short and long names."
+  ],
+  "registryItem": "/r/goo-morph.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "words": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Switch the liquid lettering",
+  "page": "/components/goo-morph",
+  "example": "import { GooMorph } from \"@/components/ui/goo-morph\";\n\nexport default function Example() {\n  return <GooMorph words={[\"Design\", \"Build\", \"Ship\"]} />;\n}",
+  "models": {},
+  "behavior": "words supplies the sequence for click-driven transitions. An empty array hides the control.",
+  "parts": [],
+  "related": [
+    "/agents/components/rolling-text.json",
+    "/agents/components/dynamic-text.json"
+  ],
+  "files": [
+    "components/motion/goo-morph.tsx"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "siri-orb",
+  "title": "Assistant Orb",
+  "category": "AI",
+  "description": "Switch assistant states",
+  "export": "AssistantOrb",
+  "usage": "<AssistantOrb state=\"thinking\" />",
+  "useCases": [
+    "In a voice assistant, the user sees when the app is listening, processing or speaking. The app passes the current state to AssistantOrb.",
+    "On a recording screen, the app supplies normalized microphone amplitude so the orb reacts to voice volume."
+  ],
+  "registryItem": "/r/siri-orb.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "state": {
+        "type": "\"idle\" | \"error\" | \"listening\" | \"thinking\" | \"streaming\" | \"done\" | undefined",
+        "required": false
+      },
+      "onStateChange": {
+        "type": "((state: OrbState) => void) | undefined",
+        "required": false
+      },
+      "amplitude": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((active: boolean) => void) | undefined",
+        "required": false
+      },
+      "showControls": {
+        "type": "boolean | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Switch assistant states",
+  "page": "/components/siri-orb",
+  "example": "import { AssistantOrb } from \"@/components/ui/siri-orb\";\n\nexport default function Example() {\n  return <AssistantOrb state=\"thinking\" />;\n}",
+  "models": {
+    "OrbState": "type OrbState = \"idle\" | \"error\" | \"listening\" | \"thinking\" | \"streaming\" | \"done\";"
+  },
+  "behavior": "The named export is AssistantOrb. For external control pass state, normalized audio amplitude and showControls={false}.",
+  "parts": [],
+  "related": [
+    "/agents/components/voice-input.json"
+  ],
+  "files": [
+    "components/motion/siri-orb.tsx"
+  ]
+}

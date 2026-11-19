@@ -1,0 +1,47 @@
+{
+  "name": "command-button",
+  "title": "Command Button",
+  "category": "Кнопки",
+  "description": "Выполните команду",
+  "export": "CommandButton",
+  "usage": "<CommandButton label=\"Печать\" onExecute={() => window.print()} />",
+  "useCases": [
+    "В предпросмотре накладной оператор запускает печать одной кнопкой. Приложение вызывает диалог печати в onExecute.",
+    "В демонстрации команд разработчик повторно запускает одну операцию и видит, сколько раз её вызвал."
+  ],
+  "registryItem": "/r/ru/command-button.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onExecute": {
+        "type": "(() => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Выполните команду",
+  "page": "/ru/components/command-button",
+  "example": "\"use client\";\n\nimport { CommandButton } from \"@/components/ui/command-button\";\n\nexport default function Example() {\n  return <CommandButton label=\"Печать\" onExecute={() => window.print()} />;\n}",
+  "models": {},
+  "behavior": "Задайте текст в label и передайте само действие в onExecute.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/command-palette.json"
+  ],
+  "files": [
+    "components/motion/command-button.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -96,7 +96,7 @@ export function StatCard({
         <button
           type="button"
           className="ml-auto mr-1 rounded-full border bg-muted px-2 py-1 text-[10px]"
-          aria-label="Линейный график"
+          title="Линейный график"
           aria-pressed={curve}
           onClick={() => setCurve(!curve)}
         >
@@ -105,7 +105,7 @@ export function StatCard({
         <button
           type="button"
           aria-pressed={week}
-          aria-label="Недельный период"
+          title="Недельный период"
           className="rounded-full border bg-muted px-2 py-1 text-[10px] font-medium"
           onClick={() => {
             setWeek(!week);

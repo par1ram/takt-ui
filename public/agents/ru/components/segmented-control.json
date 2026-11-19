@@ -1,0 +1,47 @@
+{
+  "name": "segmented-control",
+  "title": "Segmented Control",
+  "category": "Навигация",
+  "description": "Выберите период",
+  "export": "SegmentedControl",
+  "usage": "<SegmentedControl options={[\"p50\", \"p95\", \"p99\"]} />",
+  "useCases": [
+    "В отчёте производительности аналитик переключает p50 и p95. Приложение подставляет ряд для выбранного показателя.",
+    "В менеджере файлов пользователь выбирает плитки или список. Приложение меняет представление тех же файлов."
+  ],
+  "registryItem": "/r/ru/segmented-control.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "options": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Выберите период",
+  "page": "/ru/components/segmented-control",
+  "example": "import { SegmentedControl } from \"@/components/ui/segmented-control\";\n\nexport default function Example() {\n  return <SegmentedControl options={[\"p50\", \"p95\", \"p99\"]} />;\n}",
+  "models": {},
+  "behavior": "Передайте варианты в options. onChange сообщает индекс, по которому приложение может переключить набор данных или режим.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/swipe-tabs.json",
+    "/agents/ru/components/tab-pill.json"
+  ],
+  "files": [
+    "components/motion/segmented-control.tsx"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "tab-pill",
+  "title": "Tab Pill",
+  "category": "Навигация",
+  "description": "Переключите вкладку",
+  "export": "TabPill",
+  "usage": "<TabPill options={[\"API\", \"CLI\"]} panels={[\"POST /messages\", \"bun run build\"]} />",
+  "useCases": [
+    "В инструкции по установке разработчик переключается между вкладками API и CLI, чтобы прочитать нужный фрагмент.",
+    "В описании материала покупатель открывает вкладку ухода рядом с характеристиками, сохраняя место на странице товара."
+  ],
+  "registryItem": "/r/ru/tab-pill.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "options": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      },
+      "panels": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Переключите вкладку",
+  "page": "/ru/components/tab-pill",
+  "example": "import { TabPill } from \"@/components/ui/tab-pill\";\n\nexport default function Example() {\n  return <TabPill options={[\"API\", \"CLI\"]} panels={[\"POST /messages\", \"bun run build\"]} />;\n}",
+  "models": {},
+  "behavior": "options и panels связаны по индексу. onChange получает индекс активной вкладки, начиная с нуля.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/swipe-tabs.json",
+    "/agents/ru/components/segmented-control.json"
+  ],
+  "files": [
+    "components/motion/tab-pill.tsx"
+  ]
+}

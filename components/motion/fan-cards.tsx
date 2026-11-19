@@ -13,37 +13,36 @@ export function FanCards({
     [raised, setRaised] = useState<number | null>(null);
   const reduced = useReducedMotion();
   return (
-    <button
-      type="button"
-      aria-expanded={open}
-      aria-label="Веер карточек"
-      onClick={() => {
-        setOpen(!open);
-        setRaised(null);
-      }}
-      onPointerLeave={() => setRaised(null)}
-      onPointerMove={(e) => {
-        if (!open || e.pointerType !== "mouse") return;
-        const b = e.currentTarget.getBoundingClientRect();
-        setRaised(
-          Math.max(
-            0,
-            Math.min(
-              cards.length - 1,
-              Math.floor(((e.clientX - b.left) / b.width) * cards.length),
+    <div className={cn("relative h-[150px] w-56 select-none", className)}>
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-label="Веер карточек"
+        onClick={() => {
+          setOpen(!open);
+          setRaised(null);
+        }}
+        onPointerLeave={() => setRaised(null)}
+        onPointerMove={(e) => {
+          if (!open || e.pointerType !== "mouse") return;
+          const b = e.currentTarget.getBoundingClientRect();
+          setRaised(
+            Math.max(
+              0,
+              Math.min(
+                cards.length - 1,
+                Math.floor(((e.clientX - b.left) / b.width) * cards.length),
+              ),
             ),
-          ),
-        );
-      }}
-      className={cn(
-        "relative h-[150px] w-56 select-none rounded-xl",
-        className,
-      )}
-    >
+          );
+        }}
+        className="absolute inset-0 z-10 rounded-xl"
+      />
       {cards.map((s, i) => {
         const distance = i - (cards.length - 1) / 2;
         return (
           <motion.span
+            aria-hidden
             key={i}
             initial={false}
             animate={{
@@ -68,6 +67,6 @@ export function FanCards({
           </motion.span>
         );
       })}
-    </button>
+    </div>
   );
 }

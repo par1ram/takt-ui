@@ -1,0 +1,55 @@
+{
+  "name": "profile-card",
+  "title": "Profile Card",
+  "category": "Cards",
+  "description": "Follow the profile to see the count and actions change",
+  "export": "ProfileCard",
+  "usage": "<ProfileCard name=\"Sam Lee\" role=\"Designer\" />",
+  "useCases": [
+    "In a mentor directory, a student opens a conversation with a particular mentor. The app receives the name through onMessage.",
+    "In a community, a reader follows an author from their profile card. The app persists the follow state."
+  ],
+  "registryItem": "/r/profile-card.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "name": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "role": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onMessage": {
+        "type": "((name: string) => void) | undefined",
+        "required": false
+      },
+      "onFollow": {
+        "type": "((value: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Follow the profile to see the count and actions change",
+  "page": "/components/profile-card",
+  "example": "import { ProfileCard } from \"@/components/ui/profile-card\";\n\nexport default function Example() {\n  return <ProfileCard name=\"Sam Lee\" role=\"Designer\" />;\n}",
+  "models": {},
+  "behavior": "Supply name and role. onMessage receives the name for opening a conversation and onFollow receives the new follow state.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/profile-card.tsx",
+    "lib/takt-surface.ts",
+    "lib/takt-art-team.ts"
+  ]
+}

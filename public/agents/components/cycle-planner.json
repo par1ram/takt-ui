@@ -1,0 +1,71 @@
+{
+  "name": "cycle-planner",
+  "title": "Cycle Planner",
+  "category": "Trackers",
+  "description": "Plan cycle scope against capacity using issue estimates.",
+  "export": "CyclePlanner",
+  "usage": "<CyclePlanner cycleId=\"Q2\" capacity={12} defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3, cycleId: \"Q2\" }]} />",
+  "useCases": [
+    "Before a sprint, a team adds estimated issues to a cycle and sees how many points still fit.",
+    "When capacity changes, a lead removes an issue from the cycle and checks whether the plan is back within budget."
+  ],
+  "registryItem": "/r/cycle-planner.json",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "props": [
+    {
+      "issues": {
+        "type": "TrackerIssue[] | undefined",
+        "required": false
+      },
+      "defaultIssues": {
+        "type": "TrackerIssue[] | undefined",
+        "required": false
+      },
+      "onIssuesChange": {
+        "type": "((issues: TrackerIssue[]) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "cycleId": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "capacity": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Plan cycle scope against capacity using issue estimates.",
+  "page": "/components/cycle-planner",
+  "example": "import { CyclePlanner } from \"@/components/ui/cycle-planner\";\n\nexport default function Example() {\n  return <CyclePlanner cycleId=\"Q2\" capacity={12} defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3, cycleId: \"Q2\" }]} />;\n}",
+  "models": {
+    "TrackerIssue": "type TrackerIssue = {\n  id: string;\n  title: string;\n  status: IssueStatus;\n  priority: IssuePriority;\n  points: number;\n  cycleId?: string;\n};",
+    "IssueStatus": "type IssueStatus = \"done\" | \"backlog\" | \"active\";",
+    "IssuePriority": "type IssuePriority = \"high\" | \"medium\" | \"low\";"
+  },
+  "behavior": "cycleId associates issues with the cycle and capacity sets its point budget. Share issues and onIssuesChange to synchronize with the board.",
+  "parts": [],
+  "related": [
+    "/agents/components/issue-table.json",
+    "/agents/components/issue-board.json"
+  ],
+  "files": [
+    "components/motion/cycle-planner.tsx",
+    "components/motion/tracker-issues.tsx"
+  ]
+}

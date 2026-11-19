@@ -1,0 +1,44 @@
+{
+  "name": "rolling-text",
+  "title": "Rolling Text",
+  "category": "Текст",
+  "description": "Буквы нового слова по очереди вкатываются в строку.",
+  "export": "RollingText",
+  "usage": "<RollingText words={[\"Привет\", \"Bonjour\", \"Hello\"]} />",
+  "useCases": [
+    "На выставочном стенде посетитель нажимает на приветствие и читает его на следующем языке.",
+    "В образце фирменного шрифта дизайнер перелистывает короткие слова стрелками и сравнивает начертание букв."
+  ],
+  "registryItem": "/r/ru/rolling-text.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "words": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Буквы нового слова по очереди вкатываются в строку.",
+  "page": "/ru/components/rolling-text",
+  "example": "import { RollingText } from \"@/components/ui/rolling-text\";\n\nexport default function Example() {\n  return <RollingText words={[\"Привет\", \"Bonjour\", \"Hello\"]} />;\n}",
+  "models": {},
+  "behavior": "Передайте непустой массив words в порядке смены надписей. При пустом массиве компонент ничего не отображает.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/dynamic-text.json",
+    "/agents/ru/components/goo-morph.json"
+  ],
+  "files": [
+    "components/motion/rolling-text.tsx"
+  ]
+}

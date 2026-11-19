@@ -1,0 +1,48 @@
+{
+  "name": "jelly-slider",
+  "title": "Jelly Slider",
+  "category": "Ввод",
+  "description": "Потяните упругий бегунок",
+  "export": "JellySlider",
+  "usage": "<JellySlider label=\"Громкость\" />",
+  "useCases": [
+    "В редакторе стикеров дизайнер двигает ползунок прозрачности. Приложение применяет выбранный процент к стикеру.",
+    "В демо анимации посетитель меняет интенсивность эффекта и видит числовое значение рядом с бегунком."
+  ],
+  "registryItem": "/r/ru/jelly-slider.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((value: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Потяните упругий бегунок",
+  "page": "/ru/components/jelly-slider",
+  "example": "import { JellySlider } from \"@/components/ui/jelly-slider\";\n\nexport default function Example() {\n  return <JellySlider label=\"Громкость\" />;\n}",
+  "models": {},
+  "behavior": "label задаёт доступное имя. onChange получает числовое значение при перемещении бегунка.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/wave-slider.json",
+    "/agents/ru/components/detent-dial.json"
+  ],
+  "files": [
+    "components/motion/jelly-slider.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

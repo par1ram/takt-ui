@@ -1,0 +1,39 @@
+{
+  "name": "thinking-text",
+  "title": "Thinking Text",
+  "category": "AI",
+  "description": "Включите текстовый индикатор",
+  "export": "ThinkingText",
+  "usage": "<ThinkingText label=\"Загружаем контекст\" />",
+  "useCases": [
+    "Пока помощник собирает контекст документа, читатель видит короткую подпись о текущем этапе рядом с областью ответа.",
+    "На странице отчёта приложение показывает «Обрабатываем строки» до завершения фонового расчёта, затем заменяет индикатор результатом."
+  ],
+  "registryItem": "/r/ru/thinking-text.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Включите текстовый индикатор",
+  "page": "/ru/components/thinking-text",
+  "example": "import { ThinkingText } from \"@/components/ui/thinking-text\";\n\nexport default function Example() {\n  return <ThinkingText label=\"Загружаем контекст\" />;\n}",
+  "models": {},
+  "behavior": "Передайте статус в label и показывайте компонент, пока операция выполняется.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/thinking-text.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

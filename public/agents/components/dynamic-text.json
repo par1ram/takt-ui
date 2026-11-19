@@ -1,0 +1,47 @@
+{
+  "name": "dynamic-text",
+  "title": "Dynamic Text",
+  "category": "Text",
+  "description": "Change the word in the headline",
+  "export": "DynamicText",
+  "usage": "<DynamicText prefix=\"Takt\" words={[\"Studio\", \"Motion\"]} />",
+  "useCases": [
+    "In a product-family heading, the brand name stays fixed while a visitor taps through the product names.",
+    "In a classroom example, a student changes the ending of a short phrase to explore combinations with a fixed opening."
+  ],
+  "registryItem": "/r/dynamic-text.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "prefix": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "words": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Change the word in the headline",
+  "page": "/components/dynamic-text",
+  "example": "import { DynamicText } from \"@/components/ui/dynamic-text\";\n\nexport default function Example() {\n  return <DynamicText prefix=\"Takt\" words={[\"Studio\", \"Motion\"]} />;\n}",
+  "models": {},
+  "behavior": "prefix remains fixed. words supplies alternatives for the second part, cycled on click.",
+  "parts": [],
+  "related": [
+    "/agents/components/rolling-text.json",
+    "/agents/components/goo-morph.json"
+  ],
+  "files": [
+    "components/motion/dynamic-text.tsx"
+  ]
+}

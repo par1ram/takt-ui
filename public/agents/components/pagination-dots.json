@@ -1,0 +1,43 @@
+{
+  "name": "pagination-dots",
+  "title": "Pagination Dots",
+  "category": "Navigation",
+  "description": "Go to another page",
+  "export": "PaginationDots",
+  "usage": "<PaginationDots pages={5} />",
+  "useCases": [
+    "In a product gallery, a shopper jumps to a particular photo using the dots below the image.",
+    "In an onboarding tour, a user jumps to the last screen with the keyboard. The app displays the slide at the selected index."
+  ],
+  "registryItem": "/r/pagination-dots.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "pages": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Go to another page",
+  "page": "/components/pagination-dots",
+  "example": "import { PaginationDots } from \"@/components/ui/pagination-dots\";\n\nexport default function Example() {\n  return <PaginationDots pages={5} />;\n}",
+  "models": {},
+  "behavior": "pages sets the page count. onChange reports a zero-based index. Translate it to the numbering expected by your pagination API.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/pagination-dots.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

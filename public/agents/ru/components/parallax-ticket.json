@@ -1,0 +1,50 @@
+{
+  "name": "parallax-ticket",
+  "title": "Parallax Ticket",
+  "category": "Карточки",
+  "description": "Наклоните билет курсором",
+  "export": "ParallaxTicket",
+  "usage": "<ParallaxTicket title=\"Studio Night\" date=\"2027-04-17\" />",
+  "useCases": [
+    "На странице концерта посетитель рассматривает обложку билета и переворачивает его, чтобы увидеть дату.",
+    "В портфолио айдентики дизайнер показывает макет пропуска с собственной обложкой, названием и датой мероприятия."
+  ],
+  "registryItem": "/r/ru/parallax-ticket.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "date": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "cover": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Наклоните билет курсором",
+  "page": "/ru/components/parallax-ticket",
+  "example": "import { ParallaxTicket } from \"@/components/ui/parallax-ticket\";\n\nexport default function Example() {\n  return <ParallaxTicket title=\"Studio Night\" date=\"2027-04-17\" />;\n}",
+  "models": {},
+  "behavior": "Передайте название, дату для показа и URL изображения обложки. Компонент отвечает за наклон билета при движении указателя.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/parallax-ticket.tsx",
+    "lib/takt-art-orbit.ts"
+  ]
+}

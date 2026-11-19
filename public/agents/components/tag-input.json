@@ -1,0 +1,43 @@
+{
+  "name": "tag-input",
+  "title": "Tag Input",
+  "category": "Inputs",
+  "description": "Type a tag and press Enter",
+  "export": "TagInput",
+  "usage": "<TagInput initial={[\"design\", \"review\"]} />",
+  "useCases": [
+    "Before publishing an article, an editor adds topics, removes an accidental tag and saves the resulting list.",
+    "In a media library, a teammate opens an asset’s existing keywords and adds more so it is easier to find later."
+  ],
+  "registryItem": "/r/tag-input.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "initial": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((tags: string[]) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Type a tag and press Enter",
+  "page": "/components/tag-input",
+  "example": "import { TagInput } from \"@/components/ui/tag-input\";\n\nexport default function Example() {\n  return <TagInput initial={[\"design\", \"review\"]} />;\n}",
+  "models": {},
+  "behavior": "initial seeds the tags. onChange receives the complete updated array after edits.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/tag-input.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

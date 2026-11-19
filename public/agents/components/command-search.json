@@ -1,0 +1,56 @@
+{
+  "name": "command-search",
+  "title": "Command Search",
+  "category": "Buttons",
+  "description": "Click or press ⌘/Ctrl + K to expand the search field.",
+  "export": "CommandSearch",
+  "usage": "<CommandSearch onSearch={query => location.assign(\"/search?q=\" + encodeURIComponent(query))} />",
+  "useCases": [
+    "In a documentation hub, a developer presses Ctrl/⌘+K, enters a phrase and opens the results page through the app handler.",
+    "In a compact project toolbar, a user expands a button into a field and searches for a file using free text."
+  ],
+  "registryItem": "/r/command-search.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "placeholder": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onSearch": {
+        "type": "((query: string) => void) | undefined",
+        "required": false
+      },
+      "shortcut": {
+        "type": "boolean | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Submit a free-text query to application search.",
+  "page": "/components/command-search",
+  "example": "\"use client\";\n\nimport { CommandSearch } from \"@/components/ui/command-search\";\n\nexport default function Example() {\n  return <CommandSearch onSearch={query => location.assign(\"/search?q=\" + encodeURIComponent(query))} />;\n}",
+  "models": {},
+  "behavior": "onSearch receives the query string. The app supplies the route and results. Pass shortcut={false} if the app already handles Ctrl/⌘+K.",
+  "parts": [],
+  "related": [
+    "/agents/components/command-palette.json",
+    "/agents/components/springy-input.json"
+  ],
+  "files": [
+    "components/motion/command-search.tsx"
+  ]
+}

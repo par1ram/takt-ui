@@ -1,0 +1,39 @@
+{
+  "name": "music-toggle",
+  "title": "Music Toggle",
+  "category": "Кнопки",
+  "description": "Переключите анимацию эквалайзера",
+  "export": "MusicToggle",
+  "usage": "<MusicToggle onChange={enabled => localStorage.setItem(\"music\", String(enabled))} />",
+  "useCases": [
+    "На выставочном сайте посетитель включает фоновую музыку. Приложение запускает дорожку по событию переключателя.",
+    "В интерактивной истории читатель выключает сопровождение, сохраняя возможность продолжить чтение без звука."
+  ],
+  "registryItem": "/r/ru/music-toggle.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((on: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Переключите анимацию эквалайзера",
+  "page": "/ru/components/music-toggle",
+  "example": "\"use client\";\n\nimport { MusicToggle } from \"@/components/ui/music-toggle\";\n\nexport default function Example() {\n  return <MusicToggle onChange={enabled => localStorage.setItem(\"music\", String(enabled))} />;\n}",
+  "models": {},
+  "behavior": "onChange получает логический флаг. Подключите включение или паузу аудио в этом обработчике.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/music-toggle.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

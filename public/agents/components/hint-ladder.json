@@ -1,0 +1,45 @@
+{
+  "name": "hint-ladder",
+  "title": "Hint Ladder",
+  "category": "Learning",
+  "description": "Reveal hints one at a time, from a question to a related example.",
+  "export": "HintLadder",
+  "usage": "<HintLadder items={[\"Compare the inputs\", \"Check the length\"]} />",
+  "useCases": [
+    "When stuck on a problem, a student opens a general hint first and requests the next one only if needed.",
+    "In a lab, an instructor arranges hints from a general idea to a concrete step. The app records how far each learner went."
+  ],
+  "registryItem": "/r/hint-ladder.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "items": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onReveal": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Reveal hints one at a time, from a question to a related example.",
+  "page": "/components/hint-ladder",
+  "example": "import { HintLadder } from \"@/components/ui/hint-ladder\";\n\nexport default function Example() {\n  return <HintLadder items={[\"Compare the inputs\", \"Check the length\"]} />;\n}",
+  "models": {},
+  "behavior": "Order hints from general to specific. onReveal receives the zero-based index of the newly revealed hint.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/hint-ladder.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

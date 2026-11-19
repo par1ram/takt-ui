@@ -1,0 +1,43 @@
+{
+  "name": "rubber-dock",
+  "title": "Rubber Dock",
+  "category": "Navigation",
+  "description": "Move across the icons",
+  "export": "RubberDock",
+  "usage": "<RubberDock onSelect={(index) => console.info({ index })} />",
+  "useCases": [
+    "In a workspace shell, a user moves from Files to Calendar using the built-in four-section dock.",
+    "In a mobile desktop prototype, a designer moves across the dock, previews its labels and selects Photos."
+  ],
+  "registryItem": "/r/rubber-dock.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onSelect": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Move across the icons",
+  "page": "/components/rubber-dock",
+  "example": "\"use client\";\n\nimport { RubberDock } from \"@/components/ui/rubber-dock\";\n\nexport default function Example() {\n  return <RubberDock onSelect={(index) => console.info({ index })} />;\n}",
+  "models": {},
+  "behavior": "onSelect reports the selected index in the built-in dock. Spring Dock accepts a custom list of items and icons.",
+  "parts": [],
+  "related": [
+    "/agents/components/spring-dock.json"
+  ],
+  "files": [
+    "components/motion/rubber-dock.tsx",
+    "lib/takt-indicator.tsx"
+  ]
+}

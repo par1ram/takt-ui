@@ -1,0 +1,55 @@
+{
+  "name": "lesson-outline",
+  "title": "Lesson Outline",
+  "category": "Обучение",
+  "description": "Программа курса с выбором урока и возвратом к обучению.",
+  "export": "LessonOutline",
+  "usage": "<LessonOutline title=\"React\" currentId=\"state\" items={[{ id: \"state\", title: \"State\", href: \"/lessons/state\" }]} />",
+  "useCases": [
+    "Вернувшись к курсу, студент видит текущий урок в оглавлении и продолжает с него через кнопку возобновления.",
+    "Перед занятием участник просматривает последовательность тем и переходит по ссылке к нужному уроку."
+  ],
+  "registryItem": "/r/ru/lesson-outline.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "Lesson[] | undefined",
+        "required": false
+      },
+      "currentId": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onResume": {
+        "type": "((id: string) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Программа курса с выбором урока и возвратом к обучению.",
+  "page": "/ru/components/lesson-outline",
+  "example": "import { LessonOutline } from \"@/components/ui/lesson-outline\";\n\nexport default function Example() {\n  return <LessonOutline title=\"React\" currentId=\"state\" items={[{ id: \"state\", title: \"State\", href: \"/lessons/state\" }]} />;\n}",
+  "models": {
+    "Lesson": "type Lesson = {\n  id: string;\n  title: string;\n  complete?: boolean;\n  href?: string;\n  excerpt?: string;\n};"
+  },
+  "behavior": "Укажите currentId и список уроков с id. onResume получает идентификатор урока для открытия в приложении.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/lesson-outline.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

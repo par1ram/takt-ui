@@ -16,7 +16,7 @@ export function LikeBurst({
   return (
     <button
       type="button"
-      aria-label="Нравится"
+      aria-label={"Нравится" + ", " + (likes + Number(liked))}
       aria-pressed={liked}
       onClick={() => {
         setLiked(!liked);

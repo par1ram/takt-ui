@@ -1,0 +1,47 @@
+{
+  "name": "dynamic-text",
+  "title": "Dynamic Text",
+  "category": "Текст",
+  "description": "Смените слово в заголовке",
+  "export": "DynamicText",
+  "usage": "<DynamicText prefix=\"Takt\" words={[\"Studio\", \"Motion\"]} />",
+  "useCases": [
+    "В заголовке продуктовой линейки постоянным остаётся название бренда, а посетитель перебирает названия продуктов нажатием.",
+    "В учебном примере студент меняет окончание короткой фразы и видит разные сочетания с одной и той же первой частью."
+  ],
+  "registryItem": "/r/ru/dynamic-text.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "prefix": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "words": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Смените слово в заголовке",
+  "page": "/ru/components/dynamic-text",
+  "example": "import { DynamicText } from \"@/components/ui/dynamic-text\";\n\nexport default function Example() {\n  return <DynamicText prefix=\"Takt\" words={[\"Studio\", \"Motion\"]} />;\n}",
+  "models": {},
+  "behavior": "prefix остаётся постоянным. words задаёт варианты второй части надписи, которые сменяются при нажатии.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/rolling-text.json",
+    "/agents/ru/components/goo-morph.json"
+  ],
+  "files": [
+    "components/motion/dynamic-text.tsx"
+  ]
+}

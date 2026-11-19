@@ -1,0 +1,47 @@
+{
+  "name": "task-list",
+  "title": "Task List",
+  "category": "AI",
+  "description": "Work through the task queue",
+  "export": "TaskList",
+  "usage": "<TaskList tasks={[\"Lint\", \"Build\", \"Deploy\"]} />",
+  "useCases": [
+    "Before a release, a teammate checks off completed reviews and sees how many items remain.",
+    "In a lab workbook, a student checks off finished tasks. The app saves the completed task names through onChange."
+  ],
+  "registryItem": "/r/task-list.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "tasks": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((done: string[]) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Work through the task queue",
+  "page": "/components/task-list",
+  "example": "import { TaskList } from \"@/components/ui/task-list\";\n\nexport default function Example() {\n  return <TaskList tasks={[\"Lint\", \"Build\", \"Deploy\"]} />;\n}",
+  "models": {},
+  "behavior": "tasks supplies task labels. onChange reports the complete array of completed labels.",
+  "parts": [],
+  "related": [
+    "/agents/components/checkbox-list.json"
+  ],
+  "files": [
+    "components/motion/task-list.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "unlock-face-id",
+  "title": "Unlock Face ID",
+  "category": "Cards",
+  "description": "Try the scan demo",
+  "export": "UnlockFaceId",
+  "usage": "<UnlockFaceId onDemoComplete={() => console.info(\"Demo complete\")} />",
+  "useCases": [
+    "In an interactive prototype, a client tries a simulated scan and sees the unlocked file state.",
+    "In a protected vault UI, a user starts verification. The app runs its authentication mechanism and passes the result through status."
+  ],
+  "registryItem": "/r/unlock-face-id.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onDemoComplete": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "status": {
+        "type": "ScanState | undefined",
+        "required": false
+      },
+      "onScan": {
+        "type": "(() => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Try the scan demo",
+  "page": "/components/unlock-face-id",
+  "example": "\"use client\";\n\nimport { UnlockFaceId } from \"@/components/ui/unlock-face-id\";\n\nexport default function Example() {\n  return <UnlockFaceId onDemoComplete={() => console.info(\"Demo complete\")} />;\n}",
+  "models": {
+    "ScanState": "type ScanState = \"idle\" | \"scanning\" | \"success\" | \"error\";"
+  },
+  "behavior": "Omitting status enables simulated scanning. Start your verification flow in onScan and pass its actual state in status.",
+  "parts": [],
+  "related": [
+    "/agents/components/otp-code.json"
+  ],
+  "files": [
+    "components/motion/unlock-face-id.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "focus-mode",
+  "title": "Focus Mode",
+  "category": "Cards",
+  "description": "Silence notifications for the duration of a focus session.",
+  "export": "FocusMode",
+  "usage": "<FocusMode minutes={25} notifications={[{ title: \"Review\", body: \"PR #24\", time: \"10:00\" }]} />",
+  "useCases": [
+    "Before reviewing a mockup, a designer starts a 25-minute session. The notification stack collapses and the timer shows the time left.",
+    "In a learning workspace, a student turns on focus for an exercise. The app uses onChange to pause its own notification popups."
+  ],
+  "registryItem": "/r/focus-mode.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((active: boolean) => void) | undefined",
+        "required": false
+      },
+      "minutes": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "notifications": {
+        "type": "{ title: string; body: string; time: string; }[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Silence notifications for the duration of a focus session.",
+  "page": "/components/focus-mode",
+  "example": "import { FocusMode } from \"@/components/ui/focus-mode\";\n\nexport default function Example() {\n  return <FocusMode minutes={25} notifications={[{ title: \"Review\", body: \"PR #24\", time: \"10:00\" }]} />;\n}",
+  "models": {},
+  "behavior": "minutes sets the session length. Use onChange to synchronize external notifications when the session starts or ends.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/focus-mode.tsx"
+  ]
+}

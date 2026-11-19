@@ -1,0 +1,40 @@
+{
+  "name": "fan-cards",
+  "title": "Fan Cards",
+  "category": "Cards",
+  "description": "Fan out the deck and lift the card under your pointer.",
+  "export": "FanCards",
+  "usage": "<FanCards cards={[\"Orbit\", \"Fold\", \"Glass\"]} />",
+  "useCases": [
+    "In an illustrator’s portfolio, a visitor fans out labeled cards to see which works belong to a series.",
+    "In a card-game demo, a player fans out their hand and moves the pointer across it to lift an individual card."
+  ],
+  "registryItem": "/r/fan-cards.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "cards": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Fan out the deck and lift the card under your pointer.",
+  "page": "/components/fan-cards",
+  "example": "import { FanCards } from \"@/components/ui/fan-cards\";\n\nexport default function Example() {\n  return <FanCards cards={[\"Orbit\", \"Fold\", \"Glass\"]} />;\n}",
+  "models": {},
+  "behavior": "cards contains labels in display order. The component manages the open fan state.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/fan-cards.tsx"
+  ]
+}

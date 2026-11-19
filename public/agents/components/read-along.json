@@ -1,0 +1,46 @@
+{
+  "name": "read-along",
+  "title": "Read Along",
+  "category": "Text",
+  "description": "Words light up at reading speed. Pause or step through them individually.",
+  "export": "ReadAlong",
+  "usage": "<ReadAlong text=\"Follow the highlighted text\" interval={300} />",
+  "useCases": [
+    "In a language lesson, a learner starts word-by-word highlighting and pauses at a difficult phrase.",
+    "When rehearsing a short speech, a speaker selects a word midway through the text and resumes at the chosen pace."
+  ],
+  "registryItem": "/r/read-along.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "interval": {
+        "type": "number | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Words light up at reading speed. Pause or step through them individually.",
+  "page": "/components/read-along",
+  "example": "import { ReadAlong } from \"@/components/ui/read-along\";\n\nexport default function Example() {\n  return <ReadAlong text=\"Follow the highlighted text\" interval={300} />;\n}",
+  "models": {},
+  "behavior": "Pass the full passage. interval sets the delay between words in milliseconds, with a minimum of 120.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/read-along.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

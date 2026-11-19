@@ -1,0 +1,45 @@
+{
+  "name": "glass-lens",
+  "title": "Glass Lens",
+  "category": "Карточки",
+  "description": "Перемещайте линзу по рисунку",
+  "export": "GlassLens",
+  "usage": "<GlassLens label=\"Orbit\" image=\"/photos/orbit.jpg\" />",
+  "useCases": [
+    "В карточке ткани покупатель ведёт лупу по фотографии, чтобы рассмотреть переплетение нитей.",
+    "При разборе макета дизайнер увеличивает мелкую деталь скриншота и перемещает лупу стрелками клавиатуры."
+  ],
+  "registryItem": "/r/ru/glass-lens.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "image": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Перемещайте линзу по рисунку",
+  "page": "/ru/components/glass-lens",
+  "example": "import { GlassLens } from \"@/components/ui/glass-lens\";\n\nexport default function Example() {\n  return <GlassLens label=\"Orbit\" image=\"/photos/orbit.jpg\" />;\n}",
+  "models": {},
+  "behavior": "Укажите URL изображения в image. Линза использует то же изображение, а label подписывает управление.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/glass-lens.tsx",
+    "lib/takt-art-glass.ts"
+  ]
+}

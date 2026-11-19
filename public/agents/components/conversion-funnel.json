@@ -1,0 +1,57 @@
+{
+  "name": "conversion-funnel",
+  "title": "Conversion Funnel",
+  "category": "Metrics",
+  "description": "Participant counts and conversion between consecutive stages.",
+  "export": "ConversionFunnel",
+  "usage": "<ConversionFunnel stages={[{ id: \"visit\", label: \"Visit\", count: 120 }, { id: \"signup\", label: \"Signup\", count: 36 }]} />",
+  "useCases": [
+    "In a store report, an analyst compares counts at the cart, checkout and purchase stages to find the biggest drop-off.",
+    "A course team compares signups, first lessons and completions. The app supplies the participant count for each stage."
+  ],
+  "registryItem": "/r/conversion-funnel.json",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "props": [
+    {
+      "stages": {
+        "type": "FunnelStage[] | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "locale": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Compare conversion between successive stages.",
+  "page": "/components/conversion-funnel",
+  "example": "import { ConversionFunnel } from \"@/components/ui/conversion-funnel\";\n\nexport default function Example() {\n  return <ConversionFunnel stages={[{ id: \"visit\", label: \"Visit\", count: 120 }, { id: \"signup\", label: \"Signup\", count: 36 }]} />;\n}",
+  "models": {
+    "FunnelStage": "type FunnelStage = { id: string; label: string; count: number };"
+  },
+  "behavior": "The stages array sets the order of the funnel. Each count is the number of participants at that stage.",
+  "parts": [],
+  "related": [
+    "/agents/components/cohort-retention.json",
+    "/agents/components/latency-chart.json"
+  ],
+  "files": [
+    "components/motion/conversion-funnel.tsx",
+    "lib/takt-metric-reading.tsx"
+  ]
+}

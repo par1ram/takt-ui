@@ -85,7 +85,7 @@ async function hold(stage, page) {
     await page.keyboard.up("Space");
   }
   await stage
-    .getByRole("button", { name: /Удерживайте|Удерживать для публикации/ })
+    .getByRole("button", { name: /Удерживайте|Опубликовать/ })
     .waitFor();
 }
 async function drag(node, page, dx, dy) {
@@ -148,7 +148,7 @@ const scenarios = {
     await row.getByRole("button",{name:/^Приоритет/}).click();
     await page.getByRole("menuitemradio",{name:"Низкий",exact:true}).click();
     await contains(row,"Низкий");
-    await button(s,"Сортировать по приоритету").click();
+    await button(s,"Приоритет").click();
     assert.match(await s.locator("tbody tr").first().textContent(),/LAB-24/);
   },
   "cycle-planner": async s => {
@@ -170,8 +170,18 @@ const scenarios = {
       const path = () => chart.querySelector(".recharts-area-curve");
       const frame = () => new Promise(resolve => requestAnimationFrame(resolve));
       // Finish the percentile morph before testing a sample change on the settled curve.
-      const started = performance.now();
-      while (performance.now() - started < 750) await frame();
+      const deadline = performance.now() + 4000;
+      let settledFrames = 0;
+      while (settledFrames < 3) {
+        await frame();
+        const dot = marker();
+        const curve = path();
+        const end = curve.getPointAtLength(curve.getTotalLength());
+        const distance = Math.hypot(end.x - Number(dot.getAttribute("cx")), end.y - Number(dot.getAttribute("cy")));
+        const visible = getComputedStyle(dot.parentElement.parentElement).opacity === "1";
+        settledFrames = visible && distance < 1 ? settledFrames + 1 : 0;
+        if (performance.now() > deadline) throw new Error("Percentile curve did not settle at the selected sample");
+      }
       const positions = new Set();
       let followsCurve = true;
       const start = Number(marker().getAttribute("cx"));
@@ -235,6 +245,10 @@ const scenarios = {
     assert.equal(await button(s, "Аплодисменты, 4").getAttribute("aria-pressed"), "true");
     await button(s, "Аплодисменты, 4").click();
     await button(s, "Аплодисменты, 3").waitFor();
+  },
+  "chat-post": async stage => {
+    await stage.getByRole("article").getByText("Takt v2.0").waitFor();
+    assert.equal(await stage.getByRole("link").getAttribute("href"), "/llms.txt");
   },
   "message-thread": async s => {
     await textbox(s).fill("Ответ из проверки");
@@ -564,16 +578,16 @@ const scenarios = {
   },
   "step-progress": async (s) => {
     const current = s.locator('button[aria-current="step"]');
-    assert.equal(await current.getAttribute("aria-label"), "Данные");
+    assert.equal(await current.getAttribute("aria-label"), "01 Данные");
     await button(s, "Далее").click();
-    assert.equal(await current.getAttribute("aria-label"), "Оформление");
+    assert.equal(await current.getAttribute("aria-label"), "02 Оформление");
     await button(s, "Далее").click();
-    assert.equal(await current.getAttribute("aria-label"), "Проверка");
+    assert.equal(await current.getAttribute("aria-label"), "03 Проверка");
     await button(s, "Сначала").click();
     await contains(status(s), "Данные");
-    await button(s, "Проверка").press("Enter");
-    await button(s, "Оформление").press("Space");
-    assert.equal(await current.getAttribute("aria-label"), "Оформление");
+    await button(s, "03 Проверка").press("Enter");
+    await button(s, "02 Оформление").press("Space");
+    assert.equal(await current.getAttribute("aria-label"), "02 Оформление");
     await contains(status(s), "Оформление");
   },
   toolbar: async (s) => {
@@ -730,7 +744,7 @@ const scenarios = {
       "Коллекция Orbit",
       "Коллекция Fold",
     ]) {
-      const row = button(s, title);
+      const row = s.getByRole("button", { name: new RegExp("^" + title) });
       await row.press("Enter");
       assert.equal(await row.getAttribute("aria-expanded"), "true");
       assert.equal(await buttons(s).count(), 1);
@@ -741,7 +755,7 @@ const scenarios = {
   "fan-cards": (s) => pressed(first(s), "aria-expanded"),
   "boarding-pass": (s) => pressed(first(s), "aria-expanded"),
   "stat-card": async (s) => {
-    const mode = button(s, "Линейный график");
+    const mode = s.getByRole("button", { name: /^(Столбцы|Линия)$/ });
     const point = s.getByRole("button", { name: /^Значение / }).last();
     await mode.click();
     assert.equal(await point.locator("span").count(), 1);
@@ -782,7 +796,7 @@ const scenarios = {
     await s.locator("svg ellipse").waitFor();
     assert.equal(await s.locator("linearGradient stop").count(), 2);
     assert.equal(await point.locator("span").count(), 0);
-    await pressed(button(s, "Недельный период"));
+    await pressed(s.getByRole("button", { name: /^(День|Неделя) ↔$/ }));
     await buttons(s).last().focus();
     await contains(status(s), "21");
   },
@@ -1015,59 +1029,60 @@ const browser = await chromium.launch({
 });
 const failures = [];
 try {
-  await Promise.all(
-    ["light", "dark"].map(async (theme) => {
-      const mobile = theme === "dark";
-      const context = await browser.newContext({
-        viewport: { width: mobile ? 360 : 1250, height: 850 },
-        colorScheme: theme,
-        reducedMotion: mobile ? "reduce" : "no-preference",
-        permissions: ["microphone"],
-      });
-      const page = await context.newPage();
-      page.setDefaultTimeout(3500);
-      let current = "catalog";
-      page.on("pageerror", (e) =>
-        failures.push(theme + " " + current + ": " + e.message),
-      );
-      await page.goto(new URL("/ru", origin).href);
-      await page
-        .getByRole("button", { name: mobile ? "Тёмная тема" : "Светлая тема" })
-        .click();
-      const activeFilter = page.getByRole("button", { name: "Все", exact: true });
-      const accent = () => activeFilter.evaluate((el) => getComputedStyle(el).backgroundColor);
-      const originalAccent = await accent();
-      await button(page, "Акцентный цвет").click();
-      await button(page, "Синий").click();
-      await page.keyboard.press("Escape");
-      assert.notEqual(await accent(), originalAccent, "Accent must change the rendered color");
-      for (const item of index.items.filter((i) => i.type === "registry:ui")) {
-        current = item.name;
-        try {
-          await page
-            .getByRole("textbox", { name: "Поиск компонентов" })
-            .fill(item.title);
-          const stage = page.locator(".stage-" + item.name);
-          await stage.scrollIntoViewIfNeeded();
-          await stage
-            .locator(":scope > :not(.preview-placeholder,.magnetic-field)")
-            .first()
-            .waitFor();
-          await scenarios[item.name](stage, page);
-        } catch (error) {
-          failures.push(theme + " " + item.name + ": " + error.message);
-          await page.keyboard.press("Escape");
-        }
+  // Keyboard and clipboard scenarios need ownership of the active browser page.
+  for (const theme of ["light", "dark"]) {
+    const mobile = theme === "dark";
+    const context = await browser.newContext({
+      viewport: { width: mobile ? 360 : 1250, height: 850 },
+      colorScheme: theme,
+      reducedMotion: mobile ? "reduce" : "no-preference",
+      permissions: ["microphone"],
+    });
+    const page = await context.newPage();
+    page.setDefaultTimeout(10_000);
+    let current = "catalog";
+    page.on("pageerror", (e) =>
+      failures.push(theme + " " + current + ": " + e.message),
+    );
+    await page.goto(new URL("/ru", origin).href, { waitUntil: "domcontentloaded", timeout: 30_000 });
+    await page
+      .getByRole("button", { name: mobile ? "Тёмная тема" : "Светлая тема" })
+      .click();
+    const activeFilter = page.getByRole("button", { name: "Все", exact: true });
+    const accent = () => activeFilter.evaluate((el) => getComputedStyle(el).backgroundColor);
+    const originalAccent = await accent();
+    await button(page, "Акцентный цвет").click();
+    await button(page, "Синий").click();
+    await page.keyboard.press("Escape");
+    assert.notEqual(await accent(), originalAccent, "Accent must change the rendered color");
+    for (const item of index.items.filter((i) => i.type === "registry:ui")) {
+      current = item.name;
+      try {
+        await page
+          .getByRole("textbox", { name: "Поиск компонентов" })
+          .fill(item.title);
+        const stage = page.locator(".stage-" + item.name);
+        await stage.scrollIntoViewIfNeeded();
+        await stage
+          .locator(":scope > :not(.preview-placeholder,.magnetic-field)")
+          .first()
+          .waitFor();
+        await scenarios[item.name](stage, page);
+      } catch (error) {
+        failures.push(theme + " " + item.name + ": " + error.message);
+        await page.keyboard.press("Escape");
       }
-      await context.close();
-    }),
-  );
-  try {
-    await reviewMessenger(browser, origin);
-    await reviewEnglish(browser, origin, index.items);
-    await reviewHost(browser, origin);
-  } catch (error) {
-    failures.push("Messenger / English catalog / host: " + error.message);
+    }
+    await context.close();
+  }
+  if (!process.argv.includes("--catalog-only")) {
+    try {
+      await reviewMessenger(browser, origin);
+      await reviewEnglish(browser, origin, index.items);
+      await reviewHost(browser, origin);
+    } catch (error) {
+      failures.push("Messenger / English catalog / host: " + error.message);
+    }
   }
 } finally {
   await browser.close();

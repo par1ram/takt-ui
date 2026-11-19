@@ -1,0 +1,61 @@
+{
+  "name": "cohort-retention",
+  "title": "Cohort Retention",
+  "category": "Метрики",
+  "description": "Возврат участников по когортам с отдельным состоянием для пропущенных наблюдений.",
+  "export": "CohortRetention",
+  "usage": "<CohortRetention cohorts={[{ id: \"w1\", label: \"W01\", size: 80, retained: [80, 45, null] }]} />",
+  "useCases": [
+    "В отчёте подписок аналитик сравнивает, какая доля пользователей разных наборов вернулась через неделю после регистрации.",
+    "В кабинете курса методист изучает возвращаемость потоков и отличает будущую неделю от прошедшей недели с нулём вернувшихся."
+  ],
+  "registryItem": "/r/ru/cohort-retention.json",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "props": [
+    {
+      "cohorts": {
+        "type": "RetentionCohort[] | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "periodLabel": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "locale": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Показать возвращаемость участников по когортам и периодам.",
+  "page": "/ru/components/cohort-retention",
+  "example": "import { CohortRetention } from \"@/components/ui/cohort-retention\";\n\nexport default function Example() {\n  return <CohortRetention cohorts={[{ id: \"w1\", label: \"W01\", size: 80, retained: [80, 45, null] }]} />;\n}",
+  "models": {
+    "RetentionCohort": "type RetentionCohort = {\n  id: string;\n  label: string;\n  size: number;\n  retained: (number | null)[];\n};"
+  },
+  "behavior": "size задаёт размер когорты. В retained передайте число вернувшихся по каждому периоду. null обозначает будущий или неизмеренный период.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/conversion-funnel.json",
+    "/agents/ru/components/latency-chart.json"
+  ],
+  "files": [
+    "components/motion/cohort-retention.tsx",
+    "lib/takt-metric-reading.tsx"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "copy-button",
+  "title": "Copy Button",
+  "category": "Кнопки",
+  "description": "Скопируйте текст",
+  "export": "CopyButton",
+  "usage": "<CopyButton text=\"bun run build\" />",
+  "useCases": [
+    "В документации разработчик копирует команду установки целиком и вставляет её в терминал.",
+    "На странице заказа клиент копирует номер обращения для письма в поддержку и получает подтверждение копирования."
+  ],
+  "registryItem": "/r/ru/copy-button.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Скопируйте текст",
+  "page": "/ru/components/copy-button",
+  "example": "import { CopyButton } from \"@/components/ui/copy-button\";\n\nexport default function Example() {\n  return <CopyButton text=\"bun run build\" />;\n}",
+  "models": {},
+  "behavior": "В text передайте точную строку для буфера обмена. Компонент сам запрашивает запись и сообщает о её результате.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/copy-button.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "star-rating",
+  "title": "Star Rating",
+  "category": "Inputs",
+  "description": "Rate from one to five stars",
+  "export": "StarRating",
+  "usage": "<StarRating onChange={stars => localStorage.setItem(\"rating\", String(stars))} />",
+  "useCases": [
+    "After a class, a student rates the lesson. The app records the selected number of stars against that lesson.",
+    "In a prototype gallery, a participant rates each design. The app collects the scores for comparison."
+  ],
+  "registryItem": "/r/star-rating.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((value: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Rate from one to five stars",
+  "page": "/components/star-rating",
+  "example": "\"use client\";\n\nimport { StarRating } from \"@/components/ui/star-rating\";\n\nexport default function Example() {\n  return <StarRating onChange={stars => localStorage.setItem(\"rating\", String(stars))} />;\n}",
+  "models": {},
+  "behavior": "Supply onChange to save the rating. Its value is the number of the selected star.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/star-rating.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

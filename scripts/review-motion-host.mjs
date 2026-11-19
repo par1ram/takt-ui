@@ -15,7 +15,8 @@ export async function reviewHost(browser, origin) {
   const bundle = await result.outputs[0].text();
   const page = await browser.newPage();
   page.setDefaultTimeout(4000);
-  page.on("pageerror", (error) => console.error(error.message));
+  const pageErrors = [];
+  page.on("pageerror", error => pageErrors.push(error.message));
   try {
     await page.route("**/__motion-test.js", (route) =>
       route.fulfill({ contentType: "application/javascript", body: bundle }),
@@ -73,8 +74,8 @@ export async function reviewHost(browser, origin) {
       await render(component, { [prop]: ["A", "B", "C"] });
       if (component === "TabPill")
         await page.getByRole("tab", { name: "C" }).click();
-      else if (component === "StepProgress") await btn("C").click();
-      else await btn("Следующая страница").press("ArrowLeft");
+      else if (component === "StepProgress") await btn("03 C").click();
+      else await btn(/^Следующая страница/).press("ArrowLeft");
       await render(component, { [prop]: ["Один"] });
       if (component === "TabPill")
         assert.equal(
@@ -82,7 +83,7 @@ export async function reviewHost(browser, origin) {
           "Один",
         );
       else if (component === "StepProgress") {
-        assert.equal(await btn("Один").getAttribute("aria-current"), "step");
+        assert.equal(await btn("01 Один").getAttribute("aria-current"), "step");
         assert.match(await page.getByRole("status").textContent(), /01.*01.*Один/s);
       } else assert((await page.locator("main").innerText()).includes("1 / 1"));
       await render(component, { [prop]: [] });
@@ -90,15 +91,15 @@ export async function reviewHost(browser, origin) {
     }
     await render("UnlockFaceId", { status: "error" }, "onScan");
     const calls = await page.evaluate(() => window.fixture.calls.length);
-    await btn("Повторить сканирование").click();
+    await btn("Face ID Повторить сканирование").click();
     assert.equal(
       await page.evaluate(() => window.fixture.calls.length),
       calls + 1,
     );
     await render("UnlockFaceId", { status: "scanning" });
-    assert(await btn("Сканирование…").isDisabled());
+    assert(await btn("Face ID Сканирование…").isDisabled());
     await render("UnlockFaceId", { status: "success" });
-    assert(await btn("Доступ открыт").isDisabled());
+    assert(await btn("Face ID Доступ открыт").isDisabled());
     await render("TaskList", { tasks: ["A", "B"] });
     await btn("B").click();
     await render("TaskList", { tasks: ["A"] });
@@ -135,7 +136,7 @@ export async function reviewHost(browser, origin) {
     assert.equal(await field.inputValue(), "e\u0301👩‍🎨");
     for (const [component, callback, action, error] of [
       ["LoadingSuccess", "onRun", "Запустить", "Повторить"],
-      ["PullRefresh", "onRefresh", "Обновить", "Попробуйте ещё раз"],
+      ["PullRefresh", "onRefresh", /^Обновить/, "Попробуйте ещё раз"],
       ["InvitePeople", "onInvite", "Пригласить", "Не удалось пригласить"],
       ["PromptBox", "onSend", "Отправить", "Не удалось отправить"],
     ]) {
@@ -258,7 +259,19 @@ export async function reviewHost(browser, origin) {
     ]);
     await btn("Повторить").click();
     await page.locator('iframe[title="Hosted payment fixture"]').waitFor();
+    assert.deepEqual(pageErrors, [], "Unexpected browser errors in host fixture");
   } finally {
     await page.close();
+  }
+}
+
+if (import.meta.main) {
+  const { chromium } = await import("playwright");
+  const browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || undefined });
+  try {
+    await reviewHost(browser, "https://takt-fixture.test");
+    console.log("Verified controlled integrations, failure recovery, focus and provider events in Chromium.");
+  } finally {
+    await browser.close();
   }
 }

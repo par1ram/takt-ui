@@ -1,0 +1,88 @@
+{
+  "name": "course-messenger",
+  "title": "Course Messenger",
+  "category": "Messenger",
+  "description": "A workspace for course channels, direct messages and threads.",
+  "export": "CourseMessenger",
+  "usage": "<CourseMessenger workspace=\"Studio\" channels={[{ id: \"design\", name: \"design\", kind: \"channel\", topic: \"Review\" }]} initialMessages={{ design: [] }} />",
+  "useCases": [
+    "In a course workspace, a student discusses an assignment in the cohort channel and opens a thread for a specific question.",
+    "In a team workspace, a colleague moves between direct and shared conversations. The app synchronizes messages and reactions with its server."
+  ],
+  "registryItem": "/r/course-messenger.json",
+  "dependencies": [
+    "motion",
+    "lucide-react",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "button",
+    "avatar"
+  ],
+  "props": [
+    {
+      "messages": {
+        "type": "Record<string, ConversationPost[]> | undefined",
+        "required": false
+      },
+      "onSend": {
+        "type": "((channelId: string, text: string, parentId?: string) => void | Promise<void>) | undefined",
+        "required": false
+      },
+      "onToggleReaction": {
+        "type": "((channelId: string, postId: string, emoji: string) => void) | undefined",
+        "required": false
+      },
+      "channels": {
+        "type": "ChatChannel[] | undefined",
+        "required": false
+      },
+      "initialMessages": {
+        "type": "Record<string, ConversationPost[]> | undefined",
+        "required": false
+      },
+      "workspace": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Build a messaging workspace with channels, direct messages, reactions and threads.",
+  "page": "/components/course-messenger",
+  "example": "import { CourseMessenger } from \"@/components/ui/course-messenger\";\n\nexport default function Example() {\n  return <CourseMessenger workspace=\"Studio\" channels={[{ id: \"design\", name: \"design\", kind: \"channel\", topic: \"Review\" }]} initialMessages={{ design: [] }} />;\n}",
+  "models": {
+    "ConversationPost": "type ConversationPost = ChatPost & {\n  reactions?: ChatReaction[];\n  replies?: ChatPost[];\n};",
+    "ChatPost": "type ChatPost = {\n  id: string;\n  author: string;\n  initials: string;\n  time: string;\n  text: string;\n  code?: string;\n  resource?: { title: string; detail: string; href: string };\n};",
+    "ChatReaction": "type ChatReaction = {\n  emoji: string;\n  label: string;\n  count: number;\n  mine: boolean;\n};",
+    "ChatChannel": "type ChatChannel = {\n  id: string;\n  name: string;\n  kind: \"channel\" | \"direct\";\n  topic: string;\n};"
+  },
+  "behavior": "Use initialMessages for local state. For server-backed conversations pass messages keyed by channel ID, persist replies with onSend and update reactions through onToggleReaction. The third onSend argument identifies the parent message in a thread.",
+  "parts": [
+    "channel-list",
+    "chat-composer",
+    "message-reactions",
+    "chat-post",
+    "message-thread"
+  ],
+  "related": [
+    "/agents/components/channel-list.json",
+    "/agents/components/chat-post.json",
+    "/agents/components/chat-composer.json",
+    "/agents/components/message-reactions.json",
+    "/agents/components/message-thread.json"
+  ],
+  "files": [
+    "components/motion/course-messenger.tsx",
+    "components/motion/channel-list.tsx",
+    "components/motion/chat-composer.tsx",
+    "components/motion/message-reactions.tsx",
+    "components/motion/message-thread.tsx",
+    "components/motion/chat-post.tsx",
+    "components/motion/chat-post.module.css"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "glass-player",
+  "title": "Glass Player",
+  "category": "Карточки",
+  "description": "Аудиоплеер с обложкой, перемоткой, повтором и отключением звука.",
+  "export": "GlassPlayer",
+  "usage": "<GlassPlayer src=\"/audio/intro.mp3\" title=\"Введение\" />",
+  "useCases": [
+    "На странице урока студент перематывает аудиообъяснение к пропущенной фразе.",
+    "В каталоге музыки покупатель слушает фрагмент трека и включает повтор, чтобы сравнить аранжировку с другим вариантом."
+  ],
+  "registryItem": "/r/ru/glass-player.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "src": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "cover": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Аудиоплеер с обложкой, перемоткой, повтором и отключением звука.",
+  "page": "/ru/components/glass-player",
+  "example": "import { GlassPlayer } from \"@/components/ui/glass-player\";\n\nexport default function Example() {\n  return <GlassPlayer src=\"/audio/intro.mp3\" title=\"Введение\" />;\n}",
+  "models": {},
+  "behavior": "Укажите в src доступный браузеру аудиофайл, а в cover — изображение. Путь /audio/intro.mp3 в примере замените адресом своей записи.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/glass-player.tsx",
+    "lib/takt-art-fold.ts"
+  ]
+}

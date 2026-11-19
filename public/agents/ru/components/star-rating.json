@@ -1,0 +1,41 @@
+{
+  "name": "star-rating",
+  "title": "Star Rating",
+  "category": "Ввод",
+  "description": "Оцените от одной до пяти звёзд",
+  "export": "StarRating",
+  "usage": "<StarRating onChange={stars => localStorage.setItem(\"rating\", String(stars))} />",
+  "useCases": [
+    "После занятия студент ставит оценку уроку. Приложение привязывает выбранное число звёзд к этому занятию.",
+    "В каталоге прототипов участник оценивает каждый вариант. Приложение собирает оценки для последующего сравнения."
+  ],
+  "registryItem": "/r/ru/star-rating.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((value: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Оцените от одной до пяти звёзд",
+  "page": "/ru/components/star-rating",
+  "example": "\"use client\";\n\nimport { StarRating } from \"@/components/ui/star-rating\";\n\nexport default function Example() {\n  return <StarRating onChange={stars => localStorage.setItem(\"rating\", String(stars))} />;\n}",
+  "models": {},
+  "behavior": "Передайте onChange для сохранения выбранной оценки. Значение обработчика — номер выбранной звезды.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/star-rating.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

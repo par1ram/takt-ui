@@ -1,0 +1,63 @@
+{
+  "name": "chat-composer",
+  "title": "Chat Composer",
+  "category": "Мессенджер",
+  "description": "Редактор с черновиком, переносом строки и состояниями отправки.",
+  "export": "ChatComposer",
+  "usage": "<ChatComposer placeholder=\"Написать в команду\" />",
+  "useCases": [
+    "На странице заявки клиент отправляет комментарий. Если сеть недоступна, набранный текст остаётся в поле для повторной отправки.",
+    "При переключении между диалогами оператор возвращается к недописанному ответу. Приложение хранит отдельный черновик на диалог и передаёт его в value."
+  ],
+  "registryItem": "/r/ru/chat-composer.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "pending": {
+        "type": "boolean | undefined",
+        "required": false
+      },
+      "value": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((text: string) => void) | undefined",
+        "required": false
+      },
+      "onSend": {
+        "type": "((text: string) => void | Promise<void>) | undefined",
+        "required": false
+      },
+      "placeholder": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Отправить сообщение из существующей страницы и сохранить черновик при ошибке.",
+  "page": "/ru/components/chat-composer",
+  "example": "\"use client\";\n\nimport { useState } from \"react\";\nimport { ChatComposer } from \"@/components/ui/chat-composer\";\n\nexport default function TeamMessage() {\n  const [draft, setDraft] = useState(\"\");\n\n  async function send(text: string) {\n    const response = await fetch(\"/api/messages\", {\n      method: \"POST\",\n      headers: { \"Content-Type\": \"application/json\" },\n      body: JSON.stringify({ text }),\n    });\n    if (!response.ok) throw new Error(\"HTTP \" + response.status);\n  }\n\n  return <ChatComposer value={draft} onChange={setDraft} onSend={send} />;\n}",
+  "models": {},
+  "behavior": "Без onSend форма показывает локальное подтверждение. Для отправки верните Promise из onSend. Пока он выполняется, редактор блокирует повторную отправку. При успехе он очищает текст, при ошибке сохраняет его для повтора. В управляемом режиме передайте value и onChange вместе. Пример ожидает POST /api/messages в вашем приложении.",
+  "registryExample": "/r/ru/chat-composer-demo.json",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/message-thread.json",
+    "/agents/ru/components/course-messenger.json",
+    "/agents/ru/components/prompt-box.json"
+  ],
+  "files": [
+    "components/motion/chat-composer.tsx"
+  ]
+}

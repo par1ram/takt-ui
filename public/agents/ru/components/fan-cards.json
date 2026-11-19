@@ -1,0 +1,40 @@
+{
+  "name": "fan-cards",
+  "title": "Fan Cards",
+  "category": "Карточки",
+  "description": "Колода раскрывается веером и мягко приподнимает карту под указателем.",
+  "export": "FanCards",
+  "usage": "<FanCards cards={[\"Orbit\", \"Fold\", \"Glass\"]} />",
+  "useCases": [
+    "В портфолио иллюстратора посетитель раскрывает веер подписанных работ, чтобы увидеть состав серии.",
+    "В демо карточной игры игрок раскрывает руку и проводит указателем по картам, чтобы приподнять отдельную карту."
+  ],
+  "registryItem": "/r/ru/fan-cards.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "cards": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Колода раскрывается веером и мягко приподнимает карту под указателем.",
+  "page": "/ru/components/fan-cards",
+  "example": "import { FanCards } from \"@/components/ui/fan-cards\";\n\nexport default function Example() {\n  return <FanCards cards={[\"Orbit\", \"Fold\", \"Glass\"]} />;\n}",
+  "models": {},
+  "behavior": "cards содержит подписи карточек в порядке показа. Раскрытием веера управляет сам компонент.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/fan-cards.tsx"
+  ]
+}

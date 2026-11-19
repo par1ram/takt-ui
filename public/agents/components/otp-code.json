@@ -1,0 +1,44 @@
+{
+  "name": "otp-code",
+  "title": "OTP Code",
+  "category": "Inputs",
+  "description": "Enter or paste a numeric code",
+  "export": "OtpCode",
+  "usage": "<OtpCode length={6} />",
+  "useCases": [
+    "At sign-in, a user pastes a one-time code from a message. The app submits the complete code for verification, including leading zeros.",
+    "When confirming a new email, a user enters four digits. The app sets the field length to match its verification code."
+  ],
+  "registryItem": "/r/otp-code.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "length": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onComplete": {
+        "type": "((code: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Enter or paste a numeric code",
+  "page": "/components/otp-code",
+  "example": "import { OtpCode } from \"@/components/ui/otp-code\";\n\nexport default function Example() {\n  return <OtpCode length={6} />;\n}",
+  "models": {},
+  "behavior": "length sets the number of digits. onComplete receives a string when filled, preserving leading zeroes. The app verifies the code.",
+  "parts": [],
+  "related": [
+    "/agents/components/unlock-face-id.json"
+  ],
+  "files": [
+    "components/motion/otp-code.tsx"
+  ]
+}

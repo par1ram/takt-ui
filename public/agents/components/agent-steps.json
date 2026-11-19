@@ -1,0 +1,47 @@
+{
+  "name": "agent-steps",
+  "title": "Agent Steps",
+  "category": "AI",
+  "description": "Walk through the agent’s steps",
+  "export": "AgentSteps",
+  "usage": "<AgentSteps steps={[\"Read\", \"Verify\", \"Save\"]} />",
+  "useCases": [
+    "In a training demo, a user advances an agent from reading a file to preparing a result and sees how many steps are complete.",
+    "During a presentation, the presenter advances each step with a button. The app uses onStep to display that step’s artifact alongside it."
+  ],
+  "registryItem": "/r/agent-steps.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "steps": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onStep": {
+        "type": "((step: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Walk through the agent’s steps",
+  "page": "/components/agent-steps",
+  "example": "import { AgentSteps } from \"@/components/ui/agent-steps\";\n\nexport default function Example() {\n  return <AgentSteps steps={[\"Read\", \"Verify\", \"Save\"]} />;\n}",
+  "models": {},
+  "behavior": "steps supplies the ordered stages. Subscribe to onStep to synchronize progress elsewhere on the page.",
+  "parts": [],
+  "related": [
+    "/agents/components/step-progress.json"
+  ],
+  "files": [
+    "components/motion/agent-steps.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

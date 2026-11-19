@@ -118,7 +118,6 @@ export function FocusMode({
       <button
         type="button"
         aria-pressed={active}
-        aria-label="Режим фокуса"
         className="mt-2 flex h-11 w-full items-center gap-2 rounded-[15px] bg-white/10 px-3 text-sm font-medium"
         onClick={() => {
           const seconds = Math.max(1, Math.round(minutes * 60));

@@ -1,0 +1,44 @@
+{
+  "name": "like-burst",
+  "title": "Like Burst",
+  "category": "Buttons",
+  "description": "Add or remove a like",
+  "export": "LikeBurst",
+  "usage": "<LikeBurst likes={12} />",
+  "useCases": [
+    "In a community feed, a reader likes a post and immediately sees its count change.",
+    "On an illustration page, a viewer presses again to remove their like. The app saves the new flag through onChange."
+  ],
+  "registryItem": "/r/like-burst.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "likes": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((liked: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Add or remove a like",
+  "page": "/components/like-burst",
+  "example": "import { LikeBurst } from \"@/components/ui/like-burst\";\n\nexport default function Example() {\n  return <LikeBurst likes={12} />;\n}",
+  "models": {},
+  "behavior": "likes supplies the base count. onChange reports the new liked flag for the current user.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/like-burst.tsx"
+  ]
+}

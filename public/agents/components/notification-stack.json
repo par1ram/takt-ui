@@ -1,0 +1,52 @@
+{
+  "name": "notification-stack",
+  "title": "Notification Stack",
+  "category": "Cards",
+  "description": "Expand the stack or swipe a notification away",
+  "export": "NotificationStack",
+  "usage": "<NotificationStack notifications={[{ id: \"build-24\", title: \"Build finished\", time: \"10:00\" }]} />",
+  "useCases": [
+    "On a team dashboard, a teammate reviews stacked build notifications and dismisses the ones they have read.",
+    "In an activity center, the app updates notifications with stable IDs while the user works through the remaining cards."
+  ],
+  "registryItem": "/r/notification-stack.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "messages": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "notifications": {
+        "type": "readonly StackNotification[] | undefined",
+        "required": false
+      },
+      "onDismiss": {
+        "type": "((message: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Expand the stack or swipe a notification away",
+  "page": "/components/notification-stack",
+  "example": "import { NotificationStack } from \"@/components/ui/notification-stack\";\n\nexport default function Example() {\n  return <NotificationStack notifications={[{ id: \"build-24\", title: \"Build finished\", time: \"10:00\" }]} />;\n}",
+  "models": {
+    "StackNotification": "type StackNotification = {\n  id: string;\n  title: string;\n  body?: string;\n  time?: string;\n  icon?: ReactNode;\n};"
+  },
+  "behavior": "For structured notifications, pass notifications with stable IDs. onDismiss receives the dismissed title.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/notification-stack.tsx",
+    "lib/takt-focus.ts"
+  ]
+}

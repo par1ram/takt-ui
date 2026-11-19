@@ -31,7 +31,7 @@ export function ParallaxTicket({
   return (
     <motion.button
       type="button"
-      aria-label={title + " — оборот билета"}
+      aria-description={title + " — оборот билета"}
       aria-pressed={back}
       onClick={() => setBack(!back)}
       className={cn(

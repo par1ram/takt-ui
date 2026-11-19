@@ -1,0 +1,44 @@
+{
+  "name": "otp-code",
+  "title": "OTP Code",
+  "category": "Ввод",
+  "description": "Введите или вставьте цифровой код",
+  "export": "OtpCode",
+  "usage": "<OtpCode length={6} />",
+  "useCases": [
+    "При входе пользователь вставляет одноразовый код из сообщения. Заполненный код приложение отправляет на проверку целиком, включая начальные нули.",
+    "При подтверждении новой почты пользователь вводит четыре цифры. Приложение задаёт длину поля под формат своего кода подтверждения."
+  ],
+  "registryItem": "/r/ru/otp-code.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "length": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onComplete": {
+        "type": "((code: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Введите или вставьте цифровой код",
+  "page": "/ru/components/otp-code",
+  "example": "import { OtpCode } from \"@/components/ui/otp-code\";\n\nexport default function Example() {\n  return <OtpCode length={6} />;\n}",
+  "models": {},
+  "behavior": "length задаёт длину кода. onComplete получает строку после заполнения, что сохраняет начальные нули. Проверку кода выполняет приложение.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/unlock-face-id.json"
+  ],
+  "files": [
+    "components/motion/otp-code.tsx"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "name": "message-thread",
+  "title": "Message Thread",
+  "category": "Messenger",
+  "description": "Threaded replies with the original message and a separate composer.",
+  "export": "MessageThread",
+  "usage": "<MessageThread parent={{ id: \"24\", author: \"Sam\", initials: \"S\", time: \"10:00\", text: \"PR #24\" }} />",
+  "useCases": [
+    "In a design review, a designer opens a comment thread and replies with the original message visible above the discussion.",
+    "In support, an operator switches between threads. The app keeps each thread’s draft separate from its posted replies."
+  ],
+  "registryItem": "/r/message-thread.json",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "avatar"
+  ],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "pending": {
+        "type": "boolean | undefined",
+        "required": false
+      },
+      "parent": {
+        "type": "ChatPost | undefined",
+        "required": false
+      },
+      "replies": {
+        "type": "ChatPost[] | undefined",
+        "required": false
+      },
+      "draft": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onDraftChange": {
+        "type": "((text: string) => void) | undefined",
+        "required": false
+      },
+      "onReply": {
+        "type": "((text: string) => void | Promise<void>) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Show a parent message and its replies with a separate composer.",
+  "page": "/components/message-thread",
+  "example": "import { MessageThread } from \"@/components/ui/message-thread\";\n\nexport default function Example() {\n  return <MessageThread parent={{ id: \"24\", author: \"Sam\", initials: \"S\", time: \"10:00\", text: \"PR #24\" }} />;\n}",
+  "models": {
+    "ChatPost": "type ChatPost = {\n  id: string;\n  author: string;\n  initials: string;\n  time: string;\n  text: string;\n  code?: string;\n  resource?: { title: string; detail: string; href: string };\n};"
+  },
+  "behavior": "Pass parent and replies from your app. With a controlled list, append the reply in your data source after onReply succeeds. Use draft and onDraftChange to retain a draft when switching threads.",
+  "parts": [
+    "chat-composer",
+    "chat-post"
+  ],
+  "related": [
+    "/agents/components/chat-post.json",
+    "/agents/components/chat-composer.json",
+    "/agents/components/course-messenger.json"
+  ],
+  "files": [
+    "components/motion/message-thread.tsx",
+    "components/motion/chat-composer.tsx",
+    "components/motion/chat-post.tsx",
+    "components/motion/chat-post.module.css"
+  ]
+}

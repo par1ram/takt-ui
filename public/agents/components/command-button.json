@@ -1,0 +1,47 @@
+{
+  "name": "command-button",
+  "title": "Command Button",
+  "category": "Buttons",
+  "description": "Run the command",
+  "export": "CommandButton",
+  "usage": "<CommandButton label=\"Print\" onExecute={() => window.print()} />",
+  "useCases": [
+    "In an invoice preview, an operator starts printing with one button. The app opens the print dialog in onExecute.",
+    "In a command demo, a developer repeats an operation and sees how many times it was invoked."
+  ],
+  "registryItem": "/r/command-button.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onExecute": {
+        "type": "(() => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Run the command",
+  "page": "/components/command-button",
+  "example": "\"use client\";\n\nimport { CommandButton } from \"@/components/ui/command-button\";\n\nexport default function Example() {\n  return <CommandButton label=\"Print\" onExecute={() => window.print()} />;\n}",
+  "models": {},
+  "behavior": "Set the label and supply the application action in onExecute.",
+  "parts": [],
+  "related": [
+    "/agents/components/command-palette.json"
+  ],
+  "files": [
+    "components/motion/command-button.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -588,7 +588,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "command-palette",
       "title": "Command Palette",
-      "description": "Find and run a command",
+      "description": "Find and execute an action from a known list of commands.",
       "dependencies": [
         "lucide-react"
       ],
@@ -893,7 +893,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "receipt-printer",
       "title": "Receipt Printer",
-      "description": "Confirm a payment, watch the thermal receipt print and print another copy.",
+      "description": "Print a receipt after payment confirmation.",
       "dependencies": [
         "lucide-react",
         "motion"
@@ -910,7 +910,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "card-field",
       "title": "Card Field",
-      "description": "A test card and a Stripe form for secure card entry over HTTPS.",
+      "description": "Enter a test card number or mount a Stripe payment field.",
       "dependencies": [
         "lucide-react",
         "@stripe/react-stripe-js",
@@ -1530,7 +1530,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "command-search",
       "title": "Command Search",
-      "description": "Click or press ⌘/Ctrl + K to expand the search field.",
+      "description": "Submit a free-text query to application search.",
       "dependencies": [
         "lucide-react",
         "motion"
@@ -1781,7 +1781,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "chat-composer",
       "title": "Chat Composer",
-      "description": "Compose a draft, insert line breaks and track delivery.",
+      "description": "Send a message from an existing page and keep the draft on failure.",
       "dependencies": [
         "lucide-react"
       ],
@@ -1803,7 +1803,8 @@
       "description": "Message reactions with participant counts.",
       "dependencies": [
         "motion",
-        "radix-ui"
+        "radix-ui",
+        "lucide-react"
       ],
       "files": [
         {
@@ -1817,7 +1818,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "message-thread",
       "title": "Message Thread",
-      "description": "Threaded replies with the original message and a separate composer.",
+      "description": "Show a parent message and its replies with a separate composer.",
       "dependencies": [
         "motion",
         "lucide-react"
@@ -1834,6 +1835,15 @@
         {
           "path": "components/motion/chat-composer.tsx",
           "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-post.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-post.module.css",
+          "type": "registry:file",
+          "target": "@ui/chat-post.module.css"
         }
       ],
       "type": "registry:ui"
@@ -1842,7 +1852,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "course-messenger",
       "title": "Course Messenger",
-      "description": "A workspace for course channels, direct messages and threads.",
+      "description": "Build a messaging workspace with channels, direct messages, reactions and threads.",
       "dependencies": [
         "motion",
         "lucide-react",
@@ -1872,6 +1882,15 @@
         {
           "path": "components/motion/message-thread.tsx",
           "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-post.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-post.module.css",
+          "type": "registry:file",
+          "target": "@ui/chat-post.module.css"
         }
       ],
       "type": "registry:ui"
@@ -1880,7 +1899,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "latency-chart",
       "title": "Latency Chart",
-      "description": "Response times by percentile and sample.",
+      "description": "Compare p50 and p95 latency over time.",
       "dependencies": [
         "recharts",
         "motion",
@@ -1907,7 +1926,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "conversion-funnel",
       "title": "Conversion Funnel",
-      "description": "Participant counts and conversion between consecutive stages.",
+      "description": "Compare conversion between successive stages.",
       "dependencies": [
         "motion",
         "lucide-react"
@@ -1931,7 +1950,7 @@
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
       "name": "cohort-retention",
       "title": "Cohort Retention",
-      "description": "Cohort retention with missing observations distinguished from zero.",
+      "description": "Show returning participants by cohort and period.",
       "dependencies": [
         "motion",
         "lucide-react"
@@ -2031,6 +2050,31 @@
         {
           "path": "components/motion/tracker-issues.tsx",
           "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "chat-post",
+      "title": "Chat Post",
+      "description": "Render one message in your own feed or discussion.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "components/motion/chat-post.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-post.module.css",
+          "type": "registry:file",
+          "target": "@ui/chat-post.module.css"
         }
       ],
       "type": "registry:ui"
@@ -2471,6 +2515,15 @@
           "type": "registry:ui"
         },
         {
+          "path": "components/motion/chat-post.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-post.module.css",
+          "type": "registry:file",
+          "target": "@ui/chat-post.module.css"
+        },
+        {
           "path": "components/motion/course-messenger.tsx",
           "type": "registry:ui"
         },
@@ -2512,6 +2565,51 @@
         }
       ],
       "type": "registry:block"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "chat-composer-demo",
+      "title": "Chat Composer · Integration",
+      "description": "Without onSend the form shows a local confirmation. Return a Promise from onSend to persist a message. The editor prevents duplicate sends while pending, clears the text on success and keeps it for retry on error. Supply value and onChange together for a controlled draft. This example expects your application to handle POST /api/messages.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "examples/chat-composer-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/motion/chat-composer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:example"
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "message-reactions-demo",
+      "title": "Message Reactions · Integration",
+      "description": "Supplying reactions makes the list controlled. onToggle receives the emoji and the exported toggleReaction helper computes the next array for state updates.",
+      "dependencies": [
+        "motion",
+        "radix-ui",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "examples/message-reactions-demo.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "components/motion/message-reactions.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:example"
     }
   ]
 }

@@ -1,0 +1,46 @@
+{
+  "name": "dynamic-menu",
+  "title": "Dynamic Menu",
+  "category": "Навигация",
+  "description": "Откройте меню и вложенный раздел",
+  "export": "DynamicMenu",
+  "usage": "<DynamicMenu formats={[\"PNG\", \"WebP\"]} />",
+  "useCases": [
+    "В редакторе диаграмм автор раскрывает подменю экспорта и выбирает SVG. Приложение запускает нужный экспортёр.",
+    "В конструкторе отчётов аналитик открывает список форматов, возвращается на уровень выше и снова выбирает способ выгрузки."
+  ],
+  "registryItem": "/r/ru/dynamic-menu.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "formats": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChoose": {
+        "type": "((format: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Откройте меню и вложенный раздел",
+  "page": "/ru/components/dynamic-menu",
+  "example": "import { DynamicMenu } from \"@/components/ui/dynamic-menu\";\n\nexport default function Example() {\n  return <DynamicMenu formats={[\"PNG\", \"WebP\"]} />;\n}",
+  "models": {},
+  "behavior": "Передайте форматы в formats и подключите экспорт через onChoose. Обработчик получает название формата.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/dynamic-menu.tsx",
+    "lib/takt-focus.ts",
+    "lib/takt-surface.ts"
+  ]
+}

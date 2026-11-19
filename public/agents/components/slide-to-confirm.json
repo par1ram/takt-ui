@@ -1,0 +1,44 @@
+{
+  "name": "slide-to-confirm",
+  "title": "Slide To Confirm",
+  "category": "Buttons",
+  "description": "Slide into the finish zone to confirm. An incomplete swipe returns the handle.",
+  "export": "SlideToConfirm",
+  "usage": "<SlideToConfirm onConfirm={() => window.print()} />",
+  "useCases": [
+    "At a packing station, a worker slides to confirm after inspecting a parcel. The app marks it ready to ship.",
+    "On a mobile terminal, an operator ends a shift with a deliberate slide so a stray tap cannot close the shift."
+  ],
+  "registryItem": "/r/slide-to-confirm.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onConfirm": {
+        "type": "(() => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Slide into the finish zone to confirm. An incomplete swipe returns the handle.",
+  "page": "/components/slide-to-confirm",
+  "example": "\"use client\";\n\nimport { SlideToConfirm } from \"@/components/ui/slide-to-confirm\";\n\nexport default function Example() {\n  return <SlideToConfirm onConfirm={() => window.print()} />;\n}",
+  "models": {},
+  "behavior": "Supply the action in onConfirm. The component owns gesture progress and invokes the handler on confirmation.",
+  "parts": [],
+  "related": [
+    "/agents/components/hold-button.json",
+    "/agents/components/hold-to-publish.json"
+  ],
+  "files": [
+    "components/motion/slide-to-confirm.tsx",
+    "lib/takt-focus.ts"
+  ]
+}

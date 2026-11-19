@@ -1,0 +1,40 @@
+{
+  "name": "page-flip",
+  "title": "Page Flip",
+  "category": "Карточки",
+  "description": "Лист с двумя сторонами переворачивается вокруг корешка.",
+  "export": "PageFlip",
+  "usage": "<PageFlip pages={[\"Введение\", \"API\", \"CLI\"]} />",
+  "useCases": [
+    "В цифровом буклете посетитель перелистывает короткие подписи к главам как страницы печатного издания.",
+    "В презентации визуальной концепции дизайнер показывает по одному тезису на разворот и листает в обе стороны стрелками."
+  ],
+  "registryItem": "/r/ru/page-flip.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "pages": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Лист с двумя сторонами переворачивается вокруг корешка.",
+  "page": "/ru/components/page-flip",
+  "example": "import { PageFlip } from \"@/components/ui/page-flip\";\n\nexport default function Example() {\n  return <PageFlip pages={[\"Введение\", \"API\", \"CLI\"]} />;\n}",
+  "models": {},
+  "behavior": "Передайте текст страниц в pages в порядке чтения. Навигация и текущая позиция остаются внутри компонента.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/page-flip.tsx"
+  ]
+}

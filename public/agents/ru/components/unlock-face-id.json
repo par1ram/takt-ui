@@ -1,0 +1,54 @@
+{
+  "name": "unlock-face-id",
+  "title": "Unlock Face ID",
+  "category": "Карточки",
+  "description": "Запустите демонстрацию сканирования",
+  "export": "UnlockFaceId",
+  "usage": "<UnlockFaceId onDemoComplete={() => console.info(\"Demo complete\")} />",
+  "useCases": [
+    "В интерактивном прототипе заказчик проходит демонстрационное сканирование и видит состояние открытого файла.",
+    "В интерфейсе защищённого хранилища пользователь начинает проверку. Приложение запускает свой механизм аутентификации и передаёт его результат в status."
+  ],
+  "registryItem": "/r/ru/unlock-face-id.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onDemoComplete": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "status": {
+        "type": "ScanState | undefined",
+        "required": false
+      },
+      "onScan": {
+        "type": "(() => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Запустите демонстрацию сканирования",
+  "page": "/ru/components/unlock-face-id",
+  "example": "\"use client\";\n\nimport { UnlockFaceId } from \"@/components/ui/unlock-face-id\";\n\nexport default function Example() {\n  return <UnlockFaceId onDemoComplete={() => console.info(\"Demo complete\")} />;\n}",
+  "models": {
+    "ScanState": "type ScanState = \"idle\" | \"scanning\" | \"success\" | \"error\";"
+  },
+  "behavior": "Без status компонент моделирует сканирование. Для подключения своего механизма проверки запускайте его в onScan и передавайте фактическое состояние в status.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/otp-code.json"
+  ],
+  "files": [
+    "components/motion/unlock-face-id.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

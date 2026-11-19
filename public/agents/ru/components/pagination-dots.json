@@ -1,0 +1,43 @@
+{
+  "name": "pagination-dots",
+  "title": "Pagination Dots",
+  "category": "Навигация",
+  "description": "Перейдите к другой странице",
+  "export": "PaginationDots",
+  "usage": "<PaginationDots pages={5} />",
+  "useCases": [
+    "В галерее товара покупатель переходит к нужной фотографии по точке под изображением.",
+    "Во вводном туре пользователь переходит к последнему экрану с клавиатуры. Приложение показывает слайд с выбранным индексом."
+  ],
+  "registryItem": "/r/ru/pagination-dots.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "pages": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Перейдите к другой странице",
+  "page": "/ru/components/pagination-dots",
+  "example": "import { PaginationDots } from \"@/components/ui/pagination-dots\";\n\nexport default function Example() {\n  return <PaginationDots pages={5} />;\n}",
+  "models": {},
+  "behavior": "pages задаёт количество страниц. onChange возвращает индекс с нуля. Для серверной пагинации преобразуйте его в принятую вашим API нумерацию.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/pagination-dots.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "name": "cycle-planner",
+  "title": "Cycle Planner",
+  "category": "Трекеры",
+  "description": "Планирование цикла по оценкам задач с резервом и превышением ёмкости.",
+  "export": "CyclePlanner",
+  "usage": "<CyclePlanner cycleId=\"Q2\" capacity={12} defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3, cycleId: \"Q2\" }]} />",
+  "useCases": [
+    "Перед спринтом команда добавляет оценённые задачи в цикл и видит, сколько баллов ещё помещается в план.",
+    "При изменении доступной ёмкости руководитель снимает задачу с цикла и проверяет, устранена ли перегрузка."
+  ],
+  "registryItem": "/r/ru/cycle-planner.json",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "props": [
+    {
+      "issues": {
+        "type": "TrackerIssue[] | undefined",
+        "required": false
+      },
+      "defaultIssues": {
+        "type": "TrackerIssue[] | undefined",
+        "required": false
+      },
+      "onIssuesChange": {
+        "type": "((issues: TrackerIssue[]) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "cycleId": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "capacity": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Планирование цикла по оценкам задач с резервом и превышением ёмкости.",
+  "page": "/ru/components/cycle-planner",
+  "example": "import { CyclePlanner } from \"@/components/ui/cycle-planner\";\n\nexport default function Example() {\n  return <CyclePlanner cycleId=\"Q2\" capacity={12} defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3, cycleId: \"Q2\" }]} />;\n}",
+  "models": {
+    "TrackerIssue": "type TrackerIssue = {\n  id: string;\n  title: string;\n  status: IssueStatus;\n  priority: IssuePriority;\n  points: number;\n  cycleId?: string;\n};",
+    "IssueStatus": "type IssueStatus = \"done\" | \"backlog\" | \"active\";",
+    "IssuePriority": "type IssuePriority = \"high\" | \"medium\" | \"low\";"
+  },
+  "behavior": "cycleId связывает задачи с циклом, а capacity задаёт ёмкость в баллах. Передайте общие issues и onIssuesChange для синхронизации с доской.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/issue-table.json",
+    "/agents/ru/components/issue-board.json"
+  ],
+  "files": [
+    "components/motion/cycle-planner.tsx",
+    "components/motion/tracker-issues.tsx"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "cart-button",
+  "title": "Cart Button",
+  "category": "Карточки",
+  "description": "Раскрывающаяся корзина с количеством товаров и пересчётом суммы.",
+  "export": "CartButton",
+  "usage": "<CartButton title=\"Studio Print\" price={32} />",
+  "useCases": [
+    "В каталоге принтов покупатель добавляет первый экземпляр и меняет количество прямо в карточке товара.",
+    "В киоске мерча покупатель убирает лишний экземпляр. Приложение получает итоговое количество и обновляет сумму заказа."
+  ],
+  "registryItem": "/r/ru/cart-button.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onAdd": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "onQuantityChange": {
+        "type": "((n: number) => void) | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "price": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "cover": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Раскрывающаяся корзина с количеством товаров и пересчётом суммы.",
+  "page": "/ru/components/cart-button",
+  "example": "import { CartButton } from \"@/components/ui/cart-button\";\n\nexport default function Example() {\n  return <CartButton title=\"Studio Print\" price={32} />;\n}",
+  "models": {},
+  "behavior": "onAdd вызывается при увеличении количества, а onQuantityChange получает новое общее количество. Используйте второй обработчик для синхронизации корзины.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/cart-button.tsx",
+    "lib/takt-focus.ts",
+    "lib/takt-art-orbit.ts",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "stack-panel",
+  "title": "Stack Panel",
+  "category": "Навигация",
+  "description": "Откройте проект и смахните вправо, чтобы вернуться",
+  "export": "StackPanel",
+  "usage": "<StackPanel title=\"Настройки\" items={[\"API\", \"CLI\"]} renderPanel={name => <p>{name}</p>} />",
+  "useCases": [
+    "В компактных настройках пользователь проходит от корневого меню к параметрам уведомлений и возвращается на уровень выше.",
+    "В справке продукта читатель выбирает тему. Приложение показывает связанный текст внутри той же панели через renderPanel."
+  ],
+  "registryItem": "/r/ru/stack-panel.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "renderPanel": {
+        "type": "((name: string) => ReactNode) | undefined",
+        "required": false
+      },
+      "pages": {
+        "type": "Record<string, StackPage> | undefined",
+        "required": false
+      },
+      "root": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Откройте проект и смахните вправо, чтобы вернуться",
+  "page": "/ru/components/stack-panel",
+  "example": "\"use client\";\n\nimport { StackPanel } from \"@/components/ui/stack-panel\";\n\nexport default function Example() {\n  return <StackPanel title=\"Настройки\" items={[\"API\", \"CLI\"]} renderPanel={name => <p>{name}</p>} />;\n}",
+  "models": {
+    "StackPage": "type StackPage = { title: string; rows?: Row[]; content?: ReactNode };",
+    "Row": "type Row = {\n  id: string;\n  label: string;\n  to?: string;\n  detail?: string;\n  icon?: ReactNode;\n  selected?: boolean;\n  onSelect?: () => void;\n};"
+  },
+  "behavior": "Для плоского меню передайте items и renderPanel. Для вложенных переходов задайте карту pages и начальный ключ root.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/stack-panel.tsx"
+  ]
+}

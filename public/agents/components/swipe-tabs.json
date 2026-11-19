@@ -1,0 +1,59 @@
+{
+  "name": "swipe-tabs",
+  "title": "Swipe Tabs",
+  "category": "Navigation",
+  "description": "Swipe horizontally to move between panels and update the active tab.",
+  "export": "SwipeTabs",
+  "usage": "<SwipeTabs onChange={console.log} />",
+  "useCases": [
+    "On a mobile product page, a shopper swipes between the description, specifications and reviews.",
+    "In a course workspace, a student opens a link to the practice tab. The app sets the active ID and updates the URL on subsequent changes."
+  ],
+  "registryItem": "/r/swipe-tabs.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "SwipeTab[] | undefined",
+        "required": false
+      },
+      "defaultValue": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "value": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((id: string) => void) | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Swipe horizontally to move between panels and update the active tab.",
+  "page": "/components/swipe-tabs",
+  "example": "\"use client\";\n\nimport { SwipeTabs } from \"@/components/ui/swipe-tabs\";\n\nexport default function Example() {\n  return <SwipeTabs onChange={console.log} />;\n}",
+  "models": {
+    "SwipeTab": "type SwipeTab = { id: string; title: string; content: ReactNode };"
+  },
+  "behavior": "Each item has a stable id, title and content. Use defaultValue to seed the tab or value and onChange for external control.",
+  "parts": [],
+  "related": [
+    "/agents/components/tab-pill.json",
+    "/agents/components/segmented-control.json"
+  ],
+  "files": [
+    "components/motion/swipe-tabs.tsx"
+  ]
+}

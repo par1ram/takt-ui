@@ -1,0 +1,45 @@
+{
+  "name": "spring-dropdown",
+  "title": "Spring Dropdown",
+  "category": "Ввод",
+  "description": "Раскройте список и выберите статус",
+  "export": "SpringDropdown",
+  "usage": "<SpringDropdown options={[\"PNG\", \"WebP\", \"SVG\"]} />",
+  "useCases": [
+    "В редакторе иллюстраций автор выбирает формат файла из короткого списка перед экспортом.",
+    "В списке заказов менеджер выбирает режим сортировки. Приложение получает название варианта и перестраивает список."
+  ],
+  "registryItem": "/r/ru/spring-dropdown.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "options": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onSelect": {
+        "type": "((value: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Раскройте список и выберите статус",
+  "page": "/ru/components/spring-dropdown",
+  "example": "import { SpringDropdown } from \"@/components/ui/spring-dropdown\";\n\nexport default function Example() {\n  return <SpringDropdown options={[\"PNG\", \"WebP\", \"SVG\"]} />;\n}",
+  "models": {},
+  "behavior": "options содержит строки для показа. onSelect получает выбранную строку.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/spring-dropdown.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

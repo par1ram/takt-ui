@@ -1708,7 +1708,8 @@
       "description": "Реакции на сообщение со счётчиками участников.",
       "dependencies": [
         "motion",
-        "radix-ui"
+        "radix-ui",
+        "lucide-react"
       ],
       "files": [
         {
@@ -1738,6 +1739,15 @@
         {
           "path": "components/motion/chat-composer.tsx",
           "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-post.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-post.module.css",
+          "type": "registry:file",
+          "target": "@ui/chat-post.module.css"
         }
       ]
     },
@@ -1775,6 +1785,15 @@
         {
           "path": "components/motion/message-thread.tsx",
           "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-post.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-post.module.css",
+          "type": "registry:file",
+          "target": "@ui/chat-post.module.css"
         }
       ]
     },
@@ -1928,6 +1947,30 @@
         {
           "path": "components/motion/tracker-issues.tsx",
           "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chat-post",
+      "type": "registry:ui",
+      "title": "Chat Post",
+      "description": "Одно сообщение с автором, текстом, кодом и ссылкой на материал.",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "components/motion/chat-post.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/motion/chat-post.module.css",
+          "type": "registry:file",
+          "target": "@ui/chat-post.module.css"
         }
       ]
     }

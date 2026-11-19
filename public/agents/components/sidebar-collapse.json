@@ -1,0 +1,44 @@
+{
+  "name": "sidebar-collapse",
+  "title": "Sidebar Collapse",
+  "category": "Navigation",
+  "description": "A studio sidebar that switches between workspaces.",
+  "export": "SidebarCollapse",
+  "usage": "<SidebarCollapse items={[\"Projects\", \"Team\"]} />",
+  "useCases": [
+    "In a design workspace, a designer collapses navigation to make room for the canvas while retaining access to both sections.",
+    "In a studio workspace, a teammate selects Projects or Collections. The app switches content using the section index."
+  ],
+  "registryItem": "/r/sidebar-collapse.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "[string, string] | undefined",
+        "required": false
+      },
+      "onSelect": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "A studio sidebar that switches between workspaces.",
+  "page": "/components/sidebar-collapse",
+  "example": "import { SidebarCollapse } from \"@/components/ui/sidebar-collapse\";\n\nexport default function Example() {\n  return <SidebarCollapse items={[\"Projects\", \"Team\"]} />;\n}",
+  "models": {},
+  "behavior": "items takes a pair of labels. onSelect provides the index for switching the application view.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/sidebar-collapse.tsx"
+  ]
+}

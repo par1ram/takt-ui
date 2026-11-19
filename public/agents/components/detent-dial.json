@@ -1,0 +1,45 @@
+{
+  "name": "detent-dial",
+  "title": "Detent Dial",
+  "category": "Inputs",
+  "description": "Turn the dial with the arrow keys or a swipe",
+  "export": "DetentDial",
+  "usage": "<DetentDial label=\"Brightness\" />",
+  "useCases": [
+    "On a synthesizer panel, a musician turns a dial to select one of eleven effect levels.",
+    "In a lamp prototype, a designer selects a brightness step. The app maps the 0–10 position to a light output level."
+  ],
+  "registryItem": "/r/detent-dial.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((value: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Turn the dial with the arrow keys or a swipe",
+  "page": "/components/detent-dial",
+  "example": "import { DetentDial } from \"@/components/ui/detent-dial\";\n\nexport default function Example() {\n  return <DetentDial label=\"Brightness\" />;\n}",
+  "models": {},
+  "behavior": "The dial selects a value from 0 to 10. Convert the position into application units in onChange.",
+  "parts": [],
+  "related": [
+    "/agents/components/jelly-slider.json",
+    "/agents/components/wave-slider.json"
+  ],
+  "files": [
+    "components/motion/detent-dial.tsx"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "invite-people",
+  "title": "Invite People",
+  "category": "Inputs",
+  "description": "Invite a teammate by email, validate the address and update the member list.",
+  "export": "InvitePeople",
+  "usage": "<InvitePeople members={[{ name: \"Sam\", email: \"sam@example.com\" }]} />",
+  "useCases": [
+    "In project settings, an admin enters a designer’s email. The app sends the invitation through onInvite and the form keeps the address if delivery fails.",
+    "When setting up a team, the organizer checks the existing members before inviting the next colleague."
+  ],
+  "registryItem": "/r/invite-people.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "members": {
+        "type": "ProjectMember[] | undefined",
+        "required": false
+      },
+      "onInvite": {
+        "type": "((email: string) => void | Promise<void>) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Invite a teammate by email, validate the address and update the member list.",
+  "page": "/components/invite-people",
+  "example": "import { InvitePeople } from \"@/components/ui/invite-people\";\n\nexport default function Example() {\n  return <InvitePeople members={[{ name: \"Sam\", email: \"sam@example.com\" }]} />;\n}",
+  "models": {
+    "ProjectMember": "type ProjectMember = { name: string; email: string; avatar?: string };"
+  },
+  "behavior": "Supply existing members in members. onInvite receives a normalized email address. Reject its Promise to keep the address available for retry.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/invite-people.tsx",
+    "lib/takt-surface.ts",
+    "lib/takt-art-team.ts"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "scrubber",
+  "title": "Scrubber",
+  "category": "Inputs",
+  "description": "Scrub the timeline",
+  "export": "Scrubber",
+  "usage": "<Scrubber frames={24} />",
+  "useCases": [
+    "In an animation preview, a designer scrubs to an individual frame to inspect an object’s position.",
+    "When reviewing an experiment recording, a researcher selects a sample number. The app displays the data for that position."
+  ],
+  "registryItem": "/r/scrubber.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "frames": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((frame: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Scrub the timeline",
+  "page": "/components/scrubber",
+  "example": "import { Scrubber } from \"@/components/ui/scrubber\";\n\nexport default function Example() {\n  return <Scrubber frames={24} />;\n}",
+  "models": {},
+  "behavior": "frames sets the maximum position. onChange receives an integer from 0 through frames inclusive.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/scrubber.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

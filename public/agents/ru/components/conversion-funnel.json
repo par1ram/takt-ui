@@ -1,0 +1,57 @@
+{
+  "name": "conversion-funnel",
+  "title": "Conversion Funnel",
+  "category": "Метрики",
+  "description": "Число участников на этапах и конверсия между соседними этапами.",
+  "export": "ConversionFunnel",
+  "usage": "<ConversionFunnel stages={[{ id: \"visit\", label: \"Визит\", count: 120 }, { id: \"signup\", label: \"Регистрация\", count: 36 }]} />",
+  "useCases": [
+    "В отчёте магазина аналитик сравнивает число посетителей на этапах корзины, оформления и покупки, чтобы найти крупнейшую потерю.",
+    "Команда курса сопоставляет регистрации, первые занятия и завершения. Число участников каждого этапа рассчитывает приложение."
+  ],
+  "registryItem": "/r/ru/conversion-funnel.json",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "props": [
+    {
+      "stages": {
+        "type": "FunnelStage[] | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "locale": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Сравнить конверсию между последовательными этапами.",
+  "page": "/ru/components/conversion-funnel",
+  "example": "import { ConversionFunnel } from \"@/components/ui/conversion-funnel\";\n\nexport default function Example() {\n  return <ConversionFunnel stages={[{ id: \"visit\", label: \"Визит\", count: 120 }, { id: \"signup\", label: \"Регистрация\", count: 36 }]} />;\n}",
+  "models": {
+    "FunnelStage": "type FunnelStage = { id: string; label: string; count: number };"
+  },
+  "behavior": "Порядок stages задаёт последовательность воронки. Каждый count — число участников этапа.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/cohort-retention.json",
+    "/agents/ru/components/latency-chart.json"
+  ],
+  "files": [
+    "components/motion/conversion-funnel.tsx",
+    "lib/takt-metric-reading.tsx"
+  ]
+}

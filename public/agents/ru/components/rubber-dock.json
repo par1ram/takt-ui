@@ -1,0 +1,43 @@
+{
+  "name": "rubber-dock",
+  "title": "Rubber Dock",
+  "category": "Навигация",
+  "description": "Проведите по иконкам",
+  "export": "RubberDock",
+  "usage": "<RubberDock onSelect={(index) => console.info({ index })} />",
+  "useCases": [
+    "В оболочке рабочего пространства пользователь переходит из файлов в календарь через встроенную панель из четырёх разделов.",
+    "В прототипе мобильного рабочего стола дизайнер проводит по панели, просматривает подписи и выбирает раздел фотографий."
+  ],
+  "registryItem": "/r/ru/rubber-dock.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onSelect": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Проведите по иконкам",
+  "page": "/ru/components/rubber-dock",
+  "example": "\"use client\";\n\nimport { RubberDock } from \"@/components/ui/rubber-dock\";\n\nexport default function Example() {\n  return <RubberDock onSelect={(index) => console.info({ index })} />;\n}",
+  "models": {},
+  "behavior": "onSelect передаёт индекс выбранной кнопки встроенной панели. Для собственного набора пунктов и иконок используйте Spring Dock.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/spring-dock.json"
+  ],
+  "files": [
+    "components/motion/rubber-dock.tsx",
+    "lib/takt-indicator.tsx"
+  ]
+}

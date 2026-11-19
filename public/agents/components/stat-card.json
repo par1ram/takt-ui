@@ -1,0 +1,52 @@
+{
+  "name": "stat-card",
+  "title": "Stat Card",
+  "category": "Cards",
+  "description": "Explore individual data points and switch reporting periods.",
+  "export": "StatCard",
+  "usage": "<StatCard label=\"P95\" daily={[82, 91, 85]} weekly={[88, 84, 82]} />",
+  "useCases": [
+    "On an editorial dashboard, a team member switches page views from daily to weekly to see how readership changed.",
+    "In a support report, a manager selects a chart point to read the ticket count for a specific period."
+  ],
+  "registryItem": "/r/stat-card.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "daily": {
+        "type": "number[] | undefined",
+        "required": false
+      },
+      "weekly": {
+        "type": "number[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Explore individual data points and switch reporting periods.",
+  "page": "/components/stat-card",
+  "example": "import { StatCard } from \"@/components/ui/stat-card\";\n\nexport default function Example() {\n  return <StatCard label=\"P95\" daily={[82, 91, 85]} weekly={[88, 84, 82]} />;\n}",
+  "models": {},
+  "behavior": "Pass two numeric series in daily and weekly. The card owns the selected period and point.",
+  "parts": [],
+  "related": [
+    "/agents/components/latency-chart.json"
+  ],
+  "files": [
+    "components/motion/stat-card.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "marker-text",
+  "title": "Marker Text",
+  "category": "Текст",
+  "description": "Выделите фразу маркером",
+  "export": "MarkerText",
+  "usage": "<MarkerText text=\"Новая версия\" />",
+  "useCases": [
+    "В конспекте лекции преподаватель нажимает на короткую цитату, чтобы выделить её во время объяснения.",
+    "При презентации редактор отмечает ключевой тезис маркером и снимает выделение перед следующим показом."
+  ],
+  "registryItem": "/r/ru/marker-text.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Выделите фразу маркером",
+  "page": "/ru/components/marker-text",
+  "example": "import { MarkerText } from \"@/components/ui/marker-text\";\n\nexport default function Example() {\n  return <MarkerText text=\"Новая версия\" />;\n}",
+  "models": {},
+  "behavior": "Передайте выделяемую фразу в text. Компонент сам переключает её выделение.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/marker-text.tsx"
+  ]
+}

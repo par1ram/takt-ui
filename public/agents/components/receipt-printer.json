@@ -1,0 +1,54 @@
+{
+  "name": "receipt-printer",
+  "title": "Receipt Printer",
+  "category": "Cards",
+  "description": "Confirm a payment, watch the thermal receipt print and print another copy.",
+  "export": "ReceiptPrinter",
+  "usage": "<ReceiptPrinter merchant=\"Studio\" order={{ id: \"S-12\", description: \"Print\", amount: 32, currency: \"EUR\" }} />",
+  "useCases": [
+    "After checkout, a shop shows a receipt with the order ID returned by its server. The buyer can print that confirmed receipt again.",
+    "In a point-of-sale prototype, a designer runs a demo purchase and shows the receipt without connecting a payment service."
+  ],
+  "registryItem": "/r/receipt-printer.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "merchant": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "order": {
+        "type": "ReceiptOrder | undefined",
+        "required": false
+      },
+      "onPay": {
+        "type": "((order: ReceiptOrder) => Promise<PaymentReceipt>) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Print a receipt after payment confirmation.",
+  "page": "/components/receipt-printer",
+  "example": "import { ReceiptPrinter } from \"@/components/ui/receipt-printer\";\n\nexport default function Example() {\n  return <ReceiptPrinter merchant=\"Studio\" order={{ id: \"S-12\", description: \"Print\", amount: 32, currency: \"EUR\" }} />;\n}",
+  "models": {
+    "ReceiptOrder": "type ReceiptOrder = {\n  id?: string;\n  description: string;\n  amount: number;\n  currency: string;\n};",
+    "PaymentReceipt": "type PaymentReceipt = { orderId: string };"
+  },
+  "behavior": "Omitting onPay enables demo checkout. Supply order.amount in major currency units. Resolve onPay with { orderId } after server confirmation. Rejection enables retry. Reprinting reuses the saved receipt.",
+  "parts": [],
+  "related": [
+    "/agents/components/card-field.json"
+  ],
+  "files": [
+    "components/motion/receipt-printer.tsx"
+  ]
+}

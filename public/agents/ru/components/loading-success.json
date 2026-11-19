@@ -1,0 +1,41 @@
+{
+  "name": "loading-success",
+  "title": "Loading Success",
+  "category": "Кнопки",
+  "description": "Запустите действие и дождитесь результата",
+  "export": "LoadingSuccess",
+  "usage": "<LoadingSuccess onRun={async () => { const response = await fetch(\"/api/status\"); if (!response.ok) throw new Error(\"HTTP \" + response.status); }} />",
+  "useCases": [
+    "В настройках интеграции администратор проверяет соединение. Кнопка ждёт ответ сервера и предлагает повторить проверку при ошибке.",
+    "В отчёте аналитик запускает синхронизацию и видит подтверждение после завершения запроса."
+  ],
+  "registryItem": "/r/ru/loading-success.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onRun": {
+        "type": "(() => Promise<void>) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Запустите действие и дождитесь результата",
+  "page": "/ru/components/loading-success",
+  "example": "\"use client\";\n\nimport { LoadingSuccess } from \"@/components/ui/loading-success\";\n\nexport default function Example() {\n  return <LoadingSuccess onRun={async () => { const response = await fetch(\"/api/status\"); if (!response.ok) throw new Error(\"HTTP \" + response.status); }} />;\n}",
+  "models": {},
+  "behavior": "Верните Promise из onRun. Компонент показывает ожидание, успех или возможность повтора по результату операции.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/loading-success.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

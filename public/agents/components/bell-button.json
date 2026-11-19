@@ -1,0 +1,44 @@
+{
+  "name": "bell-button",
+  "title": "Bell Button",
+  "category": "Buttons",
+  "description": "Toggle notifications",
+  "export": "BellButton",
+  "usage": "<BellButton onChange={(enabled) => localStorage.setItem(\"alerts\", String(enabled))} />",
+  "useCases": [
+    "On a project page, a member subscribes to updates and presses again to unsubscribe.",
+    "On a livestream page, a viewer enables a reminder. The app uses the new flag to schedule a notification."
+  ],
+  "registryItem": "/r/bell-button.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((on: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Toggle notifications",
+  "page": "/components/bell-button",
+  "example": "\"use client\";\n\nimport { BellButton } from \"@/components/ui/bell-button\";\n\nexport default function Example() {\n  return <BellButton onChange={(enabled) => localStorage.setItem(\"alerts\", String(enabled))} />;\n}",
+  "models": {},
+  "behavior": "onChange supplies the new subscription flag. The app handles persistence between sessions.",
+  "parts": [],
+  "related": [
+    "/agents/components/spring-switch.json"
+  ],
+  "files": [
+    "components/motion/bell-button.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

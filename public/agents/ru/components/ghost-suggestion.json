@@ -1,0 +1,43 @@
+{
+  "name": "ghost-suggestion",
+  "title": "Ghost Suggestion",
+  "category": "AI",
+  "description": "Начните ввод и примите подсказку стрелкой вправо",
+  "export": "GhostSuggestion",
+  "usage": "<GhostSuggestion options={[\"Amsterdam\", \"Athens\", \"Lisbon\"]} />",
+  "useCases": [
+    "В форме поездки пользователь начинает вводить город и дополняет название предложенным совпадением из списка.",
+    "В поле команды разработчик вводит префикс известной команды. Приложение передаёт словарь, из которого поле предлагает продолжение."
+  ],
+  "registryItem": "/r/ru/ghost-suggestion.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "options": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((value: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Начните ввод и примите подсказку стрелкой вправо",
+  "page": "/ru/components/ghost-suggestion",
+  "example": "import { GhostSuggestion } from \"@/components/ui/ghost-suggestion\";\n\nexport default function Example() {\n  return <GhostSuggestion options={[\"Amsterdam\", \"Athens\", \"Lisbon\"]} />;\n}",
+  "models": {},
+  "behavior": "Передайте словарь автодополнения в options. onChange сообщает текст поля при вводе или принятии подсказки.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/ghost-suggestion.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "music-toggle",
+  "title": "Music Toggle",
+  "category": "Buttons",
+  "description": "Toggle the equalizer animation",
+  "export": "MusicToggle",
+  "usage": "<MusicToggle onChange={enabled => localStorage.setItem(\"music\", String(enabled))} />",
+  "useCases": [
+    "On an exhibition site, a visitor enables background music. The app starts the track when the toggle changes.",
+    "In an interactive story, a reader turns off the soundtrack and continues reading in silence."
+  ],
+  "registryItem": "/r/music-toggle.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((on: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Toggle the equalizer animation",
+  "page": "/components/music-toggle",
+  "example": "\"use client\";\n\nimport { MusicToggle } from \"@/components/ui/music-toggle\";\n\nexport default function Example() {\n  return <MusicToggle onChange={enabled => localStorage.setItem(\"music\", String(enabled))} />;\n}",
+  "models": {},
+  "behavior": "onChange receives a boolean. Connect audio play or pause in that handler.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/music-toggle.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

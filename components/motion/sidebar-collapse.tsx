@@ -40,7 +40,7 @@ export function SidebarCollapse({
       >
         <button
           type="button"
-          aria-label="Боковая панель"
+          aria-label={"Студия" + " · " + "Боковая панель"}
           aria-expanded={open}
           onClick={() => setOpen(!open)}
           className="mb-3 flex h-8 w-full items-center gap-2 overflow-hidden rounded-md px-2 hover:bg-muted"

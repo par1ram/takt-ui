@@ -1,0 +1,55 @@
+{
+  "name": "run-console",
+  "title": "Run Console",
+  "category": "Обучение",
+  "description": "Состояния компиляции и выполнения с выводом, временем и остановкой.",
+  "export": "RunConsole",
+  "usage": "<RunConsole state={{ phase: \"done\", output: \"OK\", duration: 120 }} />",
+  "useCases": [
+    "Во время запуска упражнения студент видит этап выполнения, вывод и длительность, полученные от исполнителя.",
+    "Если запуск завис или завершился ошибкой, студент просит остановить его либо переходит к проблемной строке через обработчик редактора."
+  ],
+  "registryItem": "/r/ru/run-console.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "state": {
+        "type": "RunState | undefined",
+        "required": false
+      },
+      "onStop": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "onErrorLocation": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Состояния компиляции и выполнения с выводом, временем и остановкой.",
+  "page": "/ru/components/run-console",
+  "example": "import { RunConsole } from \"@/components/ui/run-console\";\n\nexport default function Example() {\n  return <RunConsole state={{ phase: \"done\", output: \"OK\", duration: 120 }} />;\n}",
+  "models": {
+    "RunState": "type RunState = {\n  phase: \"idle\" | \"compile\" | \"run\" | \"done\" | \"error\" | \"stopped\";\n  output?: string;\n  duration?: number;\n};"
+  },
+  "behavior": "Для внешнего исполнителя передайте state с phase, output и duration в миллисекундах. Подключите остановку через onStop и переход к ошибке через onErrorLocation.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/code-exercise.json",
+    "/agents/ru/components/test-results.json",
+    "/agents/ru/components/ask-tutor.json"
+  ],
+  "files": [
+    "components/motion/run-console.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

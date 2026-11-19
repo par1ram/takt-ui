@@ -1,0 +1,41 @@
+{
+  "name": "copy-button",
+  "title": "Copy Button",
+  "category": "Buttons",
+  "description": "Copy the text",
+  "export": "CopyButton",
+  "usage": "<CopyButton text=\"bun run build\" />",
+  "useCases": [
+    "In documentation, a developer copies the entire installation command and pastes it into a terminal.",
+    "On an order page, a customer copies the ticket number for a support email and gets confirmation."
+  ],
+  "registryItem": "/r/copy-button.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Copy the text",
+  "page": "/components/copy-button",
+  "example": "import { CopyButton } from \"@/components/ui/copy-button\";\n\nexport default function Example() {\n  return <CopyButton text=\"bun run build\" />;\n}",
+  "models": {},
+  "behavior": "Pass the exact clipboard string in text. The component performs the clipboard write and announces the outcome.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/copy-button.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

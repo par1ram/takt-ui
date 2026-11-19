@@ -131,7 +131,7 @@ export function CommandSearch({
         type="button"
         aria-expanded={open}
         inert={open}
-        aria-label={label}
+        title={lastQuery ? label : undefined}
         tabIndex={open ? -1 : 0}
         className={
           "absolute inset-0 flex items-center gap-2.5 rounded-[inherit] px-3.5 text-left focus:outline-none! " +
@@ -143,7 +143,6 @@ export function CommandSearch({
         <span className="min-w-0 flex-1 truncate">{lastQuery || label}</span>
         {shortcut && (
           <kbd
-            aria-hidden
             className="shrink-0 rounded-md border bg-muted px-1.5 py-0.5 font-mono text-[10px]"
           >
             {modifier} K

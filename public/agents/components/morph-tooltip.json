@@ -1,0 +1,48 @@
+{
+  "name": "morph-tooltip",
+  "title": "Morph Tooltip",
+  "category": "Navigation",
+  "description": "Hover or focus with the keyboard",
+  "export": "MorphTooltip",
+  "usage": "<MorphTooltip label=\"Article\" onAction={(action) => console.info(action)} />",
+  "useCases": [
+    "In a reading list, a reader opens an article’s actions and bookmarks it for later.",
+    "On a research board, a contributor pins an important reference. The app handles the pin action for that entry."
+  ],
+  "registryItem": "/r/morph-tooltip.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onClick": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "onAction": {
+        "type": "((action: \"bookmark\" | \"favorite\" | \"pin\") => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Hover or focus with the keyboard",
+  "page": "/components/morph-tooltip",
+  "example": "\"use client\";\n\nimport { MorphTooltip } from \"@/components/ui/morph-tooltip\";\n\nexport default function Example() {\n  return <MorphTooltip label=\"Article\" onAction={(action) => console.info(action)} />;\n}",
+  "models": {},
+  "behavior": "onAction reports bookmark, favorite or pin. The first action also calls onClick, so put its side effect in one handler.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/morph-tooltip.tsx"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "springy-input",
+  "title": "Springy Input",
+  "category": "Inputs",
+  "description": "Focus the field and start typing",
+  "export": "SpringyInput",
+  "usage": "<SpringyInput placeholder=\"Search project\" onSubmit={query => location.assign(\"/search?q=\" + encodeURIComponent(query))} />",
+  "useCases": [
+    "In a knowledge base, a teammate enters a question and submits it with Enter. The app opens the results page.",
+    "In a swatch catalog, a designer types part of a name. The app uses onChange to filter swatches as they type."
+  ],
+  "registryItem": "/r/springy-input.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "placeholder": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((text: string) => void) | undefined",
+        "required": false
+      },
+      "onSubmit": {
+        "type": "((query: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Focus the field and start typing",
+  "page": "/components/springy-input",
+  "example": "\"use client\";\n\nimport { SpringyInput } from \"@/components/ui/springy-input\";\n\nexport default function Example() {\n  return <SpringyInput placeholder=\"Search project\" onSubmit={query => location.assign(\"/search?q=\" + encodeURIComponent(query))} />;\n}",
+  "models": {},
+  "behavior": "onChange runs during editing. Use onSubmit to run a search with the trimmed query.",
+  "parts": [],
+  "related": [
+    "/agents/components/command-search.json"
+  ],
+  "files": [
+    "components/motion/springy-input.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

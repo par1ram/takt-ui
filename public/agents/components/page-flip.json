@@ -1,0 +1,40 @@
+{
+  "name": "page-flip",
+  "title": "Page Flip",
+  "category": "Cards",
+  "description": "Turn a double-sided page around its spine.",
+  "export": "PageFlip",
+  "usage": "<PageFlip pages={[\"Introduction\", \"API\", \"CLI\"]} />",
+  "useCases": [
+    "In a digital booklet, a visitor flips through short chapter captions like pages in a printed edition.",
+    "In a visual concept presentation, a designer shows one idea per spread and moves in either direction with the arrow keys."
+  ],
+  "registryItem": "/r/page-flip.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "pages": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Turn a double-sided page around its spine.",
+  "page": "/components/page-flip",
+  "example": "import { PageFlip } from \"@/components/ui/page-flip\";\n\nexport default function Example() {\n  return <PageFlip pages={[\"Introduction\", \"API\", \"CLI\"]} />;\n}",
+  "models": {},
+  "behavior": "Pass page text in reading order. Navigation and the current position are managed internally.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/page-flip.tsx"
+  ]
+}

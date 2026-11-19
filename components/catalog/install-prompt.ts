@@ -1,10 +1,12 @@
 import type { Entry } from "@/lib/catalog";
 import { publishedOrigin } from "@/lib/registry-origin";
 
-export function installPrompt(entry: Entry | null, registryPath: string) {
-  const registry = publishedOrigin + registryPath;
-  const guide = publishedOrigin + "/llms.txt";
-  const index = publishedOrigin + "/agents/components.json";
+export function installPrompt(entry: Entry | null, registryPath: string, origin = publishedOrigin) {
+  const base = origin || publishedOrigin;
+  const root = base + (registryPath === "/r/ru/" ? "/agents/ru" : "/agents");
+  const registry = base + registryPath;
+  const guide = base + "/llms.txt";
+  const index = entry ? root + "/components/" + entry.slug + ".json" : root + "/search.json";
   const item = registry + (entry?.slug ?? "takt") + ".json";
   const command = "bunx shadcn@latest add " + item;
 
@@ -14,7 +16,7 @@ export function installPrompt(entry: Entry | null, registryPath: string) {
       : "Подключи полную библиотеку Takt к моему приложению.",
     "Работай в проекте приложения. Прочитай его AGENTS.md, если он есть. Проверь package.json, Tailwind и алиасы в components.json.",
     "Инструкция Takt для установки: " + guide,
-    "Индекс с именами экспортов, пропсами и примерами JSX: " + index,
+    "Выбери компонент по задаче и прочитай его карточку с примером и типами: " + index,
     "Проверь список файлов и зависимостей пакета: " + item,
     "Если shadcn ещё не настроен, инициализируй его в приложении. Выполни команду из корня приложения через его пакетный менеджер. Для Bun:",
     command,

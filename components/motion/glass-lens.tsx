@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { ScanSearch } from "lucide-react";
 import { glassCover } from "@/lib/takt-art-glass";
 export function GlassLens({
@@ -12,6 +12,7 @@ export function GlassLens({
   label?: string;
   image?: string;
 }) {
+  const instructionsId = useId();
   const lens = useRef<HTMLSpanElement>(null);
   const pos = useRef({ x: 0.58, y: 0.52 });
   const [zoomed, setZoomed] = useState(false);
@@ -44,7 +45,7 @@ export function GlassLens({
         position(pos.current.x * w, pos.current.y * h, w, h, zoomed ? 2 : 3);
       }}
       tabIndex={0}
-      aria-label="Лупа: перемещайте указателем или стрелками. Нажмите для смены увеличения"
+      aria-describedby={instructionsId}
       className={cn(
         "relative aspect-square w-[180px] touch-pan-y overflow-hidden rounded-2xl border border-white/20 bg-cover shadow-[0_12px_24px_-9px_#17372c80] outline-offset-4",
         className,
@@ -83,6 +84,7 @@ export function GlassLens({
         );
       }}
     >
+      <span id={instructionsId} hidden>Лупа: перемещайте указателем или стрелками. Нажмите для смены увеличения</span>
       <span className="absolute top-2 left-2 flex items-center gap-1 rounded-full bg-black/70 px-2 py-1 text-[9px] font-medium text-white">
         <ScanSearch size={11} />
         {zoomed ? "Линза ×3" : label}

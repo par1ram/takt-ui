@@ -1,0 +1,57 @@
+{
+  "name": "predict-output",
+  "title": "Predict Output",
+  "category": "Обучение",
+  "description": "Прогноз вывода программы с проверкой ответа и объяснением.",
+  "export": "PredictOutput",
+  "usage": "<PredictOutput code=\"2 ** 3\" options={[\"6\", \"8\"]} answer=\"8\" explanation=\"2 × 2 × 2\" />",
+  "useCases": [
+    "Перед запуском примера студент выбирает предполагаемый вывод программы и читает объяснение результата.",
+    "В контрольной точке урока преподаватель задаёт варианты ответа для выражения. Приложение записывает выбор ученика через onAnswer."
+  ],
+  "registryItem": "/r/ru/predict-output.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "code": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "options": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "answer": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "explanation": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onAnswer": {
+        "type": "((guess: string) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Прогноз вывода программы с проверкой ответа и объяснением.",
+  "page": "/ru/components/predict-output",
+  "example": "import { PredictOutput } from \"@/components/ui/predict-output\";\n\nexport default function Example() {\n  return <PredictOutput code=\"2 ** 3\" options={[\"6\", \"8\"]} answer=\"8\" explanation=\"2 × 2 × 2\" />;\n}",
+  "models": {},
+  "behavior": "answer должен совпадать с одной из строк options. onAnswer получает выбранный ответ, explanation объясняет результат.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/predict-output.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "name": "hold-to-publish",
+  "title": "Hold to Publish",
+  "category": "Кнопки",
+  "description": "Удержание заполняет кнопку публикации. После отправки она складывается в галочку.",
+  "export": "HoldToPublish",
+  "usage": "<HoldToPublish onPublish={() => console.log('published')} />",
+  "useCases": [
+    "Перед выпуском статьи редактор удерживает кнопку публикации. Приложение отправляет материал в CMS после завершения удержания.",
+    "В кабинете преподавателя автор начинает публикацию урока, замечает ошибку и отпускает кнопку до подтверждения."
+  ],
+  "registryItem": "/r/ru/hold-to-publish.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "duration": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onPublish": {
+        "type": "(() => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Удержание заполняет кнопку публикации. После отправки она складывается в галочку.",
+  "page": "/ru/components/hold-to-publish",
+  "example": "\"use client\";\n\nimport { HoldToPublish } from \"@/components/ui/hold-to-publish\";\n\nexport default function Example() {\n  return <HoldToPublish onPublish={() => console.log('published')} />;\n}",
+  "models": {},
+  "behavior": "duration задаёт длительность удержания в миллисекундах. Подключите публикацию к onPublish, который вызывается по завершении удержания.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/hold-button.json",
+    "/agents/ru/components/slide-to-confirm.json"
+  ],
+  "files": [
+    "components/motion/hold-to-publish.tsx"
+  ]
+}

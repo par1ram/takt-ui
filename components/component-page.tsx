@@ -1,3 +1,7 @@
+import { InstallCommand } from "@/components/install-command";
+import { taskFor } from "@/lib/catalog";
+import * as ruGuides from "@/lib/component-guides";
+import * as enGuides from "@/generated/en/lib/component-guides";
 import { notFound } from "next/navigation";
 import { catalogs, pagePath, siteOrigin, type Locale } from "@/lib/seo";
 import { Stage as RussianDemo } from "@/components/catalog/preview";
@@ -8,6 +12,9 @@ export function ComponentPage({ lang, slug }: { lang: Locale; slug: string }) {
   const en = lang === "en";
   const item = catalogs[lang].find((entry) => entry.slug === slug);
   if (!item) notFound();
+  const guides = en ? enGuides : ruGuides;
+  const guide = guides.guideFor(item.slug);
+  const card = (en ? "/agents" : "/agents/ru") + "/components/" + slug + ".json";
   const alternate = en ? "ru" : "en";
   const home = pagePath(lang);
   const category = en ? "Catalog" : "Каталог";
@@ -36,16 +43,35 @@ export function ComponentPage({ lang, slug }: { lang: Locale; slug: string }) {
         <Demo entry={item} />
         <p className="mt-2 text-sm text-muted-foreground">{item.gesture}</p>
       </section>
+      <section aria-labelledby="use-cases">
+        <h2 id="use-cases" className="mb-2 text-xl font-semibold">{en ? "Use cases" : "Сценарии использования"}</h2>
+        <ul className="list-disc space-y-2 pl-5 text-sm">
+          {item.useCases.map(scenario => <li key={scenario}>{scenario}</li>)}
+        </ul>
+      </section>
       <section>
         <h2 className="mb-2 text-xl font-semibold">{en ? "Install with shadcn" : "Установка через shadcn"}</h2>
-        <pre className="overflow-x-auto rounded-xl bg-muted p-4 text-xs"><code>{`bunx shadcn@latest add ${siteOrigin}${registryPath}`}</code></pre>
+        <pre className="overflow-x-auto rounded-xl bg-muted p-4 text-xs"><code><InstallCommand path={registryPath} /></code></pre>
       </section>
       <section>
         <h2 className="mb-2 text-xl font-semibold">{en ? "Usage" : "Использование"}</h2>
-        <pre className="overflow-x-auto rounded-xl bg-muted p-4 text-xs"><code>{`import { ${item.symbol} } from "@/components/ui/${item.slug}";\n\n${item.usage}`}</code></pre>
+        <p className="mb-3 text-sm">{guide.behavior}</p>
+        <pre className="overflow-x-auto rounded-xl bg-muted p-4 text-xs"><code>{guides.usageExample(item)}</code></pre>
       </section>
+      {guide.related && (
+        <nav aria-label={en ? "Related components" : "Связанные компоненты"}>
+          <h2 className="mb-2 text-xl font-semibold">{en ? "Related components" : "Связанные компоненты"}</h2>
+          <ul className="grid gap-2 text-sm">
+            {guide.related.map(slug => {
+              const other = catalogs[lang].find(entry => entry.slug === slug)!;
+              return <li key={slug}><a className="underline" href={pagePath(lang, slug)}>{other.title}</a> · {taskFor(other)}</li>;
+            })}
+          </ul>
+        </nav>
+      )}
       <footer className="flex flex-wrap gap-5 text-sm underline underline-offset-4">
         <a href={registryPath}>{en ? "Component source" : "Исходный код"}</a>
+        <a href={card}>{en ? "API & examples (JSON)" : "API и примеры (JSON)"}</a>
         <a href="/llms.txt">{en ? "Agent instructions" : "Инструкция для агента"}</a>
       </footer>
     </main>

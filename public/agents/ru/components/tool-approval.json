@@ -1,0 +1,50 @@
+{
+  "name": "tool-approval",
+  "title": "Tool Approval",
+  "category": "AI",
+  "description": "Разрешите или отклоните действие",
+  "export": "ToolApproval",
+  "usage": "<ToolApproval action=\"Запустить сборку\" resource=\"package.json\" onDecision={allowed => console.info({ allowed })} />",
+  "useCases": [
+    "Перед созданием события ассистент показывает календарь и действие. Пользователь разрешает или отклоняет запрос, а приложение обрабатывает решение.",
+    "В рабочем пространстве агент предлагает изменить конкретный файл. Редактор проверяет имя ресурса перед подтверждением записи."
+  ],
+  "registryItem": "/r/ru/tool-approval.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "action": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "resource": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onDecision": {
+        "type": "((allowed: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Разрешите или отклоните действие",
+  "page": "/ru/components/tool-approval",
+  "example": "\"use client\";\n\nimport { ToolApproval } from \"@/components/ui/tool-approval\";\n\nexport default function Example() {\n  return <ToolApproval action=\"Запустить сборку\" resource=\"package.json\" onDecision={allowed => console.info({ allowed })} />;\n}",
+  "models": {},
+  "behavior": "Передайте описание действия и ресурса. onDecision сообщает выбор пользователя. Выполнение операции и проверка полномочий остаются в приложении.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/tool-approval.tsx",
+    "lib/takt-focus.ts",
+    "lib/takt-surface.ts"
+  ]
+}

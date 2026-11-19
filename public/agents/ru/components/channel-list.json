@@ -1,0 +1,57 @@
+{
+  "name": "channel-list",
+  "title": "Channel List",
+  "category": "Мессенджер",
+  "description": "Список каналов курса и личных диалогов.",
+  "export": "ChannelList",
+  "usage": "<ChannelList workspace=\"Studio\" channels={[{ id: \"design\", name: \"design\", kind: \"channel\", topic: \"Review\" }]} />",
+  "useCases": [
+    "В боковой панели курса студент выбирает канал потока. Приложение открывает переписку по стабильному id канала.",
+    "В командном чате сотрудник переключается с общего канала на личный диалог. Список подсвечивает выбор, которым управляет приложение."
+  ],
+  "registryItem": "/r/ru/channel-list.json",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "channels": {
+        "type": "ChatChannel[] | undefined",
+        "required": false
+      },
+      "value": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onSelect": {
+        "type": "((id: string) => void) | undefined",
+        "required": false
+      },
+      "workspace": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Список каналов курса и личных диалогов.",
+  "page": "/ru/components/channel-list",
+  "example": "import { ChannelList } from \"@/components/ui/channel-list\";\n\nexport default function Example() {\n  return <ChannelList workspace=\"Studio\" channels={[{ id: \"design\", name: \"design\", kind: \"channel\", topic: \"Review\" }]} />;\n}",
+  "models": {
+    "ChatChannel": "type ChatChannel = {\n  id: string;\n  name: string;\n  kind: \"channel\" | \"direct\";\n  topic: string;\n};"
+  },
+  "behavior": "Укажите стабильный id для каждого канала. Передайте value и обновляйте его через onSelect, чтобы связать навигацию с отображаемой перепиской.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/course-messenger.json"
+  ],
+  "files": [
+    "components/motion/channel-list.tsx"
+  ]
+}

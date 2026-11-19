@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "receipt-printer",
   "title": "Receipt Printer",
-  "description": "Подтверждение оплаты с анимацией термопринтера и повторной печатью чека.",
+  "description": "Напечатать чек после подтверждения оплаты.",
   "dependencies": [
     "lucide-react",
     "motion"

@@ -1,0 +1,45 @@
+{
+  "name": "exposure-slider",
+  "title": "Exposure Slider",
+  "category": "Inputs",
+  "description": "Adjust photo brightness in EV and restore the original exposure.",
+  "export": "ExposureSlider",
+  "usage": "<ExposureSlider image=\"/photos/portrait.jpg\" />",
+  "useCases": [
+    "A photographer adjusts portrait exposure and compares the preview with the original before saving.",
+    "In a photography lesson, a learner tries negative and positive exposure adjustments on one frame, then resets to zero."
+  ],
+  "registryItem": "/r/exposure-slider.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((ev: number) => void) | undefined",
+        "required": false
+      },
+      "image": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Adjust photo brightness in EV and restore the original exposure.",
+  "page": "/components/exposure-slider",
+  "example": "import { ExposureSlider } from \"@/components/ui/exposure-slider\";\n\nexport default function Example() {\n  return <ExposureSlider image=\"/photos/portrait.jpg\" />;\n}",
+  "models": {},
+  "behavior": "Pass your photo URL in image. onChange reports exposure compensation between −2 and +2.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/exposure-slider.tsx",
+    "lib/takt-art-fold.ts"
+  ]
+}

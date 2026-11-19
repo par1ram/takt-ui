@@ -1,0 +1,49 @@
+{
+  "name": "morph-popover",
+  "title": "Morph Popover",
+  "category": "Кнопки",
+  "description": "Оставьте отзыв: кнопка развернётся в форму",
+  "export": "MorphPopover",
+  "usage": "<MorphPopover title=\"Обратная связь\" onSubmit={text => localStorage.setItem(\"feedback\", text)} />",
+  "useCases": [
+    "Читатель замечает ошибку в документации и отправляет замечание из небольшой формы рядом со статьёй.",
+    "При ревью макета дизайнер оставляет короткий комментарий. Если сервис недоступен, автор повторяет отправку из той же формы."
+  ],
+  "registryItem": "/r/ru/morph-popover.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "children": {
+        "type": "ReactNode",
+        "required": false
+      },
+      "onSubmit": {
+        "type": "((text: string) => void | Promise<void>) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Оставьте отзыв: кнопка развернётся в форму",
+  "page": "/ru/components/morph-popover",
+  "example": "\"use client\";\n\nimport { MorphPopover } from \"@/components/ui/morph-popover\";\n\nexport default function Example() {\n  return <MorphPopover title=\"Обратная связь\" onSubmit={text => localStorage.setItem(\"feedback\", text)} />;\n}",
+  "models": {},
+  "behavior": "onSubmit получает текст и может вернуть Promise. При ошибке отправки отклоните Promise, чтобы форма показала состояние повтора.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/morph-popover.tsx"
+  ]
+}

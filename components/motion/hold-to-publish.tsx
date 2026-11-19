@@ -59,10 +59,9 @@ export function HoldToPublish({
     <motion.button
       type="button"
       initial={false}
-      aria-label={
-        published
-          ? "Опубликовано"
-          : label === "Опубликовать"
+      aria-label={published ? "Опубликовано" : label}
+      aria-description={
+        label === "Опубликовать"
             ? "Удерживать для публикации"
             : "Удерживать для действия «" + label + "»"
       }
@@ -121,7 +120,8 @@ export function HoldToPublish({
           </span>
           <span
             aria-hidden
-            className="absolute inset-0 flex items-center justify-center gap-2 whitespace-nowrap bg-primary text-primary-foreground motion-safe:transition-[clip-path] motion-reduce:duration-0! motion-reduce:transition-none!"
+            data-label={label}
+            className="absolute inset-0 flex items-center justify-center gap-2 whitespace-nowrap after:content-[attr(data-label)] bg-primary text-primary-foreground motion-safe:transition-[clip-path] motion-reduce:duration-0! motion-reduce:transition-none!"
             style={{
               clipPath: phase === "holding" ? "inset(0)" : "inset(0 100% 0 0)",
               transitionDuration: (phase === "holding" ? holdMs : 180) + "ms",
@@ -129,7 +129,6 @@ export function HoldToPublish({
             }}
           >
             <Upload size={16} />
-            {label}
           </span>
         </>
       )}

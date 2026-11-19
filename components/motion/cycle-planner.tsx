@@ -92,12 +92,12 @@ export function CyclePlanner({
               key={row.id}
               type="button"
               aria-pressed={assigned}
-              aria-label={row.id + " · " + row.title}
               onClick={() =>
                 update(row.id, { cycleId: assigned ? undefined : cycleId })
               }
               className="group flex min-h-10 w-full items-center gap-2 rounded-lg px-1.5 py-1 text-left hover:bg-muted/55"
             >
+              <span className="sr-only">{row.id} · </span>
               <span className="grid size-5 shrink-0 place-items-center rounded-md border bg-card text-muted-foreground group-aria-pressed:border-primary/30 group-aria-pressed:bg-primary group-aria-pressed:text-primary-foreground">
                 <motion.span
                   key={String(assigned)}

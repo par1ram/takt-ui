@@ -1,0 +1,1161 @@
+{
+  "version": 1,
+  "locale": "en",
+  "components": [
+    {
+      "name": "invite-people",
+      "title": "Invite People",
+      "category": "Inputs",
+      "task": "Invite a teammate by email, validate the address and update the member list.",
+      "useCases": [
+        "In project settings, an admin enters a designer’s email. The app sends the invitation through onInvite and the form keeps the address if delivery fails.",
+        "When setting up a team, the organizer checks the existing members before inviting the next colleague."
+      ],
+      "guide": "/agents/components/invite-people.json"
+    },
+    {
+      "name": "focus-mode",
+      "title": "Focus Mode",
+      "category": "Cards",
+      "task": "Silence notifications for the duration of a focus session.",
+      "useCases": [
+        "Before reviewing a mockup, a designer starts a 25-minute session. The notification stack collapses and the timer shows the time left.",
+        "In a learning workspace, a student turns on focus for an exercise. The app uses onChange to pause its own notification popups."
+      ],
+      "guide": "/agents/components/focus-mode.json"
+    },
+    {
+      "name": "swipe-deck",
+      "title": "Swipe Deck",
+      "category": "Cards",
+      "task": "Swipe through a stack of art prints to reveal the next poster.",
+      "useCases": [
+        "On a portfolio page, a visitor swipes through a poster series one piece at a time.",
+        "When shortlisting covers, an editor swipes a candidate right to keep it. The app records the card and direction from onSwipe."
+      ],
+      "guide": "/agents/components/swipe-deck.json"
+    },
+    {
+      "name": "glass-player",
+      "title": "Glass Player",
+      "category": "Cards",
+      "task": "An audio player with cover art, seeking, repeat and mute.",
+      "useCases": [
+        "On a lesson page, a student scrubs back to a phrase they missed in an audio explanation.",
+        "In a music catalog, a buyer loops a track preview to compare its arrangement with another version."
+      ],
+      "guide": "/agents/components/glass-player.json"
+    },
+    {
+      "name": "stat-card",
+      "title": "Stat Card",
+      "category": "Cards",
+      "task": "Explore individual data points and switch reporting periods.",
+      "useCases": [
+        "On an editorial dashboard, a team member switches page views from daily to weekly to see how readership changed.",
+        "In a support report, a manager selects a chart point to read the ticket count for a specific period."
+      ],
+      "guide": "/agents/components/stat-card.json"
+    },
+    {
+      "name": "magnetic-button",
+      "title": "Magnetic Button",
+      "category": "Buttons",
+      "task": "The button follows your pointer and springs back into place.",
+      "useCases": [
+        "On a studio homepage, a visitor presses “View portfolio.” The app opens the collection through onClick.",
+        "At the end of a presentation, a “Try the demo” button responds to the approaching pointer and opens the demo when pressed."
+      ],
+      "guide": "/agents/components/magnetic-button.json"
+    },
+    {
+      "name": "plan-switch",
+      "title": "Plan Switch",
+      "category": "Cards",
+      "task": "Switch billing periods to compare the monthly price, total and savings.",
+      "useCases": [
+        "On a pricing page, a buyer compares the monthly price with the annual total before subscribing.",
+        "At renewal, a customer changes the billing period. The app uses the selected index to send the corresponding plan to checkout."
+      ],
+      "guide": "/agents/components/plan-switch.json"
+    },
+    {
+      "name": "wave-slider",
+      "title": "Wave Slider",
+      "category": "Inputs",
+      "task": "A compact volume control that remembers the level before muting.",
+      "useCases": [
+        "In a player, a listener sets volume on a 0–100 scale. The app converts the percentage to an audio level.",
+        "In an ambient sound editor, the app restores the saved level through value and updates the mix as the user moves the slider."
+      ],
+      "guide": "/agents/components/wave-slider.json"
+    },
+    {
+      "name": "flip-counter",
+      "title": "Flip Counter",
+      "category": "Inputs",
+      "task": "Digits roll into place as the count changes.",
+      "useCases": [
+        "When booking a table, a guest adds people up to the table’s seating capacity.",
+        "In a print order, a customer changes the number of copies. The app recalculates the quote from the new count."
+      ],
+      "guide": "/agents/components/flip-counter.json"
+    },
+    {
+      "name": "hold-button",
+      "title": "Hold to Confirm",
+      "category": "Buttons",
+      "task": "Hold to fill the button and confirm the action.",
+      "useCases": [
+        "Before clearing a draft, the author holds the button to confirm. Releasing it early preserves the text.",
+        "At a kiosk, an operator holds the session reset button. The app starts the reset after onConfirm."
+      ],
+      "guide": "/agents/components/hold-button.json"
+    },
+    {
+      "name": "spring-dock",
+      "title": "Spring Dock",
+      "category": "Navigation",
+      "task": "The indicator slides under the selected item.",
+      "useCases": [
+        "In a layout editor, a designer picks a tool by its icon. The app maps the button index to a canvas tool.",
+        "In a creator workspace, a bottom dock opens the library, drafts and publications, highlighting the active section."
+      ],
+      "guide": "/agents/components/spring-dock.json"
+    },
+    {
+      "name": "file-drop",
+      "title": "File Drop",
+      "category": "Inputs",
+      "task": "Drop files into a folder and see their names and sizes.",
+      "useCases": [
+        "When opening a support ticket, a customer drops screenshots. The form receives File objects and attaches them when the ticket is submitted.",
+        "In a gallery editor, an author selects images from disk. The app previews the chosen files before upload."
+      ],
+      "guide": "/agents/components/file-drop.json"
+    },
+    {
+      "name": "rolling-text",
+      "title": "Rolling Text",
+      "category": "Text",
+      "task": "Letters roll into place one by one.",
+      "useCases": [
+        "At an exhibition kiosk, a visitor taps the greeting to read it in the next language.",
+        "In a brand type specimen, a designer cycles through short words with the arrow keys to compare letterforms."
+      ],
+      "guide": "/agents/components/rolling-text.json"
+    },
+    {
+      "name": "spring-switch",
+      "title": "Spring Switch",
+      "category": "Inputs",
+      "task": "A spring-loaded switch for on/off settings.",
+      "useCases": [
+        "In profile settings, a user enables notifications. The app saves the flag and restores it on the next visit.",
+        "In a layout editor, a user temporarily enables a grid. The local switch tells the canvas when to show its guides."
+      ],
+      "guide": "/agents/components/spring-switch.json"
+    },
+    {
+      "name": "bloom-menu",
+      "title": "Bloom Menu",
+      "category": "Buttons",
+      "task": "Actions fan out around the menu button.",
+      "useCases": [
+        "Beside a selected shape, a designer expands duplicate and delete actions and applies one to that shape.",
+        "On a photo card, an editor opens a compact menu to download the original or copy its link through an app handler."
+      ],
+      "guide": "/agents/components/bloom-menu.json"
+    },
+    {
+      "name": "morph-tooltip",
+      "title": "Morph Tooltip",
+      "category": "Navigation",
+      "task": "Hover or focus with the keyboard",
+      "useCases": [
+        "In a reading list, a reader opens an article’s actions and bookmarks it for later.",
+        "On a research board, a contributor pins an important reference. The app handles the pin action for that entry."
+      ],
+      "guide": "/agents/components/morph-tooltip.json"
+    },
+    {
+      "name": "command-button",
+      "title": "Command Button",
+      "category": "Buttons",
+      "task": "Run the command",
+      "useCases": [
+        "In an invoice preview, an operator starts printing with one button. The app opens the print dialog in onExecute.",
+        "In a command demo, a developer repeats an operation and sees how many times it was invoked."
+      ],
+      "guide": "/agents/components/command-button.json"
+    },
+    {
+      "name": "loading-success",
+      "title": "Loading Success",
+      "category": "Buttons",
+      "task": "Start the action and wait for the result",
+      "useCases": [
+        "In integration settings, an admin tests a connection. The button waits for the server and offers another attempt if the check fails.",
+        "In a report, an analyst starts a sync and sees confirmation once the request completes."
+      ],
+      "guide": "/agents/components/loading-success.json"
+    },
+    {
+      "name": "copy-button",
+      "title": "Copy Button",
+      "category": "Buttons",
+      "task": "Copy the text",
+      "useCases": [
+        "In documentation, a developer copies the entire installation command and pastes it into a terminal.",
+        "On an order page, a customer copies the ticket number for a support email and gets confirmation."
+      ],
+      "guide": "/agents/components/copy-button.json"
+    },
+    {
+      "name": "like-burst",
+      "title": "Like Burst",
+      "category": "Buttons",
+      "task": "Add or remove a like",
+      "useCases": [
+        "In a community feed, a reader likes a post and immediately sees its count change.",
+        "On an illustration page, a viewer presses again to remove their like. The app saves the new flag through onChange."
+      ],
+      "guide": "/agents/components/like-burst.json"
+    },
+    {
+      "name": "slide-to-confirm",
+      "title": "Slide To Confirm",
+      "category": "Buttons",
+      "task": "Slide into the finish zone to confirm. An incomplete swipe returns the handle.",
+      "useCases": [
+        "At a packing station, a worker slides to confirm after inspecting a parcel. The app marks it ready to ship.",
+        "On a mobile terminal, an operator ends a shift with a deliberate slide so a stray tap cannot close the shift."
+      ],
+      "guide": "/agents/components/slide-to-confirm.json"
+    },
+    {
+      "name": "cart-button",
+      "title": "Cart Button",
+      "category": "Cards",
+      "task": "Expand the cart to adjust quantities and see the total.",
+      "useCases": [
+        "In a print catalog, a shopper adds the first copy and adjusts the quantity directly on the product card.",
+        "At a merchandise kiosk, a shopper removes an extra item. The app receives the new quantity and updates the order total."
+      ],
+      "guide": "/agents/components/cart-button.json"
+    },
+    {
+      "name": "undo-button",
+      "title": "Undo Button",
+      "category": "Buttons",
+      "task": "Delete the entry and undo the change",
+      "useCases": [
+        "In a draft list, an author removes an entry and restores it immediately after spotting a mistaken selection.",
+        "In a reading collection, an editor temporarily excludes an article. The app updates its visibility and supports undo."
+      ],
+      "guide": "/agents/components/undo-button.json"
+    },
+    {
+      "name": "bell-button",
+      "title": "Bell Button",
+      "category": "Buttons",
+      "task": "Toggle notifications",
+      "useCases": [
+        "On a project page, a member subscribes to updates and presses again to unsubscribe.",
+        "On a livestream page, a viewer enables a reminder. The app uses the new flag to schedule a notification."
+      ],
+      "guide": "/agents/components/bell-button.json"
+    },
+    {
+      "name": "unlock-face-id",
+      "title": "Unlock Face ID",
+      "category": "Cards",
+      "task": "Try the scan demo",
+      "useCases": [
+        "In an interactive prototype, a client tries a simulated scan and sees the unlocked file state.",
+        "In a protected vault UI, a user starts verification. The app runs its authentication mechanism and passes the result through status."
+      ],
+      "guide": "/agents/components/unlock-face-id.json"
+    },
+    {
+      "name": "spring-dropdown",
+      "title": "Spring Dropdown",
+      "category": "Inputs",
+      "task": "Open the list and choose a status",
+      "useCases": [
+        "In an illustration editor, an author selects a file format from a short list before exporting.",
+        "In an order list, a manager selects a sort order. The app receives the chosen option and reorders the list."
+      ],
+      "guide": "/agents/components/spring-dropdown.json"
+    },
+    {
+      "name": "morph-island",
+      "title": "Morph Island",
+      "category": "Cards",
+      "task": "A compact panel for a timer, an export and an incoming call.",
+      "useCases": [
+        "In an incoming-call prototype, a user accepts or declines a call. The app receives the decision through onCall.",
+        "In a mobile UI presentation, a designer cycles through the built-in activities to show a timer and operation progress in one compact panel."
+      ],
+      "guide": "/agents/components/morph-island.json"
+    },
+    {
+      "name": "tab-pill",
+      "title": "Tab Pill",
+      "category": "Navigation",
+      "task": "Switch tabs",
+      "useCases": [
+        "In a setup guide, a developer switches between API and CLI tabs to read the relevant snippet.",
+        "In a material description, a shopper opens care instructions beside the specifications without leaving the product page."
+      ],
+      "guide": "/agents/components/tab-pill.json"
+    },
+    {
+      "name": "segmented-control",
+      "title": "Segmented Control",
+      "category": "Navigation",
+      "task": "Choose a period",
+      "useCases": [
+        "In a performance report, an analyst switches between p50 and p95. The app supplies the series for the selected metric.",
+        "In a file manager, a user chooses a grid or list. The app changes how it displays the same files."
+      ],
+      "guide": "/agents/components/segmented-control.json"
+    },
+    {
+      "name": "rubber-dock",
+      "title": "Rubber Dock",
+      "category": "Navigation",
+      "task": "Move across the icons",
+      "useCases": [
+        "In a workspace shell, a user moves from Files to Calendar using the built-in four-section dock.",
+        "In a mobile desktop prototype, a designer moves across the dock, previews its labels and selects Photos."
+      ],
+      "guide": "/agents/components/rubber-dock.json"
+    },
+    {
+      "name": "dynamic-menu",
+      "title": "Dynamic Menu",
+      "category": "Navigation",
+      "task": "Open the menu and explore a submenu",
+      "useCases": [
+        "In a diagram editor, an author opens the export submenu and selects SVG. The app starts the corresponding exporter.",
+        "In a report builder, an analyst opens the format list, goes back a level and revisits the export choice."
+      ],
+      "guide": "/agents/components/dynamic-menu.json"
+    },
+    {
+      "name": "sidebar-collapse",
+      "title": "Sidebar Collapse",
+      "category": "Navigation",
+      "task": "A studio sidebar that switches between workspaces.",
+      "useCases": [
+        "In a design workspace, a designer collapses navigation to make room for the canvas while retaining access to both sections.",
+        "In a studio workspace, a teammate selects Projects or Collections. The app switches content using the section index."
+      ],
+      "guide": "/agents/components/sidebar-collapse.json"
+    },
+    {
+      "name": "pagination-dots",
+      "title": "Pagination Dots",
+      "category": "Navigation",
+      "task": "Go to another page",
+      "useCases": [
+        "In a product gallery, a shopper jumps to a particular photo using the dots below the image.",
+        "In an onboarding tour, a user jumps to the last screen with the keyboard. The app displays the slide at the selected index."
+      ],
+      "guide": "/agents/components/pagination-dots.json"
+    },
+    {
+      "name": "command-palette",
+      "title": "Command Palette",
+      "category": "Navigation",
+      "task": "Find and execute an action from a known list of commands.",
+      "useCases": [
+        "In an editor, a user types part of a command name and runs the matching action with Enter.",
+        "In an admin console, an operator finds the command for opening the ticket queue. The app maps the selected command to its route."
+      ],
+      "guide": "/agents/components/command-palette.json"
+    },
+    {
+      "name": "step-progress",
+      "title": "Step Progress",
+      "category": "Navigation",
+      "task": "Move to the next step",
+      "useCases": [
+        "In an application form, a customer moves through contact details, options and review. The app shows the fields for the selected step.",
+        "In a setup wizard, an admin returns to a numbered step to correct settings before finishing."
+      ],
+      "guide": "/agents/components/step-progress.json"
+    },
+    {
+      "name": "toolbar",
+      "title": "Toolbar",
+      "category": "Navigation",
+      "task": "Toggle text formatting",
+      "useCases": [
+        "In a note editor, an author turns on bold and italic and immediately sees the combination in a text sample.",
+        "In a template builder, a designer removes one style. The app receives the remaining styles for the selected label."
+      ],
+      "guide": "/agents/components/toolbar.json"
+    },
+    {
+      "name": "morph-popover",
+      "title": "Morph Popover",
+      "category": "Buttons",
+      "task": "Open the feedback button to leave a comment",
+      "useCases": [
+        "A reader spots an error in the docs and sends feedback from a small form beside the article.",
+        "During a mockup review, a designer leaves a short comment. If the service is unavailable, they retry from the same form."
+      ],
+      "guide": "/agents/components/morph-popover.json"
+    },
+    {
+      "name": "letter-limit",
+      "title": "Letter Limit",
+      "category": "Inputs",
+      "task": "Type until you reach the character limit",
+      "useCases": [
+        "On a profile page, an author trims their bio to the platform limit and sees how much space it uses.",
+        "When writing a short caption, an editor pastes text containing emoji. The field enforces the limit without splitting combined characters."
+      ],
+      "guide": "/agents/components/letter-limit.json"
+    },
+    {
+      "name": "springy-input",
+      "title": "Springy Input",
+      "category": "Inputs",
+      "task": "Focus the field and start typing",
+      "useCases": [
+        "In a knowledge base, a teammate enters a question and submits it with Enter. The app opens the results page.",
+        "In a swatch catalog, a designer types part of a name. The app uses onChange to filter swatches as they type."
+      ],
+      "guide": "/agents/components/springy-input.json"
+    },
+    {
+      "name": "otp-code",
+      "title": "OTP Code",
+      "category": "Inputs",
+      "task": "Enter or paste a numeric code",
+      "useCases": [
+        "At sign-in, a user pastes a one-time code from a message. The app submits the complete code for verification, including leading zeros.",
+        "When confirming a new email, a user enters four digits. The app sets the field length to match its verification code."
+      ],
+      "guide": "/agents/components/otp-code.json"
+    },
+    {
+      "name": "star-rating",
+      "title": "Star Rating",
+      "category": "Inputs",
+      "task": "Rate from one to five stars",
+      "useCases": [
+        "After a class, a student rates the lesson. The app records the selected number of stars against that lesson.",
+        "In a prototype gallery, a participant rates each design. The app collects the scores for comparison."
+      ],
+      "guide": "/agents/components/star-rating.json"
+    },
+    {
+      "name": "tag-input",
+      "title": "Tag Input",
+      "category": "Inputs",
+      "task": "Type a tag and press Enter",
+      "useCases": [
+        "Before publishing an article, an editor adds topics, removes an accidental tag and saves the resulting list.",
+        "In a media library, a teammate opens an asset’s existing keywords and adds more so it is easier to find later."
+      ],
+      "guide": "/agents/components/tag-input.json"
+    },
+    {
+      "name": "password-strength",
+      "title": "Password Strength",
+      "category": "Inputs",
+      "task": "Watch the strength indicator as you type",
+      "useCases": [
+        "At signup, a user watches the local strength estimate change as they type a new password.",
+        "In a password change form, a user improves the candidate before submitting. The app applies its own policy when saving."
+      ],
+      "guide": "/agents/components/password-strength.json"
+    },
+    {
+      "name": "checkbox-list",
+      "title": "Checkbox List",
+      "category": "Inputs",
+      "task": "Check off completed items",
+      "useCases": [
+        "When exporting a report, an analyst selects the sections to include. The app builds the file from those choices.",
+        "In newsletter settings, a subscriber selects topics of interest and saves several preferences at once."
+      ],
+      "guide": "/agents/components/checkbox-list.json"
+    },
+    {
+      "name": "jelly-slider",
+      "title": "Jelly Slider",
+      "category": "Inputs",
+      "task": "Drag the elastic handle",
+      "useCases": [
+        "In a sticker editor, a designer moves an opacity slider. The app applies the selected percentage to the sticker.",
+        "In a motion demo, a visitor adjusts an effect’s intensity and sees the numeric value beside the slider."
+      ],
+      "guide": "/agents/components/jelly-slider.json"
+    },
+    {
+      "name": "detent-dial",
+      "title": "Detent Dial",
+      "category": "Inputs",
+      "task": "Turn the dial with the arrow keys or a swipe",
+      "useCases": [
+        "On a synthesizer panel, a musician turns a dial to select one of eleven effect levels.",
+        "In a lamp prototype, a designer selects a brightness step. The app maps the 0–10 position to a light output level."
+      ],
+      "guide": "/agents/components/detent-dial.json"
+    },
+    {
+      "name": "exposure-slider",
+      "title": "Exposure Slider",
+      "category": "Inputs",
+      "task": "Adjust photo brightness in EV and restore the original exposure.",
+      "useCases": [
+        "A photographer adjusts portrait exposure and compares the preview with the original before saving.",
+        "In a photography lesson, a learner tries negative and positive exposure adjustments on one frame, then resets to zero."
+      ],
+      "guide": "/agents/components/exposure-slider.json"
+    },
+    {
+      "name": "wheel-picker",
+      "title": "Wheel Picker",
+      "category": "Inputs",
+      "task": "Scroll to a value",
+      "useCases": [
+        "When setting up a profile, a user scrolls through time zones and saves their selection.",
+        "In a mobile timer, a user selects a duration from preset intervals. The app maps the selection to a timer value."
+      ],
+      "guide": "/agents/components/wheel-picker.json"
+    },
+    {
+      "name": "scrubber",
+      "title": "Scrubber",
+      "category": "Inputs",
+      "task": "Scrub the timeline",
+      "useCases": [
+        "In an animation preview, a designer scrubs to an individual frame to inspect an object’s position.",
+        "When reviewing an experiment recording, a researcher selects a sample number. The app displays the data for that position."
+      ],
+      "guide": "/agents/components/scrubber.json"
+    },
+    {
+      "name": "receipt-printer",
+      "title": "Receipt Printer",
+      "category": "Cards",
+      "task": "Print a receipt after payment confirmation.",
+      "useCases": [
+        "After checkout, a shop shows a receipt with the order ID returned by its server. The buyer can print that confirmed receipt again.",
+        "In a point-of-sale prototype, a designer runs a demo purchase and shows the receipt without connecting a payment service."
+      ],
+      "guide": "/agents/components/receipt-printer.json"
+    },
+    {
+      "name": "card-field",
+      "title": "Card Field",
+      "category": "Inputs",
+      "task": "Enter a test card number or mount a Stripe payment field.",
+      "useCases": [
+        "In a checkout prototype, a tester selects the built-in test card and resets it for the next run.",
+        "In a live checkout, a customer fills in Stripe Elements over HTTPS. The app uses onCompleteChange to decide when to offer payment confirmation."
+      ],
+      "guide": "/agents/components/card-field.json"
+    },
+    {
+      "name": "signature-pad",
+      "title": "Signature Pad",
+      "category": "Inputs",
+      "task": "Draw a signature and save it",
+      "useCases": [
+        "At equipment pickup, the recipient signs with a finger. The app attaches the resulting PNG to the pickup record.",
+        "In a greeting card editor, an author adds a handwritten autograph, undoes a stray stroke and saves the drawing."
+      ],
+      "guide": "/agents/components/signature-pad.json"
+    },
+    {
+      "name": "parallax-ticket",
+      "title": "Parallax Ticket",
+      "category": "Cards",
+      "task": "Move the pointer to tilt the ticket",
+      "useCases": [
+        "On a concert page, a visitor explores the ticket artwork and flips it over to see the date.",
+        "In an identity design portfolio, a designer presents a pass mockup with custom artwork, an event name and a date."
+      ],
+      "guide": "/agents/components/parallax-ticket.json"
+    },
+    {
+      "name": "glass-lens",
+      "title": "Glass Lens",
+      "category": "Cards",
+      "task": "Move the lens over the artwork",
+      "useCases": [
+        "On a fabric product page, a shopper moves the lens over a photo to inspect the weave.",
+        "During a design review, a designer magnifies a screenshot detail and moves the lens with the arrow keys."
+      ],
+      "guide": "/agents/components/glass-lens.json"
+    },
+    {
+      "name": "pull-refresh",
+      "title": "Pull Refresh",
+      "category": "Cards",
+      "task": "Pull down to sync a file. A short pull cancels the gesture.",
+      "useCases": [
+        "In a mobile recent-files panel, a teammate pulls down to refresh. The app requests fresh data in onRefresh.",
+        "After a connection drops, a user retries the sync with the button and reads its status to see whether the request completed."
+      ],
+      "guide": "/agents/components/pull-refresh.json"
+    },
+    {
+      "name": "expand-card",
+      "title": "Expand Card",
+      "category": "Cards",
+      "task": "Select a collection to reveal its cover and details",
+      "useCases": [
+        "In a collection list, a shopper opens a card, reads the details and returns to the overview.",
+        "In a workshop listing, an organizer puts the full session description behind a compact cover that visitors can expand."
+      ],
+      "guide": "/agents/components/expand-card.json"
+    },
+    {
+      "name": "fan-cards",
+      "title": "Fan Cards",
+      "category": "Cards",
+      "task": "Fan out the deck and lift the card under your pointer.",
+      "useCases": [
+        "In an illustrator’s portfolio, a visitor fans out labeled cards to see which works belong to a series.",
+        "In a card-game demo, a player fans out their hand and moves the pointer across it to lift an individual card."
+      ],
+      "guide": "/agents/components/fan-cards.json"
+    },
+    {
+      "name": "profile-card",
+      "title": "Profile Card",
+      "category": "Cards",
+      "task": "Follow the profile to see the count and actions change",
+      "useCases": [
+        "In a mentor directory, a student opens a conversation with a particular mentor. The app receives the name through onMessage.",
+        "In a community, a reader follows an author from their profile card. The app persists the follow state."
+      ],
+      "guide": "/agents/components/profile-card.json"
+    },
+    {
+      "name": "boarding-pass",
+      "title": "Boarding Pass",
+      "category": "Cards",
+      "task": "A boarding pass with route, gate and an expandable barcode.",
+      "useCases": [
+        "On a trip screen, a passenger expands the boarding pass to check their seat, gate and boarding time.",
+        "In a connecting itinerary, the app shows a separate pass for each flight so the traveler can distinguish the legs of the trip."
+      ],
+      "guide": "/agents/components/boarding-pass.json"
+    },
+    {
+      "name": "notification-stack",
+      "title": "Notification Stack",
+      "category": "Cards",
+      "task": "Expand the stack or swipe a notification away",
+      "useCases": [
+        "On a team dashboard, a teammate reviews stacked build notifications and dismisses the ones they have read.",
+        "In an activity center, the app updates notifications with stable IDs while the user works through the remaining cards."
+      ],
+      "guide": "/agents/components/notification-stack.json"
+    },
+    {
+      "name": "page-flip",
+      "title": "Page Flip",
+      "category": "Cards",
+      "task": "Turn a double-sided page around its spine.",
+      "useCases": [
+        "In a digital booklet, a visitor flips through short chapter captions like pages in a printed edition.",
+        "In a visual concept presentation, a designer shows one idea per spread and moves in either direction with the arrow keys."
+      ],
+      "guide": "/agents/components/page-flip.json"
+    },
+    {
+      "name": "stack-panel",
+      "title": "Stack Panel",
+      "category": "Navigation",
+      "task": "Open a project and swipe right to go back",
+      "useCases": [
+        "In compact settings, a user moves from the root menu into notification preferences and then goes back one level.",
+        "In product help, a reader picks a topic. The app displays the associated content in the same panel through renderPanel."
+      ],
+      "guide": "/agents/components/stack-panel.json"
+    },
+    {
+      "name": "weight-wave",
+      "title": "Weight Wave",
+      "category": "Text",
+      "task": "Move across the letters or tap",
+      "useCases": [
+        "On a type studio’s page, a visitor moves across a word to see how the weight of nearby letters changes.",
+        "In an interactive wordmark specimen, a designer moves the emphasis across letters with the keyboard to inspect each shape."
+      ],
+      "guide": "/agents/components/weight-wave.json"
+    },
+    {
+      "name": "goo-morph",
+      "title": "Goo Morph",
+      "category": "Text",
+      "task": "Switch the liquid lettering",
+      "useCases": [
+        "In a brand presentation, a viewer taps a keyword to reveal the next principle in the series.",
+        "In a motion showcase, a designer supplies their own words to compare transitions between short and long names."
+      ],
+      "guide": "/agents/components/goo-morph.json"
+    },
+    {
+      "name": "scramble-text",
+      "title": "Scramble Text",
+      "category": "Text",
+      "task": "Reveal the scrambled text",
+      "useCases": [
+        "On a game promo page, a visitor triggers a decoding effect that reveals the mission name.",
+        "In a release presentation, the presenter reveals the version’s codename as an animated label."
+      ],
+      "guide": "/agents/components/scramble-text.json"
+    },
+    {
+      "name": "read-along",
+      "title": "Read Along",
+      "category": "Text",
+      "task": "Words light up at reading speed. Pause or step through them individually.",
+      "useCases": [
+        "In a language lesson, a learner starts word-by-word highlighting and pauses at a difficult phrase.",
+        "When rehearsing a short speech, a speaker selects a word midway through the text and resumes at the chosen pace."
+      ],
+      "guide": "/agents/components/read-along.json"
+    },
+    {
+      "name": "roll-links",
+      "title": "Roll Links",
+      "category": "Text",
+      "task": "Hover or focus the link",
+      "useCases": [
+        "In portfolio navigation, a visitor sees a hover response on a section name and follows its link.",
+        "At the end of an article, a reader focuses the documentation link with the keyboard and opens it without a mouse."
+      ],
+      "guide": "/agents/components/roll-links.json"
+    },
+    {
+      "name": "marker-text",
+      "title": "Marker Text",
+      "category": "Text",
+      "task": "Highlight the phrase",
+      "useCases": [
+        "In lecture notes, an instructor taps a short quotation to highlight it during an explanation.",
+        "During a presentation, an editor highlights a key point and clears the mark before showing it again."
+      ],
+      "guide": "/agents/components/marker-text.json"
+    },
+    {
+      "name": "dynamic-text",
+      "title": "Dynamic Text",
+      "category": "Text",
+      "task": "Change the word in the headline",
+      "useCases": [
+        "In a product-family heading, the brand name stays fixed while a visitor taps through the product names.",
+        "In a classroom example, a student changes the ending of a short phrase to explore combinations with a fixed opening."
+      ],
+      "guide": "/agents/components/dynamic-text.json"
+    },
+    {
+      "name": "typewriter",
+      "title": "Typewriter",
+      "category": "Text",
+      "task": "Start typing the text",
+      "useCases": [
+        "In a terminal demo, a reader starts the character-by-character reveal of a prepared command.",
+        "On a game introduction screen, the author chooses a slow reveal so the player can read a line as dialogue."
+      ],
+      "guide": "/agents/components/typewriter.json"
+    },
+    {
+      "name": "music-toggle",
+      "title": "Music Toggle",
+      "category": "Buttons",
+      "task": "Toggle the equalizer animation",
+      "useCases": [
+        "On an exhibition site, a visitor enables background music. The app starts the track when the toggle changes.",
+        "In an interactive story, a reader turns off the soundtrack and continues reading in silence."
+      ],
+      "guide": "/agents/components/music-toggle.json"
+    },
+    {
+      "name": "prompt-box",
+      "title": "Prompt Box",
+      "category": "AI",
+      "task": "Enter a prompt and send it",
+      "useCases": [
+        "On an assistant’s empty screen, an analyst picks “Summarize the report,” refines the prompt and submits it.",
+        "In a writing assistant, an author enters a custom request. The app returns its request promise so the form shows progress and allows a retry on failure."
+      ],
+      "guide": "/agents/components/prompt-box.json"
+    },
+    {
+      "name": "streaming-reply",
+      "title": "Streaming Reply",
+      "category": "AI",
+      "task": "Reveal the reply in chunks",
+      "useCases": [
+        "In a chatbot demo, a visitor starts the gradual reveal of a prepared reply and watches the words appear.",
+        "In a worked example, a learner reads an explanation in stages. The app supplies the completed text for playback."
+      ],
+      "guide": "/agents/components/streaming-reply.json"
+    },
+    {
+      "name": "ghost-suggestion",
+      "title": "Ghost Suggestion",
+      "category": "AI",
+      "task": "Start typing and accept the suggestion with the right arrow",
+      "useCases": [
+        "In a travel form, a user starts typing a city and completes its name from a matching suggestion.",
+        "In a command field, a developer enters the prefix of a known command. The app supplies the vocabulary used for inline completion."
+      ],
+      "guide": "/agents/components/ghost-suggestion.json"
+    },
+    {
+      "name": "goo-thinking",
+      "title": "Goo Thinking",
+      "category": "AI",
+      "task": "Tap the dots to reveal the answer",
+      "useCases": [
+        "In an assistant prototype, a designer taps the processing indicator to reveal a short sample reply.",
+        "In a search presentation, a presenter replays the transition from “Finding matches” to a prepared result."
+      ],
+      "guide": "/agents/components/goo-thinking.json"
+    },
+    {
+      "name": "siri-orb",
+      "title": "Assistant Orb",
+      "category": "AI",
+      "task": "Switch assistant states",
+      "useCases": [
+        "In a voice assistant, the user sees when the app is listening, processing or speaking. The app passes the current state to AssistantOrb.",
+        "On a recording screen, the app supplies normalized microphone amplitude so the orb reacts to voice volume."
+      ],
+      "guide": "/agents/components/siri-orb.json"
+    },
+    {
+      "name": "agent-steps",
+      "title": "Agent Steps",
+      "category": "AI",
+      "task": "Walk through the agent’s steps",
+      "useCases": [
+        "In a training demo, a user advances an agent from reading a file to preparing a result and sees how many steps are complete.",
+        "During a presentation, the presenter advances each step with a button. The app uses onStep to display that step’s artifact alongside it."
+      ],
+      "guide": "/agents/components/agent-steps.json"
+    },
+    {
+      "name": "tool-approval",
+      "title": "Tool Approval",
+      "category": "AI",
+      "task": "Approve or decline the action",
+      "useCases": [
+        "Before creating an event, an assistant shows the calendar and proposed action. The user approves or declines, and the app handles the decision.",
+        "In a workspace, an agent proposes changing a specific file. The editor checks the resource name before approving the write."
+      ],
+      "guide": "/agents/components/tool-approval.json"
+    },
+    {
+      "name": "thinking-text",
+      "title": "Thinking Text",
+      "category": "AI",
+      "task": "Start the thinking indicator",
+      "useCases": [
+        "While an assistant gathers document context, the reader sees a short status beside the reply area.",
+        "On a report page, the app displays “Processing rows” while a background calculation runs, then replaces it with the result."
+      ],
+      "guide": "/agents/components/thinking-text.json"
+    },
+    {
+      "name": "task-list",
+      "title": "Task List",
+      "category": "AI",
+      "task": "Work through the task queue",
+      "useCases": [
+        "Before a release, a teammate checks off completed reviews and sees how many items remain.",
+        "In a lab workbook, a student checks off finished tasks. The app saves the completed task names through onChange."
+      ],
+      "guide": "/agents/components/task-list.json"
+    },
+    {
+      "name": "voice-input",
+      "title": "Voice Input",
+      "category": "AI",
+      "task": "Record and play a voice note",
+      "useCases": [
+        "In a discussion, a user records a voice comment and stops recording. The app attaches the resulting audio file to the message.",
+        "In a notes form, an author dictates an idea. The app sends the Blob from onRecord to its transcription service."
+      ],
+      "guide": "/agents/components/voice-input.json"
+    },
+    {
+      "name": "hold-to-publish",
+      "title": "Hold to Publish",
+      "category": "Buttons",
+      "task": "Hold to fill the publish button. A checkmark appears when it completes.",
+      "useCases": [
+        "Before releasing an article, an editor holds the publish button. The app submits the piece to the CMS after the hold completes.",
+        "In a teaching workspace, an author starts publishing a lesson, spots a mistake and releases the button before confirming."
+      ],
+      "guide": "/agents/components/hold-to-publish.json"
+    },
+    {
+      "name": "command-search",
+      "title": "Command Search",
+      "category": "Buttons",
+      "task": "Submit a free-text query to application search.",
+      "useCases": [
+        "In a documentation hub, a developer presses Ctrl/⌘+K, enters a phrase and opens the results page through the app handler.",
+        "In a compact project toolbar, a user expands a button into a field and searches for a file using free text."
+      ],
+      "guide": "/agents/components/command-search.json"
+    },
+    {
+      "name": "swipe-tabs",
+      "title": "Swipe Tabs",
+      "category": "Navigation",
+      "task": "Swipe horizontally to move between panels and update the active tab.",
+      "useCases": [
+        "On a mobile product page, a shopper swipes between the description, specifications and reviews.",
+        "In a course workspace, a student opens a link to the practice tab. The app sets the active ID and updates the URL on subsequent changes."
+      ],
+      "guide": "/agents/components/swipe-tabs.json"
+    },
+    {
+      "name": "lesson-outline",
+      "title": "Lesson Outline",
+      "category": "Learning",
+      "task": "Browse lessons and resume a course.",
+      "useCases": [
+        "Returning to a course, a student sees the current lesson in the outline and resumes it with the continue button.",
+        "Before a class, a participant reviews the topic sequence and follows the link to a particular lesson."
+      ],
+      "guide": "/agents/components/lesson-outline.json"
+    },
+    {
+      "name": "code-exercise",
+      "title": "Code Exercise",
+      "category": "Learning",
+      "task": "Edit an exercise, run a sample and investigate a failing test.",
+      "useCases": [
+        "In a regex lesson, a student edits a pattern, checks it against sample strings and inspects mismatches.",
+        "In a lab, a student returns to an unfinished exercise. The app assigns each exercise its own draftKey so the right draft is restored."
+      ],
+      "guide": "/agents/components/code-exercise.json"
+    },
+    {
+      "name": "run-console",
+      "title": "Run Console",
+      "category": "Learning",
+      "task": "Follow compilation and execution, inspect output and stop a run.",
+      "useCases": [
+        "During an exercise run, a student sees the execution phase, output and duration reported by the runner.",
+        "When a run stalls or fails, a student requests a stop or jumps to the offending line through the editor’s handler."
+      ],
+      "guide": "/agents/components/run-console.json"
+    },
+    {
+      "name": "test-results",
+      "title": "Test Results",
+      "category": "Learning",
+      "task": "Inspect the input, expected value and actual result of each test.",
+      "useCases": [
+        "After checking a solution, a student selects a failing case and compares its input, expected value and actual result.",
+        "During review, a student asks about a particular mismatch. The app sends the selected case to a tutor through onAsk."
+      ],
+      "guide": "/agents/components/test-results.json"
+    },
+    {
+      "name": "ask-tutor",
+      "title": "Ask Tutor",
+      "category": "Learning",
+      "task": "Ask about a lesson or failing test with selected context.",
+      "useCases": [
+        "During an exercise, a student asks about a selected code fragment. The app sends the question and its context to the tutoring service.",
+        "While investigating a mistake, a learner removes an irrelevant source before submitting and reads a reply citing the relevant lesson passage."
+      ],
+      "guide": "/agents/components/ask-tutor.json"
+    },
+    {
+      "name": "lesson-citation",
+      "title": "Lesson Citation",
+      "category": "Learning",
+      "task": "Read a cited lesson passage and return to the exercise.",
+      "useCases": [
+        "Below a tutor’s reply, a student expands a citation and checks the explanation against the original lesson passage.",
+        "In an exercise review, a reader opens the referenced textbook section. The app can take them back to the marked location through onReturn."
+      ],
+      "guide": "/agents/components/lesson-citation.json"
+    },
+    {
+      "name": "predict-output",
+      "title": "Predict Output",
+      "category": "Learning",
+      "task": "Predict the output, compare your answer and read the explanation.",
+      "useCases": [
+        "Before running an example, a student predicts its output and reads the explanation.",
+        "At a lesson checkpoint, an instructor supplies possible results for an expression. The app records the learner’s choice through onAnswer."
+      ],
+      "guide": "/agents/components/predict-output.json"
+    },
+    {
+      "name": "execution-trace",
+      "title": "Execution Trace",
+      "category": "Learning",
+      "task": "Step through a trace with the active line and live variable values.",
+      "useCases": [
+        "When studying a loop, a student steps through the trace and follows the counter beside the highlighted line.",
+        "When explaining a bug, an instructor goes back to the step where a variable first acquired the wrong value."
+      ],
+      "guide": "/agents/components/execution-trace.json"
+    },
+    {
+      "name": "hint-ladder",
+      "title": "Hint Ladder",
+      "category": "Learning",
+      "task": "Reveal hints one at a time, from a question to a related example.",
+      "useCases": [
+        "When stuck on a problem, a student opens a general hint first and requests the next one only if needed.",
+        "In a lab, an instructor arranges hints from a general idea to a concrete step. The app records how far each learner went."
+      ],
+      "guide": "/agents/components/hint-ladder.json"
+    },
+    {
+      "name": "channel-list",
+      "title": "Channel List",
+      "category": "Messenger",
+      "task": "Course channels and direct conversations.",
+      "useCases": [
+        "In a course sidebar, a student selects their cohort’s channel. The app opens the conversation by its stable ID.",
+        "In team chat, a colleague switches from a shared channel to a direct conversation. The list highlights the selection controlled by the app."
+      ],
+      "guide": "/agents/components/channel-list.json"
+    },
+    {
+      "name": "chat-composer",
+      "title": "Chat Composer",
+      "category": "Messenger",
+      "task": "Send a message from an existing page and keep the draft on failure.",
+      "useCases": [
+        "On a ticket page, a customer submits a comment. If the network is unavailable, the typed text stays in the field for another attempt.",
+        "When switching conversations, an operator can return to an unfinished reply. The app stores one draft per conversation and supplies it through value."
+      ],
+      "guide": "/agents/components/chat-composer.json"
+    },
+    {
+      "name": "message-reactions",
+      "title": "Message Reactions",
+      "category": "Messenger",
+      "task": "Message reactions with participant counts.",
+      "useCases": [
+        "Under a release announcement, a teammate adds a reaction and sees the count update beside the emoji.",
+        "In a proposal thread, a member removes their reaction. The app updates that emoji’s count while preserving everyone else’s reactions."
+      ],
+      "guide": "/agents/components/message-reactions.json"
+    },
+    {
+      "name": "chat-post",
+      "title": "Chat Post",
+      "category": "Messenger",
+      "task": "Render one message in your own feed or discussion.",
+      "useCases": [
+        "In a support log, a reader sees a single message with its author, time and code snippet, even on a page without a reply editor.",
+        "In a course feed, an instructor shares a workbook link. The card shows the resource below the text, and the app adds reactions through children."
+      ],
+      "guide": "/agents/components/chat-post.json"
+    },
+    {
+      "name": "message-thread",
+      "title": "Message Thread",
+      "category": "Messenger",
+      "task": "Show a parent message and its replies with a separate composer.",
+      "useCases": [
+        "In a design review, a designer opens a comment thread and replies with the original message visible above the discussion.",
+        "In support, an operator switches between threads. The app keeps each thread’s draft separate from its posted replies."
+      ],
+      "guide": "/agents/components/message-thread.json"
+    },
+    {
+      "name": "course-messenger",
+      "title": "Course Messenger",
+      "category": "Messenger",
+      "task": "Build a messaging workspace with channels, direct messages, reactions and threads.",
+      "useCases": [
+        "In a course workspace, a student discusses an assignment in the cohort channel and opens a thread for a specific question.",
+        "In a team workspace, a colleague moves between direct and shared conversations. The app synchronizes messages and reactions with its server."
+      ],
+      "guide": "/agents/components/course-messenger.json"
+    },
+    {
+      "name": "latency-chart",
+      "title": "Latency Chart",
+      "category": "Metrics",
+      "task": "Compare p50 and p95 latency over time.",
+      "useCases": [
+        "After a release, an engineer compares median API latency with p95 to spot slowdowns affecting a subset of requests.",
+        "During incident review, an on-call engineer steps through samples and distinguishes a missing measurement from a measured zero."
+      ],
+      "guide": "/agents/components/latency-chart.json"
+    },
+    {
+      "name": "conversion-funnel",
+      "title": "Conversion Funnel",
+      "category": "Metrics",
+      "task": "Compare conversion between successive stages.",
+      "useCases": [
+        "In a store report, an analyst compares counts at the cart, checkout and purchase stages to find the biggest drop-off.",
+        "A course team compares signups, first lessons and completions. The app supplies the participant count for each stage."
+      ],
+      "guide": "/agents/components/conversion-funnel.json"
+    },
+    {
+      "name": "cohort-retention",
+      "title": "Cohort Retention",
+      "category": "Metrics",
+      "task": "Show returning participants by cohort and period.",
+      "useCases": [
+        "In a subscription report, an analyst compares the share of users in different signup cohorts who returned a week later.",
+        "In a course dashboard, a curriculum lead distinguishes a future cohort week from a completed week in which nobody returned."
+      ],
+      "guide": "/agents/components/cohort-retention.json"
+    },
+    {
+      "name": "issue-board",
+      "title": "Issue Board",
+      "category": "Trackers",
+      "task": "A kanban board with status transitions and inline issue creation.",
+      "useCases": [
+        "At stand-up, a developer moves a card from backlog to active so the team sees the task’s new status.",
+        "During intake, a manager creates a task directly on the board. The app saves the updated list and refreshes its other views."
+      ],
+      "guide": "/agents/components/issue-board.json"
+    },
+    {
+      "name": "issue-table",
+      "title": "Issue Table",
+      "category": "Trackers",
+      "task": "An inline-editable issue database with sortable priorities.",
+      "useCases": [
+        "During backlog triage, a manager sorts issues by priority and corrects a title inline.",
+        "In a team meeting, a coordinator changes a task’s status in the table. The board receives the same updated array and shows the new status."
+      ],
+      "guide": "/agents/components/issue-table.json"
+    },
+    {
+      "name": "cycle-planner",
+      "title": "Cycle Planner",
+      "category": "Trackers",
+      "task": "Plan cycle scope against capacity using issue estimates.",
+      "useCases": [
+        "Before a sprint, a team adds estimated issues to a cycle and sees how many points still fit.",
+        "When capacity changes, a lead removes an issue from the cycle and checks whether the plan is back within budget."
+      ],
+      "guide": "/agents/components/cycle-planner.json"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "channel-list",
+  "title": "Channel List",
+  "category": "Messenger",
+  "description": "Course channels and direct conversations.",
+  "export": "ChannelList",
+  "usage": "<ChannelList workspace=\"Studio\" channels={[{ id: \"design\", name: \"design\", kind: \"channel\", topic: \"Review\" }]} />",
+  "useCases": [
+    "In a course sidebar, a student selects their cohort’s channel. The app opens the conversation by its stable ID.",
+    "In team chat, a colleague switches from a shared channel to a direct conversation. The list highlights the selection controlled by the app."
+  ],
+  "registryItem": "/r/channel-list.json",
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "channels": {
+        "type": "ChatChannel[] | undefined",
+        "required": false
+      },
+      "value": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onSelect": {
+        "type": "((id: string) => void) | undefined",
+        "required": false
+      },
+      "workspace": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Course channels and direct conversations.",
+  "page": "/components/channel-list",
+  "example": "import { ChannelList } from \"@/components/ui/channel-list\";\n\nexport default function Example() {\n  return <ChannelList workspace=\"Studio\" channels={[{ id: \"design\", name: \"design\", kind: \"channel\", topic: \"Review\" }]} />;\n}",
+  "models": {
+    "ChatChannel": "type ChatChannel = {\n  id: string;\n  name: string;\n  kind: \"channel\" | \"direct\";\n  topic: string;\n};"
+  },
+  "behavior": "Use a stable ID per channel. Pass value and update it from onSelect to synchronize navigation with the displayed conversation.",
+  "parts": [],
+  "related": [
+    "/agents/components/course-messenger.json"
+  ],
+  "files": [
+    "components/motion/channel-list.tsx"
+  ]
+}

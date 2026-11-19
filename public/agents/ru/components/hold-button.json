@@ -1,0 +1,51 @@
+{
+  "name": "hold-button",
+  "title": "Hold to Confirm",
+  "category": "Кнопки",
+  "description": "Удержание заполняет кнопку и подтверждает действие.",
+  "export": "HoldButton",
+  "usage": "<HoldButton duration={800} onConfirm={() => console.log('done')} />",
+  "useCases": [
+    "Перед очисткой черновика автор удерживает кнопку до подтверждения. Если отпустить её раньше, текст остаётся на месте.",
+    "На экране терминала оператор удерживает кнопку сброса сеанса. Приложение начинает сброс после onConfirm."
+  ],
+  "registryItem": "/r/ru/hold-button.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onConfirm": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "duration": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "resetAfter": {
+        "type": "number | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Удержание заполняет кнопку и подтверждает действие.",
+  "page": "/ru/components/hold-button",
+  "example": "\"use client\";\n\nimport { HoldButton } from \"@/components/ui/hold-button\";\n\nexport default function Example() {\n  return <HoldButton duration={800} onConfirm={() => console.log('done')} />;\n}",
+  "models": {},
+  "behavior": "duration и resetAfter задаются в миллисекундах. Привяжите действие к onConfirm, который срабатывает после завершённого удержания.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/slide-to-confirm.json",
+    "/agents/ru/components/hold-to-publish.json"
+  ],
+  "files": [
+    "components/motion/hold-button.tsx"
+  ]
+}

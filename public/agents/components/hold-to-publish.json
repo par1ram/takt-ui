@@ -1,0 +1,52 @@
+{
+  "name": "hold-to-publish",
+  "title": "Hold to Publish",
+  "category": "Buttons",
+  "description": "Hold to fill the publish button. A checkmark appears when it completes.",
+  "export": "HoldToPublish",
+  "usage": "<HoldToPublish onPublish={() => console.log('published')} />",
+  "useCases": [
+    "Before releasing an article, an editor holds the publish button. The app submits the piece to the CMS after the hold completes.",
+    "In a teaching workspace, an author starts publishing a lesson, spots a mistake and releases the button before confirming."
+  ],
+  "registryItem": "/r/hold-to-publish.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "duration": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onPublish": {
+        "type": "(() => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Hold to fill the publish button. A checkmark appears when it completes.",
+  "page": "/components/hold-to-publish",
+  "example": "\"use client\";\n\nimport { HoldToPublish } from \"@/components/ui/hold-to-publish\";\n\nexport default function Example() {\n  return <HoldToPublish onPublish={() => console.log('published')} />;\n}",
+  "models": {},
+  "behavior": "duration sets the hold time in milliseconds. Connect publishing to onPublish, invoked after a completed hold.",
+  "parts": [],
+  "related": [
+    "/agents/components/hold-button.json",
+    "/agents/components/slide-to-confirm.json"
+  ],
+  "files": [
+    "components/motion/hold-to-publish.tsx"
+  ]
+}

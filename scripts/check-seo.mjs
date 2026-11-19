@@ -9,7 +9,7 @@ async function read(path) {
 }
 
 const registry = await (await read("/r/registry.json")).json();
-const components = registry.items.filter(item => item.name !== "takt");
+const components = registry.items.filter(item => item.type === "registry:ui");
 assert.ok(components.length > 0);
 const sitemap = await (await read("/sitemap.xml")).text();
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);

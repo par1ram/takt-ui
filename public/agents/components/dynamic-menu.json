@@ -1,0 +1,46 @@
+{
+  "name": "dynamic-menu",
+  "title": "Dynamic Menu",
+  "category": "Navigation",
+  "description": "Open the menu and explore a submenu",
+  "export": "DynamicMenu",
+  "usage": "<DynamicMenu formats={[\"PNG\", \"WebP\"]} />",
+  "useCases": [
+    "In a diagram editor, an author opens the export submenu and selects SVG. The app starts the corresponding exporter.",
+    "In a report builder, an analyst opens the format list, goes back a level and revisits the export choice."
+  ],
+  "registryItem": "/r/dynamic-menu.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "formats": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChoose": {
+        "type": "((format: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Open the menu and explore a submenu",
+  "page": "/components/dynamic-menu",
+  "example": "import { DynamicMenu } from \"@/components/ui/dynamic-menu\";\n\nexport default function Example() {\n  return <DynamicMenu formats={[\"PNG\", \"WebP\"]} />;\n}",
+  "models": {},
+  "behavior": "Supply format names in formats and connect export through onChoose, which receives the chosen format.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/dynamic-menu.tsx",
+    "lib/takt-focus.ts",
+    "lib/takt-surface.ts"
+  ]
+}

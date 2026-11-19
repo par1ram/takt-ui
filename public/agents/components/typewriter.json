@@ -1,0 +1,42 @@
+{
+  "name": "typewriter",
+  "title": "Typewriter",
+  "category": "Text",
+  "description": "Start typing the text",
+  "export": "Typewriter",
+  "usage": "<Typewriter text=\"Hello, Takt.\" interval={70} />",
+  "useCases": [
+    "In a terminal demo, a reader starts the character-by-character reveal of a prepared command.",
+    "On a game introduction screen, the author chooses a slow reveal so the player can read a line as dialogue."
+  ],
+  "registryItem": "/r/typewriter.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "interval": {
+        "type": "number | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Start typing the text",
+  "page": "/components/typewriter",
+  "example": "import { Typewriter } from \"@/components/ui/typewriter\";\n\nexport default function Example() {\n  return <Typewriter text=\"Hello, Takt.\" interval={70} />;\n}",
+  "models": {},
+  "behavior": "text supplies the string and interval sets the typing cadence in milliseconds.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/typewriter.tsx"
+  ]
+}

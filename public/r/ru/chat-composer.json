@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "chat-composer",
   "title": "Chat Composer",
-  "description": "Редактор с черновиком, переносом строки и состояниями отправки.",
+  "description": "Отправить сообщение из существующей страницы и сохранить черновик при ошибке.",
   "dependencies": [
     "lucide-react"
   ],

@@ -1,0 +1,45 @@
+{
+  "name": "detent-dial",
+  "title": "Detent Dial",
+  "category": "Ввод",
+  "description": "Поверните регулятор стрелками или свайпом",
+  "export": "DetentDial",
+  "usage": "<DetentDial label=\"Яркость\" />",
+  "useCases": [
+    "На панели синтезатора музыкант выбирает одну из одиннадцати ступеней эффекта поворотом регулятора.",
+    "В прототипе светильника дизайнер выбирает ступень яркости. Приложение переводит позицию от 0 до 10 в мощность подсветки."
+  ],
+  "registryItem": "/r/ru/detent-dial.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((value: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Поверните регулятор стрелками или свайпом",
+  "page": "/ru/components/detent-dial",
+  "example": "import { DetentDial } from \"@/components/ui/detent-dial\";\n\nexport default function Example() {\n  return <DetentDial label=\"Яркость\" />;\n}",
+  "models": {},
+  "behavior": "Диск выбирает значение от 0 до 10. Используйте onChange для преобразования позиции в единицы приложения.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/jelly-slider.json",
+    "/agents/ru/components/wave-slider.json"
+  ],
+  "files": [
+    "components/motion/detent-dial.tsx"
+  ]
+}

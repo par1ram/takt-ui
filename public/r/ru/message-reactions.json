@@ -5,7 +5,8 @@
   "description": "Реакции на сообщение со счётчиками участников.",
   "dependencies": [
     "motion",
-    "radix-ui"
+    "radix-ui",
+    "lucide-react"
   ],
   "files": [
     {

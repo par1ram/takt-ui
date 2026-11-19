@@ -1,0 +1,48 @@
+{
+  "name": "jelly-slider",
+  "title": "Jelly Slider",
+  "category": "Inputs",
+  "description": "Drag the elastic handle",
+  "export": "JellySlider",
+  "usage": "<JellySlider label=\"Volume\" />",
+  "useCases": [
+    "In a sticker editor, a designer moves an opacity slider. The app applies the selected percentage to the sticker.",
+    "In a motion demo, a visitor adjusts an effect’s intensity and sees the numeric value beside the slider."
+  ],
+  "registryItem": "/r/jelly-slider.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((value: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Drag the elastic handle",
+  "page": "/components/jelly-slider",
+  "example": "import { JellySlider } from \"@/components/ui/jelly-slider\";\n\nexport default function Example() {\n  return <JellySlider label=\"Volume\" />;\n}",
+  "models": {},
+  "behavior": "label provides the accessible name. onChange receives a number as the slider moves.",
+  "parts": [],
+  "related": [
+    "/agents/components/wave-slider.json",
+    "/agents/components/detent-dial.json"
+  ],
+  "files": [
+    "components/motion/jelly-slider.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

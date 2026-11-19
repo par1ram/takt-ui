@@ -1,0 +1,45 @@
+{
+  "name": "hint-ladder",
+  "title": "Hint Ladder",
+  "category": "Обучение",
+  "description": "Подсказки раскрываются по одной от вопроса до похожего примера.",
+  "export": "HintLadder",
+  "usage": "<HintLadder items={[\"Сравните входные данные\", \"Проверьте длину\"]} />",
+  "useCases": [
+    "Застряв в задаче, студент открывает сначала общую подсказку и запрашивает следующую только при необходимости.",
+    "В практикуме преподаватель выстраивает подсказки от идеи до конкретного шага. Приложение отмечает, до какой подсказки дошёл ученик."
+  ],
+  "registryItem": "/r/ru/hint-ladder.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "items": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onReveal": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Подсказки раскрываются по одной от вопроса до похожего примера.",
+  "page": "/ru/components/hint-ladder",
+  "example": "import { HintLadder } from \"@/components/ui/hint-ladder\";\n\nexport default function Example() {\n  return <HintLadder items={[\"Сравните входные данные\", \"Проверьте длину\"]} />;\n}",
+  "models": {},
+  "behavior": "Передайте подсказки от общей к конкретной. onReveal получает индекс только что открытой подсказки, начиная с нуля.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/hint-ladder.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "letter-limit",
+  "title": "Letter Limit",
+  "category": "Ввод",
+  "description": "Введите текст до лимита",
+  "export": "LetterLimit",
+  "usage": "<LetterLimit label=\"Bio\" limit={160} />",
+  "useCases": [
+    "В профиле автор сокращает биографию под лимит площадки и видит, сколько символов уже занял.",
+    "При подготовке короткой подписи редактор вставляет текст с эмодзи. Поле соблюдает лимит, сохраняя составные символы целиком."
+  ],
+  "registryItem": "/r/ru/letter-limit.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "limit": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((text: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Введите текст до лимита",
+  "page": "/ru/components/letter-limit",
+  "example": "import { LetterLimit } from \"@/components/ui/letter-limit\";\n\nexport default function Example() {\n  return <LetterLimit label=\"Bio\" limit={160} />;\n}",
+  "models": {},
+  "behavior": "limit задаёт максимальную длину. onChange получает уже ограниченный текст, который можно сохранить как значение поля.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/letter-limit.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

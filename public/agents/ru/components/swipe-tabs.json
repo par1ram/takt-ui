@@ -1,0 +1,59 @@
+{
+  "name": "swipe-tabs",
+  "title": "Swipe Tabs",
+  "category": "Навигация",
+  "description": "Горизонтальный жест сдвигает панель раздела и активную подложку вкладки.",
+  "export": "SwipeTabs",
+  "usage": "<SwipeTabs onChange={console.log} />",
+  "useCases": [
+    "В мобильной карточке товара покупатель смахивает между описанием, характеристиками и отзывами.",
+    "В кабинете курса студент открывает ссылку на вкладку практики. Приложение задаёт выбранный id и обновляет адрес при дальнейших переключениях."
+  ],
+  "registryItem": "/r/ru/swipe-tabs.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "SwipeTab[] | undefined",
+        "required": false
+      },
+      "defaultValue": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "value": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((id: string) => void) | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Горизонтальный жест сдвигает панель раздела и активную подложку вкладки.",
+  "page": "/ru/components/swipe-tabs",
+  "example": "\"use client\";\n\nimport { SwipeTabs } from \"@/components/ui/swipe-tabs\";\n\nexport default function Example() {\n  return <SwipeTabs onChange={console.log} />;\n}",
+  "models": {
+    "SwipeTab": "type SwipeTab = { id: string; title: string; content: ReactNode };"
+  },
+  "behavior": "У каждого элемента есть стабильный id, title и content. Используйте defaultValue для начальной вкладки или value и onChange для управления извне.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/tab-pill.json",
+    "/agents/ru/components/segmented-control.json"
+  ],
+  "files": [
+    "components/motion/swipe-tabs.tsx"
+  ]
+}

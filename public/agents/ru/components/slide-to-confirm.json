@@ -1,0 +1,44 @@
+{
+  "name": "slide-to-confirm",
+  "title": "Slide To Confirm",
+  "category": "Кнопки",
+  "description": "Подтверждение выполняется в конце хода. Незавершённый жест возвращает бегунок.",
+  "export": "SlideToConfirm",
+  "usage": "<SlideToConfirm onConfirm={() => window.print()} />",
+  "useCases": [
+    "На упаковочном столе сотрудник сдвигает подтверждение после проверки посылки. Приложение помечает её готовой к отправке.",
+    "В мобильном терминале оператор завершает смену протяжённым жестом, чтобы случайное касание не запустило закрытие."
+  ],
+  "registryItem": "/r/ru/slide-to-confirm.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onConfirm": {
+        "type": "(() => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Подтверждение выполняется в конце хода. Незавершённый жест возвращает бегунок.",
+  "page": "/ru/components/slide-to-confirm",
+  "example": "\"use client\";\n\nimport { SlideToConfirm } from \"@/components/ui/slide-to-confirm\";\n\nexport default function Example() {\n  return <SlideToConfirm onConfirm={() => window.print()} />;\n}",
+  "models": {},
+  "behavior": "Передайте подтверждаемое действие в onConfirm. Компонент управляет прогрессом жеста и вызовом после подтверждения.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/hold-button.json",
+    "/agents/ru/components/hold-to-publish.json"
+  ],
+  "files": [
+    "components/motion/slide-to-confirm.tsx",
+    "lib/takt-focus.ts"
+  ]
+}

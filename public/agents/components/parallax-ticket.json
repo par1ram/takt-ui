@@ -1,0 +1,50 @@
+{
+  "name": "parallax-ticket",
+  "title": "Parallax Ticket",
+  "category": "Cards",
+  "description": "Move the pointer to tilt the ticket",
+  "export": "ParallaxTicket",
+  "usage": "<ParallaxTicket title=\"Studio Night\" date=\"2027-04-17\" />",
+  "useCases": [
+    "On a concert page, a visitor explores the ticket artwork and flips it over to see the date.",
+    "In an identity design portfolio, a designer presents a pass mockup with custom artwork, an event name and a date."
+  ],
+  "registryItem": "/r/parallax-ticket.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "date": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "cover": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Move the pointer to tilt the ticket",
+  "page": "/components/parallax-ticket",
+  "example": "import { ParallaxTicket } from \"@/components/ui/parallax-ticket\";\n\nexport default function Example() {\n  return <ParallaxTicket title=\"Studio Night\" date=\"2027-04-17\" />;\n}",
+  "models": {},
+  "behavior": "Supply the title, display date and cover image URL. The component handles pointer-driven tilt.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/parallax-ticket.tsx",
+    "lib/takt-art-orbit.ts"
+  ]
+}

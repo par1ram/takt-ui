@@ -1,0 +1,43 @@
+{
+  "name": "file-drop",
+  "title": "File Drop",
+  "category": "Ввод",
+  "description": "Папка принимает файлы и показывает список с размером каждого.",
+  "export": "FileDrop",
+  "usage": "<FileDrop onFiles={(files) => console.info(files.map(file => file.name))} />",
+  "useCases": [
+    "При создании обращения клиент перетаскивает скриншоты. Форма получает объекты File и прикладывает их к запросу при отправке.",
+    "В редакторе галереи автор выбирает изображения с диска. Приложение строит предпросмотр из выбранных файлов до загрузки."
+  ],
+  "registryItem": "/r/ru/file-drop.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onFiles": {
+        "type": "((files: File[]) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Папка принимает файлы и показывает список с размером каждого.",
+  "page": "/ru/components/file-drop",
+  "example": "\"use client\";\n\nimport { FileDrop } from \"@/components/ui/file-drop\";\n\nexport default function Example() {\n  return <FileDrop onFiles={(files) => console.info(files.map(file => file.name))} />;\n}",
+  "models": {},
+  "behavior": "onFiles получает текущий список объектов File. Загрузку в хранилище выполняет приложение.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/signature-pad.json"
+  ],
+  "files": [
+    "components/motion/file-drop.tsx",
+    "lib/takt-focus.ts"
+  ]
+}

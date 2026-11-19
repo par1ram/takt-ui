@@ -1,0 +1,62 @@
+{
+  "name": "card-field",
+  "title": "Card Field",
+  "category": "Inputs",
+  "description": "Try the test card",
+  "export": "CardField",
+  "usage": "<CardField mode=\"demo\" />",
+  "useCases": [
+    "In a checkout prototype, a tester selects the built-in test card and resets it for the next run.",
+    "In a live checkout, a customer fills in Stripe Elements over HTTPS. The app uses onCompleteChange to decide when to offer payment confirmation."
+  ],
+  "registryItem": "/r/card-field.json",
+  "dependencies": [
+    "lucide-react",
+    "@stripe/react-stripe-js",
+    "@stripe/stripe-js"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "mode": {
+        "type": "\"demo\" | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((testDigits: string) => void) | undefined",
+        "required": false
+      }
+    },
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "mode": {
+        "type": "\"payment\"",
+        "required": true
+      },
+      "onCompleteChange": {
+        "type": "((complete: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Enter a test card number or mount a Stripe payment field.",
+  "page": "/components/card-field",
+  "example": "import { CardField } from \"@/components/ui/card-field\";\n\nexport default function Example() {\n  return <CardField mode=\"demo\" />;\n}",
+  "models": {},
+  "behavior": "In demo mode onChange receives test digits. For mode=\"payment\", mount inside configured Stripe Elements over HTTPS and use onCompleteChange to track completion.",
+  "parts": [],
+  "related": [
+    "/agents/components/receipt-printer.json"
+  ],
+  "files": [
+    "components/motion/card-field.tsx"
+  ]
+}

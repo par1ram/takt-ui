@@ -1,0 +1,94 @@
+{
+  "name": "code-exercise",
+  "title": "Code Exercise",
+  "category": "Обучение",
+  "description": "Редактор задания с запуском, проверкой тестов и разбором ошибки.",
+  "export": "CodeExercise",
+  "usage": "<CodeExercise draftKey=\"lesson:ids:v1\" initialSource=\"^UI-[0-9]+$\" tests={[{ input: \"UI-23\", expected: true }]} />",
+  "useCases": [
+    "На уроке регулярных выражений студент исправляет шаблон, проверяет его на наборе строк и изучает несовпадения.",
+    "В практикуме студент возвращается к незавершённому упражнению. Приложение задаёт отдельный draftKey на задание, чтобы восстановить его черновик."
+  ],
+  "registryItem": "/r/ru/code-exercise.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "instruction": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "filename": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "initialSource": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "initialInput": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "tests": {
+        "type": "InputCase[] | undefined",
+        "required": false
+      },
+      "onExecute": {
+        "type": "Runner | undefined",
+        "required": false
+      },
+      "onAsk": {
+        "type": "((question: string, context: string[]) => Promise<TutorAnswer>) | undefined",
+        "required": false
+      },
+      "draftKey": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Редактор задания с запуском, проверкой тестов и разбором ошибки.",
+  "page": "/ru/components/code-exercise",
+  "example": "import { CodeExercise } from \"@/components/ui/code-exercise\";\n\nexport default function Example() {\n  return <CodeExercise draftKey=\"lesson:ids:v1\" initialSource=\"^UI-[0-9]+$\" tests={[{ input: \"UI-23\", expected: true }]} />;\n}",
+  "models": {
+    "InputCase": "type InputCase = Omit<ExerciseCase, \"actual\">;",
+    "ExerciseCase": "type ExerciseCase = {\n  input: string;\n  expected: boolean;\n  actual: boolean;\n};",
+    "Runner": "type Runner = (\n  source: string,\n  inputs: InputCase[],\n  signal: AbortSignal,\n  onRunning: () => void,\n) => Promise<boolean[]>;",
+    "TutorAnswer": "type TutorAnswer = { text: string; citation?: Citation };",
+    "Citation": "type Citation = Pick<\n  React.ComponentProps<typeof LessonCitation>,\n  \"title\" | \"locator\" | \"excerpt\" | \"href\"\n>;"
+  },
+  "behavior": "Для сохранения черновика используйте отдельный draftKey на урок. Собственный onExecute получает исходник, тесты, AbortSignal и onRunning. Верните по одному результату boolean на тест в исходном порядке.",
+  "parts": [
+    "prompt-box",
+    "run-console",
+    "test-results",
+    "ask-tutor",
+    "lesson-citation"
+  ],
+  "related": [
+    "/agents/ru/components/run-console.json",
+    "/agents/ru/components/test-results.json",
+    "/agents/ru/components/ask-tutor.json"
+  ],
+  "files": [
+    "components/motion/code-exercise.tsx",
+    "components/motion/run-console.tsx",
+    "components/motion/test-results.tsx",
+    "components/motion/ask-tutor.tsx",
+    "components/motion/prompt-box.tsx",
+    "components/motion/lesson-citation.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

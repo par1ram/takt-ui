@@ -1,0 +1,45 @@
+{
+  "name": "morph-island",
+  "title": "Morph Island",
+  "category": "Cards",
+  "description": "A compact panel for a timer, an export and an incoming call.",
+  "export": "MorphIsland",
+  "usage": "<MorphIsland title=\"Studio\" onCall={(accepted) => console.info({ accepted })} />",
+  "useCases": [
+    "In an incoming-call prototype, a user accepts or declines a call. The app receives the decision through onCall.",
+    "In a mobile UI presentation, a designer cycles through the built-in activities to show a timer and operation progress in one compact panel."
+  ],
+  "registryItem": "/r/morph-island.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onCall": {
+        "type": "((accepted: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "A compact panel for a timer, an export and an incoming call.",
+  "page": "/components/morph-island",
+  "example": "\"use client\";\n\nimport { MorphIsland } from \"@/components/ui/morph-island\";\n\nexport default function Example() {\n  return <MorphIsland title=\"Studio\" onCall={(accepted) => console.info({ accepted })} />;\n}",
+  "models": {},
+  "behavior": "title labels the call. onCall receives a boolean indicating acceptance or dismissal.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/morph-island.tsx"
+  ]
+}

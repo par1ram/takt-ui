@@ -87,7 +87,7 @@ export function StepProgress({
             <button
               key={index}
               type="button"
-              aria-label={label}
+              aria-label={ordinal(index) + " " + label}
               aria-current={index === step ? "step" : undefined}
               title={label}
               onClick={() => select(index)}

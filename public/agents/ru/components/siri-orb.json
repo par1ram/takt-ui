@@ -1,0 +1,60 @@
+{
+  "name": "siri-orb",
+  "title": "Assistant Orb",
+  "category": "AI",
+  "description": "Переключайте состояния ассистента",
+  "export": "AssistantOrb",
+  "usage": "<AssistantOrb state=\"thinking\" />",
+  "useCases": [
+    "В голосовом помощнике пользователь видит, когда приложение слушает, обрабатывает запрос или отвечает. Приложение передаёт текущее состояние в AssistantOrb.",
+    "На экране записи приложение передаёт нормализованную амплитуду микрофона, чтобы сфера реагировала на громкость голоса."
+  ],
+  "registryItem": "/r/ru/siri-orb.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "state": {
+        "type": "\"idle\" | \"error\" | \"listening\" | \"thinking\" | \"streaming\" | \"done\" | undefined",
+        "required": false
+      },
+      "onStateChange": {
+        "type": "((state: OrbState) => void) | undefined",
+        "required": false
+      },
+      "amplitude": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((active: boolean) => void) | undefined",
+        "required": false
+      },
+      "showControls": {
+        "type": "boolean | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Переключайте состояния ассистента",
+  "page": "/ru/components/siri-orb",
+  "example": "import { AssistantOrb } from \"@/components/ui/siri-orb\";\n\nexport default function Example() {\n  return <AssistantOrb state=\"thinking\" />;\n}",
+  "models": {
+    "OrbState": "type OrbState = \"idle\" | \"error\" | \"listening\" | \"thinking\" | \"streaming\" | \"done\";"
+  },
+  "behavior": "Именованный экспорт — AssistantOrb. Для внешнего управления передайте state, нормализованную амплитуду звука в amplitude и showControls={false}.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/voice-input.json"
+  ],
+  "files": [
+    "components/motion/siri-orb.tsx"
+  ]
+}

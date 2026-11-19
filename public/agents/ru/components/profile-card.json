@@ -1,0 +1,55 @@
+{
+  "name": "profile-card",
+  "title": "Profile Card",
+  "category": "Карточки",
+  "description": "Подпишитесь и посмотрите, как меняются счётчик и кнопки",
+  "export": "ProfileCard",
+  "usage": "<ProfileCard name=\"Sam Lee\" role=\"Designer\" />",
+  "useCases": [
+    "В каталоге наставников студент открывает диалог с выбранным специалистом. Приложение получает имя через onMessage.",
+    "В сообществе читатель подписывается на автора со страницы его профиля. Приложение сохраняет состояние подписки."
+  ],
+  "registryItem": "/r/ru/profile-card.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "name": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "role": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onMessage": {
+        "type": "((name: string) => void) | undefined",
+        "required": false
+      },
+      "onFollow": {
+        "type": "((value: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Подпишитесь и посмотрите, как меняются счётчик и кнопки",
+  "page": "/ru/components/profile-card",
+  "example": "import { ProfileCard } from \"@/components/ui/profile-card\";\n\nexport default function Example() {\n  return <ProfileCard name=\"Sam Lee\" role=\"Designer\" />;\n}",
+  "models": {},
+  "behavior": "Передайте имя и роль. onMessage получает имя для открытия диалога, а onFollow — новое состояние подписки.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/profile-card.tsx",
+    "lib/takt-surface.ts",
+    "lib/takt-art-team.ts"
+  ]
+}

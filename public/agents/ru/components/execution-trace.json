@@ -1,0 +1,47 @@
+{
+  "name": "execution-trace",
+  "title": "Execution Trace",
+  "category": "Обучение",
+  "description": "Пошаговое выполнение с подсветкой строки и значений переменных.",
+  "export": "ExecutionTrace",
+  "usage": "<ExecutionTrace code={[\"let x = 2\", \"x *= 3\"]} steps={[{ line: 1, variables: { x: 2 } }, { line: 2, variables: { x: 6 } }]} />",
+  "useCases": [
+    "Разбирая цикл, студент переходит от шага к шагу и следит за значением счётчика рядом с подсвеченной строкой.",
+    "При объяснении ошибки преподаватель возвращается к шагу, на котором переменная впервые получила неверное значение."
+  ],
+  "registryItem": "/r/ru/execution-trace.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "code": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "steps": {
+        "type": "Frame[] | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Пошаговое выполнение с подсветкой строки и значений переменных.",
+  "page": "/ru/components/execution-trace",
+  "example": "import { ExecutionTrace } from \"@/components/ui/execution-trace\";\n\nexport default function Example() {\n  return <ExecutionTrace code={[\"let x = 2\", \"x *= 3\"]} steps={[{ line: 1, variables: { x: 2 } }, { line: 2, variables: { x: 6 } }]} />;\n}",
+  "models": {
+    "Frame": "type Frame = { line: number; variables: Record<string, string | number> };"
+  },
+  "behavior": "code содержит строки программы. В каждом шаге line нумеруется с единицы, а variables задаёт значения для этого шага.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/execution-trace.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

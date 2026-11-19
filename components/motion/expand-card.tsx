@@ -104,7 +104,6 @@ export function ExpandCard({
           >
             <button
               type="button"
-              aria-label={row.title}
               aria-expanded={open}
               aria-controls={id + "-" + i}
               onClick={() => setSelection(open ? null : i)}

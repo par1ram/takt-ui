@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "cohort-retention",
   "title": "Cohort Retention",
-  "description": "Cohort retention with missing observations distinguished from zero.",
+  "description": "Show returning participants by cohort and period.",
   "dependencies": [
     "motion",
     "lucide-react"

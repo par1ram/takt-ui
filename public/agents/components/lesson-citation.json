@@ -1,0 +1,58 @@
+{
+  "name": "lesson-citation",
+  "title": "Lesson Citation",
+  "category": "Learning",
+  "description": "Read a cited lesson passage and return to the exercise.",
+  "export": "LessonCitation",
+  "usage": "<LessonCitation title=\"React\" locator=\"§ 2\" excerpt=\"State\" href=\"/lessons/state\" />",
+  "useCases": [
+    "Below a tutor’s reply, a student expands a citation and checks the explanation against the original lesson passage.",
+    "In an exercise review, a reader opens the referenced textbook section. The app can take them back to the marked location through onReturn."
+  ],
+  "registryItem": "/r/lesson-citation.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "locator": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "excerpt": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "href": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onReturn": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Read a cited lesson passage and return to the exercise.",
+  "page": "/components/lesson-citation",
+  "example": "import { LessonCitation } from \"@/components/ui/lesson-citation\";\n\nexport default function Example() {\n  return <LessonCitation title=\"React\" locator=\"§ 2\" excerpt=\"State\" href=\"/lessons/state\" />;\n}",
+  "models": {},
+  "behavior": "Supply a title, source locator, excerpt and link. Use onReturn to restore the relevant application view.",
+  "parts": [],
+  "related": [
+    "/agents/components/ask-tutor.json"
+  ],
+  "files": [
+    "components/motion/lesson-citation.tsx"
+  ]
+}

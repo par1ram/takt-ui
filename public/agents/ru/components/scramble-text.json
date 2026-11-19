@@ -1,0 +1,38 @@
+{
+  "name": "scramble-text",
+  "title": "Scramble Text",
+  "category": "Текст",
+  "description": "Расшифруйте строку",
+  "export": "ScrambleText",
+  "usage": "<ScrambleText text=\"STUDIO\" />",
+  "useCases": [
+    "На промостранице игры посетитель запускает эффект расшифровки, который раскрывает название миссии.",
+    "В презентации релиза ведущий раскрывает кодовое имя версии как анимированную надпись."
+  ],
+  "registryItem": "/r/ru/scramble-text.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Расшифруйте строку",
+  "page": "/ru/components/scramble-text",
+  "example": "import { ScrambleText } from \"@/components/ui/scramble-text\";\n\nexport default function Example() {\n  return <ScrambleText text=\"STUDIO\" />;\n}",
+  "models": {},
+  "behavior": "Передайте в text итоговую строку, которую показывает эффект расшифровки.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/scramble-text.tsx"
+  ]
+}

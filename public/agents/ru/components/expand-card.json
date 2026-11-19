@@ -1,0 +1,58 @@
+{
+  "name": "expand-card",
+  "title": "Expand Card",
+  "category": "Карточки",
+  "description": "Выберите коллекцию, чтобы развернуть обложку и детали",
+  "export": "ExpandCard",
+  "usage": "<ExpandCard title=\"Studio\" body=\"Расписание мастерской\" />",
+  "useCases": [
+    "В подборке коллекций покупатель открывает одну карточку, читает подробности и возвращается к обзору.",
+    "В афише мастерской организатор помещает полное описание занятия под компактной обложкой, которую посетитель раскрывает по нажатию."
+  ],
+  "registryItem": "/r/ru/expand-card.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "cover": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "body": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "readonly ExpandCardItem[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Выберите коллекцию, чтобы развернуть обложку и детали",
+  "page": "/ru/components/expand-card",
+  "example": "import { ExpandCard } from \"@/components/ui/expand-card\";\n\nexport default function Example() {\n  return <ExpandCard title=\"Studio\" body=\"Расписание мастерской\" />;\n}",
+  "models": {
+    "ExpandCardItem": "type ExpandCardItem = {\n  title: string;\n  cover: string;\n  body: string;\n  subtitle?: string;\n};"
+  },
+  "behavior": "Для одной карточки передайте title, body и cover. Для нескольких используйте items с содержимым каждой карточки.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/expand-card.tsx",
+    "lib/takt-art-glass.ts",
+    "lib/takt-art-orbit.ts",
+    "lib/takt-art-fold.ts"
+  ]
+}

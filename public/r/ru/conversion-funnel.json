@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "conversion-funnel",
   "title": "Conversion Funnel",
-  "description": "Число участников на этапах и конверсия между соседними этапами.",
+  "description": "Сравнить конверсию между последовательными этапами.",
   "dependencies": [
     "motion",
     "lucide-react"

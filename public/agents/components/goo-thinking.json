@@ -1,0 +1,45 @@
+{
+  "name": "goo-thinking",
+  "title": "Goo Thinking",
+  "category": "AI",
+  "description": "Tap the dots to reveal the answer",
+  "export": "GooThinking",
+  "usage": "<GooThinking label=\"Analysis\" reply=\"Ready\" />",
+  "useCases": [
+    "In an assistant prototype, a designer taps the processing indicator to reveal a short sample reply.",
+    "In a search presentation, a presenter replays the transition from “Finding matches” to a prepared result."
+  ],
+  "registryItem": "/r/goo-thinking.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "reply": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Tap the dots to reveal the answer",
+  "page": "/components/goo-thinking",
+  "example": "import { GooThinking } from \"@/components/ui/goo-thinking\";\n\nexport default function Example() {\n  return <GooThinking label=\"Analysis\" reply=\"Ready\" />;\n}",
+  "models": {},
+  "behavior": "label supplies the waiting caption and reply supplies the displayed response. Update that prop with application content.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/goo-thinking.tsx"
+  ]
+}

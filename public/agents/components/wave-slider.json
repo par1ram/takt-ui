@@ -1,0 +1,56 @@
+{
+  "name": "wave-slider",
+  "title": "Wave Slider",
+  "category": "Inputs",
+  "description": "A compact volume control that remembers the level before muting.",
+  "export": "WaveSlider",
+  "usage": "<WaveSlider defaultValue={60} onValueChange={console.log} />",
+  "useCases": [
+    "In a player, a listener sets volume on a 0–100 scale. The app converts the percentage to an audio level.",
+    "In an ambient sound editor, the app restores the saved level through value and updates the mix as the user moves the slider."
+  ],
+  "registryItem": "/r/wave-slider.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "defaultValue": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "value": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onValueChange": {
+        "type": "((value: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "A compact volume control that remembers the level before muting.",
+  "page": "/components/wave-slider",
+  "example": "\"use client\";\n\nimport { WaveSlider } from \"@/components/ui/wave-slider\";\n\nexport default function Example() {\n  return <WaveSlider defaultValue={60} onValueChange={console.log} />;\n}",
+  "models": {},
+  "behavior": "Volume ranges from 0 to 100. Use defaultValue for local state or supply value with onValueChange for external control.",
+  "parts": [],
+  "related": [
+    "/agents/components/jelly-slider.json",
+    "/agents/components/detent-dial.json"
+  ],
+  "files": [
+    "components/motion/wave-slider.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

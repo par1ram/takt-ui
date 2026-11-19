@@ -1,0 +1,52 @@
+{
+  "name": "flip-counter",
+  "title": "Flip Counter",
+  "category": "Ввод",
+  "description": "Цифры перекатываются при каждом шаге счётчика.",
+  "export": "FlipCounter",
+  "usage": "<FlipCounter defaultValue={12} min={0} max={99} />",
+  "useCases": [
+    "При бронировании стола гость добавляет участников. Верхняя граница счётчика соответствует вместимости стола.",
+    "В заказе печати клиент меняет число экземпляров. Приложение пересчитывает смету из нового значения счётчика."
+  ],
+  "registryItem": "/r/ru/flip-counter.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "defaultValue": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "min": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "max": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onValueChange": {
+        "type": "((value: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Цифры перекатываются при каждом шаге счётчика.",
+  "page": "/ru/components/flip-counter",
+  "example": "import { FlipCounter } from \"@/components/ui/flip-counter\";\n\nexport default function Example() {\n  return <FlipCounter defaultValue={12} min={0} max={99} />;\n}",
+  "models": {},
+  "behavior": "min и max ограничивают счётчик. defaultValue задаёт начальное число, а onValueChange передаёт следующее значение.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/flip-counter.tsx"
+  ]
+}

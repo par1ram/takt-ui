@@ -1,0 +1,42 @@
+{
+  "name": "roll-links",
+  "title": "Roll Links",
+  "category": "Text",
+  "description": "Hover or focus the link",
+  "export": "RollLinks",
+  "usage": "<RollLinks label=\"Documentation\" href=\"/docs\" />",
+  "useCases": [
+    "In portfolio navigation, a visitor sees a hover response on a section name and follows its link.",
+    "At the end of an article, a reader focuses the documentation link with the keyboard and opens it without a mouse."
+  ],
+  "registryItem": "/r/roll-links.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "href": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Hover or focus the link",
+  "page": "/components/roll-links",
+  "example": "import { RollLinks } from \"@/components/ui/roll-links\";\n\nexport default function Example() {\n  return <RollLinks label=\"Documentation\" href=\"/docs\" />;\n}",
+  "models": {},
+  "behavior": "href is the navigation target. label supplies both visual versions of the link text.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/roll-links.tsx"
+  ]
+}

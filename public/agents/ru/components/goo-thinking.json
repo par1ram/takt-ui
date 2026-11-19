@@ -1,0 +1,45 @@
+{
+  "name": "goo-thinking",
+  "title": "Goo Thinking",
+  "category": "AI",
+  "description": "Нажмите на капли, чтобы раскрыть ответ",
+  "export": "GooThinking",
+  "usage": "<GooThinking label=\"Анализ\" reply=\"Готово\" />",
+  "useCases": [
+    "В прототипе помощника дизайнер нажатием переводит индикатор обработки в короткий демонстрационный ответ.",
+    "В презентации поиска ведущий повторяет переход от надписи «Ищем совпадения» к заранее заданному результату."
+  ],
+  "registryItem": "/r/ru/goo-thinking.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "reply": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Нажмите на капли, чтобы раскрыть ответ",
+  "page": "/ru/components/goo-thinking",
+  "example": "import { GooThinking } from \"@/components/ui/goo-thinking\";\n\nexport default function Example() {\n  return <GooThinking label=\"Анализ\" reply=\"Готово\" />;\n}",
+  "models": {},
+  "behavior": "label задаёт подпись ожидания, reply — текст демонстрируемого ответа. Для ответа из приложения обновите этот проп.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/goo-thinking.tsx"
+  ]
+}

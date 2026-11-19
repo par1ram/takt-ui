@@ -18,7 +18,7 @@ export function GooMorph({
   return (
     <button
       type="button"
-      aria-label="Сменить надпись"
+      title="Сменить надпись"
       className={cn(
         "inline-grid place-items-center overflow-hidden rounded-lg px-3 py-2 text-[40px] leading-tight font-black tracking-[-.07em]",
         className,

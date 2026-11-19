@@ -1,0 +1,53 @@
+{
+  "name": "chat-post",
+  "title": "Chat Post",
+  "category": "Мессенджер",
+  "description": "Одно сообщение с автором, текстом, кодом и ссылкой на материал.",
+  "export": "ChatPostBody",
+  "usage": "<ChatPostBody post={{ id: \"release\", author: \"Sam\", initials: \"S\", time: \"10:00\", text: \"v2.0\" }} />",
+  "useCases": [
+    "В журнале поддержки читатель видит одно сообщение с автором, временем и фрагментом кода, даже если на странице нет редактора ответа.",
+    "В ленте курса преподаватель прикладывает ссылку на методичку. Карточка показывает ресурс под текстом, а приложение добавляет реакции через children."
+  ],
+  "registryItem": "/r/ru/chat-post.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "props": [
+    {
+      "post": {
+        "type": "ChatPost",
+        "required": true
+      },
+      "children": {
+        "type": "ReactNode",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Показать одно сообщение в собственной ленте или обсуждении.",
+  "page": "/ru/components/chat-post",
+  "example": "import { ChatPostBody } from \"@/components/ui/chat-post\";\n\nexport default function Example() {\n  return <ChatPostBody post={{ id: \"release\", author: \"Sam\", initials: \"S\", time: \"10:00\", text: \"v2.0\" }} />;\n}",
+  "models": {
+    "ChatPost": "type ChatPost = {\n  id: string;\n  author: string;\n  initials: string;\n  time: string;\n  text: string;\n  code?: string;\n  resource?: { title: string; detail: string; href: string };\n};"
+  },
+  "behavior": "Передайте post с автором, временем и текстом. Поля code и resource добавляют фрагмент кода и ссылку. Через children можно подставить действия или реакции под сообщением.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/message-reactions.json",
+    "/agents/ru/components/message-thread.json"
+  ],
+  "files": [
+    "components/motion/chat-post.tsx",
+    "components/motion/chat-post.module.css"
+  ]
+}

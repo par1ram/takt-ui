@@ -78,7 +78,7 @@ export async function reviewEnglish(browser, origin, items) {
     const registry = new URL(command[1]);
     assert.equal(registry.pathname, "/r/takt.json");
     assert.ok(fullPrompt.includes(registry.origin + "/llms.txt"));
-    assert.ok(fullPrompt.includes(registry.origin + "/agents/components.json"));
+    assert.ok(fullPrompt.includes(registry.origin + "/agents/search.json"));
     assert.doesNotMatch(await dialog.innerText(), /localhost|127\.0\.0\.1/);
     await page.keyboard.press("Escape");
     await page.locator('a[hreflang="ru"]').click();

@@ -10,7 +10,11 @@
       "category": "Inputs",
       "description": "Invite a teammate by email, validate the address and update the member list.",
       "export": "InvitePeople",
-      "usage": "<InvitePeople />",
+      "usage": "<InvitePeople members={[{ name: \"Sam\", email: \"sam@example.com\" }]} />",
+      "useCases": [
+        "In project settings, an admin enters a designer’s email. The app sends the invitation through onInvite and the form keeps the address if delivery fails.",
+        "When setting up a team, the organizer checks the existing members before inviting the next colleague."
+      ],
       "registryItem": "/r/invite-people.json",
       "dependencies": [
         "lucide-react"
@@ -39,7 +43,11 @@
       "category": "Cards",
       "description": "Silence notifications for the duration of a focus session.",
       "export": "FocusMode",
-      "usage": "<FocusMode />",
+      "usage": "<FocusMode minutes={25} notifications={[{ title: \"Review\", body: \"PR #24\", time: \"10:00\" }]} />",
+      "useCases": [
+        "Before reviewing a mockup, a designer starts a 25-minute session. The notification stack collapses and the timer shows the time left.",
+        "In a learning workspace, a student turns on focus for an exercise. The app uses onChange to pause its own notification popups."
+      ],
       "registryItem": "/r/focus-mode.json",
       "dependencies": [
         "lucide-react"
@@ -72,7 +80,11 @@
       "category": "Cards",
       "description": "Swipe through a stack of art prints to reveal the next poster.",
       "export": "SwipeDeck",
-      "usage": "<SwipeDeck />",
+      "usage": "<SwipeDeck cards={[{ title: \"Orbit\", color: \"#bed5ce\", ink: \"#20312a\" }, { title: \"Fold\", color: \"#dbcfbd\", ink: \"#30271c\" }]} />",
+      "useCases": [
+        "On a portfolio page, a visitor swipes through a poster series one piece at a time.",
+        "When shortlisting covers, an editor swipes a candidate right to keep it. The app records the card and direction from onSwipe."
+      ],
       "registryItem": "/r/swipe-deck.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -99,7 +111,11 @@
       "category": "Cards",
       "description": "An audio player with cover art, seeking, repeat and mute.",
       "export": "GlassPlayer",
-      "usage": "<GlassPlayer />",
+      "usage": "<GlassPlayer src=\"/audio/intro.mp3\" title=\"Introduction\" />",
+      "useCases": [
+        "On a lesson page, a student scrubs back to a phrase they missed in an audio explanation.",
+        "In a music catalog, a buyer loops a track preview to compare its arrangement with another version."
+      ],
       "registryItem": "/r/glass-player.json",
       "dependencies": [
         "lucide-react"
@@ -132,7 +148,11 @@
       "category": "Cards",
       "description": "Explore individual data points and switch reporting periods.",
       "export": "StatCard",
-      "usage": "<StatCard />",
+      "usage": "<StatCard label=\"P95\" daily={[82, 91, 85]} weekly={[88, 84, 82]} />",
+      "useCases": [
+        "On an editorial dashboard, a team member switches page views from daily to weekly to see how readership changed.",
+        "In a support report, a manager selects a chart point to read the ticket count for a specific period."
+      ],
       "registryItem": "/r/stat-card.json",
       "dependencies": [
         "lucide-react",
@@ -167,6 +187,10 @@
       "description": "The button follows your pointer and springs back into place.",
       "export": "MagneticButton",
       "usage": "<MagneticButton onClick={() => console.log(\"click\")}>Open</MagneticButton>",
+      "useCases": [
+        "On a studio homepage, a visitor presses “View portfolio.” The app opens the collection through onClick.",
+        "At the end of a presentation, a “Try the demo” button responds to the approaching pointer and opens the demo when pressed."
+      ],
       "registryItem": "/r/magnetic-button.json",
       "dependencies": [
         "lucide-react"
@@ -197,7 +221,11 @@
       "category": "Cards",
       "description": "Switch billing periods to compare the monthly price, total and savings.",
       "export": "PlanSwitch",
-      "usage": "<PlanSwitch />",
+      "usage": "<PlanSwitch options={[\"Monthly\", \"Yearly\"]} prices={[{ monthly: 20, total: 20 }, { monthly: 15, total: 180 }]} />",
+      "useCases": [
+        "On a pricing page, a buyer compares the monthly price with the annual total before subscribing.",
+        "At renewal, a customer changes the billing period. The app uses the selected index to send the corresponding plan to checkout."
+      ],
       "registryItem": "/r/plan-switch.json",
       "dependencies": [
         "lucide-react"
@@ -231,6 +259,10 @@
       "description": "A compact volume control that remembers the level before muting.",
       "export": "WaveSlider",
       "usage": "<WaveSlider defaultValue={60} onValueChange={console.log} />",
+      "useCases": [
+        "In a player, a listener sets volume on a 0–100 scale. The app converts the percentage to an audio level.",
+        "In an ambient sound editor, the app restores the saved level through value and updates the mix as the user moves the slider."
+      ],
       "registryItem": "/r/wave-slider.json",
       "dependencies": [
         "lucide-react"
@@ -268,6 +300,10 @@
       "description": "Digits roll into place as the count changes.",
       "export": "FlipCounter",
       "usage": "<FlipCounter defaultValue={12} min={0} max={99} />",
+      "useCases": [
+        "When booking a table, a guest adds people up to the table’s seating capacity.",
+        "In a print order, a customer changes the number of copies. The app recalculates the quote from the new count."
+      ],
       "registryItem": "/r/flip-counter.json",
       "dependencies": [
         "lucide-react"
@@ -305,6 +341,10 @@
       "description": "Hold to fill the button and confirm the action.",
       "export": "HoldButton",
       "usage": "<HoldButton duration={800} onConfirm={() => console.log('done')} />",
+      "useCases": [
+        "Before clearing a draft, the author holds the button to confirm. Releasing it early preserves the text.",
+        "At a kiosk, an operator holds the session reset button. The app starts the reset after onConfirm."
+      ],
       "registryItem": "/r/hold-button.json",
       "dependencies": [
         "lucide-react"
@@ -338,6 +378,10 @@
       "description": "The indicator slides under the selected item.",
       "export": "SpringDock",
       "usage": "<SpringDock onChange={(index) => console.log(index)} />",
+      "useCases": [
+        "In a layout editor, a designer picks a tool by its icon. The app maps the button index to a canvas tool.",
+        "In a creator workspace, a bottom dock opens the library, drafts and publications, highlighting the active section."
+      ],
       "registryItem": "/r/spring-dock.json",
       "dependencies": [
         "lucide-react",
@@ -367,7 +411,11 @@
       "category": "Inputs",
       "description": "Drop files into a folder and see their names and sizes.",
       "export": "FileDrop",
-      "usage": "<FileDrop />",
+      "usage": "<FileDrop onFiles={(files) => console.info(files.map(file => file.name))} />",
+      "useCases": [
+        "When opening a support ticket, a customer drops screenshots. The form receives File objects and attaches them when the ticket is submitted.",
+        "In a gallery editor, an author selects images from disk. The app previews the chosen files before upload."
+      ],
       "registryItem": "/r/file-drop.json",
       "dependencies": [
         "lucide-react"
@@ -393,6 +441,10 @@
       "description": "Letters roll into place one by one.",
       "export": "RollingText",
       "usage": "<RollingText words={[\"Welcome\", \"Bonjour\", \"Hello\"]} />",
+      "useCases": [
+        "At an exhibition kiosk, a visitor taps the greeting to read it in the next language.",
+        "In a brand type specimen, a designer cycles through short words with the arrow keys to compare letterforms."
+      ],
       "registryItem": "/r/rolling-text.json",
       "dependencies": [
         "lucide-react",
@@ -419,6 +471,10 @@
       "description": "A spring-loaded switch for on/off settings.",
       "export": "SpringSwitch",
       "usage": "<SpringSwitch label=\"Notifications\" onCheckedChange={console.log} />",
+      "useCases": [
+        "In profile settings, a user enables notifications. The app saves the flag and restores it on the next visit.",
+        "In a layout editor, a user temporarily enables a grid. The local switch tells the canvas when to show its guides."
+      ],
       "registryItem": "/r/spring-switch.json",
       "dependencies": [
         "lucide-react",
@@ -457,6 +513,10 @@
       "description": "Actions fan out around the menu button.",
       "export": "BloomMenu",
       "usage": "<BloomMenu onSelect={(action) => console.log(action)} />",
+      "useCases": [
+        "Beside a selected shape, a designer expands duplicate and delete actions and applies one to that shape.",
+        "On a photo card, an editor opens a compact menu to download the original or copy its link through an app handler."
+      ],
       "registryItem": "/r/bloom-menu.json",
       "dependencies": [
         "lucide-react",
@@ -486,7 +546,11 @@
       "category": "Navigation",
       "description": "Hover or focus with the keyboard",
       "export": "MorphTooltip",
-      "usage": "<MorphTooltip />",
+      "usage": "<MorphTooltip label=\"Article\" onAction={(action) => console.info(action)} />",
+      "useCases": [
+        "In a reading list, a reader opens an article’s actions and bookmarks it for later.",
+        "On a research board, a contributor pins an important reference. The app handles the pin action for that entry."
+      ],
       "registryItem": "/r/morph-tooltip.json",
       "dependencies": [
         "lucide-react"
@@ -519,7 +583,11 @@
       "category": "Buttons",
       "description": "Run the command",
       "export": "CommandButton",
-      "usage": "<CommandButton />",
+      "usage": "<CommandButton label=\"Print\" onExecute={() => window.print()} />",
+      "useCases": [
+        "In an invoice preview, an operator starts printing with one button. The app opens the print dialog in onExecute.",
+        "In a command demo, a developer repeats an operation and sees how many times it was invoked."
+      ],
       "registryItem": "/r/command-button.json",
       "dependencies": [
         "lucide-react"
@@ -548,7 +616,11 @@
       "category": "Buttons",
       "description": "Start the action and wait for the result",
       "export": "LoadingSuccess",
-      "usage": "<LoadingSuccess />",
+      "usage": "<LoadingSuccess onRun={async () => { const response = await fetch(\"/api/status\"); if (!response.ok) throw new Error(\"HTTP \" + response.status); }} />",
+      "useCases": [
+        "In integration settings, an admin tests a connection. The button waits for the server and offers another attempt if the check fails.",
+        "In a report, an analyst starts a sync and sees confirmation once the request completes."
+      ],
       "registryItem": "/r/loading-success.json",
       "dependencies": [
         "lucide-react"
@@ -573,7 +645,11 @@
       "category": "Buttons",
       "description": "Copy the text",
       "export": "CopyButton",
-      "usage": "<CopyButton />",
+      "usage": "<CopyButton text=\"bun run build\" />",
+      "useCases": [
+        "In documentation, a developer copies the entire installation command and pastes it into a terminal.",
+        "On an order page, a customer copies the ticket number for a support email and gets confirmation."
+      ],
       "registryItem": "/r/copy-button.json",
       "dependencies": [
         "lucide-react"
@@ -598,7 +674,11 @@
       "category": "Buttons",
       "description": "Add or remove a like",
       "export": "LikeBurst",
-      "usage": "<LikeBurst />",
+      "usage": "<LikeBurst likes={12} />",
+      "useCases": [
+        "In a community feed, a reader likes a post and immediately sees its count change.",
+        "On an illustration page, a viewer presses again to remove their like. The app saves the new flag through onChange."
+      ],
       "registryItem": "/r/like-burst.json",
       "dependencies": [
         "lucide-react"
@@ -627,7 +707,11 @@
       "category": "Buttons",
       "description": "Slide into the finish zone to confirm. An incomplete swipe returns the handle.",
       "export": "SlideToConfirm",
-      "usage": "<SlideToConfirm />",
+      "usage": "<SlideToConfirm onConfirm={() => window.print()} />",
+      "useCases": [
+        "At a packing station, a worker slides to confirm after inspecting a parcel. The app marks it ready to ship.",
+        "On a mobile terminal, an operator ends a shift with a deliberate slide so a stray tap cannot close the shift."
+      ],
       "registryItem": "/r/slide-to-confirm.json",
       "dependencies": [
         "lucide-react"
@@ -652,7 +736,11 @@
       "category": "Cards",
       "description": "Expand the cart to adjust quantities and see the total.",
       "export": "CartButton",
-      "usage": "<CartButton />",
+      "usage": "<CartButton title=\"Studio Print\" price={32} />",
+      "useCases": [
+        "In a print catalog, a shopper adds the first copy and adjusts the quantity directly on the product card.",
+        "At a merchandise kiosk, a shopper removes an extra item. The app receives the new quantity and updates the order total."
+      ],
       "registryItem": "/r/cart-button.json",
       "dependencies": [
         "lucide-react"
@@ -693,7 +781,11 @@
       "category": "Buttons",
       "description": "Delete the entry and undo the change",
       "export": "UndoButton",
-      "usage": "<UndoButton />",
+      "usage": "<UndoButton label=\"Draft\" onChange={(removed) => console.info({ removed })} />",
+      "useCases": [
+        "In a draft list, an author removes an entry and restores it immediately after spotting a mistaken selection.",
+        "In a reading collection, an editor temporarily excludes an article. The app updates its visibility and supports undo."
+      ],
       "registryItem": "/r/undo-button.json",
       "dependencies": [
         "lucide-react"
@@ -722,7 +814,11 @@
       "category": "Buttons",
       "description": "Toggle notifications",
       "export": "BellButton",
-      "usage": "<BellButton />",
+      "usage": "<BellButton onChange={(enabled) => localStorage.setItem(\"alerts\", String(enabled))} />",
+      "useCases": [
+        "On a project page, a member subscribes to updates and presses again to unsubscribe.",
+        "On a livestream page, a viewer enables a reminder. The app uses the new flag to schedule a notification."
+      ],
       "registryItem": "/r/bell-button.json",
       "dependencies": [
         "lucide-react",
@@ -748,7 +844,11 @@
       "category": "Cards",
       "description": "Try the scan demo",
       "export": "UnlockFaceId",
-      "usage": "<UnlockFaceId />",
+      "usage": "<UnlockFaceId onDemoComplete={() => console.info(\"Demo complete\")} />",
+      "useCases": [
+        "In an interactive prototype, a client tries a simulated scan and sees the unlocked file state.",
+        "In a protected vault UI, a user starts verification. The app runs its authentication mechanism and passes the result through status."
+      ],
       "registryItem": "/r/unlock-face-id.json",
       "dependencies": [
         "lucide-react",
@@ -782,7 +882,11 @@
       "category": "Inputs",
       "description": "Open the list and choose a status",
       "export": "SpringDropdown",
-      "usage": "<SpringDropdown />",
+      "usage": "<SpringDropdown options={[\"PNG\", \"WebP\", \"SVG\"]} />",
+      "useCases": [
+        "In an illustration editor, an author selects a file format from a short list before exporting.",
+        "In an order list, a manager selects a sort order. The app receives the chosen option and reorders the list."
+      ],
       "registryItem": "/r/spring-dropdown.json",
       "dependencies": [
         "lucide-react"
@@ -811,7 +915,11 @@
       "category": "Cards",
       "description": "A compact panel for a timer, an export and an incoming call.",
       "export": "MorphIsland",
-      "usage": "<MorphIsland />",
+      "usage": "<MorphIsland title=\"Studio\" onCall={(accepted) => console.info({ accepted })} />",
+      "useCases": [
+        "In an incoming-call prototype, a user accepts or declines a call. The app receives the decision through onCall.",
+        "In a mobile UI presentation, a designer cycles through the built-in activities to show a timer and operation progress in one compact panel."
+      ],
       "registryItem": "/r/morph-island.json",
       "dependencies": [
         "lucide-react",
@@ -841,7 +949,11 @@
       "category": "Navigation",
       "description": "Switch tabs",
       "export": "TabPill",
-      "usage": "<TabPill />",
+      "usage": "<TabPill options={[\"API\", \"CLI\"]} panels={[\"POST /messages\", \"bun run build\"]} />",
+      "useCases": [
+        "In a setup guide, a developer switches between API and CLI tabs to read the relevant snippet.",
+        "In a material description, a shopper opens care instructions beside the specifications without leaving the product page."
+      ],
       "registryItem": "/r/tab-pill.json",
       "dependencies": [
         "motion"
@@ -874,7 +986,11 @@
       "category": "Navigation",
       "description": "Choose a period",
       "export": "SegmentedControl",
-      "usage": "<SegmentedControl />",
+      "usage": "<SegmentedControl options={[\"p50\", \"p95\", \"p99\"]} />",
+      "useCases": [
+        "In a performance report, an analyst switches between p50 and p95. The app supplies the series for the selected metric.",
+        "In a file manager, a user chooses a grid or list. The app changes how it displays the same files."
+      ],
       "registryItem": "/r/segmented-control.json",
       "dependencies": [
         "motion"
@@ -903,7 +1019,11 @@
       "category": "Navigation",
       "description": "Move across the icons",
       "export": "RubberDock",
-      "usage": "<RubberDock />",
+      "usage": "<RubberDock onSelect={(index) => console.info({ index })} />",
+      "useCases": [
+        "In a workspace shell, a user moves from Files to Calendar using the built-in four-section dock.",
+        "In a mobile desktop prototype, a designer moves across the dock, previews its labels and selects Photos."
+      ],
       "registryItem": "/r/rubber-dock.json",
       "dependencies": [
         "lucide-react"
@@ -928,7 +1048,11 @@
       "category": "Navigation",
       "description": "Open the menu and explore a submenu",
       "export": "DynamicMenu",
-      "usage": "<DynamicMenu />",
+      "usage": "<DynamicMenu formats={[\"PNG\", \"WebP\"]} />",
+      "useCases": [
+        "In a diagram editor, an author opens the export submenu and selects SVG. The app starts the corresponding exporter.",
+        "In a report builder, an analyst opens the format list, goes back a level and revisits the export choice."
+      ],
       "registryItem": "/r/dynamic-menu.json",
       "dependencies": [
         "lucide-react"
@@ -957,7 +1081,11 @@
       "category": "Navigation",
       "description": "A studio sidebar that switches between workspaces.",
       "export": "SidebarCollapse",
-      "usage": "<SidebarCollapse />",
+      "usage": "<SidebarCollapse items={[\"Projects\", \"Team\"]} />",
+      "useCases": [
+        "In a design workspace, a designer collapses navigation to make room for the canvas while retaining access to both sections.",
+        "In a studio workspace, a teammate selects Projects or Collections. The app switches content using the section index."
+      ],
       "registryItem": "/r/sidebar-collapse.json",
       "dependencies": [
         "lucide-react"
@@ -986,7 +1114,11 @@
       "category": "Navigation",
       "description": "Go to another page",
       "export": "PaginationDots",
-      "usage": "<PaginationDots />",
+      "usage": "<PaginationDots pages={5} />",
+      "useCases": [
+        "In a product gallery, a shopper jumps to a particular photo using the dots below the image.",
+        "In an onboarding tour, a user jumps to the last screen with the keyboard. The app displays the slide at the selected index."
+      ],
       "registryItem": "/r/pagination-dots.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -1013,7 +1145,11 @@
       "category": "Navigation",
       "description": "Find and run a command",
       "export": "CommandPalette",
-      "usage": "<CommandPalette />",
+      "usage": "<CommandPalette commands={[\"Print\"]} onExecute={() => window.print()} />",
+      "useCases": [
+        "In an editor, a user types part of a command name and runs the matching action with Enter.",
+        "In an admin console, an operator finds the command for opening the ticket queue. The app maps the selected command to its route."
+      ],
       "registryItem": "/r/command-palette.json",
       "dependencies": [
         "lucide-react"
@@ -1042,7 +1178,11 @@
       "category": "Navigation",
       "description": "Move to the next step",
       "export": "StepProgress",
-      "usage": "<StepProgress />",
+      "usage": "<StepProgress steps={[\"Draft\", \"Review\", \"Done\"]} />",
+      "useCases": [
+        "In an application form, a customer moves through contact details, options and review. The app shows the fields for the selected step.",
+        "In a setup wizard, an admin returns to a numbered step to correct settings before finishing."
+      ],
       "registryItem": "/r/step-progress.json",
       "dependencies": [
         "lucide-react"
@@ -1071,7 +1211,11 @@
       "category": "Navigation",
       "description": "Toggle text formatting",
       "export": "Toolbar",
-      "usage": "<Toolbar />",
+      "usage": "<Toolbar text=\"Editor note\" />",
+      "useCases": [
+        "In a note editor, an author turns on bold and italic and immediately sees the combination in a text sample.",
+        "In a template builder, a designer removes one style. The app receives the remaining styles for the selected label."
+      ],
       "registryItem": "/r/toolbar.json",
       "dependencies": [
         "lucide-react"
@@ -1100,7 +1244,11 @@
       "category": "Buttons",
       "description": "Open the feedback button to leave a comment",
       "export": "MorphPopover",
-      "usage": "<MorphPopover />",
+      "usage": "<MorphPopover title=\"Feedback\" onSubmit={text => localStorage.setItem(\"feedback\", text)} />",
+      "useCases": [
+        "A reader spots an error in the docs and sends feedback from a small form beside the article.",
+        "During a mockup review, a designer leaves a short comment. If the service is unavailable, they retry from the same form."
+      ],
       "registryItem": "/r/morph-popover.json",
       "dependencies": [
         "lucide-react",
@@ -1134,7 +1282,11 @@
       "category": "Inputs",
       "description": "Type until you reach the character limit",
       "export": "LetterLimit",
-      "usage": "<LetterLimit />",
+      "usage": "<LetterLimit label=\"Bio\" limit={160} />",
+      "useCases": [
+        "On a profile page, an author trims their bio to the platform limit and sees how much space it uses.",
+        "When writing a short caption, an editor pastes text containing emoji. The field enforces the limit without splitting combined characters."
+      ],
       "registryItem": "/r/letter-limit.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -1165,7 +1317,11 @@
       "category": "Inputs",
       "description": "Focus the field and start typing",
       "export": "SpringyInput",
-      "usage": "<SpringyInput />",
+      "usage": "<SpringyInput placeholder=\"Search project\" onSubmit={query => location.assign(\"/search?q=\" + encodeURIComponent(query))} />",
+      "useCases": [
+        "In a knowledge base, a teammate enters a question and submits it with Enter. The app opens the results page.",
+        "In a swatch catalog, a designer types part of a name. The app uses onChange to filter swatches as they type."
+      ],
       "registryItem": "/r/springy-input.json",
       "dependencies": [
         "lucide-react"
@@ -1198,7 +1354,11 @@
       "category": "Inputs",
       "description": "Enter or paste a numeric code",
       "export": "OtpCode",
-      "usage": "<OtpCode />",
+      "usage": "<OtpCode length={6} />",
+      "useCases": [
+        "At sign-in, a user pastes a one-time code from a message. The app submits the complete code for verification, including leading zeros.",
+        "When confirming a new email, a user enters four digits. The app sets the field length to match its verification code."
+      ],
       "registryItem": "/r/otp-code.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -1225,7 +1385,11 @@
       "category": "Inputs",
       "description": "Rate from one to five stars",
       "export": "StarRating",
-      "usage": "<StarRating />",
+      "usage": "<StarRating onChange={stars => localStorage.setItem(\"rating\", String(stars))} />",
+      "useCases": [
+        "After a class, a student rates the lesson. The app records the selected number of stars against that lesson.",
+        "In a prototype gallery, a participant rates each design. The app collects the scores for comparison."
+      ],
       "registryItem": "/r/star-rating.json",
       "dependencies": [
         "lucide-react"
@@ -1250,7 +1414,11 @@
       "category": "Inputs",
       "description": "Type a tag and press Enter",
       "export": "TagInput",
-      "usage": "<TagInput />",
+      "usage": "<TagInput initial={[\"design\", \"review\"]} />",
+      "useCases": [
+        "Before publishing an article, an editor adds topics, removes an accidental tag and saves the resulting list.",
+        "In a media library, a teammate opens an asset’s existing keywords and adds more so it is easier to find later."
+      ],
       "registryItem": "/r/tag-input.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -1277,7 +1445,11 @@
       "category": "Inputs",
       "description": "Watch the strength indicator as you type",
       "export": "PasswordStrength",
-      "usage": "<PasswordStrength />",
+      "usage": "<PasswordStrength onChange={password => console.info({ length: password.length })} />",
+      "useCases": [
+        "At signup, a user watches the local strength estimate change as they type a new password.",
+        "In a password change form, a user improves the candidate before submitting. The app applies its own policy when saving."
+      ],
       "registryItem": "/r/password-strength.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -1300,7 +1472,11 @@
       "category": "Inputs",
       "description": "Check off completed items",
       "export": "CheckboxList",
-      "usage": "<CheckboxList />",
+      "usage": "<CheckboxList items={[\"Lint\", \"Build\", \"Review\"]} />",
+      "useCases": [
+        "When exporting a report, an analyst selects the sections to include. The app builds the file from those choices.",
+        "In newsletter settings, a subscriber selects topics of interest and saves several preferences at once."
+      ],
       "registryItem": "/r/checkbox-list.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -1327,7 +1503,11 @@
       "category": "Inputs",
       "description": "Drag the elastic handle",
       "export": "JellySlider",
-      "usage": "<JellySlider />",
+      "usage": "<JellySlider label=\"Volume\" />",
+      "useCases": [
+        "In a sticker editor, a designer moves an opacity slider. The app applies the selected percentage to the sticker.",
+        "In a motion demo, a visitor adjusts an effect’s intensity and sees the numeric value beside the slider."
+      ],
       "registryItem": "/r/jelly-slider.json",
       "dependencies": [
         "motion"
@@ -1356,7 +1536,11 @@
       "category": "Inputs",
       "description": "Turn the dial with the arrow keys or a swipe",
       "export": "DetentDial",
-      "usage": "<DetentDial />",
+      "usage": "<DetentDial label=\"Brightness\" />",
+      "useCases": [
+        "On a synthesizer panel, a musician turns a dial to select one of eleven effect levels.",
+        "In a lamp prototype, a designer selects a brightness step. The app maps the 0–10 position to a light output level."
+      ],
       "registryItem": "/r/detent-dial.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -1383,7 +1567,11 @@
       "category": "Inputs",
       "description": "Adjust photo brightness in EV and restore the original exposure.",
       "export": "ExposureSlider",
-      "usage": "<ExposureSlider />",
+      "usage": "<ExposureSlider image=\"/photos/portrait.jpg\" />",
+      "useCases": [
+        "A photographer adjusts portrait exposure and compares the preview with the original before saving.",
+        "In a photography lesson, a learner tries negative and positive exposure adjustments on one frame, then resets to zero."
+      ],
       "registryItem": "/r/exposure-slider.json",
       "dependencies": [
         "lucide-react"
@@ -1412,7 +1600,11 @@
       "category": "Inputs",
       "description": "Scroll to a value",
       "export": "WheelPicker",
-      "usage": "<WheelPicker />",
+      "usage": "<WheelPicker label=\"UTC\" items={[\"UTC−1\", \"UTC\", \"UTC+1\"]} />",
+      "useCases": [
+        "When setting up a profile, a user scrolls through time zones and saves their selection.",
+        "In a mobile timer, a user selects a duration from preset intervals. The app maps the selection to a timer value."
+      ],
       "registryItem": "/r/wheel-picker.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -1443,7 +1635,11 @@
       "category": "Inputs",
       "description": "Scrub the timeline",
       "export": "Scrubber",
-      "usage": "<Scrubber />",
+      "usage": "<Scrubber frames={24} />",
+      "useCases": [
+        "In an animation preview, a designer scrubs to an individual frame to inspect an object’s position.",
+        "When reviewing an experiment recording, a researcher selects a sample number. The app displays the data for that position."
+      ],
       "registryItem": "/r/scrubber.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -1470,7 +1666,11 @@
       "category": "Cards",
       "description": "Confirm a payment, watch the thermal receipt print and print another copy.",
       "export": "ReceiptPrinter",
-      "usage": "<ReceiptPrinter />",
+      "usage": "<ReceiptPrinter merchant=\"Studio\" order={{ id: \"S-12\", description: \"Print\", amount: 32, currency: \"EUR\" }} />",
+      "useCases": [
+        "After checkout, a shop shows a receipt with the order ID returned by its server. The buyer can print that confirmed receipt again.",
+        "In a point-of-sale prototype, a designer runs a demo purchase and shows the receipt without connecting a payment service."
+      ],
       "registryItem": "/r/receipt-printer.json",
       "dependencies": [
         "lucide-react",
@@ -1504,7 +1704,11 @@
       "category": "Inputs",
       "description": "Try the test card",
       "export": "CardField",
-      "usage": "<CardField />",
+      "usage": "<CardField mode=\"demo\" />",
+      "useCases": [
+        "In a checkout prototype, a tester selects the built-in test card and resets it for the next run.",
+        "In a live checkout, a customer fills in Stripe Elements over HTTPS. The app uses onCompleteChange to decide when to offer payment confirmation."
+      ],
       "registryItem": "/r/card-field.json",
       "dependencies": [
         "lucide-react",
@@ -1549,7 +1753,11 @@
       "category": "Inputs",
       "description": "Draw a signature and save it",
       "export": "SignaturePad",
-      "usage": "<SignaturePad />",
+      "usage": "<SignaturePad onSave={png => { const link = document.createElement(\"a\"); link.download = \"signature.png\"; link.href = png; link.click(); }} />",
+      "useCases": [
+        "At equipment pickup, the recipient signs with a finger. The app attaches the resulting PNG to the pickup record.",
+        "In a greeting card editor, an author adds a handwritten autograph, undoes a stray stroke and saves the drawing."
+      ],
       "registryItem": "/r/signature-pad.json",
       "dependencies": [
         "lucide-react"
@@ -1574,7 +1782,11 @@
       "category": "Cards",
       "description": "Move the pointer to tilt the ticket",
       "export": "ParallaxTicket",
-      "usage": "<ParallaxTicket />",
+      "usage": "<ParallaxTicket title=\"Studio Night\" date=\"2027-04-17\" />",
+      "useCases": [
+        "On a concert page, a visitor explores the ticket artwork and flips it over to see the date.",
+        "In an identity design portfolio, a designer presents a pass mockup with custom artwork, an event name and a date."
+      ],
       "registryItem": "/r/parallax-ticket.json",
       "dependencies": [
         "lucide-react",
@@ -1608,7 +1820,11 @@
       "category": "Cards",
       "description": "Move the lens over the artwork",
       "export": "GlassLens",
-      "usage": "<GlassLens />",
+      "usage": "<GlassLens label=\"Orbit\" image=\"/photos/orbit.jpg\" />",
+      "useCases": [
+        "On a fabric product page, a shopper moves the lens over a photo to inspect the weave.",
+        "During a design review, a designer magnifies a screenshot detail and moves the lens with the arrow keys."
+      ],
       "registryItem": "/r/glass-lens.json",
       "dependencies": [
         "lucide-react"
@@ -1637,7 +1853,11 @@
       "category": "Cards",
       "description": "Pull down to sync a file. A short pull cancels the gesture.",
       "export": "PullRefresh",
-      "usage": "<PullRefresh />",
+      "usage": "<PullRefresh onRefresh={async () => { const result = await fetch(\"/api/status\", { cache: \"no-store\" }); if (!result.ok) throw new Error(\"Refresh failed\"); }} />",
+      "useCases": [
+        "In a mobile recent-files panel, a teammate pulls down to refresh. The app requests fresh data in onRefresh.",
+        "After a connection drops, a user retries the sync with the button and reads its status to see whether the request completed."
+      ],
       "registryItem": "/r/pull-refresh.json",
       "dependencies": [
         "lucide-react"
@@ -1662,7 +1882,11 @@
       "category": "Cards",
       "description": "Select a collection to reveal its cover and details",
       "export": "ExpandCard",
-      "usage": "<ExpandCard />",
+      "usage": "<ExpandCard title=\"Studio\" body=\"Workshop schedule\" />",
+      "useCases": [
+        "In a collection list, a shopper opens a card, reads the details and returns to the overview.",
+        "In a workshop listing, an organizer puts the full session description behind a compact cover that visitors can expand."
+      ],
       "registryItem": "/r/expand-card.json",
       "dependencies": [
         "lucide-react",
@@ -1700,7 +1924,11 @@
       "category": "Cards",
       "description": "Fan out the deck and lift the card under your pointer.",
       "export": "FanCards",
-      "usage": "<FanCards />",
+      "usage": "<FanCards cards={[\"Orbit\", \"Fold\", \"Glass\"]} />",
+      "useCases": [
+        "In an illustrator’s portfolio, a visitor fans out labeled cards to see which works belong to a series.",
+        "In a card-game demo, a player fans out their hand and moves the pointer across it to lift an individual card."
+      ],
       "registryItem": "/r/fan-cards.json",
       "dependencies": [
         "motion"
@@ -1725,7 +1953,11 @@
       "category": "Cards",
       "description": "Follow the profile to see the count and actions change",
       "export": "ProfileCard",
-      "usage": "<ProfileCard />",
+      "usage": "<ProfileCard name=\"Sam Lee\" role=\"Designer\" />",
+      "useCases": [
+        "In a mentor directory, a student opens a conversation with a particular mentor. The app receives the name through onMessage.",
+        "In a community, a reader follows an author from their profile card. The app persists the follow state."
+      ],
       "registryItem": "/r/profile-card.json",
       "dependencies": [
         "lucide-react",
@@ -1763,7 +1995,11 @@
       "category": "Cards",
       "description": "A boarding pass with route, gate and an expandable barcode.",
       "export": "BoardingPass",
-      "usage": "<BoardingPass />",
+      "usage": "<BoardingPass from=\"LIS\" to=\"AMS\" flight=\"TK 204\" seat=\"12A\" />",
+      "useCases": [
+        "On a trip screen, a passenger expands the boarding pass to check their seat, gate and boarding time.",
+        "In a connecting itinerary, the app shows a separate pass for each flight so the traveler can distinguish the legs of the trip."
+      ],
       "registryItem": "/r/boarding-pass.json",
       "dependencies": [
         "lucide-react"
@@ -1808,7 +2044,11 @@
       "category": "Cards",
       "description": "Expand the stack or swipe a notification away",
       "export": "NotificationStack",
-      "usage": "<NotificationStack />",
+      "usage": "<NotificationStack notifications={[{ id: \"build-24\", title: \"Build finished\", time: \"10:00\" }]} />",
+      "useCases": [
+        "On a team dashboard, a teammate reviews stacked build notifications and dismisses the ones they have read.",
+        "In an activity center, the app updates notifications with stable IDs while the user works through the remaining cards."
+      ],
       "registryItem": "/r/notification-stack.json",
       "dependencies": [
         "lucide-react",
@@ -1842,7 +2082,11 @@
       "category": "Cards",
       "description": "Turn a double-sided page around its spine.",
       "export": "PageFlip",
-      "usage": "<PageFlip />",
+      "usage": "<PageFlip pages={[\"Introduction\", \"API\", \"CLI\"]} />",
+      "useCases": [
+        "In a digital booklet, a visitor flips through short chapter captions like pages in a printed edition.",
+        "In a visual concept presentation, a designer shows one idea per spread and moves in either direction with the arrow keys."
+      ],
       "registryItem": "/r/page-flip.json",
       "dependencies": [
         "motion"
@@ -1867,7 +2111,11 @@
       "category": "Navigation",
       "description": "Open a project and swipe right to go back",
       "export": "StackPanel",
-      "usage": "<StackPanel />",
+      "usage": "<StackPanel title=\"Settings\" items={[\"API\", \"CLI\"]} renderPanel={name => <p>{name}</p>} />",
+      "useCases": [
+        "In compact settings, a user moves from the root menu into notification preferences and then goes back one level.",
+        "In product help, a reader picks a topic. The app displays the associated content in the same panel through renderPanel."
+      ],
       "registryItem": "/r/stack-panel.json",
       "dependencies": [
         "lucide-react",
@@ -1909,7 +2157,11 @@
       "category": "Text",
       "description": "Move across the letters or tap",
       "export": "WeightWave",
-      "usage": "<WeightWave />",
+      "usage": "<WeightWave text=\"Takt Studio\" />",
+      "useCases": [
+        "On a type studio’s page, a visitor moves across a word to see how the weight of nearby letters changes.",
+        "In an interactive wordmark specimen, a designer moves the emphasis across letters with the keyboard to inspect each shape."
+      ],
       "registryItem": "/r/weight-wave.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -1932,7 +2184,11 @@
       "category": "Text",
       "description": "Switch the liquid lettering",
       "export": "GooMorph",
-      "usage": "<GooMorph />",
+      "usage": "<GooMorph words={[\"Design\", \"Build\", \"Ship\"]} />",
+      "useCases": [
+        "In a brand presentation, a viewer taps a keyword to reveal the next principle in the series.",
+        "In a motion showcase, a designer supplies their own words to compare transitions between short and long names."
+      ],
       "registryItem": "/r/goo-morph.json",
       "dependencies": [
         "motion"
@@ -1957,7 +2213,11 @@
       "category": "Text",
       "description": "Reveal the scrambled text",
       "export": "ScrambleText",
-      "usage": "<ScrambleText />",
+      "usage": "<ScrambleText text=\"STUDIO\" />",
+      "useCases": [
+        "On a game promo page, a visitor triggers a decoding effect that reveals the mission name.",
+        "In a release presentation, the presenter reveals the version’s codename as an animated label."
+      ],
       "registryItem": "/r/scramble-text.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -1980,7 +2240,11 @@
       "category": "Text",
       "description": "Words light up at reading speed. Pause or step through them individually.",
       "export": "ReadAlong",
-      "usage": "<ReadAlong />",
+      "usage": "<ReadAlong text=\"Follow the highlighted text\" interval={300} />",
+      "useCases": [
+        "In a language lesson, a learner starts word-by-word highlighting and pauses at a difficult phrase.",
+        "When rehearsing a short speech, a speaker selects a word midway through the text and resumes at the chosen pace."
+      ],
       "registryItem": "/r/read-along.json",
       "dependencies": [
         "lucide-react",
@@ -2010,7 +2274,11 @@
       "category": "Text",
       "description": "Hover or focus the link",
       "export": "RollLinks",
-      "usage": "<RollLinks />",
+      "usage": "<RollLinks label=\"Documentation\" href=\"/docs\" />",
+      "useCases": [
+        "In portfolio navigation, a visitor sees a hover response on a section name and follows its link.",
+        "At the end of an article, a reader focuses the documentation link with the keyboard and opens it without a mouse."
+      ],
       "registryItem": "/r/roll-links.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -2037,7 +2305,11 @@
       "category": "Text",
       "description": "Highlight the phrase",
       "export": "MarkerText",
-      "usage": "<MarkerText />",
+      "usage": "<MarkerText text=\"New release\" />",
+      "useCases": [
+        "In lecture notes, an instructor taps a short quotation to highlight it during an explanation.",
+        "During a presentation, an editor highlights a key point and clears the mark before showing it again."
+      ],
       "registryItem": "/r/marker-text.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -2060,7 +2332,11 @@
       "category": "Text",
       "description": "Change the word in the headline",
       "export": "DynamicText",
-      "usage": "<DynamicText />",
+      "usage": "<DynamicText prefix=\"Takt\" words={[\"Studio\", \"Motion\"]} />",
+      "useCases": [
+        "In a product-family heading, the brand name stays fixed while a visitor taps through the product names.",
+        "In a classroom example, a student changes the ending of a short phrase to explore combinations with a fixed opening."
+      ],
       "registryItem": "/r/dynamic-text.json",
       "dependencies": [
         "motion"
@@ -2089,7 +2365,11 @@
       "category": "Text",
       "description": "Start typing the text",
       "export": "Typewriter",
-      "usage": "<Typewriter />",
+      "usage": "<Typewriter text=\"Hello, Takt.\" interval={70} />",
+      "useCases": [
+        "In a terminal demo, a reader starts the character-by-character reveal of a prepared command.",
+        "On a game introduction screen, the author chooses a slow reveal so the player can read a line as dialogue."
+      ],
       "registryItem": "/r/typewriter.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -2116,7 +2396,11 @@
       "category": "Buttons",
       "description": "Toggle the equalizer animation",
       "export": "MusicToggle",
-      "usage": "<MusicToggle />",
+      "usage": "<MusicToggle onChange={enabled => localStorage.setItem(\"music\", String(enabled))} />",
+      "useCases": [
+        "On an exhibition site, a visitor enables background music. The app starts the track when the toggle changes.",
+        "In an interactive story, a reader turns off the soundtrack and continues reading in silence."
+      ],
       "registryItem": "/r/music-toggle.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -2139,7 +2423,11 @@
       "category": "AI",
       "description": "Enter a prompt and send it",
       "export": "PromptBox",
-      "usage": "<PromptBox />",
+      "usage": "<PromptBox suggestions={[\"Explain this example\"]} onSend={text => localStorage.setItem(\"last-prompt\", text)} />",
+      "useCases": [
+        "On an assistant’s empty screen, an analyst picks “Summarize the report,” refines the prompt and submits it.",
+        "In a writing assistant, an author enters a custom request. The app returns its request promise so the form shows progress and allows a retry on failure."
+      ],
       "registryItem": "/r/prompt-box.json",
       "dependencies": [
         "lucide-react"
@@ -2168,7 +2456,11 @@
       "category": "AI",
       "description": "Reveal the reply in chunks",
       "export": "StreamingReply",
-      "usage": "<StreamingReply />",
+      "usage": "<StreamingReply text=\"The draft reply is ready.\" />",
+      "useCases": [
+        "In a chatbot demo, a visitor starts the gradual reveal of a prepared reply and watches the words appear.",
+        "In a worked example, a learner reads an explanation in stages. The app supplies the completed text for playback."
+      ],
       "registryItem": "/r/streaming-reply.json",
       "dependencies": [
         "motion"
@@ -2193,7 +2485,11 @@
       "category": "AI",
       "description": "Start typing and accept the suggestion with the right arrow",
       "export": "GhostSuggestion",
-      "usage": "<GhostSuggestion />",
+      "usage": "<GhostSuggestion options={[\"Amsterdam\", \"Athens\", \"Lisbon\"]} />",
+      "useCases": [
+        "In a travel form, a user starts typing a city and completes its name from a matching suggestion.",
+        "In a command field, a developer enters the prefix of a known command. The app supplies the vocabulary used for inline completion."
+      ],
       "registryItem": "/r/ghost-suggestion.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -2220,7 +2516,11 @@
       "category": "AI",
       "description": "Tap the dots to reveal the answer",
       "export": "GooThinking",
-      "usage": "<GooThinking />",
+      "usage": "<GooThinking label=\"Analysis\" reply=\"Ready\" />",
+      "useCases": [
+        "In an assistant prototype, a designer taps the processing indicator to reveal a short sample reply.",
+        "In a search presentation, a presenter replays the transition from “Finding matches” to a prepared result."
+      ],
       "registryItem": "/r/goo-thinking.json",
       "dependencies": [
         "lucide-react",
@@ -2251,6 +2551,10 @@
       "description": "Switch assistant states",
       "export": "AssistantOrb",
       "usage": "<AssistantOrb state=\"thinking\" />",
+      "useCases": [
+        "In a voice assistant, the user sees when the app is listening, processing or speaking. The app passes the current state to AssistantOrb.",
+        "On a recording screen, the app supplies normalized microphone amplitude so the orb reacts to voice volume."
+      ],
       "registryItem": "/r/siri-orb.json",
       "dependencies": [
         "lucide-react"
@@ -2291,7 +2595,11 @@
       "category": "AI",
       "description": "Walk through the agent’s steps",
       "export": "AgentSteps",
-      "usage": "<AgentSteps />",
+      "usage": "<AgentSteps steps={[\"Read\", \"Verify\", \"Save\"]} />",
+      "useCases": [
+        "In a training demo, a user advances an agent from reading a file to preparing a result and sees how many steps are complete.",
+        "During a presentation, the presenter advances each step with a button. The app uses onStep to display that step’s artifact alongside it."
+      ],
       "registryItem": "/r/agent-steps.json",
       "dependencies": [
         "lucide-react"
@@ -2320,7 +2628,11 @@
       "category": "AI",
       "description": "Approve or decline the action",
       "export": "ToolApproval",
-      "usage": "<ToolApproval />",
+      "usage": "<ToolApproval action=\"Run build\" resource=\"package.json\" onDecision={allowed => console.info({ allowed })} />",
+      "useCases": [
+        "Before creating an event, an assistant shows the calendar and proposed action. The user approves or declines, and the app handles the decision.",
+        "In a workspace, an agent proposes changing a specific file. The editor checks the resource name before approving the write."
+      ],
       "registryItem": "/r/tool-approval.json",
       "dependencies": [
         "lucide-react"
@@ -2353,7 +2665,11 @@
       "category": "AI",
       "description": "Start the thinking indicator",
       "export": "ThinkingText",
-      "usage": "<ThinkingText />",
+      "usage": "<ThinkingText label=\"Loading context\" />",
+      "useCases": [
+        "While an assistant gathers document context, the reader sees a short status beside the reply area.",
+        "On a report page, the app displays “Processing rows” while a background calculation runs, then replaces it with the result."
+      ],
       "registryItem": "/r/thinking-text.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -2376,7 +2692,11 @@
       "category": "AI",
       "description": "Work through the task queue",
       "export": "TaskList",
-      "usage": "<TaskList />",
+      "usage": "<TaskList tasks={[\"Lint\", \"Build\", \"Deploy\"]} />",
+      "useCases": [
+        "Before a release, a teammate checks off completed reviews and sees how many items remain.",
+        "In a lab workbook, a student checks off finished tasks. The app saves the completed task names through onChange."
+      ],
       "registryItem": "/r/task-list.json",
       "dependencies": [
         "lucide-react"
@@ -2405,7 +2725,11 @@
       "category": "AI",
       "description": "Record and play a voice note",
       "export": "VoiceInput",
-      "usage": "<VoiceInput />",
+      "usage": "<VoiceInput onRecord={blob => console.info(blob.type, blob.size)} />",
+      "useCases": [
+        "In a discussion, a user records a voice comment and stops recording. The app attaches the resulting audio file to the message.",
+        "In a notes form, an author dictates an idea. The app sends the Blob from onRecord to its transcription service."
+      ],
       "registryItem": "/r/voice-input.json",
       "dependencies": [
         "lucide-react",
@@ -2432,6 +2756,10 @@
       "description": "Hold to fill the publish button. A checkmark appears when it completes.",
       "export": "HoldToPublish",
       "usage": "<HoldToPublish onPublish={() => console.log('published')} />",
+      "useCases": [
+        "Before releasing an article, an editor holds the publish button. The app submits the piece to the CMS after the hold completes.",
+        "In a teaching workspace, an author starts publishing a lesson, spots a mistake and releases the button before confirming."
+      ],
       "registryItem": "/r/hold-to-publish.json",
       "dependencies": [
         "lucide-react",
@@ -2465,7 +2793,11 @@
       "category": "Buttons",
       "description": "Click or press ⌘/Ctrl + K to expand the search field.",
       "export": "CommandSearch",
-      "usage": "<CommandSearch onSearch={console.log} />",
+      "usage": "<CommandSearch onSearch={query => location.assign(\"/search?q=\" + encodeURIComponent(query))} />",
+      "useCases": [
+        "In a documentation hub, a developer presses Ctrl/⌘+K, enters a phrase and opens the results page through the app handler.",
+        "In a compact project toolbar, a user expands a button into a field and searches for a file using free text."
+      ],
       "registryItem": "/r/command-search.json",
       "dependencies": [
         "lucide-react",
@@ -2504,6 +2836,10 @@
       "description": "Swipe horizontally to move between panels and update the active tab.",
       "export": "SwipeTabs",
       "usage": "<SwipeTabs onChange={console.log} />",
+      "useCases": [
+        "On a mobile product page, a shopper swipes between the description, specifications and reviews.",
+        "In a course workspace, a student opens a link to the practice tab. The app sets the active ID and updates the URL on subsequent changes."
+      ],
       "registryItem": "/r/swipe-tabs.json",
       "dependencies": [],
       "registryDependencies": [],
@@ -2542,7 +2878,11 @@
       "category": "Learning",
       "description": "Browse lessons and resume a course.",
       "export": "LessonOutline",
-      "usage": "<LessonOutline />",
+      "usage": "<LessonOutline title=\"React\" currentId=\"state\" items={[{ id: \"state\", title: \"State\", href: \"/lessons/state\" }]} />",
+      "useCases": [
+        "Returning to a course, a student sees the current lesson in the outline and resumes it with the continue button.",
+        "Before a class, a participant reviews the topic sequence and follows the link to a particular lesson."
+      ],
       "registryItem": "/r/lesson-outline.json",
       "dependencies": [
         "lucide-react"
@@ -2579,7 +2919,11 @@
       "category": "Learning",
       "description": "Edit an exercise, run a sample and investigate a failing test.",
       "export": "CodeExercise",
-      "usage": "<CodeExercise />",
+      "usage": "<CodeExercise draftKey=\"lesson:ids:v1\" initialSource=\"^UI-[0-9]+$\" tests={[{ input: \"UI-23\", expected: true }]} />",
+      "useCases": [
+        "In a regex lesson, a student edits a pattern, checks it against sample strings and inspects mismatches.",
+        "In a lab, a student returns to an unfinished exercise. The app assigns each exercise its own draftKey so the right draft is restored."
+      ],
       "registryItem": "/r/code-exercise.json",
       "dependencies": [
         "lucide-react"
@@ -2636,7 +2980,11 @@
       "category": "Learning",
       "description": "Follow compilation and execution, inspect output and stop a run.",
       "export": "RunConsole",
-      "usage": "<RunConsole />",
+      "usage": "<RunConsole state={{ phase: \"done\", output: \"OK\", duration: 120 }} />",
+      "useCases": [
+        "During an exercise run, a student sees the execution phase, output and duration reported by the runner.",
+        "When a run stalls or fails, a student requests a stop or jumps to the offending line through the editor’s handler."
+      ],
       "registryItem": "/r/run-console.json",
       "dependencies": [
         "lucide-react"
@@ -2669,7 +3017,11 @@
       "category": "Learning",
       "description": "Inspect the input, expected value and actual result of each test.",
       "export": "TestResults",
-      "usage": "<TestResults />",
+      "usage": "<TestResults results={[{ input: \"UI-23\", expected: true, actual: false }]} />",
+      "useCases": [
+        "After checking a solution, a student selects a failing case and compares its input, expected value and actual result.",
+        "During review, a student asks about a particular mismatch. The app sends the selected case to a tutor through onAsk."
+      ],
       "registryItem": "/r/test-results.json",
       "dependencies": [
         "lucide-react"
@@ -2698,7 +3050,11 @@
       "category": "Learning",
       "description": "Ask about a lesson or failing test with selected context.",
       "export": "AskTutor",
-      "usage": "<AskTutor />",
+      "usage": "<AskTutor context={[\"lesson.md § 2\", \"pattern.regex\"]} />",
+      "useCases": [
+        "During an exercise, a student asks about a selected code fragment. The app sends the question and its context to the tutoring service.",
+        "While investigating a mistake, a learner removes an irrelevant source before submitting and reads a reply citing the relevant lesson passage."
+      ],
       "registryItem": "/r/ask-tutor.json",
       "dependencies": [
         "lucide-react"
@@ -2731,7 +3087,11 @@
       "category": "Learning",
       "description": "Read a cited lesson passage and return to the exercise.",
       "export": "LessonCitation",
-      "usage": "<LessonCitation />",
+      "usage": "<LessonCitation title=\"React\" locator=\"§ 2\" excerpt=\"State\" href=\"/lessons/state\" />",
+      "useCases": [
+        "Below a tutor’s reply, a student expands a citation and checks the explanation against the original lesson passage.",
+        "In an exercise review, a reader opens the referenced textbook section. The app can take them back to the marked location through onReturn."
+      ],
       "registryItem": "/r/lesson-citation.json",
       "dependencies": [
         "lucide-react"
@@ -2772,7 +3132,11 @@
       "category": "Learning",
       "description": "Predict the output, compare your answer and read the explanation.",
       "export": "PredictOutput",
-      "usage": "<PredictOutput />",
+      "usage": "<PredictOutput code=\"2 ** 3\" options={[\"6\", \"8\"]} answer=\"8\" explanation=\"2 × 2 × 2\" />",
+      "useCases": [
+        "Before running an example, a student predicts its output and reads the explanation.",
+        "At a lesson checkpoint, an instructor supplies possible results for an expression. The app records the learner’s choice through onAnswer."
+      ],
       "registryItem": "/r/predict-output.json",
       "dependencies": [
         "lucide-react"
@@ -2813,7 +3177,11 @@
       "category": "Learning",
       "description": "Step through a trace with the active line and live variable values.",
       "export": "ExecutionTrace",
-      "usage": "<ExecutionTrace />",
+      "usage": "<ExecutionTrace code={[\"let x = 2\", \"x *= 3\"]} steps={[{ line: 1, variables: { x: 2 } }, { line: 2, variables: { x: 6 } }]} />",
+      "useCases": [
+        "When studying a loop, a student steps through the trace and follows the counter beside the highlighted line.",
+        "When explaining a bug, an instructor goes back to the step where a variable first acquired the wrong value."
+      ],
       "registryItem": "/r/execution-trace.json",
       "dependencies": [
         "lucide-react"
@@ -2842,7 +3210,11 @@
       "category": "Learning",
       "description": "Reveal hints one at a time, from a question to a related example.",
       "export": "HintLadder",
-      "usage": "<HintLadder />",
+      "usage": "<HintLadder items={[\"Compare the inputs\", \"Check the length\"]} />",
+      "useCases": [
+        "When stuck on a problem, a student opens a general hint first and requests the next one only if needed.",
+        "In a lab, an instructor arranges hints from a general idea to a concrete step. The app records how far each learner went."
+      ],
       "registryItem": "/r/hint-ladder.json",
       "dependencies": [
         "lucide-react"
@@ -2871,7 +3243,11 @@
       "category": "Messenger",
       "description": "Course channels and direct conversations.",
       "export": "ChannelList",
-      "usage": "<ChannelList />",
+      "usage": "<ChannelList workspace=\"Studio\" channels={[{ id: \"design\", name: \"design\", kind: \"channel\", topic: \"Review\" }]} />",
+      "useCases": [
+        "In a course sidebar, a student selects their cohort’s channel. The app opens the conversation by its stable ID.",
+        "In team chat, a colleague switches from a shared channel to a direct conversation. The list highlights the selection controlled by the app."
+      ],
       "registryItem": "/r/channel-list.json",
       "dependencies": [
         "motion",
@@ -2909,7 +3285,11 @@
       "category": "Messenger",
       "description": "Compose a draft, insert line breaks and track delivery.",
       "export": "ChatComposer",
-      "usage": "<ChatComposer />",
+      "usage": "<ChatComposer placeholder=\"Message the team\" />",
+      "useCases": [
+        "On a ticket page, a customer submits a comment. If the network is unavailable, the typed text stays in the field for another attempt.",
+        "When switching conversations, an operator can return to an unfinished reply. The app stores one draft per conversation and supplies it through value."
+      ],
       "registryItem": "/r/chat-composer.json",
       "dependencies": [
         "lucide-react"
@@ -2952,11 +3332,16 @@
       "category": "Messenger",
       "description": "Message reactions with participant counts.",
       "export": "MessageReactions",
-      "usage": "<MessageReactions />",
+      "usage": "<MessageReactions onToggle={emoji => console.info(emoji)} />",
+      "useCases": [
+        "Under a release announcement, a teammate adds a reaction and sees the count update beside the emoji.",
+        "In a proposal thread, a member removes their reaction. The app updates that emoji’s count while preserving everyone else’s reactions."
+      ],
       "registryItem": "/r/message-reactions.json",
       "dependencies": [
         "motion",
-        "radix-ui"
+        "radix-ui",
+        "lucide-react"
       ],
       "registryDependencies": [],
       "props": [
@@ -2977,12 +3362,52 @@
       ]
     },
     {
+      "name": "chat-post",
+      "title": "Chat Post",
+      "category": "Messenger",
+      "description": "Render one chat message with an author, text, optional code and a resource link.",
+      "export": "ChatPostBody",
+      "usage": "<ChatPostBody post={{ id: \"release\", author: \"Sam\", initials: \"S\", time: \"10:00\", text: \"v2.0\" }} />",
+      "useCases": [
+        "In a support log, a reader sees a single message with its author, time and code snippet, even on a page without a reply editor.",
+        "In a course feed, an instructor shares a workbook link. The card shows the resource below the text, and the app adds reactions through children."
+      ],
+      "registryItem": "/r/chat-post.json",
+      "dependencies": [
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
+      "props": [
+        {
+          "post": {
+            "type": "ChatPost",
+            "required": true
+          },
+          "children": {
+            "type": "ReactNode",
+            "required": false
+          },
+          "className": {
+            "type": "string | undefined",
+            "required": false
+          }
+        }
+      ]
+    },
+    {
       "name": "message-thread",
       "title": "Message Thread",
       "category": "Messenger",
       "description": "Threaded replies with the original message and a separate composer.",
       "export": "MessageThread",
-      "usage": "<MessageThread />",
+      "usage": "<MessageThread parent={{ id: \"24\", author: \"Sam\", initials: \"S\", time: \"10:00\", text: \"PR #24\" }} />",
+      "useCases": [
+        "In a design review, a designer opens a comment thread and replies with the original message visible above the discussion.",
+        "In support, an operator switches between threads. The app keeps each thread’s draft separate from its posted replies."
+      ],
       "registryItem": "/r/message-thread.json",
       "dependencies": [
         "motion",
@@ -3031,7 +3456,11 @@
       "category": "Messenger",
       "description": "A workspace for course channels, direct messages and threads.",
       "export": "CourseMessenger",
-      "usage": "<CourseMessenger />",
+      "usage": "<CourseMessenger workspace=\"Studio\" channels={[{ id: \"design\", name: \"design\", kind: \"channel\", topic: \"Review\" }]} initialMessages={{ design: [] }} />",
+      "useCases": [
+        "In a course workspace, a student discusses an assignment in the cohort channel and opens a thread for a specific question.",
+        "In a team workspace, a colleague moves between direct and shared conversations. The app synchronizes messages and reactions with its server."
+      ],
       "registryItem": "/r/course-messenger.json",
       "dependencies": [
         "motion",
@@ -3081,7 +3510,11 @@
       "category": "Metrics",
       "description": "Response times by percentile and sample.",
       "export": "LatencyChart",
-      "usage": "<LatencyChart />",
+      "usage": "<LatencyChart title=\"API latency\" unit=\"ms\" samples={[{ label: \"10:00\", p50: 18, p95: 42 }, { label: \"10:05\", p50: 20, p95: null }]} />",
+      "useCases": [
+        "After a release, an engineer compares median API latency with p95 to spot slowdowns affecting a subset of requests.",
+        "During incident review, an on-call engineer steps through samples and distinguishes a missing measurement from a measured zero."
+      ],
       "registryItem": "/r/latency-chart.json",
       "dependencies": [
         "recharts",
@@ -3120,7 +3553,11 @@
       "category": "Metrics",
       "description": "Participant counts and conversion between consecutive stages.",
       "export": "ConversionFunnel",
-      "usage": "<ConversionFunnel />",
+      "usage": "<ConversionFunnel stages={[{ id: \"visit\", label: \"Visit\", count: 120 }, { id: \"signup\", label: \"Signup\", count: 36 }]} />",
+      "useCases": [
+        "In a store report, an analyst compares counts at the cart, checkout and purchase stages to find the biggest drop-off.",
+        "A course team compares signups, first lessons and completions. The app supplies the participant count for each stage."
+      ],
       "registryItem": "/r/conversion-funnel.json",
       "dependencies": [
         "motion",
@@ -3156,7 +3593,11 @@
       "category": "Metrics",
       "description": "Cohort retention with missing observations distinguished from zero.",
       "export": "CohortRetention",
-      "usage": "<CohortRetention />",
+      "usage": "<CohortRetention cohorts={[{ id: \"w1\", label: \"W01\", size: 80, retained: [80, 45, null] }]} />",
+      "useCases": [
+        "In a subscription report, an analyst compares the share of users in different signup cohorts who returned a week later.",
+        "In a course dashboard, a curriculum lead distinguishes a future cohort week from a completed week in which nobody returned."
+      ],
       "registryItem": "/r/cohort-retention.json",
       "dependencies": [
         "motion",
@@ -3196,7 +3637,11 @@
       "category": "Trackers",
       "description": "A kanban board with status transitions and inline issue creation.",
       "export": "IssueBoard",
-      "usage": "<IssueBoard />",
+      "usage": "<IssueBoard defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3 }]} />",
+      "useCases": [
+        "At stand-up, a developer moves a card from backlog to active so the team sees the task’s new status.",
+        "During intake, a manager creates a task directly on the board. The app saves the updated list and refreshes its other views."
+      ],
       "registryItem": "/r/issue-board.json",
       "dependencies": [
         "motion",
@@ -3210,15 +3655,15 @@
       "props": [
         {
           "issues": {
-            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "type": "TrackerIssue[] | undefined",
             "required": false
           },
           "defaultIssues": {
-            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "type": "TrackerIssue[] | undefined",
             "required": false
           },
           "onIssuesChange": {
-            "type": "((issues: import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[]) => void) | undefined",
+            "type": "((issues: TrackerIssue[]) => void) | undefined",
             "required": false
           },
           "className": {
@@ -3238,7 +3683,11 @@
       "category": "Trackers",
       "description": "An inline-editable issue database with sortable priorities.",
       "export": "IssueTable",
-      "usage": "<IssueTable />",
+      "usage": "<IssueTable defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3 }]} />",
+      "useCases": [
+        "During backlog triage, a manager sorts issues by priority and corrects a title inline.",
+        "In a team meeting, a coordinator changes a task’s status in the table. The board receives the same updated array and shows the new status."
+      ],
       "registryItem": "/r/issue-table.json",
       "dependencies": [
         "motion",
@@ -3252,15 +3701,15 @@
       "props": [
         {
           "issues": {
-            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "type": "TrackerIssue[] | undefined",
             "required": false
           },
           "defaultIssues": {
-            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "type": "TrackerIssue[] | undefined",
             "required": false
           },
           "onIssuesChange": {
-            "type": "((issues: import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[]) => void) | undefined",
+            "type": "((issues: TrackerIssue[]) => void) | undefined",
             "required": false
           },
           "className": {
@@ -3280,7 +3729,11 @@
       "category": "Trackers",
       "description": "Plan cycle scope against capacity using issue estimates.",
       "export": "CyclePlanner",
-      "usage": "<CyclePlanner />",
+      "usage": "<CyclePlanner cycleId=\"Q2\" capacity={12} defaultIssues={[{ id: \"UI-7\", title: \"Search\", status: \"active\", priority: \"high\", points: 3, cycleId: \"Q2\" }]} />",
+      "useCases": [
+        "Before a sprint, a team adds estimated issues to a cycle and sees how many points still fit.",
+        "When capacity changes, a lead removes an issue from the cycle and checks whether the plan is back within budget."
+      ],
       "registryItem": "/r/cycle-planner.json",
       "dependencies": [
         "motion",
@@ -3292,15 +3745,15 @@
       "props": [
         {
           "issues": {
-            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "type": "TrackerIssue[] | undefined",
             "required": false
           },
           "defaultIssues": {
-            "type": "import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[] | undefined",
+            "type": "TrackerIssue[] | undefined",
             "required": false
           },
           "onIssuesChange": {
-            "type": "((issues: import(\"/Users/vladislav/Documents/ChatGPT/ui-library/components/motion/tracker-issues\").TrackerIssue[]) => void) | undefined",
+            "type": "((issues: TrackerIssue[]) => void) | undefined",
             "required": false
           },
           "className": {

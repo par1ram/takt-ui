@@ -1,0 +1,47 @@
+{
+  "name": "step-progress",
+  "title": "Step Progress",
+  "category": "Навигация",
+  "description": "Перейдите к следующему этапу",
+  "export": "StepProgress",
+  "usage": "<StepProgress steps={[\"Черновик\", \"Проверка\", \"Готово\"]} />",
+  "useCases": [
+    "При оформлении заявки клиент проходит шаги контактов, параметров и проверки. Приложение показывает поля выбранного шага.",
+    "В мастере настройки администратор возвращается к пронумерованному шагу, чтобы исправить параметры перед завершением."
+  ],
+  "registryItem": "/r/ru/step-progress.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "steps": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Перейдите к следующему этапу",
+  "page": "/ru/components/step-progress",
+  "example": "import { StepProgress } from \"@/components/ui/step-progress\";\n\nexport default function Example() {\n  return <StepProgress steps={[\"Черновик\", \"Проверка\", \"Готово\"]} />;\n}",
+  "models": {},
+  "behavior": "Порядок steps определяет последовательность. onChange сообщает индекс шага, который можно связать с содержимым формы.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/agent-steps.json"
+  ],
+  "files": [
+    "components/motion/step-progress.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

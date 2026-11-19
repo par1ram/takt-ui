@@ -1,0 +1,47 @@
+{
+  "name": "wheel-picker",
+  "title": "Wheel Picker",
+  "category": "Ввод",
+  "description": "Прокрутите список до нужного значения",
+  "export": "WheelPicker",
+  "usage": "<WheelPicker label=\"UTC\" items={[\"UTC−1\", \"UTC\", \"UTC+1\"]} />",
+  "useCases": [
+    "При настройке профиля пользователь прокручивает часовые пояса до своего и сохраняет выбранную строку.",
+    "В мобильном таймере пользователь выбирает длительность из готовых интервалов. Приложение задаёт ей соответствующее время."
+  ],
+  "registryItem": "/r/ru/wheel-picker.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((value: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Прокрутите список до нужного значения",
+  "page": "/ru/components/wheel-picker",
+  "example": "import { WheelPicker } from \"@/components/ui/wheel-picker\";\n\nexport default function Example() {\n  return <WheelPicker label=\"UTC\" items={[\"UTC−1\", \"UTC\", \"UTC+1\"]} />;\n}",
+  "models": {},
+  "behavior": "Передайте варианты в items. onChange возвращает выбранную строку, которую можно сохранить в настройках.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/wheel-picker.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "streaming-reply",
+  "title": "Streaming Reply",
+  "category": "AI",
+  "description": "Покажите ответ по частям",
+  "export": "StreamingReply",
+  "usage": "<StreamingReply text=\"Черновик ответа готов.\" />",
+  "useCases": [
+    "В демо чат-бота посетитель запускает постепенный показ заранее написанного ответа и наблюдает, как появляются слова.",
+    "В учебном разборе студент читает сформированное объяснение по частям. Приложение передаёт готовый текст для воспроизведения."
+  ],
+  "registryItem": "/r/ru/streaming-reply.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Покажите ответ по частям",
+  "page": "/ru/components/streaming-reply",
+  "example": "import { StreamingReply } from \"@/components/ui/streaming-reply\";\n\nexport default function Example() {\n  return <StreamingReply text=\"Черновик ответа готов.\" />;\n}",
+  "models": {},
+  "behavior": "text содержит ответ для постепенного показа. Получение ответа от модели выполняется в приложении.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/streaming-reply.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

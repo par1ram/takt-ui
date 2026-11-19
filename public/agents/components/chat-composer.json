@@ -1,0 +1,63 @@
+{
+  "name": "chat-composer",
+  "title": "Chat Composer",
+  "category": "Messenger",
+  "description": "Compose a draft, insert line breaks and track delivery.",
+  "export": "ChatComposer",
+  "usage": "<ChatComposer placeholder=\"Message the team\" />",
+  "useCases": [
+    "On a ticket page, a customer submits a comment. If the network is unavailable, the typed text stays in the field for another attempt.",
+    "When switching conversations, an operator can return to an unfinished reply. The app stores one draft per conversation and supplies it through value."
+  ],
+  "registryItem": "/r/chat-composer.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "pending": {
+        "type": "boolean | undefined",
+        "required": false
+      },
+      "value": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((text: string) => void) | undefined",
+        "required": false
+      },
+      "onSend": {
+        "type": "((text: string) => void | Promise<void>) | undefined",
+        "required": false
+      },
+      "placeholder": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Send a message from an existing page and keep the draft on failure.",
+  "page": "/components/chat-composer",
+  "example": "\"use client\";\n\nimport { useState } from \"react\";\nimport { ChatComposer } from \"@/components/ui/chat-composer\";\n\nexport default function TeamMessage() {\n  const [draft, setDraft] = useState(\"\");\n\n  async function send(text: string) {\n    const response = await fetch(\"/api/messages\", {\n      method: \"POST\",\n      headers: { \"Content-Type\": \"application/json\" },\n      body: JSON.stringify({ text }),\n    });\n    if (!response.ok) throw new Error(\"HTTP \" + response.status);\n  }\n\n  return <ChatComposer value={draft} onChange={setDraft} onSend={send} />;\n}",
+  "models": {},
+  "behavior": "Without onSend the form shows a local confirmation. Return a Promise from onSend to persist a message. The editor prevents duplicate sends while pending, clears the text on success and keeps it for retry on error. Supply value and onChange together for a controlled draft. This example expects your application to handle POST /api/messages.",
+  "registryExample": "/r/chat-composer-demo.json",
+  "parts": [],
+  "related": [
+    "/agents/components/message-thread.json",
+    "/agents/components/course-messenger.json",
+    "/agents/components/prompt-box.json"
+  ],
+  "files": [
+    "components/motion/chat-composer.tsx"
+  ]
+}

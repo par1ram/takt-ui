@@ -1,0 +1,43 @@
+{
+  "name": "voice-input",
+  "title": "Voice Input",
+  "category": "AI",
+  "description": "Record and play a voice note",
+  "export": "VoiceInput",
+  "usage": "<VoiceInput onRecord={blob => console.info(blob.type, blob.size)} />",
+  "useCases": [
+    "In a discussion, a user records a voice comment and stops recording. The app attaches the resulting audio file to the message.",
+    "In a notes form, an author dictates an idea. The app sends the Blob from onRecord to its transcription service."
+  ],
+  "registryItem": "/r/voice-input.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onRecord": {
+        "type": "((blob: Blob) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Record and play a voice note",
+  "page": "/components/voice-input",
+  "example": "\"use client\";\n\nimport { VoiceInput } from \"@/components/ui/voice-input\";\n\nexport default function Example() {\n  return <VoiceInput onRecord={blob => console.info(blob.type, blob.size)} />;\n}",
+  "models": {},
+  "behavior": "Recording requests microphone access. On stop, onRecord receives a Blob with the actual recording MIME type for storage or upload.",
+  "parts": [],
+  "related": [
+    "/agents/components/siri-orb.json"
+  ],
+  "files": [
+    "components/motion/voice-input.tsx"
+  ]
+}

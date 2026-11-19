@@ -1,0 +1,55 @@
+{
+  "name": "spring-switch",
+  "title": "Spring Switch",
+  "category": "Ввод",
+  "description": "Пружинный переключатель для двоичных настроек.",
+  "export": "SpringSwitch",
+  "usage": "<SpringSwitch label=\"Уведомления\" onCheckedChange={console.log} />",
+  "useCases": [
+    "В настройках профиля пользователь включает уведомления. Приложение сохраняет флаг и восстанавливает его при следующем входе.",
+    "В редакторе макета пользователь временно включает сетку. Локальный переключатель сообщает холсту, когда показать направляющие."
+  ],
+  "registryItem": "/r/ru/spring-switch.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "defaultChecked": {
+        "type": "boolean | undefined",
+        "required": false
+      },
+      "checked": {
+        "type": "boolean | undefined",
+        "required": false
+      },
+      "onCheckedChange": {
+        "type": "((value: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Пружинный переключатель для двоичных настроек.",
+  "page": "/ru/components/spring-switch",
+  "example": "\"use client\";\n\nimport { SpringSwitch } from \"@/components/ui/spring-switch\";\n\nexport default function Example() {\n  return <SpringSwitch label=\"Уведомления\" onCheckedChange={console.log} />;\n}",
+  "models": {},
+  "behavior": "Для локального переключателя задайте defaultChecked. Для настройки, которой владеет приложение, передайте checked и обновляйте его через onCheckedChange.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/bell-button.json"
+  ],
+  "files": [
+    "components/motion/spring-switch.tsx"
+  ]
+}

@@ -26,7 +26,7 @@ export function PredictOutput({
   return (
     <section className={cn(panel, "grid w-72 max-w-full gap-3", className)}>
       <strong>Что выведет код?</strong>
-      <pre className="overflow-x-auto rounded-lg bg-muted p-3 text-xs">
+      <pre tabIndex={0} className="overflow-x-auto rounded-lg bg-muted p-3 text-xs">
         <code>{code}</code>
       </pre>
       <div className="flex flex-wrap gap-1">

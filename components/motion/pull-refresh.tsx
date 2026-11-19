@@ -50,7 +50,6 @@ export function PullRefresh({
     >
       <button
         type="button"
-        aria-label="Обновить"
         disabled={busy}
         className="grid w-full touch-pan-x gap-2 rounded-md py-1 text-left active:cursor-grabbing"
         onPointerDown={(e) => {
@@ -93,6 +92,7 @@ export function PullRefresh({
           suppress.current = false;
         }}
       >
+        <span className="sr-only">Обновить</span>
         <span className="flex items-center justify-between gap-2">
           <strong className="text-sm">Недавние файлы</strong>
           <span

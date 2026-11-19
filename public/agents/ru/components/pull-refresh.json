@@ -1,0 +1,41 @@
+{
+  "name": "pull-refresh",
+  "title": "Pull Refresh",
+  "category": "Карточки",
+  "description": "Синхронизация файла с предварительным натяжением и отменой короткого жеста.",
+  "export": "PullRefresh",
+  "usage": "<PullRefresh onRefresh={async () => { const result = await fetch(\"/api/status\", { cache: \"no-store\" }); if (!result.ok) throw new Error(\"Refresh failed\"); }} />",
+  "useCases": [
+    "В мобильной панели недавних файлов сотрудник тянет список вниз. Приложение запрашивает свежие данные в onRefresh.",
+    "После обрыва связи пользователь повторяет синхронизацию кнопкой и по статусу видит, завершился ли запрос."
+  ],
+  "registryItem": "/r/ru/pull-refresh.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onRefresh": {
+        "type": "(() => Promise<void>) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Синхронизация файла с предварительным натяжением и отменой короткого жеста.",
+  "page": "/ru/components/pull-refresh",
+  "example": "\"use client\";\n\nimport { PullRefresh } from \"@/components/ui/pull-refresh\";\n\nexport default function Example() {\n  return <PullRefresh onRefresh={async () => { const result = await fetch(\"/api/status\", { cache: \"no-store\" }); if (!result.ok) throw new Error(\"Refresh failed\"); }} />;\n}",
+  "models": {},
+  "behavior": "Верните Promise из onRefresh и обновите данные приложения внутри обработчика. Отклонение переводит управление в состояние ошибки.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/pull-refresh.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

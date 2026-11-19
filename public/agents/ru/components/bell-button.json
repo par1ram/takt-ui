@@ -1,0 +1,44 @@
+{
+  "name": "bell-button",
+  "title": "Bell Button",
+  "category": "Кнопки",
+  "description": "Переключите оповещения",
+  "export": "BellButton",
+  "usage": "<BellButton onChange={(enabled) => localStorage.setItem(\"alerts\", String(enabled))} />",
+  "useCases": [
+    "На странице проекта участник подписывается на обновления и повторным нажатием отключает подписку.",
+    "На странице трансляции зритель включает напоминание. Приложение использует новый флаг, чтобы запланировать уведомление."
+  ],
+  "registryItem": "/r/ru/bell-button.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((on: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Переключите оповещения",
+  "page": "/ru/components/bell-button",
+  "example": "\"use client\";\n\nimport { BellButton } from \"@/components/ui/bell-button\";\n\nexport default function Example() {\n  return <BellButton onChange={(enabled) => localStorage.setItem(\"alerts\", String(enabled))} />;\n}",
+  "models": {},
+  "behavior": "onChange передаёт новое логическое состояние подписки. Сохранение настройки между сессиями выполняет приложение.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/spring-switch.json"
+  ],
+  "files": [
+    "components/motion/bell-button.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

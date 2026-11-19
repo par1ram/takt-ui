@@ -1,0 +1,46 @@
+{
+  "name": "magnetic-button",
+  "title": "Magnetic Button",
+  "category": "Кнопки",
+  "description": "Кнопка тянется за курсором и мягко возвращается на место.",
+  "export": "MagneticButton",
+  "usage": "<MagneticButton onClick={() => console.log(\"click\")}>Открыть</MagneticButton>",
+  "useCases": [
+    "На главной странице студии посетитель нажимает «Открыть портфолио». Переход к работам задаёт приложение через onClick.",
+    "В финале интерактивной презентации кнопка «Попробовать демо» реагирует на приближение указателя и открывает демо по нажатию."
+  ],
+  "registryItem": "/r/ru/magnetic-button.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "children": {
+        "type": "ReactNode",
+        "required": false
+      },
+      "onClick": {
+        "type": "(() => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Кнопка тянется за курсором и мягко возвращается на место.",
+  "page": "/ru/components/magnetic-button",
+  "example": "\"use client\";\n\nimport { MagneticButton } from \"@/components/ui/magnetic-button\";\n\nexport default function Example() {\n  return <MagneticButton onClick={() => console.log(\"click\")}>Открыть</MagneticButton>;\n}",
+  "models": {},
+  "behavior": "children задаёт подпись кнопки. Передайте действие в onClick из клиентского компонента.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/magnetic-button.tsx"
+  ]
+}

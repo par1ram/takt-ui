@@ -1,0 +1,88 @@
+{
+  "name": "course-messenger",
+  "title": "Course Messenger",
+  "category": "Мессенджер",
+  "description": "Рабочее пространство с каналами, личными сообщениями и тредами.",
+  "export": "CourseMessenger",
+  "usage": "<CourseMessenger workspace=\"Studio\" channels={[{ id: \"design\", name: \"design\", kind: \"channel\", topic: \"Review\" }]} initialMessages={{ design: [] }} />",
+  "useCases": [
+    "В учебном кабинете студент обсуждает задание в канале группы и открывает ветку конкретного вопроса.",
+    "В командном пространстве сотрудник попеременно ведёт личный и общий диалоги. Приложение синхронизирует сообщения и реакции с сервером."
+  ],
+  "registryItem": "/r/ru/course-messenger.json",
+  "dependencies": [
+    "motion",
+    "lucide-react",
+    "radix-ui"
+  ],
+  "registryDependencies": [
+    "button",
+    "avatar"
+  ],
+  "props": [
+    {
+      "messages": {
+        "type": "Record<string, ConversationPost[]> | undefined",
+        "required": false
+      },
+      "onSend": {
+        "type": "((channelId: string, text: string, parentId?: string) => void | Promise<void>) | undefined",
+        "required": false
+      },
+      "onToggleReaction": {
+        "type": "((channelId: string, postId: string, emoji: string) => void) | undefined",
+        "required": false
+      },
+      "channels": {
+        "type": "ChatChannel[] | undefined",
+        "required": false
+      },
+      "initialMessages": {
+        "type": "Record<string, ConversationPost[]> | undefined",
+        "required": false
+      },
+      "workspace": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Собрать рабочее пространство с каналами, личными сообщениями, реакциями и обсуждениями.",
+  "page": "/ru/components/course-messenger",
+  "example": "import { CourseMessenger } from \"@/components/ui/course-messenger\";\n\nexport default function Example() {\n  return <CourseMessenger workspace=\"Studio\" channels={[{ id: \"design\", name: \"design\", kind: \"channel\", topic: \"Review\" }]} initialMessages={{ design: [] }} />;\n}",
+  "models": {
+    "ConversationPost": "type ConversationPost = ChatPost & {\n  reactions?: ChatReaction[];\n  replies?: ChatPost[];\n};",
+    "ChatPost": "type ChatPost = {\n  id: string;\n  author: string;\n  initials: string;\n  time: string;\n  text: string;\n  code?: string;\n  resource?: { title: string; detail: string; href: string };\n};",
+    "ChatReaction": "type ChatReaction = {\n  emoji: string;\n  label: string;\n  count: number;\n  mine: boolean;\n};",
+    "ChatChannel": "type ChatChannel = {\n  id: string;\n  name: string;\n  kind: \"channel\" | \"direct\";\n  topic: string;\n};"
+  },
+  "behavior": "initialMessages задаёт начальные данные локального режима. Для синхронизации с сервером передайте messages по ID канала, сохраняйте ответы через onSend и обновляйте reactions через onToggleReaction. Третий аргумент onSend указывает родительское сообщение в ветке.",
+  "parts": [
+    "channel-list",
+    "chat-composer",
+    "message-reactions",
+    "chat-post",
+    "message-thread"
+  ],
+  "related": [
+    "/agents/ru/components/channel-list.json",
+    "/agents/ru/components/chat-post.json",
+    "/agents/ru/components/chat-composer.json",
+    "/agents/ru/components/message-reactions.json",
+    "/agents/ru/components/message-thread.json"
+  ],
+  "files": [
+    "components/motion/course-messenger.tsx",
+    "components/motion/channel-list.tsx",
+    "components/motion/chat-composer.tsx",
+    "components/motion/message-reactions.tsx",
+    "components/motion/message-thread.tsx",
+    "components/motion/chat-post.tsx",
+    "components/motion/chat-post.module.css"
+  ]
+}

@@ -5,7 +5,8 @@
   "description": "Message reactions with participant counts.",
   "dependencies": [
     "motion",
-    "radix-ui"
+    "radix-ui",
+    "lucide-react"
   ],
   "files": [
     {

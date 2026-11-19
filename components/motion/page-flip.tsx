@@ -104,7 +104,6 @@ export function PageFlip({
   return (
     <button
       type="button"
-      aria-label="Следующая страница"
       onClick={() => turn(1)}
       onKeyDown={(e) => {
         if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
@@ -117,6 +116,7 @@ export function PageFlip({
         className,
       )}
     >
+      <span className="sr-only">Следующая страница</span>
       <span className="absolute inset-[3px] [transform-style:preserve-3d]">
         <span className="absolute inset-y-0 left-0 w-1/2 overflow-hidden rounded-l-sm">
           {sheet(moving && forward ? prev : idx, false)}

@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "chat-composer",
   "title": "Chat Composer",
-  "description": "Compose a draft, insert line breaks and track delivery.",
+  "description": "Send a message from an existing page and keep the draft on failure.",
   "dependencies": [
     "lucide-react"
   ],

@@ -1,0 +1,45 @@
+{
+  "name": "checkbox-list",
+  "title": "Checkbox List",
+  "category": "Ввод",
+  "description": "Отметьте выполненные пункты",
+  "export": "CheckboxList",
+  "usage": "<CheckboxList items={[\"Lint\", \"Build\", \"Review\"]} />",
+  "useCases": [
+    "При экспорте отчёта аналитик отмечает несколько включаемых разделов. Приложение формирует файл из выбранных пунктов.",
+    "В настройках рассылки подписчик выбирает интересующие темы и сохраняет несколько предпочтений за один раз."
+  ],
+  "registryItem": "/r/ru/checkbox-list.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((items: string[]) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Отметьте выполненные пункты",
+  "page": "/ru/components/checkbox-list",
+  "example": "import { CheckboxList } from \"@/components/ui/checkbox-list\";\n\nexport default function Example() {\n  return <CheckboxList items={[\"Lint\", \"Build\", \"Review\"]} />;\n}",
+  "models": {},
+  "behavior": "items содержит подписи вариантов. onChange сообщает весь список выбранных значений.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/task-list.json"
+  ],
+  "files": [
+    "components/motion/checkbox-list.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

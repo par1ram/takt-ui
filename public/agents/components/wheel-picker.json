@@ -1,0 +1,47 @@
+{
+  "name": "wheel-picker",
+  "title": "Wheel Picker",
+  "category": "Inputs",
+  "description": "Scroll to a value",
+  "export": "WheelPicker",
+  "usage": "<WheelPicker label=\"UTC\" items={[\"UTC−1\", \"UTC\", \"UTC+1\"]} />",
+  "useCases": [
+    "When setting up a profile, a user scrolls through time zones and saves their selection.",
+    "In a mobile timer, a user selects a duration from preset intervals. The app maps the selection to a timer value."
+  ],
+  "registryItem": "/r/wheel-picker.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((value: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Scroll to a value",
+  "page": "/components/wheel-picker",
+  "example": "import { WheelPicker } from \"@/components/ui/wheel-picker\";\n\nexport default function Example() {\n  return <WheelPicker label=\"UTC\" items={[\"UTC−1\", \"UTC\", \"UTC+1\"]} />;\n}",
+  "models": {},
+  "behavior": "Pass options in items. onChange returns the selected string to store in preferences.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/wheel-picker.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "cart-button",
+  "title": "Cart Button",
+  "category": "Cards",
+  "description": "Expand the cart to adjust quantities and see the total.",
+  "export": "CartButton",
+  "usage": "<CartButton title=\"Studio Print\" price={32} />",
+  "useCases": [
+    "In a print catalog, a shopper adds the first copy and adjusts the quantity directly on the product card.",
+    "At a merchandise kiosk, a shopper removes an extra item. The app receives the new quantity and updates the order total."
+  ],
+  "registryItem": "/r/cart-button.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onAdd": {
+        "type": "(() => void) | undefined",
+        "required": false
+      },
+      "onQuantityChange": {
+        "type": "((n: number) => void) | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "price": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "cover": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Expand the cart to adjust quantities and see the total.",
+  "page": "/components/cart-button",
+  "example": "import { CartButton } from \"@/components/ui/cart-button\";\n\nexport default function Example() {\n  return <CartButton title=\"Studio Print\" price={32} />;\n}",
+  "models": {},
+  "behavior": "onAdd fires on increments and onQuantityChange receives the resulting total. Use the latter to synchronize the cart.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/cart-button.tsx",
+    "lib/takt-focus.ts",
+    "lib/takt-art-orbit.ts",
+    "lib/takt-surface.ts"
+  ]
+}

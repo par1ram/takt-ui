@@ -1,0 +1,47 @@
+{
+  "name": "spring-dock",
+  "title": "Spring Dock",
+  "category": "Навигация",
+  "description": "Активная подложка скользит за выбранным пунктом.",
+  "export": "SpringDock",
+  "usage": "<SpringDock onChange={(index) => console.log(index)} />",
+  "useCases": [
+    "В редакторе макетов дизайнер выбирает инструмент по иконке. Приложение связывает индекс кнопки с инструментом холста.",
+    "В кабинете автора нижняя панель ведёт в библиотеку, черновики и публикации. При смене раздела активная иконка выделяется."
+  ],
+  "registryItem": "/r/ru/spring-dock.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "{ label: string; icon: LucideIcon; }[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Активная подложка скользит за выбранным пунктом.",
+  "page": "/ru/components/spring-dock",
+  "example": "\"use client\";\n\nimport { SpringDock } from \"@/components/ui/spring-dock\";\n\nexport default function Example() {\n  return <SpringDock onChange={(index) => console.log(index)} />;\n}",
+  "models": {},
+  "behavior": "Для каждого пункта передайте label и компонент иконки Lucide. onChange возвращает индекс пункта. Собирайте список иконок в клиентском компоненте.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/rubber-dock.json"
+  ],
+  "files": [
+    "components/motion/spring-dock.tsx"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "test-results",
+  "title": "Test Results",
+  "category": "Learning",
+  "description": "Inspect the input, expected value and actual result of each test.",
+  "export": "TestResults",
+  "usage": "<TestResults results={[{ input: \"UI-23\", expected: true, actual: false }]} />",
+  "useCases": [
+    "After checking a solution, a student selects a failing case and compares its input, expected value and actual result.",
+    "During review, a student asks about a particular mismatch. The app sends the selected case to a tutor through onAsk."
+  ],
+  "registryItem": "/r/test-results.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "results": {
+        "type": "ExerciseCase[] | undefined",
+        "required": false
+      },
+      "onAsk": {
+        "type": "((result: ExerciseCase, trigger: HTMLButtonElement) => void) | undefined",
+        "required": false
+      },
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Inspect the input, expected value and actual result of each test.",
+  "page": "/components/test-results",
+  "example": "import { TestResults } from \"@/components/ui/test-results\";\n\nexport default function Example() {\n  return <TestResults results={[{ input: \"UI-23\", expected: true, actual: false }]} />;\n}",
+  "models": {
+    "ExerciseCase": "type ExerciseCase = {\n  input: string;\n  expected: boolean;\n  actual: boolean;\n};"
+  },
+  "behavior": "Each results entry contains input, expected and actual. onAsk receives the selected case and the button to which focus can return.",
+  "parts": [],
+  "related": [
+    "/agents/components/code-exercise.json",
+    "/agents/components/run-console.json",
+    "/agents/components/ask-tutor.json"
+  ],
+  "files": [
+    "components/motion/test-results.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

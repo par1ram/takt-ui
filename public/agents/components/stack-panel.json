@@ -1,0 +1,60 @@
+{
+  "name": "stack-panel",
+  "title": "Stack Panel",
+  "category": "Navigation",
+  "description": "Open a project and swipe right to go back",
+  "export": "StackPanel",
+  "usage": "<StackPanel title=\"Settings\" items={[\"API\", \"CLI\"]} renderPanel={name => <p>{name}</p>} />",
+  "useCases": [
+    "In compact settings, a user moves from the root menu into notification preferences and then goes back one level.",
+    "In product help, a reader picks a topic. The app displays the associated content in the same panel through renderPanel."
+  ],
+  "registryItem": "/r/stack-panel.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "renderPanel": {
+        "type": "((name: string) => ReactNode) | undefined",
+        "required": false
+      },
+      "pages": {
+        "type": "Record<string, StackPage> | undefined",
+        "required": false
+      },
+      "root": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Open a project and swipe right to go back",
+  "page": "/components/stack-panel",
+  "example": "\"use client\";\n\nimport { StackPanel } from \"@/components/ui/stack-panel\";\n\nexport default function Example() {\n  return <StackPanel title=\"Settings\" items={[\"API\", \"CLI\"]} renderPanel={name => <p>{name}</p>} />;\n}",
+  "models": {
+    "StackPage": "type StackPage = { title: string; rows?: Row[]; content?: ReactNode };",
+    "Row": "type Row = {\n  id: string;\n  label: string;\n  to?: string;\n  detail?: string;\n  icon?: ReactNode;\n  selected?: boolean;\n  onSelect?: () => void;\n};"
+  },
+  "behavior": "Use items and renderPanel for a flat menu. For nested navigation pass a pages map and the initial root key.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/stack-panel.tsx"
+  ]
+}

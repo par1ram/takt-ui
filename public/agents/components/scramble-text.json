@@ -1,0 +1,38 @@
+{
+  "name": "scramble-text",
+  "title": "Scramble Text",
+  "category": "Text",
+  "description": "Reveal the scrambled text",
+  "export": "ScrambleText",
+  "usage": "<ScrambleText text=\"STUDIO\" />",
+  "useCases": [
+    "On a game promo page, a visitor triggers a decoding effect that reveals the mission name.",
+    "In a release presentation, the presenter reveals the version’s codename as an animated label."
+  ],
+  "registryItem": "/r/scramble-text.json",
+  "dependencies": [],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Reveal the scrambled text",
+  "page": "/components/scramble-text",
+  "example": "import { ScrambleText } from \"@/components/ui/scramble-text\";\n\nexport default function Example() {\n  return <ScrambleText text=\"STUDIO\" />;\n}",
+  "models": {},
+  "behavior": "Pass the final string to reveal in text.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/scramble-text.tsx"
+  ]
+}

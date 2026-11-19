@@ -1,0 +1,45 @@
+{
+  "name": "bloom-menu",
+  "title": "Bloom Menu",
+  "category": "Кнопки",
+  "description": "Меню раскрывает действия веером вокруг кнопки.",
+  "export": "BloomMenu",
+  "usage": "<BloomMenu onSelect={(action) => console.log(action)} />",
+  "useCases": [
+    "Рядом с выбранной фигурой дизайнер раскрывает действия дублирования и удаления, затем применяет одно к фигуре.",
+    "На карточке фотографии редактор открывает компактное меню, чтобы скачать оригинал или скопировать ссылку через обработчик приложения."
+  ],
+  "registryItem": "/r/ru/bloom-menu.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "actions": {
+        "type": "{ label: string; icon: LucideIcon; }[] | undefined",
+        "required": false
+      },
+      "onSelect": {
+        "type": "((label: string) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Меню раскрывает действия веером вокруг кнопки.",
+  "page": "/ru/components/bloom-menu",
+  "example": "\"use client\";\n\nimport { BloomMenu } from \"@/components/ui/bloom-menu\";\n\nexport default function Example() {\n  return <BloomMenu onSelect={(action) => console.log(action)} />;\n}",
+  "models": {},
+  "behavior": "actions содержит пары label и icon. Для запуска действия сопоставьте полученную в onSelect подпись с обработчиком приложения.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/bloom-menu.tsx"
+  ]
+}

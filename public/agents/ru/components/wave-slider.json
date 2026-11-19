@@ -1,0 +1,56 @@
+{
+  "name": "wave-slider",
+  "title": "Wave Slider",
+  "category": "Ввод",
+  "description": "Компактная регулировка громкости с запоминанием уровня при отключении звука.",
+  "export": "WaveSlider",
+  "usage": "<WaveSlider defaultValue={60} onValueChange={console.log} />",
+  "useCases": [
+    "В плеере слушатель выставляет громкость по шкале от 0 до 100. Приложение преобразует процент в уровень звука.",
+    "В редакторе фонового звука пользователь загружает сохранённый уровень в value и слышит изменение при перемещении ползунка."
+  ],
+  "registryItem": "/r/ru/wave-slider.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "defaultValue": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "value": {
+        "type": "number | undefined",
+        "required": false
+      },
+      "onValueChange": {
+        "type": "((value: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Компактная регулировка громкости с запоминанием уровня при отключении звука.",
+  "page": "/ru/components/wave-slider",
+  "example": "\"use client\";\n\nimport { WaveSlider } from \"@/components/ui/wave-slider\";\n\nexport default function Example() {\n  return <WaveSlider defaultValue={60} onValueChange={console.log} />;\n}",
+  "models": {},
+  "behavior": "Уровень задаётся числом от 0 до 100. Используйте defaultValue для начального значения или value вместе с onValueChange для внешнего управления.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/jelly-slider.json",
+    "/agents/ru/components/detent-dial.json"
+  ],
+  "files": [
+    "components/motion/wave-slider.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

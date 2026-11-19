@@ -1,0 +1,45 @@
+{
+  "name": "morph-island",
+  "title": "Morph Island",
+  "category": "Карточки",
+  "description": "Панель для таймера, экспорта и входящего звонка.",
+  "export": "MorphIsland",
+  "usage": "<MorphIsland title=\"Studio\" onCall={(accepted) => console.info({ accepted })} />",
+  "useCases": [
+    "В прототипе входящего звонка пользователь принимает или отклоняет вызов. Приложение получает решение через onCall.",
+    "На презентации мобильного интерфейса дизайнер переключает встроенные активности, чтобы показать таймер и ход операции в одной компактной панели."
+  ],
+  "registryItem": "/r/ru/morph-island.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "title": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onCall": {
+        "type": "((accepted: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Панель для таймера, экспорта и входящего звонка.",
+  "page": "/ru/components/morph-island",
+  "example": "\"use client\";\n\nimport { MorphIsland } from \"@/components/ui/morph-island\";\n\nexport default function Example() {\n  return <MorphIsland title=\"Studio\" onCall={(accepted) => console.info({ accepted })} />;\n}",
+  "models": {},
+  "behavior": "title задаёт подпись звонка. onCall получает логический результат принятия или отклонения.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/morph-island.tsx"
+  ]
+}

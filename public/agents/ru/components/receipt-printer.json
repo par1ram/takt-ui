@@ -1,0 +1,54 @@
+{
+  "name": "receipt-printer",
+  "title": "Receipt Printer",
+  "category": "Карточки",
+  "description": "Подтверждение оплаты с анимацией термопринтера и повторной печатью чека.",
+  "export": "ReceiptPrinter",
+  "usage": "<ReceiptPrinter merchant=\"Studio\" order={{ id: \"S-12\", description: \"Print\", amount: 32, currency: \"EUR\" }} />",
+  "useCases": [
+    "После оплаты заказа магазин показывает чек с номером, который вернул сервер. Покупатель может повторно открыть печать уже подтверждённого чека.",
+    "В прототипе кассы дизайнер проводит демонстрационную покупку и показывает выдачу чека без подключения платёжного сервиса."
+  ],
+  "registryItem": "/r/ru/receipt-printer.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "merchant": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "order": {
+        "type": "ReceiptOrder | undefined",
+        "required": false
+      },
+      "onPay": {
+        "type": "((order: ReceiptOrder) => Promise<PaymentReceipt>) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Напечатать чек после подтверждения оплаты.",
+  "page": "/ru/components/receipt-printer",
+  "example": "import { ReceiptPrinter } from \"@/components/ui/receipt-printer\";\n\nexport default function Example() {\n  return <ReceiptPrinter merchant=\"Studio\" order={{ id: \"S-12\", description: \"Print\", amount: 32, currency: \"EUR\" }} />;\n}",
+  "models": {
+    "ReceiptOrder": "type ReceiptOrder = {\n  id?: string;\n  description: string;\n  amount: number;\n  currency: string;\n};",
+    "PaymentReceipt": "type PaymentReceipt = { orderId: string };"
+  },
+  "behavior": "Без onPay используется демонстрационная оплата. Передайте order.amount в основных единицах валюты. Возвращайте { orderId } из onPay после подтверждения на сервере. Отклонённый Promise позволяет повторить оплату. Повторная печать использует сохранённый чек.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/card-field.json"
+  ],
+  "files": [
+    "components/motion/receipt-printer.tsx"
+  ]
+}

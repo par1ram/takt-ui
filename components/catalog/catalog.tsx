@@ -26,7 +26,7 @@ import {
   Type,
   X,
 } from "lucide-react";
-import { allEntries, entries, type Entry } from "@/lib/catalog";
+import { allEntries, entries, taskFor, type Entry } from "@/lib/catalog";
 import { useTheme } from "next-themes";
 import "./catalog.css";
 
@@ -41,6 +41,8 @@ const searchIndex = new Map(
         [
           entry.title,
           entry.description,
+          taskFor(entry),
+          ...entry.useCases,
           entry.category,
           entry.gesture,
           ...entry.references.map((ref) => ref.name),

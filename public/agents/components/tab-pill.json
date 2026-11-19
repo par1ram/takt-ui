@@ -1,0 +1,51 @@
+{
+  "name": "tab-pill",
+  "title": "Tab Pill",
+  "category": "Navigation",
+  "description": "Switch tabs",
+  "export": "TabPill",
+  "usage": "<TabPill options={[\"API\", \"CLI\"]} panels={[\"POST /messages\", \"bun run build\"]} />",
+  "useCases": [
+    "In a setup guide, a developer switches between API and CLI tabs to read the relevant snippet.",
+    "In a material description, a shopper opens care instructions beside the specifications without leaving the product page."
+  ],
+  "registryItem": "/r/tab-pill.json",
+  "dependencies": [
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "options": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      },
+      "panels": {
+        "type": "string[] | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Switch tabs",
+  "page": "/components/tab-pill",
+  "example": "import { TabPill } from \"@/components/ui/tab-pill\";\n\nexport default function Example() {\n  return <TabPill options={[\"API\", \"CLI\"]} panels={[\"POST /messages\", \"bun run build\"]} />;\n}",
+  "models": {},
+  "behavior": "options and panels are paired by index. onChange receives the zero-based active tab index.",
+  "parts": [],
+  "related": [
+    "/agents/components/swipe-tabs.json",
+    "/agents/components/segmented-control.json"
+  ],
+  "files": [
+    "components/motion/tab-pill.tsx"
+  ]
+}

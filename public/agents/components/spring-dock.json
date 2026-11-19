@@ -1,0 +1,47 @@
+{
+  "name": "spring-dock",
+  "title": "Spring Dock",
+  "category": "Navigation",
+  "description": "The indicator slides under the selected item.",
+  "export": "SpringDock",
+  "usage": "<SpringDock onChange={(index) => console.log(index)} />",
+  "useCases": [
+    "In a layout editor, a designer picks a tool by its icon. The app maps the button index to a canvas tool.",
+    "In a creator workspace, a bottom dock opens the library, drafts and publications, highlighting the active section."
+  ],
+  "registryItem": "/r/spring-dock.json",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "items": {
+        "type": "{ label: string; icon: LucideIcon; }[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((index: number) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "The indicator slides under the selected item.",
+  "page": "/components/spring-dock",
+  "example": "\"use client\";\n\nimport { SpringDock } from \"@/components/ui/spring-dock\";\n\nexport default function Example() {\n  return <SpringDock onChange={(index) => console.log(index)} />;\n}",
+  "models": {},
+  "behavior": "Each item takes a label and a Lucide icon component. onChange reports the selected index. Construct the icon list in a client component.",
+  "parts": [],
+  "related": [
+    "/agents/components/rubber-dock.json"
+  ],
+  "files": [
+    "components/motion/spring-dock.tsx"
+  ]
+}

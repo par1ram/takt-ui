@@ -1,0 +1,45 @@
+{
+  "name": "undo-button",
+  "title": "Undo Button",
+  "category": "Buttons",
+  "description": "Delete the entry and undo the change",
+  "export": "UndoButton",
+  "usage": "<UndoButton label=\"Draft\" onChange={(removed) => console.info({ removed })} />",
+  "useCases": [
+    "In a draft list, an author removes an entry and restores it immediately after spotting a mistaken selection.",
+    "In a reading collection, an editor temporarily excludes an article. The app updates its visibility and supports undo."
+  ],
+  "registryItem": "/r/undo-button.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "label": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((removed: boolean) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "en",
+  "task": "Delete the entry and undo the change",
+  "page": "/components/undo-button",
+  "example": "\"use client\";\n\nimport { UndoButton } from \"@/components/ui/undo-button\";\n\nexport default function Example() {\n  return <UndoButton label=\"Draft\" onChange={(removed) => console.info({ removed })} />;\n}",
+  "models": {},
+  "behavior": "Use onChange to update row visibility. True means removed and false means restored.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/undo-button.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

@@ -20,8 +20,8 @@ Installable React motion components for Next.js App Router, TypeScript and Tailw
 1. Read the consuming app’s own AGENTS.md if it exists. Inspect its package manager, aliases and Next.js guides shipped with its installed version.
 2. For a new app, run \`bun create next-app@latest my-app --yes\`, then \`cd my-app\`. Keep the recommended App Router, TypeScript, Tailwind and Turbopack defaults.
 3. If components.json is missing, run \`bunx shadcn@latest init\`. Preserve existing aliases and registries in an initialized app.
-4. Fetch the [component index](${url("/agents/components.json")}). Match the user's intent to a name, description or category. Inspect the named export, prop combinations, JSX example, dependencies and registryItem. Resolve all paths in the index against this site's origin.
-5. Read files[].content from the selected registry item. Install that URL with shadcn. For example:
+4. Search the compact [task index](${url("/agents/search.json")}) or its [Russian edition](${url("/agents/ru/search.json")}). Match the request against task and useCases. Pick the smallest component that supports the scenario. Open its guide URL. It includes the complete import and example, data models, prop variants, related alternatives, installable parts and registryItem. Resolve paths against this site's origin. The original [full API index](${url("/agents/components.json")}) remains available.
+5. Install the guide's registryItem with shadcn. Adapt its example to the app's UI alias, data source and theme. For example:
 
 \`\`\`sh
 bunx shadcn@latest add ${cli}/r/receipt-printer.json
@@ -39,15 +39,16 @@ Merge this entry into the registries object in the app's components.json:
 { "@takt": "${origin || "<published Takt origin>"}/r/{name}.json" }
 \`\`\`
 
-Use \`bunx shadcn@latest search @takt -q "receipt"\`, \`bunx shadcn@latest view @takt/receipt-printer\`, then \`bunx shadcn@latest add @takt/receipt-printer\`. The same namespace is available to the shadcn MCP server. For the full library use @takt/takt. Keep this reference alongside the project's existing AGENTS.md instructions:
+Use \`bunx shadcn@latest search @takt -q "receipt"\`, \`bunx shadcn@latest view @takt/receipt-printer\`, then \`bunx shadcn@latest add @takt/receipt-printer\`. The same namespace is available to the shadcn MCP server. For example, search @takt for "draft", then request the chat-composer-demo example with get_item_examples_from_registries. Install it with \`bunx shadcn@latest add @takt/chat-composer-demo\`. For the full library use @takt/takt. Keep this reference alongside the project's existing AGENTS.md instructions:
 
-> For Takt UI requests, read ${url("/llms.txt")} on the published Takt site, inspect ${url("/agents/components.json")}, then install the requested component from @takt.
+> For Takt UI requests, read ${url("/llms.txt")} on the published Takt site, search ${url("/agents/search.json")} and open the selected guide, then install the requested component from @takt.
 
 ## Integrate
 
 Import the recorded named export from the file under the project's UI alias. Keep pages server-rendered by default. Put browser state, callbacks and event handlers behind a client boundary. Use the project's theme tokens, content and data. Check both themes, keyboard interaction and reduced motion, then run the production build. English is the default; Russian packages are in /r/ru/.
 
 - [Metrics](${url("/metrics")}) includes Latency Chart (ordered p50/p95 samples), Conversion Funnel (ordered stage counts), and Cohort Retention (cohort sizes and counts per period). Pass null for an unobserved sample or period. Zero is a measured value.
+- For a message input on an existing page, use [Chat Composer](${url("/agents/components/chat-composer.json")}). Its example sends to an application endpoint and retains the draft on failure. For one read-only message use [Chat Post](${url("/agents/components/chat-post.json")}).
 - [Course Messenger](${url("/messenger")}) combines channel selection, message composition, reactions and threads. Install [the workspace](${url("/r/course-messenger.json")}) or find each part under Messenger in the component index.
 - [Assistant Orb](${url("/r/siri-orb.json")}) takes an assistant state and normalized audio amplitude.
 - [Receipt Printer](${url("/r/receipt-printer.json")}) runs a demo by default. For checkout, supply the order and an onPay callback that resolves after server-side confirmation. Reprinting reuses the existing receipt.

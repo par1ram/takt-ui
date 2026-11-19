@@ -1,0 +1,45 @@
+{
+  "name": "toolbar",
+  "title": "Toolbar",
+  "category": "Навигация",
+  "description": "Включите стили текста",
+  "export": "Toolbar",
+  "usage": "<Toolbar text=\"Заметка редактора\" />",
+  "useCases": [
+    "В редакторе заметки автор включает жирное начертание и курсив и сразу видит их сочетание на образце текста.",
+    "В конструкторе шаблонов дизайнер снимает отдельный стиль. Приложение получает полный набор оставшихся стилей для выбранной надписи."
+  ],
+  "registryItem": "/r/ru/toolbar.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "text": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((styles: string[]) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Включите стили текста",
+  "page": "/ru/components/toolbar",
+  "example": "import { Toolbar } from \"@/components/ui/toolbar\";\n\nexport default function Example() {\n  return <Toolbar text=\"Заметка редактора\" />;\n}",
+  "models": {},
+  "behavior": "text задаёт текст для предпросмотра. onChange возвращает список включённых стилей.",
+  "parts": [],
+  "related": [],
+  "files": [
+    "components/motion/toolbar.tsx",
+    "lib/takt-surface.ts"
+  ]
+}

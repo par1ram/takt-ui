@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import { guideFor, usageExample } from "@/lib/component-guides";
 import { installPrompt } from "./install-prompt";
 import { registryOrigin } from "@/lib/registry-origin";
 import { Dialog } from "radix-ui";
@@ -111,10 +112,10 @@ function Detail({
         <>
           <h3>Задание для агента</h3>
           <div className="whitespace-pre-wrap [&_pre]:whitespace-pre-wrap [&_pre]:wrap-anywhere">
-            <CopyCode value={installPrompt(entry, registryPath)} />
+            <CopyCode value={installPrompt(entry, registryPath, publicOrigin)} />
           </div>
-          <a href="/agents/components.json" className="underline">
-            Каталог компонентов для агента
+          <a href={(locale === "ru" ? "/agents/ru" : "/agents") + (entry ? "/components/" + entry.slug + ".json" : "/search.json")} className="underline">
+            {entry ? "Карточка компонента для агента" : "Каталог компонентов для агента"}
           </a>
         </>
       ) : showCode ? (
@@ -181,18 +182,15 @@ function Detail({
             <CopyCode value={JSON.stringify({ "@takt": (publicOrigin || "<published Takt origin>") + registryPath + "{name}.json" }, null, 2)} />
           </>}
           <p>Стили соберёт Tailwind вашего проекта. Акцент берётся из темы shadcn, а CLI добавит нужные компоненту вспомогательные файлы.</p>
+          {entry && <>
+            <h3>Сценарии использования</h3>
+            <ul className="list-disc space-y-2 pl-5 text-sm">
+              {entry.useCases.map(scenario => <li key={scenario}>{scenario}</li>)}
+            </ul>
+          </>}
           <h3>Использование</h3>
-          <CopyCode
-            value={
-              '"use client";\n\nimport { ' +
-              (entry ?? entries[0]).symbol +
-              ' } from "@/components/ui/' +
-              slug +
-              '";\n\nexport function Demo() {\n  return ' +
-              (entry?.usage ?? entries[0].usage) +
-              ";\n}"
-            }
-          />
+          {entry && guideFor(entry.slug) && <p>{guideFor(entry.slug)?.behavior}</p>}
+          <CopyCode value={usageExample(entry ?? entries[0])} />
           {entry && entry.references.length > 0 && (
             <p className="source-links">
               Референсы ·{" "}

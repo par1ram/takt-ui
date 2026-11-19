@@ -1,0 +1,47 @@
+{
+  "name": "task-list",
+  "title": "Task List",
+  "category": "AI",
+  "description": "Пройдите очередь задач",
+  "export": "TaskList",
+  "usage": "<TaskList tasks={[\"Lint\", \"Build\", \"Deploy\"]} />",
+  "useCases": [
+    "Перед релизом участник команды отмечает выполненные проверки и видит, сколько пунктов осталось.",
+    "В учебном практикуме студент отмечает выполненные задания. Приложение сохраняет список завершённых названий через onChange."
+  ],
+  "registryItem": "/r/ru/task-list.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "props": [
+    {
+      "className": {
+        "type": "string | undefined",
+        "required": false
+      },
+      "tasks": {
+        "type": "string[] | undefined",
+        "required": false
+      },
+      "onChange": {
+        "type": "((done: string[]) => void) | undefined",
+        "required": false
+      }
+    }
+  ],
+  "locale": "ru",
+  "task": "Пройдите очередь задач",
+  "page": "/ru/components/task-list",
+  "example": "import { TaskList } from \"@/components/ui/task-list\";\n\nexport default function Example() {\n  return <TaskList tasks={[\"Lint\", \"Build\", \"Deploy\"]} />;\n}",
+  "models": {},
+  "behavior": "tasks задаёт названия задач. onChange передаёт полный массив названий завершённых задач.",
+  "parts": [],
+  "related": [
+    "/agents/ru/components/checkbox-list.json"
+  ],
+  "files": [
+    "components/motion/task-list.tsx",
+    "lib/takt-surface.ts"
+  ]
+}
