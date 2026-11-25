@@ -12,6 +12,17 @@ export async function reviewMessenger(browser, origin) {
       await page.goto(
         new URL(mobile ? "/ru/messenger" : "/messenger", origin).href,
       );
+      // Drafts live in React state, so typing before hydration lets the controlled
+      // textarea reset to an empty draft on a slow runner. React marks a hydrated
+      // element with an internal fiber key; wait for it before touching the form.
+      await page.waitForFunction(
+        () =>
+          [...document.querySelectorAll("textarea")].some((node) =>
+            Object.keys(node).some((key) => key.startsWith("__reactFiber$")),
+          ),
+        null,
+        { timeout: 15000 },
+      );
       const btn = (name) => page.getByRole("button", { name, exact: true });
       const text = (en, ru) => (mobile ? ru : en);
       const select = async (name) => {

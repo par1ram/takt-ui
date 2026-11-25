@@ -79,7 +79,7 @@ bunx shadcn@latest init
 
 Команда `bun run motion:sync` обходит публичные карточки DesignBookmark Motion, сохраняет содержимое **Copy code**, точные промты **Claude** и **Codex** и команду установки, если её предлагает автор. Для первого запуска нужен Chrome или Chromium из `bunx playwright install chromium`.
 
-[Карта портирования](references/motion/README.md) связывает референсы с компонентами Takt. У HTML-примера доступны цельный `index.html`, извлечённые стили и скрипты. У React-примера доступны основной TSX и дополнительные файлы, включённые автором в выдачу. [Манифест](references/motion/manifest.json) хранит хеши, зависимости TSX, ссылки на внешние материалы HTML и значения параметров движения, прочитанные в скриптах через `spring()` и `num()`. Поле `licenseNotice` отражает пометку в заголовке исходника.
+[Карта портирования](references/motion/README.md) связывает референсы с компонентами Takt. У HTML-примера доступны цельный `index.html`, извлечённые стили и скрипты. У React-примера доступны основной TSX и дополнительные файлы, включённые автором в выдачу. [Манифест](references/motion/manifest.json) хранит хеши, зависимости TSX, ссылки на внешние материалы HTML и значения параметров движения, прочитанные в скриптах через `spring()` и `num()`. Поле `licenseNotice` повторяет пометку из заголовка исходника и остаётся пустым, если автор её не указал, поэтому условия использования проверяются по [уведомлениям о третьих сторонах](THIRD_PARTY_NOTICES.md), а не по этому полю.
 
 После прерывания повторите `bun run motion:sync` — готовые карточки берутся из проверенного кеша. Для обновления уже скачанных исходников выполните `bun run motion:sync --refresh`. Команда `bun run motion:verify` проверяет локальный снимок без браузера и интернета. Сырьё для портирования хранится в игнорируемой Git папке `references/motion/sources/`. В shadcn-реестр публикуются компоненты из `components/motion/`.
 
@@ -134,3 +134,9 @@ export function CheckoutFields({ clientSecret }: { clientSecret: string }) {
 Для поля отправки на существующей странице установите Chat Composer. Пример с управляемым черновиком отправляет запрос в обработчик `POST /api/messages` вашего приложения и сохраняет текст для повтора при ошибке. В shadcn MCP найдите пример `chat-composer-demo` в пространстве имён Takt. Его можно установить и командой `bunx shadcn@latest add "$TAKT_ORIGIN/r/ru/chat-composer-demo.json"`. Для отдельного сообщения установите `chat-post`: стили миниатюры поставляются в соседнем файле CSS Module. [Карточка Chat Composer](https://takt-ui.vercel.app/agents/ru/components/chat-composer.json)
 
 При работающем каталоге команда `bun run registry:check http://127.0.0.1:3000` создаёт временный проект, запускает shadcn init, проверяет установку с другим UI-алиасом и повторную отправку в Chromium. Примеры проверяются TypeScript для обеих локалей. Для браузерной проверки установите Chromium для Playwright или задайте `PLAYWRIGHT_CHANNEL=chrome`.
+
+## Лицензия
+
+Takt распространяется по [лицензии MIT](LICENSE). Copyright (c) 2026 Vladislav Khorunzhiy.
+
+Многие компоненты движения портированы из работ других авторов, собранных в каталоге [DesignBookmark Motion](https://designbookmark.com/motion). В [уведомлениях о третьих сторонах](THIRD_PARTY_NOTICES.md) перечислен каждый портированный компонент и его автор: 25 компонентов из [Kokonut UI](https://kokonutui.com) и 6 из [SmoothUI](https://smoothui.dev) по лицензии MIT с указанием правообладателей и полным текстом лицензии, 52 на основе примеров DesignBookmark и 22 собственных компонента Takt. DesignBookmark указывает лицензию только для одного примера, поэтому условия распространения остальных отмечены там как неопределённые, а не предполагаемые.
