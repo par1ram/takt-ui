@@ -2,6 +2,8 @@
 
 Исходники и промты доступны локально после `bun run motion:sync`. Таблица связывает пример с устанавливаемым компонентом Takt.
 
+Условия использования исходников и правообладатели перечислены в [уведомлениях о третьих сторонах](../../THIRD_PARTY_NOTICES.md). Поле `licenseNotice` в манифесте повторяет пометку из заголовка исходника; пустое значение означает, что автор её не указал.
+
 | Референс | Автор | Формат | Takt | Материалы |
 | --- | --- | --- | --- | --- |
 | [Invite people](https://designbookmark.com/motion#db-invite-people) | DesignBookmark | HTML | [invite-people](../../components/motion/invite-people.tsx) | [Код](sources/db-invite-people/4f60ec9f6a3761436860518af196759e638f58887ecd62c69cd7dbebb7016010/files/index.html) · [Claude](sources/db-invite-people/4f60ec9f6a3761436860518af196759e638f58887ecd62c69cd7dbebb7016010/claude.txt) · [Codex](sources/db-invite-people/4f60ec9f6a3761436860518af196759e638f58887ecd62c69cd7dbebb7016010/codex.txt) |

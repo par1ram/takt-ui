@@ -1,3 +1,6 @@
+// Ported from Kokonut UI (https://kokonutui.com/docs/buttons/command-button).
+// Copyright (c) 2025 kokonutUI. Licensed under the MIT License.
+// Full license text: https://github.com/par1ram/takt-ui/blob/main/THIRD_PARTY_NOTICES.md
 "use client";
 
 import { useEffect, useRef, useState } from "react";

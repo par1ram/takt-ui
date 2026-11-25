@@ -1,3 +1,6 @@
+// Ported from SmoothUI (https://smoothui.dev/docs/components/music-toggle).
+// Copyright (c) 2024 Eduardo Calvo. Licensed under the MIT License.
+// Full license text: https://github.com/par1ram/takt-ui/blob/main/THIRD_PARTY_NOTICES.md
 "use client";
 import { cn } from "@/lib/utils";
 import { action as surfaceAction } from "@/lib/takt-surface";
