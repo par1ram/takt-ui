@@ -72,3 +72,9 @@ Run `bun run test` for quick feedback. After installing the three Playwright bro
 With the production server running, use `PLAYWRIGHT_CHANNEL=chrome bun run motion:review` for browser checks. [Component review log](COMPONENT-REVIEW.md)
 
 With the built catalog running, `bun run registry:check http://127.0.0.1:3000` initializes a temporary Next.js consumer with shadcn, installs through a custom UI alias and exercises draft retry in Chromium. It also type-checks the guides against the English and Russian bundles. Install the Playwright Chromium binary or set `PLAYWRIGHT_CHANNEL=chrome`.
+
+## License
+
+Takt is released under the [MIT License](LICENSE). Copyright (c) 2026 Vladislav Khorunzhiy.
+
+Many motion components are ports of work published by other authors through the [DesignBookmark Motion](https://designbookmark.com/motion) catalog. [Third-party notices](THIRD_PARTY_NOTICES.md) list every ported component with its upstream author: 25 from [Kokonut UI](https://kokonutui.com) and 6 from [SmoothUI](https://smoothui.dev) under the MIT License with their copyright lines and full license text, 52 based on DesignBookmark examples, and the remaining 22 components written for Takt. DesignBookmark states a license for one example only, so the redistribution terms for the rest are recorded there as unresolved rather than assumed.
